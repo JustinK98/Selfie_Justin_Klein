@@ -147,6 +147,7 @@ char* store_character(char* s, uint64_t i, char c);
 
 uint64_t is_letter(char c);
 uint64_t is_digit(char c);
+uint64_t is_hexa_digit(char c);
 
 char*    string_alloc(uint64_t l);
 uint64_t string_length(char* s);
@@ -155,6 +156,7 @@ void     string_reverse(char* s);
 uint64_t string_compare(char* s, char* t);
 
 uint64_t atoi(char* s);
+uint64_t atox(char* s);
 char*    itoa(uint64_t n, char* s, uint64_t b, uint64_t d, uint64_t a);
 
 uint64_t fixed_point_ratio(uint64_t a, uint64_t b, uint64_t f);
@@ -2838,6 +2840,23 @@ uint64_t is_digit(char c) {
     return 0;
 }
 
+uint64_t is_hexa_digit(char c) {
+  if (is_digit(c))
+    return 1;
+  else if (c >= 'a')
+    if (c <= 'f')
+      return 1;
+    else
+      return 0;
+  else if (c >= 'A')
+    if (c <= 'F')
+      return 1;
+    else
+      return 0;
+  else
+    return 0;
+}
+
 char* string_alloc(uint64_t l) {
   // allocates zeroed memory for a string of l characters
   // plus a null terminator aligned to word size
@@ -2990,6 +3009,74 @@ uint64_t atoi(char* s) {
     }
   else
     return n;
+}
+
+uint64_t atox(char* s) {
+  uint64_t i;
+  uint64_t n;
+  uint64_t c;
+
+  // the conversion of the ASCII string in s to its
+  // numerical value n begins with the leftmost digit in s
+  i = 0;
+
+  // and the numerical value 0 for n
+  n = 0;
+
+  // load character (one byte) at index i in s from memory requires
+  // bit shifting since memory access can only be done at word granularity
+  c = load_character(s, i);
+
+  // loop until s is terminated
+  while (c != 0) {
+    if (is_digit(c))
+      // the numerical value of ASCII-encoded hexadecimal digits
+      // between '0' and '9' is offset by the ASCII code of '0' (which is 48)
+      c = c - '0';
+    else if (c >= 'a')
+      // the numerical value of ASCII-encoded hexadecimal digits
+      // between 'a' and 'f' is offset by the ASCII code of 'a' (which is 97)
+      c = c - 'a' + 10;
+    else if (c >= 'A')
+      // the numerical value of ASCII-encoded hexadecimal digits
+      // between 'A' and 'F' is offset by the ASCII code of 'A' (which is 65)
+      c = c - 'A' + 10;
+    else {
+      printf("%s: cannot convert non-hexadecimal number %s\n", selfie_name, s);
+
+      exit(EXITCODE_SCANNERERROR);
+    }
+
+    // assert: s contains a hexadecimal number
+
+    // use base 16 but detect wrap around
+    if (n < UINT64_MAX / 16)
+      n = n * 16 + c;
+    else if (n == UINT64_MAX / 16)
+      if (c <= UINT64_MAX % 16)
+        n = n * 16 + c;
+      else {
+        // s contains a hexadecimal number larger than UINT64_MAX
+        printf("%s: cannot convert out-of-bound number %s\n", selfie_name, s);
+
+        exit(EXITCODE_SCANNERERROR);
+      }
+    else {
+      // s contains a hexadecimal number larger than UINT64_MAX
+      printf("%s: cannot convert out-of-bound number %s\n", selfie_name, s);
+
+      exit(EXITCODE_SCANNERERROR);
+    }
+
+    // go to the next digit
+    i = i + 1;
+
+    // load character (one byte) at index i in s from memory requires
+    // bit shifting since memory access can only be done at word granularity
+    c = load_character(s, i);
+  }
+
+  return n;
 }
 
 char* itoa(uint64_t n, char* s, uint64_t b, uint64_t d, uint64_t a) {
@@ -3795,10 +3882,48 @@ void get_symbol() {
         symbol = identifier_or_keyword();
       } else if (is_digit(character)) {
         if (character == '0') {
-          // 0 is 0, not 00, 000, etc.
           get_character();
 
-          literal = 0;
+          if (character == 'X')
+            character = 'x';
+
+          if (character == 'x') {
+            get_character();
+
+            if (is_hexa_digit(character) == 0) {
+              syntax_error_message("expected hexadecimal digit after 0x");
+
+              exit(EXITCODE_SCANNERERROR);
+            }
+
+            // accommodate integer and null for termination
+            integer = string_alloc(MAX_INTEGER_LENGTH);
+
+            i = 0;
+
+            while (is_hexa_digit(character)) {
+              if (i >= MAX_INTEGER_LENGTH) {
+                if (integer_is_signed)
+                  syntax_error_message("signed integer out of bound");
+                else
+                  syntax_error_message("unsigned integer out of bound");
+
+                exit(EXITCODE_SCANNERERROR);
+              }
+
+              store_character(integer, i, character);
+
+              i = i + 1;
+
+              get_character();
+            }
+
+            store_character(integer, i, 0); // null-terminated string
+
+            literal = atox(integer);
+          } else
+            // 0 is 0, not 00, 000, etc.
+            literal = 0;
         } else {
           // accommodate integer and null for termination
           integer = string_alloc(MAX_INTEGER_LENGTH);
@@ -3825,20 +3950,20 @@ void get_symbol() {
           store_character(integer, i, 0); // null-terminated string
 
           literal = atoi(integer);
+        }
 
-          if (integer_is_signed) {
-            if (literal > INT_MIN) {
-              syntax_error_message("signed integer out of target bound");
-
-              exit(EXITCODE_SCANNERERROR);
-            }
-          } else if (literal > UINT_MAX) {
-            syntax_error_message("unsigned integer out of target bound");
+        if (integer_is_signed) {
+          if (literal > INT_MIN) {
+            syntax_error_message("signed integer out of target bound");
 
             exit(EXITCODE_SCANNERERROR);
-          } else if (literal >= INT_MIN)
-            literal = sign_extend(literal, WORDSIZEINBITS);
-        }
+          }
+        } else if (literal > UINT_MAX) {
+          syntax_error_message("unsigned integer out of target bound");
+
+          exit(EXITCODE_SCANNERERROR);
+        } else if (literal >= INT_MIN)
+          literal = sign_extend(literal, WORDSIZEINBITS);
 
         symbol = SYM_INTEGER;
       } else if (character == CHAR_SINGLEQUOTE) {
