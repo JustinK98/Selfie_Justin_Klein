@@ -466,14 +466,16 @@ uint64_t SYM_LT           = 25; // <
 uint64_t SYM_LEQ          = 26; // <=
 uint64_t SYM_GT           = 27; // >
 uint64_t SYM_GEQ          = 28; // >=
-uint64_t SYM_ELLIPSIS     = 29; // ...
+uint64_t SYM_LSHIFT       = 29; // <<
+uint64_t SYM_RSHIFT       = 30; // >>
+uint64_t SYM_ELLIPSIS     = 31; // ...
 
 // symbols for bootstrapping
 
-uint64_t SYM_INT      = 30; // int
-uint64_t SYM_CHAR     = 31; // char
-uint64_t SYM_UNSIGNED = 32; // unsigned
-uint64_t SYM_CONST    = 33; // const
+uint64_t SYM_INT      = 32; // int
+uint64_t SYM_CHAR     = 33; // char
+uint64_t SYM_UNSIGNED = 34; // unsigned
+uint64_t SYM_CONST    = 35; // const
 
 uint64_t* SYMBOLS; // strings representing symbols
 
@@ -542,6 +544,8 @@ void init_scanner () {
   *(SYMBOLS + SYM_LEQ)          = (uint64_t) "<=";
   *(SYMBOLS + SYM_GT)           = (uint64_t) ">";
   *(SYMBOLS + SYM_GEQ)          = (uint64_t) ">=";
+  *(SYMBOLS + SYM_LSHIFT)       = (uint64_t) "<<";
+  *(SYMBOLS + SYM_RSHIFT)       = (uint64_t) ">>";
   *(SYMBOLS + SYM_ELLIPSIS)     = (uint64_t) "...";
 
   *(SYMBOLS + SYM_INT)      = (uint64_t) "int";
@@ -678,6 +682,7 @@ uint64_t is_type();
 uint64_t is_value();
 uint64_t is_expression();
 uint64_t is_comparison();
+uint64_t is_shift();
 uint64_t is_plus_or_minus();
 uint64_t is_mult_or_div_or_rem();
 uint64_t is_factor();
@@ -725,6 +730,7 @@ uint64_t  load_variable(char* variable);
 void compile_assignment(char* variable);
 
 uint64_t compile_expression(); // returns type
+uint64_t compile_shift();      // returns type
 uint64_t compile_arithmetic(); // returns type
 uint64_t compile_term();       // returns type
 uint64_t compile_factor();     // returns type
@@ -4091,6 +4097,10 @@ void get_symbol() {
           get_character();
 
           symbol = SYM_LEQ;
+        } else if (character == CHAR_LT) {
+          get_character();
+
+          symbol = SYM_LSHIFT;
         } else
           symbol = SYM_LT;
       } else if (character == CHAR_GT) {
@@ -4100,6 +4110,10 @@ void get_symbol() {
           get_character();
 
           symbol = SYM_GEQ;
+        } else if (character == CHAR_GT) {
+          get_character();
+
+          symbol = SYM_RSHIFT;
         } else
           symbol = SYM_GT;
       } else if (character == CHAR_DOT) {
@@ -4379,6 +4393,15 @@ uint64_t is_comparison() {
   else if (symbol == SYM_LEQ)
     return 1;
   else if (symbol == SYM_GEQ)
+    return 1;
+  else
+    return 0;
+}
+
+uint64_t is_shift() {
+  if (symbol == SYM_LSHIFT)
+    return 1;
+  else if (symbol == SYM_RSHIFT)
     return 1;
   else
     return 0;
@@ -5030,17 +5053,17 @@ uint64_t compile_expression() {
 
   // assert: n = allocated_temporaries
 
-  ltype = compile_arithmetic();
+  ltype = compile_shift();
 
   // assert: allocated_temporaries == n + 1
 
-  //optional: ==, !=, <, >, <=, >= simple_expression
+  // optional: ==, !=, <, >, <=, >= shift
   if (is_comparison()) {
     operator_symbol = symbol;
 
     get_symbol();
 
-    rtype = compile_arithmetic();
+    rtype = compile_shift();
 
     // assert: allocated_temporaries == n + 2
 
@@ -5099,6 +5122,40 @@ uint64_t compile_expression() {
   // assert: allocated_temporaries == n + 1
 
   // type of expression is grammar attribute
+  return ltype;
+}
+
+uint64_t compile_shift() {
+  uint64_t ltype;
+  uint64_t rtype;
+
+  // assert: n = allocated_temporaries
+
+  ltype = compile_arithmetic();
+
+  // assert: allocated_temporaries == n + 1
+
+  while (is_shift()) {
+    get_symbol();
+
+    rtype = compile_arithmetic();
+
+    // assert: allocated_temporaries == n + 2
+
+    if (ltype != UINT64_T)
+      type_warning(UINT64_T, ltype);
+
+    if (rtype != UINT64_T)
+      type_warning(UINT64_T, rtype);
+
+    tfree(1);
+
+    ltype = UINT64_T;
+  }
+
+  // assert: allocated_temporaries == n + 1
+
+  // type of shift is grammar attribute
   return ltype;
 }
 
