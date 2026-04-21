@@ -59,3 +59,9 @@ The parameter `imm` denotes a signed integer value represented by a fixed number
 #### System
 
 `ecall`: system call number is in `a7`, arguments are in `a0-a3`, return value is in `a0`.
+
+#### Shift 
+
+`sll rd, rs1, rs2: rd = rs1 << rs2 ; pc = pc + 4`
+
+`srl rd, rs1, rs2: rd = rs1 >> rs2 ; pc = pc + 4`
