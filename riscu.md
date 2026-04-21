@@ -4,7 +4,7 @@ Selfie is a project of the Computational Systems Group at the Department of Comp
 
 selfie.cs.uni-salzburg.at
 
-This document provides an overview of the RISC-U instruction set. RISC-U is a tiny subset of the 64-bit [RISC-V](https://en.wikipedia.org/wiki/RISC-V) instruction set. The selfie system implements a compiler that targets RISC-U as well as a RISC-U emulator that interprets RISC-U code. RISC-U consists of just 14 instructions listed below. For details on the exact encoding, decoding, and semantics of RISC-U code see the selfie implementation.
+This document provides an overview of the RISC-U instruction set. RISC-U is a tiny subset of the 64-bit [RISC-V](https://en.wikipedia.org/wiki/RISC-V) instruction set. The selfie system implements a compiler that targets RISC-U as well as a RISC-U emulator that interprets RISC-U code. RISC-U consists of just 19 instructions listed below. For details on the exact encoding, decoding, and semantics of RISC-U code see the selfie implementation.
 
 ## Machine State
 
@@ -25,6 +25,8 @@ The parameter `imm` denotes a signed integer value represented by a fixed number
 `lui rd,imm`: `rd = imm * 2^12; pc = pc + 4` with `-2^19 <= imm < 2^19`
 
 `addi rd,rs1,imm`: `rd = rs1 + imm; pc = pc + 4` with `-2^11 <= imm < 2^11`
+
+`xori rd,rs1,imm`: `rd = rs1 ^ imm; pc = pc + 4` with `-2^11 <= imm < 2^11`
 
 #### Memory
 
@@ -62,6 +64,12 @@ The parameter `imm` denotes a signed integer value represented by a fixed number
 
 #### Shift 
 
-`sll rd, rs1, rs2: rd = rs1 << rs2 ; pc = pc + 4`
+`sll rd,rs1,rs2`: `rd = rs1 << rs2; pc = pc + 4`
 
-`srl rd, rs1, rs2: rd = rs1 >> rs2 ; pc = pc + 4`
+`srl rd,rs1,rs2`: `rd = rs1 >> rs2; pc = pc + 4`
+
+#### Bitwise
+
+`and rd,rs1,rs2`: `rd = rs1 & rs2; pc = pc + 4`
+
+`or rd,rs1,rs2`: `rd = rs1 | rs2; pc = pc + 4`
