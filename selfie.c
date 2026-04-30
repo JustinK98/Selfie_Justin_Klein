@@ -474,14 +474,17 @@ uint64_t SYM_RSHIFT       = 30; // >>
 uint64_t SYM_BITWISEAND   = 31; // &
 uint64_t SYM_BITWISEOR    = 32; // |
 uint64_t SYM_BITWISENOT   = 33; // ~
-uint64_t SYM_ELLIPSIS     = 34; // ...
+uint64_t SYM_LOGICALAND   = 34; // &&
+uint64_t SYM_LOGICALOR    = 35; // ||
+uint64_t SYM_LOGICALNOT   = 36; // !
+uint64_t SYM_ELLIPSIS     = 37; // ...
 
 // symbols for bootstrapping
 
-uint64_t SYM_INT      = 35; // int
-uint64_t SYM_CHAR     = 36; // char
-uint64_t SYM_UNSIGNED = 37; // unsigned
-uint64_t SYM_CONST    = 38; // const
+uint64_t SYM_INT      = 38; // int
+uint64_t SYM_CHAR     = 39; // char
+uint64_t SYM_UNSIGNED = 40; // unsigned
+uint64_t SYM_CONST    = 41; // const
 
 uint64_t* SYMBOLS; // strings representing symbols
 
@@ -555,6 +558,9 @@ void init_scanner () {
   *(SYMBOLS + SYM_BITWISEAND)   = (uint64_t) "&";
   *(SYMBOLS + SYM_BITWISEOR)    = (uint64_t) "|";
   *(SYMBOLS + SYM_BITWISENOT)   = (uint64_t) "~";
+  *(SYMBOLS + SYM_LOGICALAND)   = (uint64_t) "&&";
+  *(SYMBOLS + SYM_LOGICALOR)    = (uint64_t) "||";
+  *(SYMBOLS + SYM_LOGICALNOT)   = (uint64_t) "!";
   *(SYMBOLS + SYM_ELLIPSIS)     = (uint64_t) "...";
 
   *(SYMBOLS + SYM_INT)      = (uint64_t) "int";
@@ -739,6 +745,8 @@ uint64_t  load_variable(char* variable);
 void compile_assignment(char* variable);
 
 uint64_t compile_expression();  // returns type
+uint64_t compile_logical_or();  // returns type
+uint64_t compile_logical_and(); // returns type
 uint64_t compile_bitwise_or();  // returns type
 uint64_t compile_bitwise_and(); // returns type
 uint64_t compile_comparison();  // returns type
@@ -754,6 +762,9 @@ void load_address(uint64_t* entry);
 void load_string();
 
 uint64_t compile_literal(); // returns type
+
+void emit_boolean(uint64_t reg);
+void emit_logical_not(uint64_t reg);
 
 void compile_if();
 void compile_while();
@@ -4134,11 +4145,21 @@ void get_symbol() {
       } else if (character == CHAR_AMPERSAND) {
         get_character();
 
-        symbol = SYM_BITWISEAND;
+        if (character == CHAR_AMPERSAND) {
+          get_character();
+
+          symbol = SYM_LOGICALAND;
+        } else
+          symbol = SYM_BITWISEAND;
       } else if (character == CHAR_VERTICALBAR) {
         get_character();
 
-        symbol = SYM_BITWISEOR;
+        if (character == CHAR_VERTICALBAR) {
+          get_character();
+
+          symbol = SYM_LOGICALOR;
+        } else
+          symbol = SYM_BITWISEOR;
       } else if (character == CHAR_TILDE) {
         get_character();
 
@@ -4155,12 +4176,12 @@ void get_symbol() {
       } else if (character == CHAR_EXCLAMATION) {
         get_character();
 
-        if (character == CHAR_EQUAL)
+        if (character == CHAR_EQUAL) {
           get_character();
-        else
-          syntax_error_expected_character(CHAR_EQUAL);
 
-        symbol = SYM_NOTEQ;
+          symbol = SYM_NOTEQ;
+        } else
+          symbol = SYM_LOGICALNOT;
       } else if (character == CHAR_LT) {
         get_character();
 
@@ -4469,6 +4490,14 @@ uint64_t is_comparison() {
     return 0;
 }
 
+uint64_t is_logical_or() {
+  return symbol == SYM_LOGICALOR;
+}
+
+uint64_t is_logical_and() {
+  return symbol == SYM_LOGICALAND;
+}
+
 uint64_t is_bitwise_or() {
   return symbol == SYM_BITWISEOR;
 }
@@ -4512,6 +4541,8 @@ uint64_t is_factor() {
   else if (symbol == SYM_MINUS)
     return 1;
   else if (symbol == SYM_ASTERISK)
+    return 1;
+  else if (symbol == SYM_LOGICALNOT)
     return 1;
   else if (symbol == SYM_BITWISENOT)
     return 1;
@@ -5128,7 +5159,85 @@ void compile_assignment(char* variable) {
 }
 
 uint64_t compile_expression() {
-  return compile_bitwise_or();
+  return compile_logical_or();
+}
+
+uint64_t compile_logical_or() {
+  uint64_t ltype;
+  uint64_t rtype;
+
+  // assert: n = allocated_temporaries
+
+  ltype = compile_logical_and();
+
+  // assert: allocated_temporaries == n + 1
+
+  while (is_logical_or()) {
+    if (ltype != UINT64_T)
+      type_warning(UINT64_T, ltype);
+
+    emit_boolean(current_temporary());
+
+    get_symbol();
+
+    rtype = compile_logical_and();
+
+    // assert: allocated_temporaries == n + 2
+
+    if (rtype != UINT64_T)
+      type_warning(UINT64_T, rtype);
+
+    emit_boolean(current_temporary());
+    emit_or(previous_temporary(), previous_temporary(), current_temporary());
+
+    tfree(1);
+
+    ltype = UINT64_T;
+  }
+
+  // assert: allocated_temporaries == n + 1
+
+  // type of logical or is grammar attribute
+  return ltype;
+}
+
+uint64_t compile_logical_and() {
+  uint64_t ltype;
+  uint64_t rtype;
+
+  // assert: n = allocated_temporaries
+
+  ltype = compile_bitwise_or();
+
+  // assert: allocated_temporaries == n + 1
+
+  while (is_logical_and()) {
+    if (ltype != UINT64_T)
+      type_warning(UINT64_T, ltype);
+
+    emit_boolean(current_temporary());
+
+    get_symbol();
+
+    rtype = compile_bitwise_or();
+
+    // assert: allocated_temporaries == n + 2
+
+    if (rtype != UINT64_T)
+      type_warning(UINT64_T, rtype);
+
+    emit_boolean(current_temporary());
+    emit_and(previous_temporary(), previous_temporary(), current_temporary());
+
+    tfree(1);
+
+    ltype = UINT64_T;
+  }
+
+  // assert: allocated_temporaries == n + 1
+
+  // type of logical and is grammar attribute
+  return ltype;
 }
 
 uint64_t compile_bitwise_or() {
@@ -5438,6 +5547,7 @@ uint64_t compile_term() {
 uint64_t compile_factor() {
   uint64_t cast;
   uint64_t type;
+  uint64_t logical_not;
   uint64_t negative;
   uint64_t bitwise_not;
   uint64_t dereference;
@@ -5474,6 +5584,15 @@ uint64_t compile_factor() {
       return type;
     }
   }
+
+  // optional: "!"
+  if (symbol == SYM_LOGICALNOT) {
+    logical_not = 1;
+
+    get_symbol();
+  } else
+    logical_not = 0;
+
   // optional: "-"
   if (symbol == SYM_MINUS) {
     negative = 1;
@@ -5590,6 +5709,16 @@ uint64_t compile_factor() {
     }
     // subtract from 0
     emit_sub(current_temporary(), REG_ZR, current_temporary());
+  }
+
+  if (logical_not) {
+    if (type != UINT64_T) {
+      type_warning(UINT64_T, type);
+
+      type = UINT64_T;
+    }
+
+    emit_logical_not(current_temporary());
   }
 
   // assert: allocated_temporaries == n + 1
@@ -5723,6 +5852,15 @@ uint64_t compile_literal() {
 
     return UINT64_T;
   }
+}
+
+void emit_boolean(uint64_t reg) {
+  emit_sltu(reg, REG_ZR, reg);
+}
+
+void emit_logical_not(uint64_t reg) {
+  emit_boolean(reg);
+  emit_xori(reg, reg, 1);
 }
 
 void compile_if() {
