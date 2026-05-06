@@ -1044,10 +1044,10 @@ uint64_t F3_SW    = 2; // 010
 uint64_t F3_BEQ   = 0; // 000
 uint64_t F3_JALR  = 0; // 000
 uint64_t F3_ECALL = 0; // 000
-uint64_t F3_SLL   = 1; // 001
-uint64_t F3_SRL   = 5; // 101
-uint64_t F3_OR    = 6; // 110
-uint64_t F3_AND   = 7; // 111
+uint64_t F3_SLL_OP = 1; // 001
+uint64_t F3_SRL_OP = 5; // 101
+uint64_t F3_OR_OP  = 6; // 110
+uint64_t F3_AND_OP = 7; // 111
 
 
 // f7-codes
@@ -7577,13 +7577,13 @@ void emit_sltu(uint64_t rd, uint64_t rs1, uint64_t rs2) {
 }
 
 void emit_or(uint64_t rd, uint64_t rs1, uint64_t rs2) {
-  emit_instruction(encode_r_format(F7_OR, rs2, rs1, F3_OR, rd, OP_OP));
+  emit_instruction(encode_r_format(F7_OR, rs2, rs1, F3_OR_OP, rd, OP_OP));
 
   ic_or = ic_or + 1;
 }
 
 void emit_and(uint64_t rd, uint64_t rs1, uint64_t rs2) {
-  emit_instruction(encode_r_format(F7_AND, rs2, rs1, F3_AND, rd, OP_OP));
+  emit_instruction(encode_r_format(F7_AND, rs2, rs1, F3_AND_OP, rd, OP_OP));
 
   ic_and = ic_and + 1;
 }
@@ -7631,13 +7631,13 @@ void emit_ecall() {
 }
 
 void emit_sll(uint64_t rd, uint64_t rs1, uint64_t rs2) {
-  emit_instruction(encode_r_format(F7_SLL, rs2, rs1, F3_SLL, rd, OP_OP));
+  emit_instruction(encode_r_format(F7_SLL, rs2, rs1, F3_SLL_OP, rd, OP_OP));
 
   ic_sll = ic_sll + 1;
 }
 
 void emit_srl(uint64_t rd, uint64_t rs1, uint64_t rs2) {
-  emit_instruction(encode_r_format(F7_SRL, rs2, rs1, F3_SRL, rd, OP_OP));
+  emit_instruction(encode_r_format(F7_SRL, rs2, rs1, F3_SRL_OP, rd, OP_OP));
 
   ic_srl = ic_srl + 1;
 }
@@ -10571,10 +10571,10 @@ void decode() {
     } else if (funct3 == F3_SLTU) {
       if (funct7 == F7_SLTU)
         is = SLTU;
-    } else if (funct3 == F3_SLL) {
+    } else if (funct3 == F3_SLL_OP) {
       if (funct7 == F7_SLL)
         is = SLL;
-    } else if (funct3 == F3_OR) {
+    } else if (funct3 == F3_OR_OP) {
       if (funct7 == F7_OR)
         is = OR;
     }
