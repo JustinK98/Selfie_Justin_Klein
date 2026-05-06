@@ -129,6 +129,9 @@ uint64_t log_ten(uint64_t n);
 
 uint64_t left_shift(uint64_t n, uint64_t b);
 uint64_t right_shift(uint64_t n, uint64_t b);
+uint64_t compute_bitwise_and(uint64_t left, uint64_t right);
+uint64_t compute_bitwise_or(uint64_t left, uint64_t right);
+uint64_t compute_bitwise_xor(uint64_t left, uint64_t right);
 
 uint64_t get_bits(uint64_t n, uint64_t i, uint64_t b);
 
@@ -2772,6 +2775,66 @@ uint64_t left_shift(uint64_t n, uint64_t b) {
 uint64_t right_shift(uint64_t n, uint64_t b) {
   // assert: 0 <= b < SIZEOFUINT64INBITS
   return n / two_to_the_power_of(b);
+}
+
+uint64_t compute_bitwise_and(uint64_t left, uint64_t right) {
+  uint64_t result;
+  uint64_t bit;
+
+  result = 0;
+  bit    = 1;
+
+  while (bit != 0) {
+    if (left % 2 != 0)
+      if (right % 2 != 0)
+        result = result + bit;
+
+    left  = left / 2;
+    right = right / 2;
+    bit   = bit * 2;
+  }
+
+  return result;
+}
+
+uint64_t compute_bitwise_or(uint64_t left, uint64_t right) {
+  uint64_t result;
+  uint64_t bit;
+
+  result = 0;
+  bit    = 1;
+
+  while (bit != 0) {
+    if (left % 2 != 0)
+      result = result + bit;
+    else if (right % 2 != 0)
+      result = result + bit;
+
+    left  = left / 2;
+    right = right / 2;
+    bit   = bit * 2;
+  }
+
+  return result;
+}
+
+uint64_t compute_bitwise_xor(uint64_t left, uint64_t right) {
+  uint64_t result;
+  uint64_t bit;
+
+  result = 0;
+  bit    = 1;
+
+  while (bit != 0) {
+    if (left % 2 != right % 2)
+      result = result + bit;
+
+    left  = left / 2;
+    right = right / 2;
+    bit   = bit * 2;
+  }
+
+  return result;
 }
 
 uint64_t get_bits(uint64_t n, uint64_t i, uint64_t b) {
@@ -9449,8 +9512,8 @@ void do_xori() {
   read_register(rs1);
 
   if (rd != REG_ZR) {
-    // semantics of xori, using bitwise and, or, and not
-    next_rd_value = (*(registers + rs1) | imm) & ~(*(registers + rs1) & imm);
+    // semantics of xori
+    next_rd_value = compute_bitwise_xor(*(registers + rs1), imm);
 
     if (*(registers + rd) != next_rd_value)
       *(registers + rd) = next_rd_value;
@@ -9706,7 +9769,7 @@ void do_or() {
 
   if (rd != REG_ZR) {
     // semantics of or
-    next_rd_value = *(registers + rs1) | *(registers + rs2);
+    next_rd_value = compute_bitwise_or(*(registers + rs1), *(registers + rs2));
 
     if (*(registers + rd) != next_rd_value)
       *(registers + rd) = next_rd_value;
@@ -9732,7 +9795,7 @@ void do_and() {
 
   if (rd != REG_ZR) {
     // semantics of and
-    next_rd_value = *(registers + rs1) & *(registers + rs2);
+    next_rd_value = compute_bitwise_and(*(registers + rs1), *(registers + rs2));
 
     if (*(registers + rd) != next_rd_value)
       *(registers + rd) = next_rd_value;
