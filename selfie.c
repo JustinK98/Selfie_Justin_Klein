@@ -488,7 +488,6 @@ uint64_t SYM_INT      = 38; // int
 uint64_t SYM_CHAR     = 39; // char
 uint64_t SYM_UNSIGNED = 40; // unsigned
 uint64_t SYM_CONST    = 41; // const
-uint64_t SYM_FOR      = 42; // for
 
 uint64_t* SYMBOLS; // strings representing symbols
 
@@ -526,7 +525,7 @@ uint64_t source_fd   = 0; // file descriptor of open source file
 // ------------------------- INITIALIZATION ------------------------
 
 void init_scanner () {
-  SYMBOLS = smalloc((SYM_FOR + 1) * sizeof(uint64_t*));
+  SYMBOLS = smalloc((SYM_CONST + 1) * sizeof(uint64_t*));
 
   *(SYMBOLS + SYM_INTEGER)      = (uint64_t) "integer";
   *(SYMBOLS + SYM_CHARACTER)    = (uint64_t) "character";
@@ -571,7 +570,6 @@ void init_scanner () {
   *(SYMBOLS + SYM_CHAR)     = (uint64_t) "char";
   *(SYMBOLS + SYM_UNSIGNED) = (uint64_t) "unsigned";
   *(SYMBOLS + SYM_CONST)    = (uint64_t) "const";
-  *(SYMBOLS + SYM_FOR)      = (uint64_t) "for";
 
   character = CHAR_EOF;
   symbol    = SYM_EOF;
@@ -738,7 +736,6 @@ uint64_t compile_cast(uint64_t type); // returns cast type
 uint64_t compile_value(); // returns value
 
 void compile_statement();
-void compile_for_assignment();
 
 uint64_t load_upper_value(uint64_t reg, uint64_t value);
 uint64_t load_upper_address(uint64_t* entry);
@@ -774,7 +771,6 @@ void emit_logical_not(uint64_t reg);
 
 void compile_if();
 void compile_while();
-void compile_for();
 
 char*    bootstrap_non_0_boot_level_procedures(char* procedure);
 uint64_t is_boot_level_0_only_procedure(char* procedure);
@@ -3965,8 +3961,6 @@ uint64_t identifier_or_keyword() {
     return SYM_RETURN;
   else if (identifier_string_match(SYM_WHILE))
     return SYM_WHILE;
-  else if (identifier_string_match(SYM_FOR))
-    return SYM_FOR;
   else if (identifier_string_match(SYM_SIZEOF))
     return SYM_SIZEOF;
   else if (identifier_string_match(SYM_INT))
@@ -4671,8 +4665,6 @@ uint64_t is_not_statement() {
     return 0;
   else if (symbol == SYM_WHILE)
     return 0;
-  else if (symbol == SYM_FOR)
-    return 0;
   else if (symbol == SYM_RETURN)
     return 0;
   else if (symbol == SYM_EOF)
@@ -5005,8 +4997,6 @@ void compile_statement() {
     compile_if();
   else if (symbol == SYM_WHILE)
     compile_while();
-  else if (symbol == SYM_FOR)
-    compile_for();
   else if (symbol == SYM_RETURN) {
     compile_return();
 
@@ -5229,25 +5219,6 @@ void compile_assignment(char* variable) {
     tfree(1);
 
   // assert: allocated_temporaries == 0
-}
-
-void compile_for_assignment() {
-  char* variable;
-
-  if (symbol == SYM_ASTERISK)
-    // assignment: "*" ...
-    compile_assignment((char*) 0);
-  else if (symbol == SYM_IDENTIFIER) {
-    variable = identifier;
-
-    get_symbol();
-
-    compile_assignment(variable);
-  } else {
-    syntax_error_unexpected_symbol();
-
-    exit(EXITCODE_PARSERERROR);
-  }
 }
 
 uint64_t compile_expression() {
@@ -6102,89 +6073,6 @@ void compile_while() {
   // assert: allocated_temporaries == 0
 
   number_of_while = number_of_while + 1;
-}
-
-void compile_for() {
-  uint64_t jump_back_to_condition;
-  uint64_t branch_forward_to_end;
-  uint64_t jump_forward_to_body;
-  uint64_t jump_back_to_update;
-
-  // assert: allocated_temporaries == 0
-
-  branch_forward_to_end = 0;
-  jump_forward_to_body  = 0;
-  jump_back_to_update   = 0;
-
-  if (symbol == SYM_FOR) {
-    // "for" "(" assignment ";" expression ";" assignment ")"
-    get_symbol();
-
-    if (symbol == SYM_LPARENTHESIS) {
-      get_symbol();
-
-      compile_for_assignment();
-
-      get_required_symbol(SYM_SEMICOLON);
-
-      jump_back_to_condition = code_size;
-
-      compile_expression();
-
-      // if the "for" condition is false
-      // we skip the "for" body and update by branching to the end
-      branch_forward_to_end = code_size;
-
-      // the target address is still unknown, using 0 for now
-      emit_beq(current_temporary(), REG_ZR, 0);
-
-      tfree(1);
-
-      get_required_symbol(SYM_SEMICOLON);
-
-      // the update code has to be parsed now but executed after the body
-      jump_forward_to_body = code_size;
-
-      // the target address is still unknown, using 0 for now
-      emit_jal(REG_ZR, 0);
-
-      jump_back_to_update = code_size;
-
-      compile_for_assignment();
-
-      get_required_symbol(SYM_RPARENTHESIS);
-
-      emit_jal(REG_ZR, jump_back_to_condition - code_size);
-
-      // first instruction of the body will be generated here
-      fixup_JFormat(jump_forward_to_body, code_size);
-
-      if (symbol == SYM_LBRACE) {
-        // zero or more statements: "{" { statement } "}"
-        get_symbol();
-
-        while (is_neither_rbrace_nor_eof())
-          // assert: allocated_temporaries == 0
-          compile_statement();
-
-        get_required_symbol(SYM_RBRACE);
-      } else
-        // only one statement without "{" "}"
-        compile_statement();
-    } else
-      syntax_error_expected_symbol(SYM_LPARENTHESIS);
-  } else
-    syntax_error_expected_symbol(SYM_FOR);
-
-  if (branch_forward_to_end != 0) {
-    emit_jal(REG_ZR, jump_back_to_update - code_size);
-
-    // first instruction after loop body will be generated here
-    // now we have the address for the conditional branch from above
-    fixup_BFormat(branch_forward_to_end);
-  }
-
-  // assert: allocated_temporaries == 0
 }
 
 char* bootstrap_non_0_boot_level_procedures(char* procedure) {
