@@ -426,6 +426,8 @@ char CHAR_LPARENTHESIS = '(';
 char CHAR_RPARENTHESIS = ')';
 char CHAR_LBRACE       = '{';
 char CHAR_RBRACE       = '}';
+char CHAR_LBRACKET     = '[';
+char CHAR_RBRACKET     = ']';
 char CHAR_PLUS         = '+';
 char CHAR_DASH         = '-';
 char CHAR_ASTERISK     = '*';
@@ -491,6 +493,8 @@ uint64_t SYM_CHAR     = 39; // char
 uint64_t SYM_UNSIGNED = 40; // unsigned
 uint64_t SYM_CONST    = 41; // const
 uint64_t SYM_FOR      = 42; // for
+uint64_t SYM_LBRACKET = 43; // [
+uint64_t SYM_RBRACKET = 44; // ]
 
 uint64_t* SYMBOLS; // strings representing symbols
 
@@ -529,7 +533,7 @@ uint64_t source_fd   = 0; // file descriptor of open source file
 // ------------------------- INITIALIZATION ------------------------
 
 void init_scanner () {
-  SYMBOLS = smalloc((SYM_FOR + 1) * sizeof(uint64_t*));
+  SYMBOLS = smalloc((SYM_RBRACKET + 1) * sizeof(uint64_t*));
 
   *(SYMBOLS + SYM_INTEGER)      = (uint64_t) "integer";
   *(SYMBOLS + SYM_CHARACTER)    = (uint64_t) "character";
@@ -575,6 +579,8 @@ void init_scanner () {
   *(SYMBOLS + SYM_UNSIGNED) = (uint64_t) "unsigned";
   *(SYMBOLS + SYM_CONST)    = (uint64_t) "const";
   *(SYMBOLS + SYM_FOR)      = (uint64_t) "for";
+  *(SYMBOLS + SYM_LBRACKET) = (uint64_t) "[";
+  *(SYMBOLS + SYM_RBRACKET) = (uint64_t) "]";
 
   character = CHAR_EOF;
   symbol    = SYM_EOF;
@@ -750,6 +756,7 @@ uint64_t load_value(uint64_t* entry);
 uint64_t* get_variable_entry(char* variable);
 uint64_t  load_variable(char* variable);
 
+uint64_t compile_array_address(char* variable);
 void compile_assignment(char* variable);
 void compile_for_assignment();
 
@@ -4243,6 +4250,14 @@ void get_symbol() {
         get_character();
 
         symbol = SYM_RBRACE;
+      } else if (character == CHAR_LBRACKET) {
+        get_character();
+
+        symbol = SYM_LBRACKET;
+      } else if (character == CHAR_RBRACKET) {
+        get_character();
+
+        symbol = SYM_RBRACKET;
       } else if (character == CHAR_PLUS) {
         get_character();
 
@@ -5176,8 +5191,44 @@ uint64_t load_variable(char* variable) {
   return load_value(get_variable_entry(variable));
 }
 
+uint64_t compile_array_address(char* variable) {
+  uint64_t ltype;
+  uint64_t itype;
+
+  // assert: n = allocated_temporaries
+
+  ltype = load_variable(variable);
+
+  // assert: allocated_temporaries == n + 1
+
+  if (ltype != UINT64STAR_T)
+    type_warning(UINT64STAR_T, ltype);
+
+  get_required_symbol(SYM_LBRACKET);
+
+  itype = compile_expression();
+
+  // assert: allocated_temporaries == n + 2
+
+  if (itype != UINT64_T)
+    type_warning(UINT64_T, itype);
+
+  get_expected_symbol(SYM_RBRACKET);
+
+  // array access: base + index * WORDSIZE
+  emit_multiply_by(current_temporary(), WORDSIZE);
+  emit_add(previous_temporary(), previous_temporary(), current_temporary());
+
+  tfree(1);
+
+  // assert: allocated_temporaries == n + 1
+
+  return UINT64_T;
+}
+
 void compile_assignment(char* variable) {
   uint64_t dereference;
+  uint64_t computed_address;
   uint64_t* entry;
   uint64_t base;
   uint64_t offset;
@@ -5189,26 +5240,40 @@ void compile_assignment(char* variable) {
   // assert: allocated_temporaries == 0
 
   if (variable != (char*) 0) {
-    // variable is identifier
     dereference = 0;
 
-    entry = get_variable_entry(variable);
+    if (symbol == SYM_LBRACKET) {
+      // array assignment: identifier "[" expression "]"
+      computed_address = 1;
 
-    base = get_scope(entry);
+      ltype = compile_array_address(variable);
 
-    // load variable upper address, if needed
-    offset = load_upper_address(entry);
-
-    if (offset != get_address(entry))
       // assert: allocated_temporaries == 1
-      base = current_temporary();
+      base   = current_temporary();
+      offset = 0;
+    } else {
+      // variable is identifier
+      computed_address = 0;
 
-    ltype = get_type(entry);
+      entry = get_variable_entry(variable);
+
+      base = get_scope(entry);
+
+      // load variable upper address, if needed
+      offset = load_upper_address(entry);
+
+      if (offset != get_address(entry))
+        // assert: allocated_temporaries == 1
+        base = current_temporary();
+
+      ltype = get_type(entry);
+    }
   } else {
     // "*" identifier | "*" "(" expression ")"
     get_required_symbol(SYM_ASTERISK);
 
     dereference = 1;
+    computed_address = 1;
 
     if (symbol == SYM_IDENTIFIER) {
       variable = identifier;
@@ -5270,6 +5335,9 @@ void compile_assignment(char* variable) {
     syntax_error_expected_symbol(SYM_ASSIGN);
 
   if (dereference)
+    // assert: allocated_temporaries == 1
+    tfree(1);
+  else if (computed_address)
     // assert: allocated_temporaries == 1
     tfree(1);
   else if (offset != get_address(entry))
@@ -5788,7 +5856,13 @@ uint64_t compile_factor() {
 
     get_symbol();
 
-    if (symbol != SYM_LPARENTHESIS)
+    if (symbol == SYM_LBRACKET) {
+      // array access: identifier "[" expression "]"
+      type = compile_array_address(variable_or_procedure);
+
+      // dereference effective address
+      emit_load(current_temporary(), current_temporary(), 0);
+    } else if (symbol != SYM_LPARENTHESIS)
       // variable access: identifier ...
       type = load_variable(variable_or_procedure);
     else {

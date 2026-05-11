@@ -51,7 +51,7 @@ value      = integer | character .
 
 statement  = assignment ";" | if | while | for | call ";" | return ";" .
 
-assignment = ( [ "*" ] identifier | "*" "(" arithmetic ")" ) "=" expression .
+assignment = ( [ "*" ] identifier | identifier "[" expression "]" | "*" "(" arithmetic ")" ) "=" expression .
 
 expression  = logical_or .
 
@@ -72,7 +72,7 @@ arithmetic = term { ( "+" | "-" ) term } .
 term       = factor { ( "*" | "/" | "%" ) factor } .
 
 factor     = [ cast ] [ "!" ] [ "-" ] [ "~" ] [ "*" ]
-             ( "sizeof" "(" type ")" | literal | identifier | call | "(" expression ")" ) .
+             ( "sizeof" "(" type ")" | literal | identifier [ "[" expression "]" ] | call | "(" expression ")" ) .
 
 literal    = value | string .
 
