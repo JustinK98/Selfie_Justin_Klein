@@ -51,7 +51,7 @@ value      = integer | character .
 
 statement  = assignment ";" | if | while | for | call ";" | return ";" .
 
-assignment = ( [ "*" ] identifier | "*" "(" expression ")" ) "=" expression .
+assignment = ( [ "*" ] identifier | "*" "(" arithmetic ")" ) "=" expression .
 
 expression  = logical_or .
 

@@ -94,18 +94,61 @@ ENV TOP=/opt RISCV=/opt/riscv PATH=$PATH:/opt/riscv/bin
 
 WORKDIR $TOP
 
-# install statically linked QEMU (so it's easier to move it to another image)
+# install QEMU user-mode binaries — on Ubuntu 25.10 these are statically
+# linked (static-pie) but no longer carry the -static suffix, so we rename
+# on copy to preserve the filenames the selfie Makefile expects
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
-       qemu-user-static qemu-system-misc \
+       qemu-user qemu-system-riscv \
   && apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# copy QEMU RISC-V statically linked binary to common output folder
+# copy QEMU RISC-V binaries to common output folder, restoring -static suffix
 RUN mkdir -p $RISCV/bin \
-  && cp /usr/bin/qemu-riscv64-static $RISCV/bin \
+  && cp /usr/bin/qemu-riscv64 $RISCV/bin/qemu-riscv64-static \
   && cp /usr/bin/qemu-system-riscv64 $RISCV/bin \
-  && cp /usr/bin/qemu-riscv32-static $RISCV/bin \
+  && cp /usr/bin/qemu-riscv32 $RISCV/bin/qemu-riscv32-static \
   && cp /usr/bin/qemu-system-riscv32 $RISCV/bin
+
+########################################
+# Boolector (SMT solver) builder image #
+########################################
+# Pinned to ubuntu:24.04 because boolector's bundled lingeling does not
+# compile under gcc 15 (it has function-pointer mismatches that gcc 15
+# promotes to hard errors and lingeling's makefile does not honor CFLAGS,
+# so they cannot be downgraded from outside). 24.04 ships gcc 13, which
+# emits only warnings. The resulting btormc binary runs fine on the
+# newer selfieall stage thanks to glibc forward compatibility.
+FROM ubuntu:24.04 AS boolectorbuilder
+
+ENV TOP=/opt RISCV=/opt/riscv PATH=$PATH:/opt/riscv/bin
+
+WORKDIR $TOP
+
+# Setting non-interactive mode
+RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+
+# install tools to build boolector
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends \
+       ca-certificates \
+       make git \
+       g++ \
+       curl cmake \
+  && apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN git clone https://github.com/Boolector/boolector
+
+ENV MAKEFLAGS=-j4
+
+# build boolector and dependencies
+RUN mkdir -p $RISCV \
+  && cd boolector \
+  && ./contrib/setup-lingeling.sh \
+  && ./contrib/setup-btor2tools.sh \
+  && ./configure.sh --prefix $RISCV \
+  && cd build \
+  && make \
+  && make install
 
 #######################################
 # Bitwuzla (SMT solver) builder image #
@@ -164,10 +207,11 @@ RUN apt-get update \
        xxd gettext curl \
   && apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# copy pk, spike, qemu, and bitwuzla from builder images
+# copy pk, spike, qemu, boolector, and bitwuzla from builder images
 COPY --from=pkbuilder $RISCV/ $RISCV/
 COPY --from=spikebuilder $RISCV/ $RISCV/
 COPY --from=qemubuilder $RISCV/ $RISCV/
+COPY --from=boolectorbuilder $RISCV/ $RISCV/
 COPY --from=bitwuzlabuilder $RISCV/ $RISCV/
 
 # add selfie sources to the image
@@ -190,9 +234,12 @@ FROM selfieall AS selfieeverything
 
 # only works on amd64 for now
 
-# install tools for 32-bit selfie
+# install tools for 32-bit selfie — match the lib32gcc-*-dev to the
+# version of gcc the system is using (Ubuntu's gcc package currently
+# tracks gcc-15). The gcc-multilib meta-package would conflict with
+# gcc-riscv64-linux-gnu, so install the 32-bit support libraries directly.
 RUN apt-get update \
-  && apt-get install -y --no-install-recommends lib32gcc-13-dev lib32gcc-12-dev \
+  && apt-get install -y --no-install-recommends lib32gcc-15-dev libc6-dev-i386 \
   && apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # specify user work directory

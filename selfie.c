@@ -219,6 +219,8 @@ void zero_memory(uint64_t* memory, uint64_t size);
 uint64_t* zalloc(uint64_t size);  // internal use only!
 uint64_t* zmalloc(uint64_t size); // use this to allocate zeroed memory
 
+void assert(uint64_t assert_expr, uint64_t lineno, const char* procedure_name);
+
 // ------------------------ GLOBAL CONSTANTS -----------------------
 
 char* SELFIE_URL = (char*) 0;
@@ -510,9 +512,10 @@ uint64_t number_of_scanned_symbols    = 0;
 
 uint64_t number_of_syntax_errors = 0; // the number of encountered syntax errors
 
-char* identifier = (char*) 0; // stores scanned identifier as string
-char* integer    = (char*) 0; // stores scanned integer as string
-char* string     = (char*) 0; // stores scanned string
+char* macro_const = (char*) 0; // stores scanned macro constant as string
+char* identifier  = (char*) 0; // stores scanned identifier as string
+char* integer     = (char*) 0; // stores scanned integer as string
+char* string      = (char*) 0; // stores scanned string
 
 uint64_t literal = 0; // numerical value of most recently scanned integer or character
 
@@ -3744,6 +3747,17 @@ uint64_t* zmalloc(uint64_t size) {
     return zalloc(size);
 }
 
+void assert(uint64_t assert_expr, uint64_t lineno, const char* procedure_name) {
+  if (assert_expr == 0) {
+    if (procedure_name == (char*) 0)
+      printf("assertion failed at lineno : %ld\n", lineno);
+    else
+      printf("assertion failed at lineno : %ld, in function : %s\n", lineno, procedure_name);
+
+    exit(EXITCODE_UNCAUGHTEXCEPTION);
+  }
+}
+
 // *~*~ *~*~ *~*~ *~*~ *~*~ *~*~ *~*~ *~*~ *~*~ *~*~ *~*~ *~*~ *~*~
 // -----------------------------------------------------------------
 // ---------------------    C O M P I L E R    ---------------------
@@ -3991,11 +4005,12 @@ void get_symbol() {
   uint64_t i;
 
   // reset previously scanned symbol
-  symbol     = SYM_EOF;
-  identifier = (char*) 0;
-  integer    = (char*) 0;
-  literal    = 0;
-  string     = (char*) 0;
+  symbol      = SYM_EOF;
+  macro_const = (char*) 0;
+  identifier  = (char*) 0;
+  integer     = (char*) 0;
+  literal     = 0;
+  string      = (char*) 0;
 
   if (find_next_character() != CHAR_EOF) {
     if (symbol != SYM_DIVISION) {
@@ -4004,7 +4019,38 @@ void get_symbol() {
 
       // start state of finite state machine
       // for recognizing C* symbols is here
-      if (is_letter(character)) {
+      if (character == CHAR_UNDERSCORE) {
+        // something starting with an underscore is interpreted as macro constant
+        macro_const = string_alloc(MAX_IDENTIFIER_LENGTH);
+
+        i = 0;
+
+        while (is_character_letter_or_digit_or_underscore()) {
+          if (i >= MAX_IDENTIFIER_LENGTH) {
+            syntax_error_message("macro constant identifier too long");
+
+            exit(EXITCODE_SCANNERERROR);
+          }
+
+          store_character(macro_const, i, character);
+
+          i = i + 1;
+
+          get_character();
+        }
+
+        store_character(macro_const, i, 0); // null-terminated string
+
+        if (string_compare("__LINE__", macro_const)) {
+          literal = line_number;
+          symbol = SYM_INTEGER;
+        } else if (string_compare("__func__", macro_const)) {
+          string = get_string(current_procedure);
+          symbol = SYM_STRING;
+        } else {
+          syntax_error_message("unrecognized macro constant");
+        }
+      } else if (is_letter(character)) {
         // accommodate identifier and null for termination
         identifier = string_alloc(MAX_IDENTIFIER_LENGTH);
 
@@ -5175,7 +5221,7 @@ void compile_assignment(char* variable) {
       get_symbol();
 
       // load expression value (as address)
-      ltype = compile_expression();
+      ltype = compile_arithmetic();
 
       get_expected_symbol(SYM_RPARENTHESIS);
     } else {
