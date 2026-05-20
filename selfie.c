@@ -665,6 +665,7 @@ uint64_t UINT64_T     = 1;
 uint64_t UINT64STAR_T = 2;
 uint64_t VOID_T       = 3;
 uint64_t UNDECLARED_T = 4;
+uint64_t UINT64ARRAY_T = 5;
 
 // symbol tables
 uint64_t GLOBAL_TABLE = 1;
@@ -752,10 +753,12 @@ uint64_t load_upper_value(uint64_t reg, uint64_t value);
 uint64_t load_upper_address(uint64_t* entry);
 
 uint64_t load_value(uint64_t* entry);
+void     load_address(uint64_t* entry);
 
 uint64_t* get_variable_entry(char* variable);
 uint64_t  load_variable(char* variable);
 
+uint64_t compile_array_size();
 uint64_t compile_array_address(char* variable);
 void compile_assignment(char* variable);
 void compile_for_assignment();
@@ -813,6 +816,11 @@ uint64_t return_jumps = 0; // fixup chain for return statements
 
 uint64_t return_type = 0; // return type of currently parsed procedure
 
+uint64_t declared_variable_is_array = 0;
+uint64_t declared_variable_size     = 1;
+uint64_t declared_variable_bytes    = 8;
+uint64_t compiling_formal_parameter = 0;
+
 uint64_t number_of_global_variables = 0;
 uint64_t number_of_procedures       = 0;
 uint64_t number_of_string_literals  = 0;
@@ -837,6 +845,11 @@ void reset_parser() {
   number_of_for         = 0;
   number_of_calls       = 0;
   number_of_return      = 0;
+
+  declared_variable_is_array = 0;
+  declared_variable_size     = 1;
+  declared_variable_bytes    = WORDSIZE;
+  compiling_formal_parameter = 0;
 
   number_of_syntax_errors = 0;
 
@@ -4812,6 +4825,8 @@ void print_type(uint64_t type) {
     printf("void");
   else if (type == UNDECLARED_T)
     printf("undeclared");
+  else if (type == UINT64ARRAY_T)
+    printf("uint64_t[]");
   else
     printf("unknown");
 }
@@ -4850,15 +4865,30 @@ void compile_cstar() {
         get_symbol();
 
         if (symbol != SYM_LPARENTHESIS) {
-          // type identifier [ initialize ] ";"
+          // type identifier [ "[" integer "]" ] [ initialize ] ";"
           // global variable declaration or definition
           entry = compile_variable(variable_or_procedure, type, 0);
 
-          set_value(entry, compile_initialize(type));
+          if (get_type(entry) == UINT64ARRAY_T) {
+            if (symbol == SYM_ASSIGN)
+              compile_initialize(get_type(entry));
 
-          emit_data_word(get_value(entry), get_address(entry), get_line_number(entry));
+            type = 0;
 
-          dc_global_variable = dc_global_variable + 1;
+            while (type < get_value(entry)) {
+              emit_data_word(0, get_address(entry) + type * WORDSIZE, get_line_number(entry));
+
+              type = type + 1;
+            }
+
+            dc_global_variable = dc_global_variable + get_value(entry);
+          } else {
+            set_value(entry, compile_initialize(type));
+
+            emit_data_word(get_value(entry), get_address(entry), get_line_number(entry));
+
+            dc_global_variable = dc_global_variable + 1;
+          }
 
           get_expected_symbol(SYM_SEMICOLON);
         } else
@@ -4894,21 +4924,71 @@ void compile_cstar() {
   }
 }
 
+uint64_t compile_array_size() {
+  uint64_t size;
+
+  declared_variable_is_array = 0;
+  declared_variable_size     = 1;
+  declared_variable_bytes    = WORDSIZE;
+
+  size = 1;
+
+  if (symbol == SYM_LBRACKET) {
+    declared_variable_is_array = 1;
+
+    get_symbol();
+
+    if (symbol == SYM_INTEGER) {
+      size = literal;
+
+      get_symbol();
+    } else
+      syntax_error_expected_symbol(SYM_INTEGER);
+
+    if (size == 0) {
+      syntax_error_message("array size must be greater than zero");
+
+      size = 1;
+    }
+
+    get_expected_symbol(SYM_RBRACKET);
+  }
+
+  declared_variable_size  = size;
+  declared_variable_bytes = size * WORDSIZE;
+
+  return size;
+}
+
 uint64_t* compile_variable(char* variable, uint64_t type, uint64_t offset) {
   uint64_t* entry;
+  uint64_t size;
+  uint64_t value;
+  char* local_variable;
 
   if (variable != (char*) 0) {
     // lookahead of 1: identifier already parsed into variable (type may be left-factored)
+
+    size = compile_array_size();
+
+    if (declared_variable_is_array) {
+      if (type != UINT64_T)
+        type_warning(UINT64_T, type);
+
+      type  = UINT64ARRAY_T;
+      value = size;
+    } else
+      value = 0;
 
     // global variable
     entry = search_global_symbol_table(variable, VARIABLE);
 
     if (entry == (uint64_t*) 0) {
       // allocate memory for global variable in data segment
-      data_size = data_size + WORDSIZE;
+      data_size = data_size + declared_variable_bytes;
 
       entry = create_symbol_table_entry(GLOBAL_TABLE, variable,
-        line_number, VARIABLE, type, 0, -data_size);
+        line_number, VARIABLE, type, value, -data_size);
 
       number_of_global_variables = number_of_global_variables + 1;
     } else {
@@ -4919,13 +4999,36 @@ uint64_t* compile_variable(char* variable, uint64_t type, uint64_t offset) {
   } else {
     // local variable or formal parameter
     if (symbol == SYM_IDENTIFIER) {
-      // TODO: check if identifier has already been declared
-      entry = create_symbol_table_entry(LOCAL_TABLE, identifier,
-        line_number, VARIABLE, type, 0, offset);
+      local_variable = identifier;
 
       get_symbol();
+
+      size = compile_array_size();
+
+      if (declared_variable_is_array) {
+        if (type != UINT64_T)
+          type_warning(UINT64_T, type);
+
+        if (compiling_formal_parameter) {
+          type = UINT64STAR_T;
+
+          declared_variable_bytes = WORDSIZE;
+        } else
+          type = UINT64ARRAY_T;
+
+        value = size;
+      } else
+        value = 0;
+
+      // TODO: check if identifier has already been declared
+      entry = create_symbol_table_entry(LOCAL_TABLE, local_variable,
+        line_number, VARIABLE, type, value, offset);
     } else {
       syntax_error_expected_symbol(SYM_IDENTIFIER);
+
+      declared_variable_is_array = 0;
+      declared_variable_size     = 1;
+      declared_variable_bytes    = WORDSIZE;
 
       entry = create_symbol_table_entry(LOCAL_TABLE, "no_name",
         line_number, VARIABLE, type, 0, offset);
@@ -5188,16 +5291,33 @@ uint64_t* get_variable_entry(char* variable) {
 }
 
 uint64_t load_variable(char* variable) {
-  return load_value(get_variable_entry(variable));
+  uint64_t* entry;
+
+  entry = get_variable_entry(variable);
+
+  if (get_type(entry) == UINT64ARRAY_T) {
+    load_address(entry);
+
+    return UINT64STAR_T;
+  } else
+    return load_value(entry);
 }
 
 uint64_t compile_array_address(char* variable) {
+  uint64_t* entry;
   uint64_t ltype;
   uint64_t itype;
 
   // assert: n = allocated_temporaries
 
-  ltype = load_variable(variable);
+  entry = get_variable_entry(variable);
+
+  if (get_type(entry) == UINT64ARRAY_T) {
+    load_address(entry);
+
+    ltype = UINT64STAR_T;
+  } else
+    ltype = load_value(entry);
 
   // assert: allocated_temporaries == n + 1
 
@@ -6398,6 +6518,7 @@ void compile_procedure(char* procedure, uint64_t type) {
   uint64_t is_variadic;
   uint64_t number_of_formal_parameters;
   uint64_t* entry;
+  uint64_t* local_entry;
   uint64_t number_of_local_variable_bytes;
 
   // lookahead of 1: identifier already parsed into procedure (type may be left-factored)
@@ -6410,6 +6531,8 @@ void compile_procedure(char* procedure, uint64_t type) {
   number_of_formal_parameters = 0;
 
   // try parsing formal parameters
+
+  compiling_formal_parameter = 1;
 
   if (symbol == SYM_LPARENTHESIS) {
     get_symbol();
@@ -6451,6 +6574,8 @@ void compile_procedure(char* procedure, uint64_t type) {
       get_symbol();
   } else
     syntax_error_expected_symbol(SYM_LPARENTHESIS);
+
+  compiling_formal_parameter = 0;
 
   if (is_variadic)
     // negative number of formal parameters indicates procedure is variadic
@@ -6520,10 +6645,12 @@ void compile_procedure(char* procedure, uint64_t type) {
 
     while (is_type()) {
       // try parsing next local variable declaration
-      number_of_local_variable_bytes = number_of_local_variable_bytes + WORDSIZE;
+      local_entry = compile_variable((char*) 0, compile_type(), 0);
+
+      number_of_local_variable_bytes = number_of_local_variable_bytes + declared_variable_bytes;
 
       // offset of local variables relative to frame pointer is negative
-      compile_variable((char*) 0, compile_type(), -number_of_local_variable_bytes);
+      set_address(local_entry, -number_of_local_variable_bytes);
 
       get_expected_symbol(SYM_SEMICOLON);
     }

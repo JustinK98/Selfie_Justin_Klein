@@ -39,7 +39,7 @@ C\* Grammar:
 ```
 cstar      = { variable [ initialize ] ";" | procedure } .
 
-variable   = type identifier .
+variable   = type identifier [ "[" integer "]" ] .
 
 type       = "uint64_t" [ "*" ] .
 
