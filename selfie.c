@@ -495,6 +495,7 @@ uint64_t SYM_CONST    = 41; // const
 uint64_t SYM_FOR      = 42; // for
 uint64_t SYM_LBRACKET = 43; // [
 uint64_t SYM_RBRACKET = 44; // ]
+uint64_t SYM_STRUCT   = 45; // struct
 
 uint64_t* SYMBOLS; // strings representing symbols
 
@@ -533,7 +534,7 @@ uint64_t source_fd   = 0; // file descriptor of open source file
 // ------------------------- INITIALIZATION ------------------------
 
 void init_scanner () {
-  SYMBOLS = smalloc((SYM_RBRACKET + 1) * sizeof(uint64_t*));
+  SYMBOLS = smalloc((SYM_STRUCT + 1) * sizeof(uint64_t*));
 
   *(SYMBOLS + SYM_INTEGER)      = (uint64_t) "integer";
   *(SYMBOLS + SYM_CHARACTER)    = (uint64_t) "character";
@@ -581,6 +582,7 @@ void init_scanner () {
   *(SYMBOLS + SYM_FOR)      = (uint64_t) "for";
   *(SYMBOLS + SYM_LBRACKET) = (uint64_t) "[";
   *(SYMBOLS + SYM_RBRACKET) = (uint64_t) "]";
+  *(SYMBOLS + SYM_STRUCT)   = (uint64_t) "struct";
 
   character = CHAR_EOF;
   symbol    = SYM_EOF;
@@ -742,6 +744,7 @@ void compile_cstar(); // grammar top symbol, parser entry
 uint64_t* compile_variable(char* variable, uint64_t type, uint64_t offset); // returns variable entry
 
 uint64_t compile_type(); // returns type
+void     compile_struct_declaration();
 
 uint64_t compile_initialize(uint64_t type); // returns initial value
 uint64_t compile_cast(uint64_t type); // returns cast type
@@ -820,6 +823,7 @@ uint64_t declared_variable_is_array = 0;
 uint64_t declared_variable_size     = 1;
 uint64_t declared_variable_bytes    = 8;
 uint64_t compiling_formal_parameter = 0;
+uint64_t compiled_type_is_struct    = 0;
 
 uint64_t number_of_global_variables = 0;
 uint64_t number_of_procedures       = 0;
@@ -850,6 +854,7 @@ void reset_parser() {
   declared_variable_size     = 1;
   declared_variable_bytes    = WORDSIZE;
   compiling_formal_parameter = 0;
+  compiled_type_is_struct    = 0;
 
   number_of_syntax_errors = 0;
 
@@ -4003,6 +4008,8 @@ uint64_t identifier_or_keyword() {
     return SYM_WHILE;
   else if (identifier_string_match(SYM_FOR))
     return SYM_FOR;
+  else if (identifier_string_match(SYM_STRUCT))
+    return SYM_STRUCT;
   else if (identifier_string_match(SYM_SIZEOF))
     return SYM_SIZEOF;
   else if (identifier_string_match(SYM_INT))
@@ -4602,7 +4609,12 @@ void tfree(uint64_t number_of_temporaries) {
 // -----------------------------------------------------------------
 
 uint64_t is_type() {
-  return symbol == SYM_UINT64;
+  if (symbol == SYM_UINT64)
+    return 1;
+  else if (symbol == SYM_STRUCT)
+    return 1;
+  else
+    return 0;
 }
 
 uint64_t is_value() {
@@ -4859,7 +4871,48 @@ void compile_cstar() {
     if (is_type()) {
       type = compile_type();
 
-      if (symbol == SYM_IDENTIFIER) {
+      if (compiled_type_is_struct) {
+        if (symbol == SYM_LBRACE)
+          compile_struct_declaration();
+        else if (symbol == SYM_IDENTIFIER) {
+          variable_or_procedure = identifier;
+
+          get_symbol();
+
+          if (symbol != SYM_LPARENTHESIS) {
+            // type identifier [ "[" integer "]" ] [ initialize ] ";"
+            // global variable declaration or definition
+            entry = compile_variable(variable_or_procedure, type, 0);
+
+            if (get_type(entry) == UINT64ARRAY_T) {
+              if (symbol == SYM_ASSIGN)
+                compile_initialize(get_type(entry));
+
+              type = 0;
+
+              while (type < get_value(entry)) {
+                emit_data_word(0, get_address(entry) + type * WORDSIZE, get_line_number(entry));
+
+                type = type + 1;
+              }
+
+              dc_global_variable = dc_global_variable + get_value(entry);
+            } else {
+              set_value(entry, compile_initialize(type));
+
+              emit_data_word(get_value(entry), get_address(entry), get_line_number(entry));
+
+              dc_global_variable = dc_global_variable + 1;
+            }
+
+            get_expected_symbol(SYM_SEMICOLON);
+          } else
+            // type identifier "(" ...
+            // procedure declaration or definition
+            compile_procedure(variable_or_procedure, type);
+        } else
+          syntax_error_expected_symbol(SYM_IDENTIFIER);
+      } else if (symbol == SYM_IDENTIFIER) {
         variable_or_procedure = identifier;
 
         get_symbol();
@@ -5038,26 +5091,72 @@ uint64_t* compile_variable(char* variable, uint64_t type, uint64_t offset) {
   return entry;
 }
 
-uint64_t compile_type() {
-  uint64_t type;
+void compile_struct_declaration() {
+  get_required_symbol(SYM_LBRACE);
 
-  type = UINT64_T;
+  while (symbol != SYM_RBRACE) {
+    if (symbol == SYM_EOF) {
+      syntax_error_expected_symbol(SYM_RBRACE);
 
-  if (is_type()) {
-    get_symbol();
+      exit(EXITCODE_PARSERERROR);
+    } else if (is_type()) {
+      compile_type();
 
-    while (is_type())
-      // we tolerate multiple uint64_t aliases for bootstrapping
-      get_symbol();
+      if (symbol == SYM_IDENTIFIER) {
+        get_symbol();
 
-    while (symbol == SYM_ASTERISK) {
-      // we tolerate pointer to pointers for bootstrapping
-      type = UINT64STAR_T;
+        compile_array_size();
+
+        get_expected_symbol(SYM_SEMICOLON);
+      } else
+        syntax_error_expected_symbol(SYM_IDENTIFIER);
+    } else {
+      syntax_error_unexpected_symbol();
 
       get_symbol();
     }
-  } else
-    syntax_error_expected_symbol(SYM_UINT64);
+  }
+
+  get_expected_symbol(SYM_RBRACE);
+  get_expected_symbol(SYM_SEMICOLON);
+}
+
+uint64_t compile_type() {
+  uint64_t type;
+
+  compiled_type_is_struct = 0;
+
+  if (symbol == SYM_STRUCT) {
+    compiled_type_is_struct = 1;
+
+    get_symbol();
+
+    get_expected_symbol(SYM_IDENTIFIER);
+
+    while (symbol == SYM_ASTERISK)
+      // we tolerate pointer to pointers for bootstrapping
+      get_symbol();
+
+    type = UINT64STAR_T;
+  } else {
+    type = UINT64_T;
+
+    if (symbol == SYM_UINT64) {
+      get_symbol();
+
+      while (symbol == SYM_UINT64)
+        // we tolerate multiple uint64_t aliases for bootstrapping
+        get_symbol();
+
+      while (symbol == SYM_ASTERISK) {
+        // we tolerate pointer to pointers for bootstrapping
+        type = UINT64STAR_T;
+
+        get_symbol();
+      }
+    } else
+      syntax_error_expected_symbol(SYM_UINT64);
+  }
 
   // type is grammar attribute
   return type;
