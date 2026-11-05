@@ -13636,6 +13636,170 @@ void print_synopsis(char* extras) {
 }
 
 // -----------------------------------------------------------------
+// ------------------------ ASSEMBLER PARSER ------------------------
+// -----------------------------------------------------------------
+
+char* assembler_word = (char*) 0;
+
+void assembler_error(char* message) {
+  syntax_error_message(message);
+  exit(EXITCODE_PARSERERROR);
+}
+
+void assembler_skip_spaces() {
+  while (or(character == CHAR_SPACE, character == CHAR_TAB))
+    get_character();
+}
+
+void assembler_read_word() {
+  uint64_t length;
+
+  assembler_skip_spaces();
+  length = 0;
+
+  while (or(is_letter(character), or(is_digit(character), character == CHAR_DOT))) {
+    if (length == 16)
+      assembler_error("assembly mnemonic or register name too long");
+    store_character(assembler_word, length, character);
+    length = length + 1;
+    get_character();
+  }
+
+  store_character(assembler_word, length, 0);
+  if (length == 0)
+    assembler_error("assembly mnemonic or register name expected");
+}
+
+void assembler_expect(char expected) {
+  assembler_skip_spaces();
+  if (character != expected) {
+    syntax_error_expected_character(expected);
+    exit(EXITCODE_PARSERERROR);
+  }
+  get_character();
+}
+
+void assembler_register() {
+  uint64_t reg;
+
+  assembler_read_word();
+  reg = 0;
+  while (reg < NUMBEROFREGISTERS) {
+    if (string_compare(assembler_word, get_register_name(reg)))
+      return;
+    reg = reg + 1;
+  }
+  assembler_error("unknown RISC-U register");
+}
+
+void assembler_literal() {
+  uint64_t digits;
+
+  assembler_skip_spaces();
+  if (character == CHAR_DASH)
+    get_character();
+
+  digits = 0;
+  if (character == '0') {
+    get_character();
+    digits = 1;
+    if (character == 'x') {
+      get_character();
+      if (not(is_hexa_digit(character)))
+        assembler_error("hexadecimal digit expected");
+      while (is_hexa_digit(character))
+        get_character();
+      return;
+    }
+  }
+
+  while (is_digit(character)) {
+    digits = digits + 1;
+    get_character();
+  }
+  if (digits == 0)
+    assembler_error("integer literal expected");
+}
+
+uint64_t assembler_mnemonic() {
+  uint64_t instruction;
+
+  instruction = 1;
+  while (instruction <= AND) {
+    if (string_compare(assembler_word, get_mnemonic(instruction)))
+      return instruction;
+    instruction = instruction + 1;
+  }
+  assembler_error("unknown RISC-U instruction");
+  return 0;
+}
+
+void assembler_instruction() {
+  uint64_t instruction;
+
+  assembler_read_word();
+  // The disassembler emits nop for the canonical addi zero,zero,0.
+  if (string_compare(assembler_word, "nop"))
+    return;
+  if (or(string_compare(assembler_word, ".8byte"), string_compare(assembler_word, ".4byte"))) {
+    assembler_literal();
+    return;
+  }
+
+  instruction = assembler_mnemonic();
+  if (instruction == ECALL)
+    return;
+
+  assembler_register();
+  assembler_expect(CHAR_COMMA);
+
+  if (or(instruction == LUI, instruction == JAL))
+    assembler_literal();
+  else if (or(instruction == LOAD, or(instruction == STORE, instruction == JALR))) {
+    assembler_literal();
+    assembler_expect(CHAR_LPARENTHESIS);
+    assembler_register();
+    assembler_expect(CHAR_RPARENTHESIS);
+  } else {
+    assembler_register();
+    assembler_expect(CHAR_COMMA);
+    if (or(instruction == ADDI, or(instruction == XORI, instruction == BEQ)))
+      assembler_literal();
+    else
+      assembler_register();
+  }
+}
+
+void selfie_assemble() {
+  source_name = get_argument();
+  source_fd = open_read_only(source_name);
+  if (signed_less_than(source_fd, 0)) {
+    printf("%s: could not open assembly input file %s\n", selfie_name, source_name);
+    exit(EXITCODE_IOERROR);
+  }
+
+  if (assembler_word == (char*) 0)
+    assembler_word = string_alloc(16);
+  reset_scanner();
+
+  while (character != CHAR_EOF) {
+    assembler_skip_spaces();
+    if (character != CHAR_EOF)
+      if (not(is_character_new_line()))
+        assembler_instruction();
+
+    assembler_skip_spaces();
+    if (character != CHAR_EOF) {
+      if (not(is_character_new_line()))
+        assembler_error("end of assembly line expected");
+      if (character == CHAR_LF)
+        line_number = line_number + 1;
+      get_character();
+    }
+  }
+}
+
+// -----------------------------------------------------------------
 // ----------------------------- SELFIE ----------------------------
 // -----------------------------------------------------------------
 
@@ -13675,6 +13839,8 @@ uint64_t selfie(uint64_t extras) {
         selfie_disassemble(0);
       else if (string_compare(argument, "-S"))
         selfie_disassemble(1);
+      else if (string_compare(argument, "-a"))
+        selfie_assemble();
       else if (string_compare(argument, "-l"))
         selfie_load(get_argument());
       else if (not(extras)) {
