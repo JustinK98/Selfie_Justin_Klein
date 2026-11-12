@@ -13679,27 +13679,32 @@ void assembler_expect(char expected) {
   get_character();
 }
 
-void assembler_register() {
+uint64_t assembler_register() {
   uint64_t reg;
 
   assembler_read_word();
   reg = 0;
   while (reg < NUMBEROFREGISTERS) {
     if (string_compare(assembler_word, get_register_name(reg)))
-      return;
+      return reg;
     reg = reg + 1;
   }
   assembler_error("unknown RISC-U register");
+  return 0;
 }
 
-void assembler_literal() {
+uint64_t assembler_literal() {
   uint64_t digits;
+  uint64_t value;
+  uint64_t negative;
 
   assembler_skip_spaces();
-  if (character == CHAR_DASH)
+  negative = character == CHAR_DASH;
+  if (negative)
     get_character();
 
   digits = 0;
+  value = 0;
   if (character == '0') {
     get_character();
     digits = 1;
@@ -13707,18 +13712,31 @@ void assembler_literal() {
       get_character();
       if (not(is_hexa_digit(character)))
         assembler_error("hexadecimal digit expected");
-      while (is_hexa_digit(character))
+      while (is_hexa_digit(character)) {
+        if (is_digit(character))
+          value = value * 16 + character - '0';
+        else if (character >= 'a')
+          value = value * 16 + character - 'a' + 10;
+        else
+          value = value * 16 + character - 'A' + 10;
         get_character();
-      return;
+      }
+      if (negative)
+        return -value;
+      return value;
     }
   }
 
   while (is_digit(character)) {
+    value = value * 10 + character - '0';
     digits = digits + 1;
     get_character();
   }
   if (digits == 0)
     assembler_error("integer literal expected");
+  if (negative)
+    return -value;
+  return value;
 }
 
 uint64_t assembler_mnemonic() {
@@ -13736,37 +13754,82 @@ uint64_t assembler_mnemonic() {
 
 void assembler_instruction() {
   uint64_t instruction;
+  uint64_t first;
+  uint64_t second;
+  uint64_t operand;
 
   assembler_read_word();
   // The disassembler emits nop for the canonical addi zero,zero,0.
-  if (string_compare(assembler_word, "nop"))
+  if (string_compare(assembler_word, "nop")) {
+    emit_nop();
     return;
+  }
   if (or(string_compare(assembler_word, ".8byte"), string_compare(assembler_word, ".4byte"))) {
-    assembler_literal();
+    store_data(data_size, assembler_literal());
+    data_size = data_size + WORDSIZE;
     return;
   }
 
   instruction = assembler_mnemonic();
-  if (instruction == ECALL)
+  if (instruction == ECALL) {
+    emit_ecall();
     return;
+  }
 
-  assembler_register();
+  first = assembler_register();
   assembler_expect(CHAR_COMMA);
 
-  if (or(instruction == LUI, instruction == JAL))
-    assembler_literal();
-  else if (or(instruction == LOAD, or(instruction == STORE, instruction == JALR))) {
-    assembler_literal();
-    assembler_expect(CHAR_LPARENTHESIS);
-    assembler_register();
-    assembler_expect(CHAR_RPARENTHESIS);
-  } else {
-    assembler_register();
-    assembler_expect(CHAR_COMMA);
-    if (or(instruction == ADDI, or(instruction == XORI, instruction == BEQ)))
-      assembler_literal();
+  if (or(instruction == LUI, instruction == JAL)) {
+    operand = assembler_literal();
+    if (instruction == LUI)
+      emit_lui(first, sign_extend(operand, 20));
     else
-      assembler_register();
+      emit_jal(first, operand * INSTRUCTIONSIZE);
+  } else if (or(instruction == LOAD, or(instruction == STORE, instruction == JALR))) {
+    operand = assembler_literal();
+    assembler_expect(CHAR_LPARENTHESIS);
+    second = assembler_register();
+    assembler_expect(CHAR_RPARENTHESIS);
+    if (instruction == LOAD)
+      emit_load(first, second, operand);
+    else if (instruction == STORE)
+      emit_store(second, operand, first);
+    else
+      emit_jalr(first, second, operand * INSTRUCTIONSIZE);
+  } else {
+    second = assembler_register();
+    assembler_expect(CHAR_COMMA);
+    if (or(instruction == ADDI, or(instruction == XORI, instruction == BEQ))) {
+      operand = assembler_literal();
+      if (instruction == ADDI)
+        emit_addi(first, second, operand);
+      else if (instruction == XORI)
+        emit_xori(first, second, operand);
+      else
+        emit_beq(first, second, operand * INSTRUCTIONSIZE);
+    } else {
+      operand = assembler_register();
+      if (instruction == ADD)
+        emit_add(first, second, operand);
+      else if (instruction == SUB)
+        emit_sub(first, second, operand);
+      else if (instruction == MUL)
+        emit_mul(first, second, operand);
+      else if (instruction == DIVU)
+        emit_divu(first, second, operand);
+      else if (instruction == REMU)
+        emit_remu(first, second, operand);
+      else if (instruction == SLTU)
+        emit_sltu(first, second, operand);
+      else if (instruction == SLL)
+        emit_sll(first, second, operand);
+      else if (instruction == SRL)
+        emit_srl(first, second, operand);
+      else if (instruction == OR)
+        emit_or(first, second, operand);
+      else if (instruction == AND)
+        emit_and(first, second, operand);
+    }
   }
 }
 
@@ -13777,6 +13840,12 @@ void selfie_assemble() {
     printf("%s: could not open assembly input file %s\n", selfie_name, source_name);
     exit(EXITCODE_IOERROR);
   }
+
+  reset_binary();
+  reset_binary_counters();
+  binary_name = source_name;
+  code_binary = zmalloc(MAX_CODE_SIZE);
+  data_binary = zmalloc(MAX_DATA_SIZE);
 
   if (assembler_word == (char*) 0)
     assembler_word = string_alloc(16);
@@ -13797,6 +13866,9 @@ void selfie_assemble() {
       get_character();
     }
   }
+
+  code_start = PK_CODE_START;
+  data_start = round_up(code_start + code_size, PAGESIZE);
 }
 
 // -----------------------------------------------------------------
