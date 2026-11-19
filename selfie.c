@@ -2521,8 +2521,7 @@ uint64_t handle_division_by_zero(uint64_t* context);
 uint64_t handle_timer(uint64_t* context);
 uint64_t handle_exception(uint64_t* context);
 
-uint64_t mipster(uint64_t* to_context);
-uint64_t hypster(uint64_t* to_context);
+uint64_t run_processes(uint64_t machine, uint64_t* processes, uint64_t count);
 
 uint64_t mixter(uint64_t* to_context, uint64_t mix);
 
@@ -2530,7 +2529,7 @@ uint64_t minmob(uint64_t* to_context);
 uint64_t minster(uint64_t* to_context);
 uint64_t mobster(uint64_t* to_context);
 
-uint64_t selfie_run(uint64_t machine);
+uint64_t selfie_run(uint64_t machine, uint64_t multiple);
 
 // ------------------------ GLOBAL CONSTANTS -----------------------
 
@@ -13347,42 +13346,41 @@ uint64_t handle_exception(uint64_t* context) {
   }
 }
 
-uint64_t mipster(uint64_t* to_context) {
+uint64_t run_processes(uint64_t machine, uint64_t* processes, uint64_t count) {
+  uint64_t index;
   uint64_t timeout;
+  uint64_t* to_context;
   uint64_t* from_context;
 
+  index = 0;
+  to_context = (uint64_t*) *processes;
   timeout = TIMESLICE;
 
   while (1) {
-    from_context = mipster_switch(to_context, timeout);
+    if (machine == MIPSTER)
+      from_context = mipster_switch(to_context, timeout);
+    else
+      from_context = hypster_switch(to_context, timeout);
 
-    if (get_parent(from_context) != MY_CONTEXT) {
+    if (and(machine == MIPSTER, get_parent(from_context) != MY_CONTEXT)) {
       // dispatch exception handling to parent
       to_context = get_parent(from_context);
-
       timeout = TIMEROFF;
-    } else if (handle_exception(from_context) == EXIT)
-      return get_exit_code(from_context);
-    else {
-      // TODO: scheduler should go here
-      to_context = from_context;
+    } else {
+      if (handle_exception(from_context) == EXIT) {
+        count = count - 1;
 
+        if (count == 0)
+          return get_exit_code(from_context);
+
+        *(processes + index) = *(processes + count);
+      } else
+        index = index + 1;
+
+      index = index % count;
+      to_context = (uint64_t*) *(processes + index);
       timeout = TIMESLICE;
     }
-  }
-}
-
-uint64_t hypster(uint64_t* to_context) {
-  uint64_t* from_context;
-
-  while (1) {
-    from_context = hypster_switch(to_context, TIMESLICE);
-
-    if (handle_exception(from_context) == EXIT)
-      return get_exit_code(from_context);
-    else
-      // TODO: scheduler should go here
-      to_context = from_context;
   }
 }
 
@@ -13491,8 +13489,11 @@ uint64_t mobster(uint64_t* to_context) {
   return minmob(to_context);
 }
 
-uint64_t selfie_run(uint64_t machine) {
+uint64_t selfie_run(uint64_t machine, uint64_t multiple) {
   uint64_t exit_code;
+  uint64_t count;
+  uint64_t i;
+  uint64_t* processes;
 
   if (code_size == 0) {
     printf("%s: nothing to run, debug, or host\n", selfie_name);
@@ -13528,15 +13529,28 @@ uint64_t selfie_run(uint64_t machine) {
   reset_profiler();
   reset_microkernel();
 
-  init_memory(atoi(peek_argument(0)));
+  if (multiple) {
+    count = atoi(peek_argument(0));
+    if (or(count == 0, count > UINT64_MAX / sizeof(uint64_t)))
+      return EXITCODE_BADARGUMENTS;
 
-  current_context = create_context(MY_CONTEXT, 0);
+    init_memory(128);
+  } else {
+    count = 1;
+    init_memory(atoi(peek_argument(0)));
+  }
 
-  // assert: number_of_remaining_arguments() > 0
+  processes = smalloc(count * sizeof(uint64_t));
+  i = 0;
+  while (i < count) {
+    current_context = create_context(MY_CONTEXT, 0);
+    boot_loader(current_context);
+    if (GC_ON)
+      gc_init(current_context);
 
-  boot_loader(current_context);
-
-  // current_context is ready to run
+    *(processes + i) = (uint64_t) current_context;
+    i = i + 1;
+  }
 
   run = 1;
 
@@ -13548,8 +13562,6 @@ uint64_t selfie_run(uint64_t machine) {
     PHYSICALMEMORYSIZE / MEGABYTE);
 
   if (GC_ON) {
-    gc_init(current_context);
-
     printf(", gcing every %lu mallocs, ", GC_PERIOD);
     if (GC_REUSE) printf("reusing memory"); else printf("not reusing memory");
   }
@@ -13563,10 +13575,8 @@ uint64_t selfie_run(uint64_t machine) {
 
   printf("\n%s: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n\n", selfie_name);
 
-  if (machine == MIPSTER)
-    exit_code = mipster(current_context);
-  else if (machine == HYPSTER)
-    exit_code = hypster(current_context);
+  if (or(machine == MIPSTER, machine == HYPSTER))
+    exit_code = run_processes(machine, processes, count);
   else if (machine == MINSTER)
     exit_code = minster(current_context);
   else if (machine == MOBSTER)
@@ -13931,19 +13941,23 @@ uint64_t selfie(uint64_t extras) {
         selfie_load(get_argument());
       else if (not(extras)) {
         if (string_compare(argument, "-m"))
-          return selfie_run(MIPSTER);
+          return selfie_run(MIPSTER, 0);
+        else if (string_compare(argument, "-x"))
+          return selfie_run(MIPSTER, 1);
+        else if (string_compare(argument, "-z"))
+          return selfie_run(HYPSTER, 1);
         else if (string_compare(argument, "-d"))
-          return selfie_run(DIPSTER);
+          return selfie_run(DIPSTER, 0);
         else if (string_compare(argument, "-r"))
-          return selfie_run(RIPSTER);
+          return selfie_run(RIPSTER, 0);
         else if (string_compare(argument, "-y"))
-          return selfie_run(HYPSTER);
+          return selfie_run(HYPSTER, 0);
         else if (string_compare(argument, "-min"))
-          return selfie_run(MINSTER);
+          return selfie_run(MINSTER, 0);
         else if (string_compare(argument, "-mob"))
-          return selfie_run(MOBSTER);
+          return selfie_run(MOBSTER, 0);
         else if (string_compare(argument, "-L1"))
-          return selfie_run(CAPSTER);
+          return selfie_run(CAPSTER, 0);
         else
           return EXITCODE_BADARGUMENTS;
       } else
@@ -14025,5 +14039,5 @@ int main(int argc, char** argv) {
 
   exit_code = selfie(0);
 
-  return exit_selfie(exit_code, " [ ( -m | -d | -r | -y ) 0-4096 ... ]");
+  return exit_selfie(exit_code, " [ ( -m | -d | -r | -y ) 0-4096 ... | ( -x | -z ) processes ... ]");
 }
