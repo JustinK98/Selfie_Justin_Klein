@@ -1,6 +1,6 @@
 # Selfie [![selfie](https://github.com/cksystemsteaching/selfie/actions/workflows/selfie.yml/badge.svg)](https://github.com/cksystemsteaching/selfie/actions) [![Run on Repl.it](https://replit.com/badge/github/cksystemsteaching/selfie)](https://replit.com/new/github/cksystemsteaching/selfie)
 
-Selfie is a project of the [Computational Systems Group](https://cs.uni-salzburg.at/~ck) at the Department of Computer Sciences of the University of Salzburg in Austria.
+Selfie is a project of the [Computational Systems Group](https://cs.uni-salzburg.at/~ck) at the Department of Computer Sciences of the University of Salzburg in Austria and the Faculty of Information Technology of the Czech Technical University in Prague (CTU) in the Czech Republic. The tools [rotor](https://github.com/cksystemsteaching/selfie/blob/main/tools/rotor.c) and [bitme](https://github.com/cksystemsteaching/selfie/blob/main/tools/bitme.py) were co-developed at the University of Salzburg and at CTU, where they were developed under the project Robotics and Advanced Industrial Production (Roboprox, reg. no. CZ.02.01.01/00/22_008/0004590). For details on these tools, see [software.md](https://github.com/cksystemsteaching/selfie/blob/main/software.md).
 
 The Selfie Project provides an educational platform for teaching undergraduate and graduate students the design and implementation of programming languages and runtime systems. The focus is on the construction of compilers, libraries, operating systems, and virtual machine monitors. The common theme is to identify and resolve self-reference in systems code which is seen as the key challenge when teaching systems engineering, hence the name.
 
@@ -20,12 +20,13 @@ Selfie is designed as 64-bit system and requires as such a 64-bit system to run 
 ## Support
 
 1. Slack: Join the conversation in the #selfie channel at [cksystemsteaching.slack.com](https://join.slack.com/t/cksystemsteaching/shared_invite/zt-cp3kb9uq-ACUnAuI8DBdmULQXIjW15A)
-2. Slides: There are classroom [slides](https://selfie.cs.uni-salzburg.at/slides) that provide a comprehensive introduction to the design and implementation of selfie.
-3. Autograder: There is an [autograder](https://github.com/cksystemsteaching/selfie/blob/main/grader/README.md) with compiler and operating systems assignments.
-4. Paper: There is an [Onward! 2017 paper](https://dl.acm.org/doi/10.1145/3133850.3133857) featuring selfie.
-5. Book: There is a book based on selfie called [Elementary Computer Science: From Bits and Bytes to the Universality of Computing](https://github.com/cksystemsteaching/selfie/tree/main/book) reaching out to everyone with an interest in learning about computer science.
-6. Code: The selfie code is open source and available at [github.com/cksystemsteaching/selfie](https://github.com/cksystemsteaching/selfie)
-7. Web: The selfie homepage is at [selfie.cs.uni-salzburg.at](https://selfie.cs.uni-salzburg.at)
+2. Classes: There are three [classes](https://selfie.cs.uni-salzburg.at/classes/) built on selfie, an introduction to computer science, a compiler class, and a systems class, each with fourteen HTML decks and PDFs, all telling one story along one axis, from the small to the vast to the countable to the uncountable. The purpose is a deep understanding of basic computer science principles, deep enough to position generative AI, and whatever comes next, properly.
+3. Talks: There is a short animated [talk](https://selfie.cs.uni-salzburg.at/talk/) introducing selfie on a high level — self-compilation, self-execution, self-hosting, and why emulation and virtualization are the key to understanding operating systems. It is also available as a narrated [video](https://youtu.be/aWT2jLb1MVA), and the [recipe](https://github.com/cksystemsteaching/selfie/tree/main/video) that builds the video from the talk is in the repository. There is a companion lecture [What is Intelligence?](https://selfie.cs.uni-salzburg.at/intelligence/) that develops the same proof-versus-truth distinction — size, infinity, Gödel, Turing, universality, complexity — for an audience in any field. And there is a short lecture [What is Computer Science?](https://selfie.cs.uni-salzburg.at/cs/) that keeps that story, puts selfie at its centre as the specimen, and answers its title with a definition: the exact study of notation a machine can execute, and therefore of the gap between notation and meaning.
+4. Autograder: There is an [autograder](https://github.com/cksystemsteaching/selfie/blob/main/grader/README.md) with compiler and operating systems assignments, including two that turn selfie's model checker on the students' own code.
+5. Paper: There is an [Onward! 2017 paper](https://dl.acm.org/doi/10.1145/3133850.3133857) featuring selfie.
+6. Book: There is a book based on selfie called [What is Intelligence? Discovering Unproven Truth](https://github.com/cksystemsteaching/selfie/tree/main/book) that develops the proof-versus-truth story of the talks and the classes at book length, for everyone with an interest in learning about computer science. The previous edition, [Elementary Computer Science: From Bits and Bytes to the Universality of Computing](https://github.com/ckirsch/book), remains available.
+7. Code: The selfie code is open source and available at [github.com/cksystemsteaching/selfie](https://github.com/cksystemsteaching/selfie)
+8. Web: The selfie homepage is at [selfie.cs.uni-salzburg.at](https://selfie.cs.uni-salzburg.at)
 
 ## Extras
 
@@ -33,7 +34,7 @@ Selfie is designed as 64-bit system and requires as such a 64-bit system to run 
 2. Fuzzing: There is a simple but self-fuzzing fuzzer called [buzzr](https://github.com/cksystemsteaching/selfie/blob/main/tools/buzzr.c) based on selfie that fuzzes RISC-U code including all of selfie and itself.
 3. Symbolic execution: There is a self-executing symbolic execution engine called [monster](https://github.com/cksystemsteaching/selfie/blob/main/tools/monster.c) based on selfie that translates RISC-U code including all of selfie and itself to SMT-LIB formulae that are satisfiable if and only if there is input to the code such that the code exits with non-zero exit codes or performs division by zero within a given number of machine instructions.
 4. Bounded model checking: There is a self-translating modeling engine called [beator](https://github.com/cksystemsteaching/selfie/blob/main/tools/beator.c) based on selfie that translates RISC-U code including all of selfie and itself to BTOR2 formulae that are satisfiable if and only if there is input to the code such that the code exits with non-zero exit codes, performs division by zero, or accesses memory outside of allocated memory blocks.
-5. Bit-precise code analysis and synthesis: There is a self-translating modeling engine called [rotor](https://github.com/cksystemsteaching/selfie/blob/main/tools/rotor.c) based on selfie that translates full RISC-V code including all of selfie and itself to BTOR2 and SMT-LIB formulae that are satisfiable if and only if there is input to the code such that the code exits with non-zero exit codes, performs division by zero, or accesses memory outside of memory segments. Rotor also generates models that enable RISC-V code synthesis. There is also a concurrent bounded model checker called [bitme](https://github.com/cksystemsteaching/selfie/blob/main/tools/bitme.py) that reasons about rotor-generated models using SMT solvers and binary decision diagrams (BDDs).
+5. Bit-precise code analysis and synthesis: There is a self-translating modeling engine called [rotor](https://github.com/cksystemsteaching/selfie/blob/main/tools/rotor.c) based on selfie that translates full RISC-V code including all of selfie and itself to BTOR2 and SMT-LIB formulae that are satisfiable if and only if there is input to the code such that the code exits with non-zero exit codes, performs division by zero, or accesses memory outside of memory segments. Rotor also generates models that enable RISC-V code synthesis. There is also a concurrent bounded model checker called [bitme](https://github.com/cksystemsteaching/selfie/blob/main/tools/bitme.py) that reasons about rotor-generated models using SMT solvers and binary decision diagrams (BDDs). There is also [rotor-rust](https://github.com/cksystemsteaching/rotor-rust), a Rust-based implementation of rotor with its own browser-based visualization tool and an experimental draft for symbolic command-line arguments.
 6. BTOR2 visualization: There is a visualization tool called [beatle](https://github.com/cksystemsgroup/beator-visualizer) that displays BTOR2 formulae generated from RISC-U binaries as directed acyclic graphs.
 7. SAT solving: There is a bruteforce SAT solver called [babysat](https://github.com/cksystemsteaching/selfie/blob/main/tools/babysat.c) based on selfie that computes satisfiability of SAT formulae in DIMACS CNF.
 8. Binary translation: There is a self-translating [binary translator](https://github.com/cksystemsteaching/selfie/blob/riscv-2-x86-unsupported/tools/riscv-2-x86.c) based on selfie that translates RISC-U code including all of selfie and itself to x86 binary code.
@@ -64,7 +65,7 @@ Once you have successfully compiled `selfie.c` you may invoke `selfie` without a
 
 ```bash
 $ ./selfie
-./selfie { -c { source } | -o binary | [ -s | -S ] assembly | -l binary } [ ( -m | -d | -r | -y ) 0-4096 ... ]
+./selfie { -c { source } | -o binary | ( -s | -S ) assembly | -l binary } [ ( -m | -d | -r | -y ) 0-4096 ... ]
 ```
 
 In this case, `selfie` responds with its usage pattern.
@@ -121,12 +122,12 @@ The `-y` option invokes the hypster hypervisor to execute RISC-U code similar to
 
 ### Self-compilation
 
-Here is an example of how to perform self-compilation of `selfie.c` and then check if the RISC-U code `selfie1.m` generated for `selfie.c` by executing the `./selfie` binary is equivalent to the code `selfie2.m` generated by executing the just generated `selfie1.m` binary:
+Here is an example of how to perform self-compilation of `selfie.c` and then check if the RISC-U code `selfie0.m` generated for `selfie.c` by executing the `./selfie` binary is equivalent to the code `selfie1.m` generated by executing the just generated `selfie0.m` binary:
 
 ```bash
-$ ./selfie -c selfie.c -o selfie1.m -m 2 -c selfie.c -o selfie2.m
-$ diff -s selfie1.m selfie2.m
-Files selfie1.m and selfie2.m are identical
+$ ./selfie -c selfie.c -o selfie0.m -m 3 -c selfie.c -o selfie1.m
+$ diff -s selfie0.m selfie1.m
+Files selfie0.m and selfie1.m are identical
 ```
 
 Note that at least 2MB of memory is required for this to work.

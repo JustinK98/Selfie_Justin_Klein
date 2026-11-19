@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SE 13 · Agents as Processes</title>
+<link rel="stylesheet" href="../../deck/deck.css">
+</head>
+<body>
+<div id="stage">
+<div id="deck" tabindex="0" aria-label="Presentation: SE 13 Agents as Processes" data-title="SE 13 · Agents as Processes" data-figures="../../../figures/">
+
+<section class="slide" data-act="0" data-mins="1.0">
+  <div class="fig bare" style="position:absolute;inset:0"><canvas data-anim="ambient"></canvas></div>
+  <div class="fill center" style="position:relative">
+    <div class="eyebrow">Systems Engineering · week 13 · station V</div>
+    <h1>Agents as <span class="k">Processes</span></h1>
+    <p class="lead">What a language model is, in this class's terms. Sandboxing is virtualization. The loops are closed. The gate is what you built.</p>
+    <p class="decknav"><a href="../12-universality/">← SE 12 · Universality for Systems</a></p>
+  </div>
+  <aside class="notes"><p>The generative-AI week, from the systems side. Limited on purpose: what the machine is, in one slide; then the observation that everything the kernel does for untrusted programs is what has to be done for generated ones. Book: Machines chapter.</p></aside>
+</section>
+
+<section class="slide" data-act="V" data-actname="Machines" data-mins="6.0">
+  <div class="eyebrow">What it is</div>
+  <h2>A function from text to a distribution over the next token, with 10<sup>11</sup> parameters, run in a loop.</h2>
+  <div class="fill">
+    <div class="two">
+      <div class="stack">
+        <p class="f" data-step="1">Trained on most of the written record to predict the next piece of text; sampled one token at a time and fed its own output back. Nothing in it is a semantics: it does not run programs, check proofs, or consult the world.</p>
+        <p class="f" data-step="2">That makes it superb at everything that is a property of notation: fluency, style, translation. And structurally unable to certify a property of meaning. A hallucination is a proof-shaped object that is not true, and the machine cannot tell.</p>
+      </div>
+      <div class="card syn f" data-step="3"><span class="h">In systems terms</span><p>A program on someone's hardware, consuming a great deal of energy, whose output is other programs, commands and requests. Untrusted by construction: not malicious, but unverified, and this class is about what a kernel does with those.</p></div>
+    </div>
+  </div>
+  <aside class="notes"><p>One slide on the machine, no more; the book has the rest. The systems framing is the card: a source of unverified programs, which is the situation the kernel was designed for.</p></aside>
+</section>
+
+<section class="slide" data-act="V" data-mins="8.0">
+  <div class="eyebrow">Sandboxing is virtualization</div>
+  <h2>An agent runs generated code. Everything you built is what runs it <span class="k">safely</span>.</h2>
+  <div class="fill">
+    <table class="t">
+      <tr><th>the agent needs</th><th>the kernel provides</th><th>week</th></tr>
+      <tr class="f" data-step="1"><td>run code it did not verify</td><td>a process, isolated in space by paging</td><td>4, 7</td></tr>
+      <tr class="f" data-step="1"><td>code that may not stop</td><td>a timer; a bound in instructions, seconds, or tokens</td><td>5</td></tr>
+      <tr class="f" data-step="2"><td>a limited view of the world</td><td>the door: system calls, and the kernel says no</td><td>2, 7</td></tr>
+      <tr class="f" data-step="2"><td>many attempts, in parallel</td><td>fork; cheap contexts; copy-on-write</td><td>7</td></tr>
+      <tr class="f" data-step="3"><td>a budget</td><td>the profile: instructions, memory, joules</td><td>11</td></tr>
+      <tr class="f" data-step="3"><td>trust in the sandbox itself</td><td>a small, named TCB; a kernel beneath the kernel</td><td>6, 12</td></tr>
+    </table>
+    <p class="sm f" data-step="4">The sandbox around an agent is a virtual machine, and its designer faces the self-reference of week 6: the agent may try to reach the sandbox's controls, and the isolation of the controls is the whole question. Nothing new; harder stakes.</p>
+  </div>
+  <aside class="notes"><p>The table maps the agent's needs onto the class. Say it flatly: the people building agent infrastructure are building operating systems, and the mistakes they make are the ones this class studies.</p></aside>
+</section>
+
+<section class="slide" data-act="V" data-mins="7.0">
+  <div class="eyebrow">The loops are closed</div>
+  <h2>Models train on model output. Models grade models. Agents invoke themselves. And no system can <span class="x">certify itself</span>.</h2>
+  <div class="fill row mid">
+    <div class="fig grow" style="flex:1.2" data-fig="loop"><span class="cap">model, output, corpus, training, and round again; the arrow from outside is the check</span></div>
+    <div class="stack grow">
+      <p class="f" data-step="1">Self-reference in the machines: model collapse when the loop tightens, judges sharing the candidate's blind spots, agents calling agents.</p>
+      <p class="f" data-step="2">Is this system safe? A semantic property: Rice says no general procedure. Can it explain itself? By Gödel II an explanation is more output, not a certificate. The kernel never asks the process; it checks from outside.</p>
+      <p class="f" data-step="3">So the effort goes where the arrow enters from outside: the gate.</p>
+    </div>
+  </div>
+  <aside class="notes"><p>The loop figure, read as the ladder with the emulator removed. The systems intuition is exactly right here: never ask the process about itself.</p></aside>
+</section>
+
+<section class="slide" data-act="V" data-mins="8.0">
+  <div class="eyebrow">The gate · in this class</div>
+  <h2>Ask a machine for a systems routine. Then <span class="k">mipster</span>, your kernel, <span class="k">rotor</span>.</h2>
+  <div class="fill row mid">
+    <div class="fig grow" style="flex:1.1" data-fig="gate"><span class="cap">a generator supplies notation; the gate supplies the semantics</span></div>
+    <div class="stack grow">
+      <div class="term sm">
+        <span class="l"><span class="p">$</span> <span class="c">./selfie -c generated.c -m 1</span></span>
+        <span class="l o">./selfie: … exception: invalid memory access …</span>
+        <span class="l"><span class="p">$</span> <span class="c">./selfie -c selfie.c -m 2 -c generated.c -y 1</span></span>
+        <span class="l"><span class="p">$</span> <span class="c">./rotor -c generated.c - 0</span></span>
+        <span class="l"><span class="p">$</span> <span class="c">tools/bitme.py -kmax 1000 --use-bitwuzla \</span></span>
+        <span class="l"><span class="c">    generated-rotorized.btor2</span></span>
+        <span class="l o">… core-0-load-seg-fault — satisfiable · input …</span>
+      </div>
+      <p class="sm f" data-step="1"><strong>Does it run?</strong> On mipster, isolated: the handler catches what the generator did not. <strong>Under your kernel?</strong> On hypster, time-shared, with your locks. <strong>Can it fail?</strong> Within a thousand steps, on any input: absence within a bound.</p>
+      <p class="sm f" data-step="2">The machine that wrote it has none of the three: the check the generator cannot be. One theorem, fourth appearance; this class built all three checks.</p>
+    </div>
+  </div>
+  <aside class="notes"><p>Do it live with a real bot and a real routine, a linked list or a small allocator; the first run usually faults, and that is the lesson. Then run it under the students' own kernel, then rotor. Generation got cheap; every check on this slide did not.</p></aside>
+</section>
+
+<section class="slide" data-act="V" data-mins="5.0">
+  <div class="eyebrow">What changed</div>
+  <h2>Generation got cheap. Isolation, bounding and verification <span class="j">did not</span>.</h2>
+  <div class="fill">
+    <div class="two">
+      <div class="stack">
+        <p class="f" data-step="1">Before, producing a program was expensive and scarcity did the filtering. Now production is nearly free and unbounded, and the filter has to be built: a kernel to run it in, a bound to stop it, a check to accept it. Hard to find, easy to check, at consumer scale.</p>
+        <p class="f" data-step="2">Value migrates to the ends the machine does not occupy: stating what should be true, and establishing that it is. For a systems engineer the second is the job description. Own the ends.</p>
+      </div>
+      <div class="card syn f" data-step="3"><span class="h">Before next week</span><p>The Machines chapter's exercises 1, 2 and 6, with a systems routine instead of factorial. Bring the failing input rotor found, or the bound up to which none exists. Next week: what a system is.</p></div>
+    </div>
+  </div>
+  <aside class="notes"><p>The chapter's closing argument, in the class's terms. The exercises are the gate, done by hand.</p></aside>
+</section>
+<section class="slide" data-act="V" data-mins="1.0">
+  <div class="eyebrow">After this week</div>
+  <h2>Listen, then read.</h2>
+  <div class="fill">
+    <div class="two">
+      <div class="card"><span class="h">Listen</span><p><a href="https://www.youtube.com/watch?v=KvAUGNh4X7Y">Strauss · Salome</a> — Karajan, Vienna 1978. Herod grants a capability without a gate: whatever you ask, up to half my kingdom. Salome asks. An agent given more than its sandbox should allow, and the opera is the consequence, in ninety minutes.</p></div>
+      <div class="card"><span class="h">Read</span><p><a href="https://en.wikipedia.org/wiki/Human_Compatible">Human Compatible</a> — Russell, 2019: machines that pursue objectives they were given, and why the sandbox around them is the design problem. And, more technical, <a href="https://doi.org/10.1145/362375.362389">A Note on the Confinement Problem</a> — Lampson, 1973: can a program be prevented from leaking what it was given? Three pages, and the answer is still no.</p></div>
+    </div>
+  </div>
+  <p class="decknav next"><a href="../14-what-is-a-system/">SE 14 · What is a System? →</a></p>
+  <aside class="notes"><p>One minute, or none: leave it on the screen while the room packs up. A piece, a book and a paper, chosen for the week’s idea; the cards say why.</p></aside>
+</section>
+
+</div>
+</div>
+<script src="../../deck/deck.js"></script>
+</body>
+</html>

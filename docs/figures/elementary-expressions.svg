@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="1000" height="620" role="img" aria-label="Elementary expressions: a context-free grammar, one finite state machine per non-terminal, and a stack">
+<title>Elementary expressions: a context-free grammar, one finite state machine per non-terminal, and a stack</title>
+<style>svg{--ink:#131C2A;--ink-2:#39485C;--muted:#5D6E85;--line:rgba(19,28,42,.18);--syn:#A2661A;--sem:#1F6C86;--bad:#A63E5A;--panel:#FFFFFF;--ground:#EFF1F3}@media (prefers-color-scheme: dark){svg{--ink:#E7EDF6;--ink-2:#B6C4D8;--muted:#8093AF;--line:rgba(122,162,204,.16);--syn:#E0A550;--sem:#5BB0C7;--bad:#C8607A;--panel:#111C2E;--ground:#080E18}}text{font-family:"JetBrains Mono","SFMono-Regular","SF Mono","Cascadia Mono",Menlo,Consolas,"DejaVu Sans Mono",monospace}.serif{font-family:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua","URW Palladio L",Georgia,serif}</style>
+<text x="40" y="40" font-size="13.5" fill="var(--ink-2)" text-anchor="start" dominant-baseline="central">expression = term { ( &quot;+&quot; | &quot;-&quot; ) term } .</text>
+<text x="40" y="62" font-size="13.5" fill="var(--ink-2)" text-anchor="start" dominant-baseline="central">term       = factor { ( &quot;*&quot; | &quot;/&quot; ) factor } .</text>
+<text x="40" y="84" font-size="13.5" fill="var(--ink-2)" text-anchor="start" dominant-baseline="central">factor     = literal | identifier | &quot;(&quot; expression &quot;)&quot; .</text>
+<text x="960" y="62" font-size="14" fill="var(--syn)" text-anchor="end" dominant-baseline="central" class="serif">context-free grammar</text>
+<rect x="40" y="120" width="720" height="480" fill="none" stroke="var(--syn)" stroke-width="1.2" rx="4"/>
+<text x="400" y="142" font-size="14" fill="var(--syn)" text-anchor="middle" dominant-baseline="central" class="serif">one finite state machine per nonterminal</text>
+<text x="70" y="215" font-size="13" fill="var(--ink-2)" text-anchor="end" dominant-baseline="central" class="serif">expression</text>
+<line x1="106" y1="215" x2="141" y2="215" stroke="var(--ink-2)" stroke-width="1.2"/><path d="M143 215 L136 211.5 L136 218.5 Z" fill="var(--ink-2)"/>
+<circle cx="150" cy="215" r="6" fill="var(--syn)"/>
+<circle cx="400" cy="215" r="6" fill="var(--sem)"/>
+<circle cx="600" cy="215" r="6" fill="var(--ink-2)"/>
+<path d="M156 215 Q275.0 215.0 394 215" fill="none" stroke="var(--ink-2)" stroke-width="1.2"/><path d="M394 215 L387.0 218.0 L387.0 212.0 Z" fill="var(--ink-2)"/><rect x="255.8" y="196.0" width="38.4" height="16" fill="var(--panel)"/><text x="275.0" y="204.0" font-size="12" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">term</text>
+<path d="M405 211 Q500.0 131.0 595 211" fill="none" stroke="var(--ink-2)" stroke-width="1.2"/><path d="M595 211 L587.7 208.8 L591.6 204.2 Z" fill="var(--ink-2)"/><rect x="461.8" y="152.0" width="76.4" height="16" fill="var(--panel)"/><text x="500.0" y="160.0" font-size="12" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">&quot;+&quot; | &quot;-&quot;</text>
+<path d="M595 219 Q500.0 299.0 405 219" fill="none" stroke="var(--ink-2)" stroke-width="1.2"/><path d="M405 219 L412.3 221.2 L408.4 225.8 Z" fill="var(--ink-2)"/><rect x="480.8" y="264.0" width="38.4" height="16" fill="var(--panel)"/><text x="500.0" y="272.0" font-size="12" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">term</text>
+<text x="70" y="355" font-size="13" fill="var(--ink-2)" text-anchor="end" dominant-baseline="central" class="serif">term</text>
+<line x1="106" y1="355" x2="141" y2="355" stroke="var(--ink-2)" stroke-width="1.2"/><path d="M143 355 L136 351.5 L136 358.5 Z" fill="var(--ink-2)"/>
+<circle cx="150" cy="355" r="6" fill="var(--syn)"/>
+<circle cx="400" cy="355" r="6" fill="var(--sem)"/>
+<circle cx="600" cy="355" r="6" fill="var(--ink-2)"/>
+<path d="M156 355 Q275.0 355.0 394 355" fill="none" stroke="var(--ink-2)" stroke-width="1.2"/><path d="M394 355 L387.0 358.0 L387.0 352.0 Z" fill="var(--ink-2)"/><rect x="248.2" y="336.0" width="53.6" height="16" fill="var(--panel)"/><text x="275.0" y="344.0" font-size="12" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">factor</text>
+<path d="M405 351 Q500.0 271.0 595 351" fill="none" stroke="var(--ink-2)" stroke-width="1.2"/><path d="M595 351 L587.7 348.8 L591.6 344.2 Z" fill="var(--ink-2)"/><rect x="461.8" y="292.0" width="76.4" height="16" fill="var(--panel)"/><text x="500.0" y="300.0" font-size="12" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">&quot;*&quot; | &quot;/&quot;</text>
+<path d="M595 359 Q500.0 439.0 405 359" fill="none" stroke="var(--ink-2)" stroke-width="1.2"/><path d="M405 359 L412.3 361.2 L408.4 365.8 Z" fill="var(--ink-2)"/><rect x="473.2" y="404.0" width="53.6" height="16" fill="var(--panel)"/><text x="500.0" y="412.0" font-size="12" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">factor</text>
+<text x="70" y="500" font-size="13" fill="var(--ink-2)" text-anchor="end" dominant-baseline="central" class="serif">factor</text>
+<line x1="106" y1="500" x2="141" y2="500" stroke="var(--ink-2)" stroke-width="1.2"/><path d="M143 500 L136 496.5 L136 503.5 Z" fill="var(--ink-2)"/>
+<circle cx="150" cy="500" r="6" fill="var(--syn)"/>
+<circle cx="600" cy="500" r="6" fill="var(--sem)"/>
+<circle cx="300" cy="555" r="6" fill="var(--ink-2)"/>
+<circle cx="460" cy="555" r="6" fill="var(--ink-2)"/>
+<path d="M156 497 Q375.0 393.0 594 497" fill="none" stroke="var(--ink-2)" stroke-width="1.2"/><path d="M594 497 L586.4 496.7 L589.0 491.3 Z" fill="var(--ink-2)"/><rect x="344.4" y="426.0" width="61.2" height="16" fill="var(--panel)"/><text x="375.0" y="434.0" font-size="12" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">literal</text>
+<path d="M156 500 Q375.0 464.0 594 500" fill="none" stroke="var(--ink-2)" stroke-width="1.2"/><path d="M594 500 L586.6 501.8 L587.6 495.9 Z" fill="var(--ink-2)"/><rect x="333.0" y="463.0" width="84.0" height="16" fill="var(--panel)"/><text x="375.0" y="471.0" font-size="12" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">identifier</text>
+<path d="M154 504 Q224.0 528.5 294 553" fill="none" stroke="var(--ink-2)" stroke-width="1.2"/><path d="M294 553 L286.4 553.5 L288.4 547.9 Z" fill="var(--ink-2)"/><rect x="208.6" y="533.5" width="30.8" height="16" fill="var(--panel)"/><text x="224.0" y="541.5" font-size="12" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">&quot;(&quot;</text>
+<path d="M306 555 Q380.0 555.0 454 555" fill="none" stroke="var(--ink-2)" stroke-width="1.2"/><path d="M454 555 L447.0 558.0 L447.0 552.0 Z" fill="var(--ink-2)"/><rect x="338.0" y="560.0" width="84.0" height="16" fill="var(--panel)"/><text x="380.0" y="568.0" font-size="12" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">expression</text>
+<path d="M466 553 Q531.0 528.5 596 504" fill="none" stroke="var(--ink-2)" stroke-width="1.2"/><path d="M596 504 L590.5 509.3 L588.4 503.7 Z" fill="var(--ink-2)"/><rect x="515.6" y="533.5" width="30.8" height="16" fill="var(--panel)"/><text x="531.0" y="541.5" font-size="12" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">&quot;)&quot;</text>
+<text x="400" y="592" font-size="11" fill="var(--muted)" text-anchor="middle" dominant-baseline="central" class="serif">accepting states in blue · the machine for factor calls the one for expression</text>
+<text x="880" y="142" font-size="14" fill="var(--syn)" text-anchor="middle" dominant-baseline="central" class="serif">pushdown automaton</text>
+<text x="880" y="160" font-size="12" fill="var(--muted)" text-anchor="middle" dominant-baseline="central" class="serif">stack</text>
+<rect x="800" y="180" width="160" height="46" fill="none" stroke="var(--line)" stroke-width="1.2"/><text x="880" y="203" font-size="13" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">expression</text>
+<rect x="800" y="226" width="160" height="46" fill="none" stroke="var(--line)" stroke-width="1.2"/><text x="880" y="249" font-size="13" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">term</text>
+<rect x="800" y="272" width="160" height="46" fill="none" stroke="var(--line)" stroke-width="1.2"/><text x="880" y="295" font-size="13" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">factor</text>
+<rect x="800" y="318" width="160" height="46" fill="none" stroke="var(--line)" stroke-width="1.2"/><text x="880" y="341" font-size="13" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">expression</text>
+<rect x="800" y="364" width="160" height="46" fill="none" stroke="var(--line)" stroke-width="1.2"/><text x="880" y="387" font-size="13" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">term</text>
+<rect x="800" y="410" width="160" height="46" fill="none" stroke="var(--line)" stroke-width="1.2"/><text x="880" y="433" font-size="13" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">⋮</text>
+<line x1="880" y1="470" x2="880" y2="520" stroke="var(--syn)" stroke-width="1.2"/><path d="M880 524 L876 514 L884 514 Z" fill="var(--syn)"/>
+<text x="880" y="542" font-size="11" fill="var(--muted)" text-anchor="middle" dominant-baseline="central" class="serif">grows with the nesting</text>
+<text x="880" y="562" font-size="11" fill="var(--muted)" text-anchor="middle" dominant-baseline="central" class="serif">of parentheses</text>
+</svg>

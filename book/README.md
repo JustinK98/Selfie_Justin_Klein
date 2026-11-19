@@ -1,4 +1,4 @@
-# Elementary Computer Science: From Bits and Bytes to the Universality of Computing
+# What is Intelligence? Discovering Unproven Truth
 
 ### by Christoph Kirsch
 
@@ -16,52 +16,66 @@ The programming language C\* in which selfie is written is a tiny subset of the 
 
 1. [Introduction](#introduction)
 
+**Part I: Finite**
+
 2. [Selfie](#selfie)
+   1. [Recommended Readings 1](#recommended-readings-1)
 
-   1. [Recommended Readings](#recommended-readings-1)
+3. [Size](#size)
+   1. [Orders of Magnitude](#orders-of-magnitude)
+   2. [Bits](#bits)
+   3. [Numbers](#numbers)
+   4. [Boolean Algebra](#boolean-algebra)
+   5. [Negative Numbers](#negative-numbers)
+   6. [Integers](#integers)
+   7. [Overflows](#overflows)
+   8. [Characters](#characters)
+   9. [Bytes](#bytes)
+   10. [Memory](#memory)
+   11. [Text](#text)
+   12. [Files](#files)
+   13. [Images](#images)
+   14. [Video](#video)
+   15. [Audio](#audio)
+   16. [Code](#code)
+   17. [Apps 1](#apps-1)
+   18. [Life 1](#life-1)
+   19. [Recommended Readings 2](#recommended-readings-2)
 
-3. [Language](#language)
+**Part II: Countable**
 
+4. [Notation](#notation)
    1. [Programming Language C\*](#programming-language-c)
    2. [RISC-U Machine Code](#risc-u-machine-code)
    3. [EBNF Grammar](#ebnf-grammar)
-   4. [Recommended Readings](#recommended-readings-2)
-
-4. [Information](#information)
-
-   1. [Bits](#bits)
-   2. [Numbers](#numbers)
-   3. [Boolean Algebra](#boolean-algebra)
-   4. [Negative Numbers](#negative-numbers)
-   5. [Integers](#integers)
-   6. [Overflows](#overflows)
-   7. [Characters](#characters)
-   8. [Bytes](#bytes)
-   9. [Memory](#memory)
-   10. [Text](#text)
-   11. [Files](#files)
-   12. [Images](#images)
-   13. [Video](#video)
-   14. [Audio](#audio)
-   15. [Code](#code)
-   16. [Apps](#apps-1)
-   17. [Life](#life-1)
-   18. [Recommended Readings](#recommended-readings-3)
+   4. [Recommended Readings 3](#recommended-readings-3)
 
 5. [Machine](#machine)
-
    1. [Model](#model)
    2. [Processor](#processor)
-   3. [Memory](#memory-1)
+   3. [Memory](#memory)
    4. [Input/Output](#inputoutput)
    5. [Instructions](#instructions)
    6. [Emulation](#emulation)
    7. [Performance](#performance)
-   8. [Life](#life-2)
-   9. [Recommended Readings](#recommended-readings-4)
+   8. [Life 2](#life-2)
+   9. [Recommended Readings 4](#recommended-readings-4)
 
-6. [Programming](#programming)
+**Part III: Uncountable**
 
+6. [Meaning](#meaning)
+   1. [Counting Without Numbers](#counting-without-numbers)
+   2. [What We Want to Talk About Is Not](#what-we-want-to-talk-about-is-not)
+   3. [The Result Everything Hangs On](#the-result-everything-hangs-on)
+   4. [Syntax and Semantics](#syntax-and-semantics)
+   5. [Truths With No Proof](#truths-with-no-proof)
+   6. [The Machine, and What It Cannot Decide](#the-machine-and-what-it-cannot-decide)
+   7. [Sets of Programs](#sets-of-programs)
+   8. [Interlude: No Text Contains Its Own Application](#interlude-no-text-contains-its-own-application)
+   9. [One Idea, Sixty Years, Six Theorems](#one-idea-sixty-years-six-theorems)
+   10. [Recommended Readings 5](#recommended-readings-5)
+
+7. [Programming](#programming)
    1. [Literals](#literals)
    2. [Variables](#variables)
    3. [Expressions](#expressions)
@@ -71,67 +85,111 @@ The programming language C\* in which selfie is written is a tiny subset of the 
    7. [Conditionals](#conditionals)
    8. [Procedures](#procedures)
    9. [Libraries](#libraries)
-   10. [Apps](#apps-2)
-   11. [Life](#life-3)
-   12. [Recommended Readings](#recommended-readings-5)
+   10. [Apps 2](#apps-2)
+   11. [Life 3](#life-3)
+   12. [Recommended Readings 6](#recommended-readings-6)
 
-7. [Computing](#computing)
-
+8. [Computing](#computing)
    1. [Virtual Machines](#virtual-machines)
    2. [Virtual Memory](#virtual-memory)
    3. [Time-Sharing](#time-sharing)
    4. [Self-Reference](#self-reference)
    5. [Concurrency](#concurrency)
    6. [Runtime Systems](#runtime-systems)
-   7. [Universality of Computing](#universality-of-computing)
-   8. [Life](#life-4)
-   9. [Recommended Readings](#recommended-readings-6)
+   7. [Recommended Readings 7](#recommended-readings-7)
 
-8. [Glossary](#glossary)
+**Part IV: Cost**
+
+9. [Cost](#cost)
+   1. [Decidable Is Not Doable](#decidable-is-not-doable)
+   2. [Hard to Find, Easy to Check](#hard-to-find-easy-to-check)
+   3. [Propositional Logic and SAT](#propositional-logic-and-sat)
+   4. [How Modern SAT Solvers Work](#how-modern-sat-solvers-work)
+   5. [From Machine Words to Formulas](#from-machine-words-to-formulas)
+   6. [Models of Machines](#models-of-machines)
+   7. [Every Step That Forgets Costs Energy](#every-step-that-forgets-costs-energy)
+   8. [A Language Without a Metric Is Decoration](#a-language-without-a-metric-is-decoration)
+   9. [Recommended Readings 8](#recommended-readings-8)
+
+**Part V: Machines**
+
+10. [Machines](#machines)
+   1. [What a Large Language Model Is](#what-a-large-language-model-is)
+   2. [A Hallucination Is a Proof-Shaped Object That Is Not True](#a-hallucination-is-a-proof-shaped-object-that-is-not-true)
+   3. [World Models](#world-models)
+   4. [The Loops Are Already Closed](#the-loops-are-already-closed)
+   5. [The Gate](#the-gate)
+   6. [Generation Got Cheap, Verification Did Not](#generation-got-cheap-verification-did-not)
+   7. [Recommended Readings 9](#recommended-readings-9)
+
+**Part VI: Intelligence**
+
+11. [Intelligence](#intelligence)
+   1. [Everywhere](#everywhere)
+   2. [The Question, Replaced](#the-question-replaced)
+   3. [So, What Is Intelligence?](#so-what-is-intelligence)
+   4. [Life 4](#life-4)
+   5. [Recommended Readings 10](#recommended-readings-10)
+
+12. [Glossary](#glossary)
 
 ## Introduction
 
-Computer science is a mystery to so many and yet more and more people use computers every day in one form or another. There are increasingly many people with all kinds of backgrounds other than computer science that may even code every day in one way or another. At schools, colleges, universities, and companies around the world there is hardly anyone left who is not confronted with the machine and its code. But even for people just using the machine in their hands, on their desks, and in the cloud there is often that unsatisfactory experience of not understanding what is really going on. This book will empower you to turn your smartphone, tablet, and laptop into what they are supposed to be: the most fascinating and powerful tools ever created rather than the seemingly unavoidable nightmare of so many people, amateurs and professionals alike.
+Computer science is a mystery to so many and yet more and more people use computers every day in one form or another. There are increasingly many people with all kinds of backgrounds other than computer science that may even code every day in one way or another. At schools, colleges, universities, and companies around the world there is hardly anyone left who is not confronted with the machine and its code. And now the machine talks back. But even for people just using the machine in their hands, on their desks, and in the cloud, and chatting with it, there is often that unsatisfactory experience of not understanding what is really going on. This book will empower you to turn your smartphone, tablet, and laptop into what they are supposed to be: the most fascinating and powerful tools ever created rather than the seemingly unavoidable nightmare of so many people, amateurs and professionals alike.
 
-We would like to emphasize that the book is not about how to use any particular device such as a smartphone or an office app such as Word or Excel. There are plenty of books about that. Also, the book is not just about developing code. The goal here is more ambitious than that and you will be challenged accordingly. The idea is to explain the absolute basics of computer science in order to develop a fundamental understanding of what software is and how it works in general on any hardware. Developing code is just one part of that. In fact, understanding the basics enables you to learn *any* programming language you like, not just the one we use here, ultimately allowing you to make informed decisions about computers and solve whatever computer problem comes along. The key challenge in doing so is to have you understand that everything can in principle be automated by a computer but only by breaking down the solution of a problem into the tiniest steps that a mindless machine can follow. Laying out even the most obvious parts of a solution is in fact what computer scientists do. Seeing that will make you sharpen your mind considerably and even change the way you think.
+> The question
+
+The title of this book is a question, and I am going to answer it on the first page, so that you know where we are going, and then spend the rest of the book earning the answer. Intelligence is developing new formal languages, or at least new properties in existing ones, which requires discovering and understanding promising *unproven* truth. New languages and properties let us ask new questions about that truth, and then answer them in proofs. Forever. If that sounds abstract, it is, for now. By the end of the book every word in it will have a precise meaning and a runnable example, and the question everyone actually asks, whether the machines that talk are intelligent, will have been replaced by better questions that you can answer yourself.
+
+The purpose of the book, in one sentence, is a deep understanding of the basic principles of computer science, deep enough to position generative AI, and whatever comes next, properly. The principles were true before this technology arrived and will still be true after whatever replaces it. That is why they are worth a book, and why the book is not about any particular machine, product, or year.
+
+> The axis
+
+The whole argument runs along one line, and it helps to see it before we start. On the left is the small: a bit, one distinction, this rather than that. Then the vast: a few dozen bytes have more states than the universe has atoms, and your phone has incomparably more than that, so no test of a machine will ever have seen more than a vanishing fraction of what it can do. Then a wall, and past the wall, endlessness comes in two sizes. Everything you can write down, every program, proof, sentence, and model, is countable: it can be listed. What you mean by it, what a program does, what a sentence says, whether something is true, is not. There are incomparably more meanings than notations, and that single fact, proved by Georg Cantor in 1891 with an argument three lines long, is behind everything in this book: why there are truths with no proof, why no system can certify itself, why no program can decide what programs do, why some decidable questions are unaffordable anyway, and why a machine trained on notation alone can produce a perfect-looking answer that is not true. The distinction between *notation* and *meaning*, between *syntax* and *semantics*, between *proof* and *truth*, is the microscope of this book, and computer science is where it was ground most sharply, because a machine does exactly what the marks say and nothing else.
+
+We would like to emphasize that the book is not about how to use any particular device such as a smartphone or an office app such as Word or Excel, and it is not about how to prompt a chat bot. There are plenty of books about that. Also, the book is not just about developing code. The goal here is more ambitious than that and you will be challenged accordingly. The idea is to explain the absolute basics of computer science in order to develop a fundamental understanding of what software is and how it works in general on any hardware, and of what it can and cannot do, in principle and in practice. Developing code is just one part of that. In fact, understanding the basics enables you to learn *any* programming language you like, not just the one we use here, ultimately allowing you to make informed decisions about computers and solve whatever computer problem comes along. The key challenge in doing so is to have you understand that everything can in principle be automated by a computer but only by breaking down the solution of a problem into the tiniest steps that a mindless machine can follow. Laying out even the most obvious parts of a solution is in fact what computer scientists do. Seeing that will make you sharpen your mind considerably and even change the way you think.
 
 Think of this book as an introduction to *elementary computer science* similar to *elementary arithmetic* taught in primary and secondary school. The vision is to have you look at what you know about numbers, geometry, and algebra from the perspective of a mindless machine. If you know how to add two numbers, how to measure the distance between two points, and what a variable and an equation is, you have all what it takes to understand how a computer works and what software is. Developing a curriculum of elementary computer science suitable for upper secondary school and above is nevertheless still work in progress and this book is just one attempt to do so. It will take a lot more time to make elementary computer science as developed and properly taught as elementary arithmetic but it will eventually happen.
 
 While a book about elementary computer science may sound appealing it actually requires commitment to understand the material even though we tried very hard to simplify everything as much as possible. The reason is that computers and software are so expressive that it is unlikely that any other computational machine in the future will be more expressive. Anything that can be computed can be computed now, provided you have enough time, space (as in memory), and energy. That power comes with a level of complexity that is unavoidable but a lot of fun to explore. Computer science is challenging like other natural sciences. In order to study and understand it you cannot just look at software or hardware and get it. No, its true nature is too complex for that. You need tools to see what is going on, like a microscope, except that here the microscope is a particular way to think!
 
+> Selfie
+
 This book is based on the [Selfie Project](https://selfie.cs.uni-salzburg.at), an educational software system that has grown out of many years of teaching undergraduate and graduate classes in computer science. The key observation is that understanding computer science and software in particular can only be achieved by understanding how software translates all the way down to the machine and then does whatever we want it to do. Selfie shows how this works which may sound difficult but can actually be done in a systematic and well-founded fashion with a strong focus on basic principles. Understanding selfie gives you the microscope you need to understand elementary computer science.
 
 Selfie is *self-referential* software that translates software including *itself* to code that can be *run* or, as computer scientists say, *executed* by a computer. Selfie can even mimic the very computer that can execute the code of selfie. This means selfie cannot only translate itself but also execute its own translation to translate itself again and so on. By now your mind might be spinning but you at least know why selfie is called selfie.
 
-Why is the *self* so important? Because it shows how meaning is created systematically on a machine. Selfie is software written in some programming language. However, selfie also defines the meaning of that language which implies that selfie defines its own meaning. This is very similar to an English dictionary written in English. The only difference is that selfie defines meaning *formally* in such a way that a machine can run selfie and thus any software written in the language in which selfie is written. Understanding that will completely change what you think of computer science and possibly many other things in life.
+Why is the *self* so important? Because it shows how meaning is created systematically on a machine. Selfie is software written in some programming language. However, selfie also defines the meaning of that language which implies that selfie defines its own meaning. This is very similar to an English dictionary written in English. The only difference is that selfie defines meaning *formally* in such a way that a machine can run selfie and thus any software written in the language in which selfie is written. And here is the twist that makes selfie the right specimen for the question in the title. Self-reference is exactly the instrument with which Cantor, Gödel, and Turing found the limits of notation. A system that can describe itself can be turned on itself, and when it is, it shows you precisely what it cannot do. Selfie is those limits, in a form you can run in a terminal. Understanding that will completely change what you think of computer science and possibly many other things in life.
 
-After introducing selfie, we provide a preview of the kind of *language* we use later in the book. The bad news is that there are three different, in fact *formal languages* that you need to learn. The good news is that all three are widely used in practice and yet so simple that it is difficult to make them any simpler without loosing essential features or making them irrelevant in the real world. The first language is the *programming language* in which selfie is written. It is a tiny subset of the programming language C. The second language is the *machine language* in which the code that selfie translates to and executes is written. It is a tiny subset of 64-bit RISC-V. The third language is a formal language or *grammar* called EBNF for describing how code is supposed to look like. EBNF is incredibly cool because it can even describe how EBNF itself is supposed to look like. This is a beautiful example of self-reference that you can actually understand even without any further background in computer science.
+> The route
 
-At this point you should be ready to do a bit of groundwork. We begin by emphasizing the fact that everything happening on a computer, phone, or tablet is encoded in bits, and nothing else. The only reason why these machines are so powerful and in fact computationally universal is the enormous amount of bits they can store and the speed and energy efficiency at which they can manipulate these bits using nothing but elementary arithmetic and logic. This insight is key to understanding information technology and therefore emphasized throughout the book. We present examples of how every day *information* such as numbers, characters, text, files, images, video, audio, and even code and apps are all encoded in just bits. We also show how those bits are later decoded back to their original form making them accessible to humans again.
+The book has six parts, and they walk the axis from left to right. Part I is about the *finite*. After introducing selfie, we emphasize the fact that everything happening on a computer, phone, or tablet is encoded in bits, and nothing else. We present examples of how everyday *information* such as numbers, characters, text, files, images, video, audio, and even code and apps are all encoded in just bits, and we practice reading the sizes involved, because every later claim in the book is a claim about how big something is.
 
-The next topic is a simple model of a *machine* that represents the core of virtually any general-purpose computing device available today. The model is in fact a simplified version of a fully realistic 64-bit RISC-V machine. We developed the model during the course of teaching undergraduate students for two decades. The goal is to enable you to develop an intuition of how computers work on the level of bits, which may at first be quite tedious but is nevertheless intellectually straightforward and worth it. Once you get the machine everything else falls into place! And you might even be surprised how fundamentally simple the machine is. Most of the complexity of modern computing devices is due to performance optimizations which we deliberately leave out to keep things accessible. Instead we focus on developing an early intuition on what code and data is, what the difference is, and the fact that both are anyway encoded in just bits. This chapter also includes a simple model of digital memory and exposes you to fundamental properties that have direct counterparts in the real world, as it is often the case with computer science, such as where to store information and how to find it again later.
+Part II is about the *countable*, that is, about notation. There are three different, in fact *formal languages* that you need to learn. The good news is that all three are widely used in practice and yet so simple that it is difficult to make them any simpler without losing essential features. The first is the *programming language* in which selfie is written, a tiny subset of C. The second is the *machine language* in which the code that selfie translates to and executes is written, a tiny subset of 64-bit RISC-V. The third is a formal language or *grammar* called EBNF for describing how code is supposed to look like, which can even describe how EBNF itself is supposed to look like. Then comes a simple model of a *machine* that represents the core of virtually any general-purpose computing device available today, developed during two decades of teaching, and the emulator in selfie that makes it run. Once you get the machine everything else falls into place! And you might even be surprised how fundamentally simple the machine is.
 
-With the machine model in mind, you will appreciate the fact that developing software directly on the machine is possible but too cumbersome and errorprone. It is therefore time to study the notion of *programming* a computer in high-level programming languages. Similar to the machine model, we introduce our simple yet realistic programming language that we also developed during years of teaching. The idea is to walk you through each element of the language, explain what its purpose is and what it means intuitively, and then show how it translates to machine code. The challenge is to maintain two different perspectives in your mind simultaneously: the human perspective, that is, your understanding of what a language element means, and the machine's perspective, that is, what the machine actually makes of each element.
+Part III is about the *uncountable*, that is, about meaning, and it is the heart of the book. Its first chapter proves that there are incomparably more meanings than notations, and follows that fact to Gödel's truths without proof, to Turing's machine that can be any machine and the question no machine can answer, and to Rice's theorem that every interesting question about what a program does is undecidable. Then, knowing exactly what cannot be done, we build the two pieces of software that construct meaning on a machine anyway. *Programming* walks you through each element of our programming language, explains what it means intuitively, shows how it translates to machine code, and shows how the translation itself is implemented in that very language. *Computing* shows how software can create any computational platform, including the one it runs on, through *virtualization*, which is the concept behind cloud computing and another form of self-reference that is fundamental in computer science, and the one that makes operating systems hard.
 
-Here we depart from the mainstream in programming language education which typically ignores the machine's perspective, assuming that it is unnecessary and too difficult and time-consuming to understand it. While this may be true for full-fledged programming languages, we leverage the simplicity of our language and take you even further by demonstrating how the translation itself is implemented in our language. Formalizing the process of translation shows you, probably for the first time, what is actually going on when reading and understanding a non-trivial formalism. Here there are plenty of opportunities to point out fundamental questions such as how long and how much memory and energy it takes to solve a problem and whether a problem can be solved at all. The latter, for example, explains why computers sometime become unresponsive for unpredictable amounts of time driving their users mad.
+Part IV is about *cost*. Even a decidable question may have an answer you will never receive, and this part explains which questions those are, why the hard ones are all the same question in disguise, how modern solvers answer many of them anyway, and what it costs in energy, by a law of physics. It is also where the book does *formal methods* at the undergraduate level: a tool built on selfie turns a program into a logical formula, a solver finds the input that makes the program fail, and the approximation that Rice's theorem forces is visible and chosen.
 
-Even the most convenient high-level programming languages are by far not enough to enable software developers build the most complex systems ever created by humans. Like all engineers they need *tools* to do it. Software development tools are interesting because their design explains a lot about what software is. In fact, the tools define the semantics of a programming language, that is, what a program written in a programming language actually means. Thus exposing you to the design of the tools is key to showing how meaning is given to code, at least in principle. There are fascinating analogies in the real world such as the self-referential paradox that an English dictionary defines the meaning of English using English. The same is true with software development tools. They are usually written in the programming language to which they give meaning. The difference to English though is that there is no apparent paradox here. Showing how that works is our goal. You will then start asking questions about computers you would have never been able to ask before. We envision the outcome to be new insights into what is possible and what is not, enabling you to develop more confidence when it comes to assessing new but often overpromised technologies such as artificial intelligence and self-driving cars.
+Part V is about the *machines* that talk. It describes what a large language model mechanically is, in the terms of the earlier parts, and reads each part against it: the size of its state space, the notation it is trained on, the meaning it cannot reach, and the cost it pays. Nothing in it is a verdict. Everything in it is an instance of a theorem.
 
-Once you have seen the basic principles of encoding *information* in bits, running actual code on a simple yet representative *machine*, and *programming* that machine in a simple yet realistic programming language, we are ready to embark on the probably single most important achievement of computer science so far: *computing* as commodity independent of any particular hardware and available to anyone with a network connection. In other words, computing has become a utility similar to electricity and water. Cloud computing and, in the near future, edge computing creates enormous potential, just like the reliable availability of power and water. There is no need anymore to operate your own hardware other than client machines such as your smartphone. As long as you have a network connection, any form of computational platform is available to you, typically without being aware of what is involved, let alone understanding how it works. The key enabling technology is *virtualization* which is a concept whose understanding is elusive even to many computer science students. However, we developed a way to teach virtualization in simple terms accessible to anyone based on a combination of our machine model, programming language, and tool set. The idea is to demonstrate how software can create any computational platform, including the one it runs on, very efficiently. This is another form of self-reference that is fundamental in computer science. Seeing that enables you to grasp the full extent of the universality of computing.
+Part VI answers the question in the title, and shows that none of the argument was about computers.
 
-You might ask why it makes any difference if you understand computing or not. After all, most people know how to use smartphones and drive cars without understanding how they work. The reason why it makes in fact a big difference is that computing is universal in the sense that any computer can in principle do what any other computer can do, including computers that do not exist yet. Computers are universal machines that are likely able to compute, already now, everything that can ever be computed, given enough time, space, and energy. Hence knowing at least the basic principles of computing impacts virtually everything you do. Many people might say they were never good in, say, math but can still function properly in modern society. However, most people know that a million dollars is quite a bit more than a thousand dollars yet without being aware that their math education, as painful as it might have been, told them that. The computer science education provided here might be even more painful because we are only at the beginning of figuring out what should be taught and how, and what is better be left out. We all just need to try, probably fail to some extent, but then learn from our mistakes and improve.
+> Prerequisites
 
-The recent advent of chat bots and other tools based on generative AI is often seen as a challenge to higher education and modern society in general. Some even claim the end of the world as we know it is near. Yet the common narrative about the seemingly unlimited potential of generative AI is just another example of how little the nature of information is understood, or ignored for whatever reason, economical or otherwise. How can anyone remain motivated to study something instrinsically complex if machines are about to take over? Well, generative AI is no more intelligent than the user that interacts with it. It is a mirror of your own intelligence, just more polished than others, which is why so many are fascinated by it, often not realizing that they are just fascinated by themselves. If you ask the wrong question you get nothing. If you ask the right question you might get something. However, knowing what to ask is not easy. It requires not just knowledge of a subject but true understanding through real training and that is exactly what we are trying to do here.
-
-This book presents material adequate for senior high-school and freshman/sophomore college students and may be used as textbook by teachers and professors with a background in computer science. The prerequisites for following the material are an understanding of elementary arithmetic (addition, subtraction, multiplication, and division of whole numbers), elementary geometry (one- and two-dimensional shapes), and elementary algebra (variables, algebraic equations). The prerequisites are anyway revisited in the book.
+This book presents material adequate for senior high-school and freshman/sophomore college students and may be used as textbook by teachers and professors with a background in computer science. It is the textbook of a first-semester introduction to computer science, and the reference for the compiler and systems classes that follow it. The prerequisites for following the material are an understanding of elementary arithmetic (addition, subtraction, multiplication, and division of whole numbers), elementary geometry (one- and two-dimensional shapes), and elementary algebra (variables, algebraic equations). The prerequisites are anyway revisited in the book.
 
 > History and future of computing
 
-Computer science is a young field, around one hundred years old. The theoretical foundations were developed first, in the 1930s, long before digital computers became available. Some work that also influenced mathematics was done even earlier, all the way back in the 1870s. Digital computers and networks, programming languages, operating systems, and software development tools all started showing up, first in very early form in the 1950s, and then in increasingly advanced variations in the following decades. The latest technology, in particular the Internet, smartphones, and cloud computing have only been around in widely accessible form since the turn of the century. In this book, we focus on modern versions of machine architecture, programming language, operating systems and software development technology that has originally been developed in the 1960s and 1970s. The basic principles behind that technology have not changed since then. Moreover, the technology we focus on here is still widely used. At the end of the book, we take all we learned and go back in time to the 1930s and even the 1870s, closing the loop from modern computer science to the origins of computing, and from there to the future.
+Computer science is a young field, around one hundred years old. The theoretical foundations were developed first, in the 1930s, long before digital computers became available. Some work that also influenced mathematics was done even earlier, all the way back in the 1870s. Digital computers and networks, programming languages, operating systems, and software development tools all started showing up, first in very early form in the 1950s, and then in increasingly advanced variations in the following decades. The latest technology, in particular the Internet, smartphones, cloud computing, and now generative AI, has only been around in widely accessible form since the turn of the century. In this book, we focus on modern versions of machine architecture, programming language, operating systems, and software development technology that has originally been developed in the 1960s and 1970s. The basic principles behind that technology have not changed since then, and the technology is still widely used. The first edition of this book went back in time to the 1930s and the 1870s only at the very end. This edition starts there, in the third part, and keeps returning, because those results turned out to be the ones that say the most about the newest technology.
 
 > To boldly go where no one has gone before!
 
-Before we begin, let me tell you how I stayed motivated when writing this book which was probably as hard for me as it is for you to read it all the way to the end. I picked some ideal that I wanted to be. Like many teenage boys I wanted to be an astronaut when I was young. Who do you want to be? Take your pick. When you are done reading all the way to the end, just exchange your pick with the ideal of a person that actually finished this book. Making it through the selfie, language, and information chapters is going to be increasingly challenging but still relatively easy compared to what comes after that. It is like doing the groundwork necessary to become, say, a candidate for astronaut training. The machine chapter after that is what probably happens when you start your training. It is not what you expected and it is brutal. In your mind, you will curse your coach. All those technical details that do not seem to get you anywhere. Why do I have to do this anyway? But then you graduate and they put you on a moon rocket. This is the programming chapter. I hope you are smiling by now. A good sense of humor is the only way. The programming chapter is not easy to read but is less painful than the machine chapter and a lot more rewarding yet you cannot understand it without making it through the machine chapter first. When you are done with the programming chapter you made it to the moon. This is the reward! Then just rest and reflect on what you have achieved. But then the good news comes in and they put you on another rocket to the stars. This is the computing chapter. Reading and actually understanding that chapter is what you have been waiting for all your life but could not get there without first going to the moon. It takes you to a level that you could not possibly have imagined. It will give you *your very own ideas* that no one else had before. To boldly go where no one has gone before!
+Before we begin, let me tell you how I stayed motivated when writing this book which was probably as hard for me as it is for you to read it all the way to the end. I picked some ideal that I wanted to be. Like many teenage boys I wanted to be an astronaut when I was young. Who do you want to be? Take your pick. When you are done reading all the way to the end, just exchange your pick with the ideal of a person that actually finished this book. Making it through the first two parts, selfie, size, and notation, is going to be increasingly challenging but still relatively easy compared to what comes after that. It is like doing the groundwork necessary to become, say, a candidate for astronaut training. The machine chapter at the end of Part II is what probably happens when you start your training. It is not what you expected and it is brutal. In your mind, you will curse your coach. All those technical details that do not seem to get you anywhere. Why do I have to do this anyway? Then, in the meaning chapter, they show you the stars for the first time, and tell you which of them can never be reached, and why that is the good news. Then you graduate and they put you on a moon rocket. This is the programming chapter. I hope you are smiling by now. A good sense of humor is the only way. The programming chapter is not easy to read but is less painful than the machine chapter and a lot more rewarding yet you cannot understand it without making it through the machine chapter first. When you are done with the programming chapter you made it to the moon. This is the reward! Then just rest and reflect on what you have achieved. But then the good news comes in and they put you on another rocket to the stars. This is the computing chapter. Reading and actually understanding that chapter is what you have been waiting for all your life but could not get there without first going to the moon. It takes you to a level that you could not possibly have imagined. The last three parts are the journey home, with the stars behind you: what the trip cost, what the new machines can and cannot do, and what all of it means. It will give you *your very own ideas* that no one else had before. To boldly go where no one has gone before!
+
+## Part I: Finite
+
+Everything in this part can be counted, and counted to the end. A bit is one distinction, and a few billion of them are what your phone is made of. The point of this part is to make the sizes involved readable, because every later claim in the book is a claim about where something sits on one line: small, vast, then two kinds of endless. We start with selfie, the system that is the specimen of the whole book, and then with the bits it is made of.
 
 ## Selfie
 
@@ -233,6 +291,10 @@ Why is all this more than just a strange game played by computer science wizards
 
 The machine and its code is universal just like organic life and its DNA. This is also the reason why understanding computer science, just like life science, takes effort. You are about to learn something that is here to stay forever. What are a few months reading and understanding this book compared to that? Here is something that may help you in the process. Students who finally understood selfie often tell me how happy they were when they finally saw how everything fits together. For some it was a life changing experience that made them even change their major to computer science!
 
+> Three commands, three theorems
+
+Here is what the three commands of selfie are going to mean by the end of this book, so that you can watch for it. Self-compilation is a *fixed point*: a compiler compiles its own source and gets the same bytes twice. That proves that the compiler agrees with itself, and the meaning chapter shows, with Gödel's second theorem and Ken Thompson's compiler, why that is the most any system can ever prove about itself. Self-execution is the *universal machine*: an emulator that runs every program written for its machine, including itself, which is Turing's machine that can be any machine, in a page of C\* per instruction group. And self-hosting is the *bootstrap problem*: a hypervisor that isolates the machines it hosts must itself be isolated from them, which is the second incompleteness theorem as engineering, and the reason operating systems are hard. Three commands you can type, and three limits you can run into. That is why selfie is the specimen of this book.
+
 > Take a Selfie!
 
 Let us personalize your copy of selfie! Load the source code `selfie.c` into your editor and scroll all the way down to the end of the file. Then, right before the line `exit_code = selfie(0);` insert the following code but with my name replaced by yours:
@@ -275,814 +337,7 @@ This book is seminal work in multiple volumes that provides comprehensive covera
 
 This book is mostly non-technical but still seminal work on fundamental concepts in mathematics and computer science. It uses formal languages and self-reference to explore how meaning is created through seemingly meaningless building blocks. You may want to consider this book to be the second book in your computer science library, and read it during your free time.
 
-## Language
-
-Gödel, Escher, Bach told me a lesson that I still remember after reading the book thirty years ago: the importance of language and the joy that comes with it! And by language I mean *formal* language, not *natural* language like English or German. Understanding the nature of information requires formal language. Once you understand a few of those formal languages you will see their enormous power.
-
-> Formal languages have formal semantics
-
-That power is rooted in a key property: formal languages have *formal* semantics. Their meaning is mathematically precise which enables us to communicate, not just with mindless machines to make them do smart things without understanding anything, but also with each other, understanding everything with mathematical rigor. In fact, once you learn how to express your ideas in formal languages, which includes programming languages but not only, you will change the way you think.
-
-> C\*
-
-We introduce three different formal languages in this book. All three are simple versions of languages used in practice in all kinds of software projects and millions of lines of code. The first language is called C\*, pronounced "C Star". C\* is a tiny subset of the programming language C which is still among the most widely used programming languages in the world. C\* has been developed by us for educational purposes and is the programming language in which selfie is written. Even if you have never written code, C\* is easy to understand. You will learn it here.
-
-> RISC-U
-
-The second language is called RISC-U, pronounced "Risk You". RISC-U is a tiny subset of the machine language RISC-V, pronounced "Risk Five". RISC-V like all machine languages comes in two flavors, *assembly* and *binary*. Assembly code is a textual and thus human-readable form of binary code which can actually be executed by a real processor. Again, RISC-U is so simple that you can easily understand it, even without any prior knowledge in computer science.
-
-> EBNF
-
-The third language is called EBNF which stands for *Extended Backus-Naur Form*. EBNF is a formal language or *grammar* for describing the *syntax* of formal languages. EBNF can even describe its own syntax which is the simplest form of self-reference we see in this book. We use EBNF to define (parts of) the syntax of C\*, RISC-U assembly, and, well, even (all of) EBNF. That gives you the first glimpse of self-reference in a formal language.
-
-In the following, we introduce a few code examples written in C\*, and then show you how some of that code translates to actual RISC-U assembly and even RISC-U binary code. We then show you how EBNF is used to define some of the C\* and RISC-U assembly syntax and finally the EBNF syntax itself.
-
-Most importantly, take your time! We go through almost every detail and motivate everything. In my experience, few people are used to that and have a hard time slowing down to the extent we do that here. However, learning and truly understanding formal languages requires patience and focus. The good news is that you do not have to do that with all formal languages you may need to learn throughout your career. But doing it once, as opposed to never, makes all the difference!
-
-### Programming Language C\*
-
-C\* is a tiny subset of the programming language C. In a nutshell, for readers familiar with basic programming language terminology, C\* features global variable declarations with optional initialization as well as procedures with parameters and local variables. C\* has five statements (assignment, while loop, if-then-else, procedure call, and return) and standard arithmetic (`+`, `-`, `*`, `/`, `%`) and comparison (`==`, `!=`, `<`, `>`, `<=`, `>=`) operators over variables and procedure calls as well as integer, character, and string literals. C\* includes the unary `*` operator for dereferencing pointers hence the name but excludes data types other than `uint64_t` and `uint64_t*` (`int` is bootstrapped to `uint64_t`), bitwise and Boolean operators, and many other features. The C\* grammar is LL(1) with 7 keywords and 22 symbols. Whitespace as well as single-line (`//`) and multi-line (`/*` to `*/`) comments are ignored. For more information see:
-
-[https://github.com/cksystemsteaching/selfie/blob/main/grammar.md](https://github.com/cksystemsteaching/selfie/blob/main/grammar.md)
-
-The following example is C\* code that implements a simple *numerical function* in a *procedure* called `double` for calculating the doubled value of a given *whole number* or *integer* represented by a *formal parameter* `n`:
-
-```c
-int double(int n) {
-  return n + n;
-}
-```
-
-As intended by the designers of the programming language C, and in fact many other programming languages including C\*, the code can be read like a sentence in English: *define* a procedure `double` with a formal parameter `n` as follows. Given an integer value for `n`, return the value to which the *arithmetic expression* `n + n` evaluates. The line `return n + n;` is called a `return` *statement*. However, the difference between C and English is that C code is more succinct and, more importantly, its meaning is precisely defined, as opposed to the meaning of a sentence in English.
-
-First of all, the code needs to be written according to strict syntactic rules. We need to say `int` and `return`, also called *keywords*, exactly as is, and even the parentheses, the braces, and the semicolon need to be where they are. But the code also contains information about how large the value of `n` as well as its doubled value as returned by `double` can ever be. This is done using the `int` keyword which specifies the *range* or *type* of the involved values.
-
-> The range of numerical values on a computer is always finite!
-
-Most importantly, the `double` procedure you see here is not a mathematical function on arbitrarily large numerical values. It is code that instructs a machine to compute the doubled value of whole numbers within a given finite range. This is a big difference!
-
-When I started coding as teenager, I was confronted with lots of these numerical functions written in code. It took me some time to understand why I had to study those, instead of writing code that makes my computer immediately do something more interesting like a game I can talk about with normal people like my parents. If you feel like that, bear with me. We will get there.
-
-The reason why we first look at numerical functions written in code is because such code has an immediate connection to something we all know and understand, at least intuitively: elementary arithmetic! That helps understanding the true meaning of code early on.
-
-So, let us try and use selfie to run the `double` procedure on some actual number, say, `42` also called an *integer literal*. Here is the C\* *program* to do that:
-
-```c
-int double(int n) {
-  return n + n;
-}
-
-int main() {
-  return double(42);
-}
-```
-
-We have prepared that code in a text file called `double.c` in the `examples` folder of the selfie system. So, just type in your terminal:
-
-```bash
-./selfie -c examples/double.c -m 1
-```
-
-Selfie responds with quite a bit of text but just look for `double.c exiting with exit code 84`. That's it! The above code instructs selfie to return the result of `double(42)` which is obviously `84`. The way this works is simple. Each program must contain a procedure called `main` to actually do anything useful. That procedure is always the first to run and everything follows from there. When `main` returns, program execution is finished and whatever `main` returns is shown as *exit code*.
-
-> Procedures may have formal parameters and be called with actual parameters
-
-There are a number of important concepts here. There are *procedure definitions* such as `int double(int n) { ... }` introducing a procedure called `double` with a formal parameter `n` of type `int` and a so-called *return type* `int` to the left of `double` which specifies the type of values the procedure returns. Formal parameters and return type as in `int double(int n)` form what is called the *procedure signature*. The actual code of the procedure is in between curly braces and is called *procedure body*. Similarly, there is a procedure definition for `main` as well. And there are *procedure calls* such as `double(42)` in the `main` procedure invoking the procedure `double` on an *actual parameter* `42`. Note that we may also refer to formal parameters just as *parameters* and to actual parameters as *arguments*.
-
-> Procedures are defined exactly once but may be used in procedure calls many times
-
-Procedure definitions must be uniquely identified, say, by name, as in C\*, but can then be used in procedure calls as many times as you like from anywhere in the code. Makes sense? Okay, then let us try to change the definition or in fact implementation of `double`:
-
-```c
-int double(int n) {
-  return 2 * n;
-}
-```
-
-This version of `double` computes the same value as the previous version of `double`, just using multiplication rather than addition, that is, `2` times `n` or simply `2 * n` rather than `n + n`. We can obviously implement other procedures as well such as a procedure that computes the square value of an integer `n`:
-
-```c
-int square(int n) {
-  return n * n;
-}
-```
-
-In addition to `+` and `*`, C\* also supports the other two *operators* of elementary arithmetic for subtraction and division, denoted `-` and `/`, respectively, as well as remainder, denoted `%`, and parentheses for *grouping* arithmetic expressions to overrule the *precedence* of `*`, `/`, and `%` over `+` and `-`, as well as the *associativity* of `-`, `/`, and `%`. Remember, in elementary arithmetic `1 + 2 * 3` is equal to `1 + (2 * 3)`, not `(1 + 2) * 3`, because `*` has higher precedence than `+`, and `1 - 2 + 3` is equal to `(1 - 2) + 3`, not `1 - (2 + 3)`, because `-` and `+` are *left-associative*. So, we may say something like this:
-
-```c
-int fancy(int n) {
-  return n * (n + 1) - n / 2 + 42;
-}
-```
-
-In C\* and many other programming languages, such arithmetic expressions are standard and widely used in practice. You may want to try a few others and see how selfie responds. Below we show you the exact rules, written in EBNF, for constructing arithmetic expressions.
-
-Let us now experiment with something that goes beyond arithmetic expressions. How about a procedure that returns the larger of two given values? Here is a procedure called `max` that does exactly that:
-
-```c
-int max(int n, int m) {
-  if (n < m)
-  	return m;
-  else
-  	return n;
-}
-```
-
-Again, the code can be read like a sentence in English: define a procedure `max` with two formal parameters `n` and `m` as follows. Given integer values for `n` and `m`, return the value of `m` if the value of `n` is less than the value of `m`. Otherwise, return the value of `n`. This is a *conditional statement*, which in C\* is called an `if` *statement*. The *comparison* or *relational expression* `n < m` is called an `if` *condition* which can evaluate either to *true* or to *false*. The statement `return m` is part of the `if` *body* of the `if` statement while the statement `return n` is part of the `else` *body* of the `if` statement.
-
-> Conditional: if this is true do that else do that
-
-Conditional statements are a powerful concept for controlling program execution. They allow us to make a choice on anything we are interested in and we can use any number of them to form a whole sequence of choices. However, any such sequence must be finite because programs are finite artifacts. But what if we would like our program to do something where, at the time of writing the program, we do not know how much work is involved and in particular how many choices need to be made when running the program? The concept that allows us to do that is called a *loop statement* which is even more powerful than a conditional statement. Here is an example written in C\* featuring a `while` *loop* over a *variable* `c`:
-
-```c
-int count(int n) {
-  int c;
-
-  c = 0;
-
-  while (c < n)
-    c = c + 1;
-
-  return c;
-}
-```
-
-Again, the code can be read like an English sentence: define a procedure `count` with a formal parameter `n` as follows. First, *declare* a variable `c` and then *initialize* the value of `c` to `0`. After that, given an integer value for `n`, if the value of `c` is less than the value of `n`, increment the value of `c` by `1`, and keep doing that until the value of `c` is not less than the value of `n` anymore. When this happens, return the value of `c`.
-
-> Loop: as long as this is true keep doing that
-
-The comparison `c < n` is called a `while` *condition* or *loop condition*. If the condition evaluates to true, the `while` *body* or *loop body*, here `c = c + 1`, is executed once and then the condition is evaluated again, and so on. If the condition evaluates to false, the loop body is not executed, effectively terminating the loop, and instead the statement after the loop, here `return c`, is executed.
-
-> Loops subsume conditionals
-
-Interestingly, loops are strictly more expressive than conditionals. In other words, a program containing conditionals can always be rewritten into a program without conditionals just using loops instead. Those loops will be a bit strange because they will only loop at most once to mimic conditionals properly. The other way around is of course not possible. Loops can in general not be replaced by conditionals. So, why do we have conditionals? Well, just making choices without looping is a common sight in programs and deserves a dedicated language element to make the code more readable but also more efficient. Figuring out that a loop always operates like a conditional is not easy for a machine and even impossible in general.
-
-> Assignment is not equality!
-
-Before we take another look at the `while` loop, let us focus on the statement `c = c + 1` which is called an *assignment*. Here, most importantly, `=` does not denote *equality* in a mathematical sense. Instead, here and in many other circumstances in computer science, especially code, `=` denotes an assignment of a value to a variable. With `c = c + 1` we do not assert equality between `c` and `c + 1`. Instead, we denote the process of assigning to the variable `c` occurring in the *left-hand side* (LHS) of the assignment operator `=` the value to which the arithmetic expression `c + 1` occurring in the *right-hand side* (RHS) of `=` evaluates *before* the assignment is actually done.
-
-In fact, *after* the assignment is done, evaluating `c + 1` again would result in a different value than the value of `c`! This is because `c` also occurs in the expression `c + 1`. But even if it does not, as in the `c = 0` assignment for example, where the value of `c` is actually equal to `0` *after* the assignment is done, an assignment is still a different statement than asserting equality because `c` may very well have a different value than `0` *before* the assignment is done. The difference is sometimes emphasized by using `:=` to denote an assignment instead of just `=`. Unfortunately, however, `=` is standard notation for assignments in many programming languages which is why we stick to using `=`. Equality, on the other hand, is denoted by `==` in many programming languages, so we use `==` to assert or just check equality from now on. In C\*, besides `==`, `<`, and `>`, there are also `!=` for checking *inequality*, `<=` for checking *less-than-or-equal-to*, and `>=` for checking *greater-than-or-equal-to*.
-
-> Imperative programming: do that and then do that
-
-The presence of assignments in a programming language indicates that the language supports a *programming paradigm* called *imperative programming* in which a computer is told what to do in a sequence of statements, especially assignments, that are in a *before-and-after* relationship. Doing so in procedures is a form of imperative programming called *procedural programming*. The `count` procedure is our first example of an imperative and even procedural program.
-
-> Iteration: do that again and again
-
-Moreover, `count` makes a computer solve a problem *iteratively* in a loop which takes more or less time to finish depending on the input of the program. To some extent this is also possible just using conditional statements. However, loops are a different story. They can even loop forever which means that programs with loops may not *terminate* and, as a result, not respond anymore like apps on your smartphone sometimes do.
-
-Thus showing that a program computes the desired result generally requires showing that it computes the result in *finitely* many iterations. That can actually become quite tricky even with proper training. In our case here, however, it is easy to see that `count` does indeed always terminate since the value of `c` is incremented in each iteration of the `while` loop and thus always *eventually*, that is, in finitely many iterations, makes the loop condition `c < n` evaluate to false terminating the loop.
-
-> C\* is computationally universal, also called Turing-complete
-
-Interestingly, the elements of C\* you have seen so far are enough to do anything any other programming language can do. We say that C\* is *computationally universal* or *Turing-complete*. If you take a program written in any other programming language, we can always rewrite it into a program written in C\* that computes exactly the same as the original. It may be cumbersome to do that but it is always possible. Hard to believe but true!
-
-Let us analyze what `count` really does. The procedure effectively returns, well, the value of `n`, after "counting" from `0` to `n`. In other words, `count(n)` implements the *identity* function, at least for `n == 0` and for all *positive* values of `n`, that is, all numbers greater than `0`. Let us ignore *negative* values of `n`, that is, numbers less than `0`, for now. In that case, we could also implement `count` as follows:
-
-```c
-int count(int n) {
-  return n;
-}
-```
-
-So, what is the difference between the two versions of `count`? Well, in terms of functionality there is no difference as long as we ignore negative values of `n`. However, there is a significant difference in *algorithmic complexity* and thus *performance*, that is, the time it takes `count` to finish.
-
-> Algorithmic complexity: how fast runs a program on increasingly larger input?
->
-> Performance: how fast runs a program on a given machine for a given input?
-
-The first version of `count` with the `while` loop can actually become quite slow for large values of `n` whereas the second version always takes the same amount of time independently of the value of `n`. We say that the first version runs in *linear time* in the value of `n`, since it takes as many loop iterations to complete as the value of `n`, while the second version runs in *constant time*. In short, their algorithmic complexity is linear and constant, respectively.
-
-Their performance may nevertheless be similar for small values of `n` because computers can go through a few loop iterations very fast. However, the second version will certainly be noticeably faster than the first version for large values of `n`. Algorithmic complexity is essentially the performance of a program or in fact the *algorithm* implemented by a program as a (unitless) function of the size of the input to the program. It tells you about a performance trend but not actual performance which can only be measured by running the program on some machine and input. We get back to algorithmic complexity and performance in subsequent chapters.
-
-While avoiding linear time here is easy using the second version, it may be more difficult to do so in other circumstances. Here is a code example that runs in linear time in the value of `n` and is not so easy to make faster while producing the same result. It computes the *factorial* of a positive integer `n` iteratively in a loop:
-
-```c
-int factorial(int n) {
-  int f;
-
-  f = 1;
-
-  while (n > 1) {
-    f = f * n;
-
-    n = n - 1;
-  }
-
-  return f;
-}
-```
-
-Remember, the factorial of a positive integer `n` is the product of all positive values less than or equal to `n`, that is, the factorial of `n` is equal to `n * (n - 1) * ... * 2 * 1` for all `n > 0`. For example, the factorial of `4` is equal to `4 * 3 * 2 * 1` which is obviously `24`. The factorial of `1` and even the factorial of `0` are both equal to `1`, the latter by convention.
-
-The above code reads in English as follows: define a procedure `factorial` with a formal parameter `n` as follows. First, declare a variable `f` and then initialize the value of `f` to `1`. Then, given an integer value for `n`, if the value of `n` is greater than `1`, multiply the value of `f` by the value of `n` and then decrement the value of `n` by `1`, and keep doing that until the value of `n` is not greater than `1` anymore. When this happens, return the value of `f`. So, the code actually computes `1 * n * (n - 1) * ... * 2` which is obviously equal to `n * (n - 1) * ... * 2 * 1` due to the *associativity* of multiplication or, in fact here, just because of the special case that `1` is the multiplicative identity. Also, `factorial` always terminates since the value of `n` is decremented in each iteration of the `while` loop and thus always eventually makes the loop condition `n > 1` evaluate to false terminating the loop. In fact, `factorial` therefore does, as promised, run in linear time in the value of `n`. Note that the code also works for `n == 0`.
-
-Now, there is one more thing that is truly remarkable. Instead of computing the factorial iteratively in a loop, we may also compute it *recursively* using code that looks quite different and yet computes exactly the same result as the iterative version:
-
-```c
-int factorial(int n) {
-  if (n > 1)
-  	return n * factorial(n - 1);
-  else
-  	return 1;
-}
-```
-
-This time the code is even in English a lot shorter: define a procedure `factorial` with a formal parameter `n` as follows. Given an integer value for `n`, if the value of `n` is greater than `1`, return the value of `n` multiplied by the value of `factorial(n - 1)`. Otherwise, return `1`. This is brilliant! The code is not only more compact but also does not even require any additional language elements. In fact, it requires less, in particular no assignments.
-
-> Functional programming: just tell me what to do but not how
-
-Procedural programming without imperative programming, that is, programming procedures without assignments, follows a programming paradigm called *functional programming* since procedures without assignments resemble mathematical functions. Indeed, the above code almost looks like the mathematical definition of factorials and actually appears not to say how to compute factorials.
-
-> Recursion: solve a problem by assuming there is a partial solution
-
-But what is the catch? Well, the code uses *recursion* which is a concept that takes time and effort to understand. We explain it here but also revisit it again later. Recursion is a method for solving a problem using solutions to smaller instances of the problem through *self-reference*.
-
-In our example, the `factorial` procedure, given an integer value for `n`, calls *itself* on the value of `n - 1` which is obviously smaller than the value of `n`. This may sound strange but it still works because the *definition* of a procedure such as `int factorial(int n) { ... }` (with a formal parameter `int n`) and the *use* of a procedure such as `factorial(n - 1)` (with an actual parameter `n - 1`) are two entirely different concepts that take effect at different times. Code is defined *before* it is executed whereas code is only used *when* it is executed.
-
-Nevertheless, similar to the iterative version of `factorial`, we still need to argue that this version of `factorial` also computes the factorial of a positive integer `n` in finitely many steps. For simplicity, let us do that just for a given integer value of `n`, say, `4` by looking at the execution of the code as follows:
-
-```c
-factorial(4) == 4 * factorial(3) == 4 * (3 * factorial(2)) == 4 * (3 * (2 * factorial(1))) == 4 * (3 * (2 * 1))
-```
-
-where `4 * (3 * (2 * 1))` is obviously equal to `4 * 3 * 2 * 1`, again due to the associativity of multiplication.
-
-In general, we need to use *structural induction* to argue that the *inductive step* `factorial(n) == n * factorial(n - 1)` for all `n > 1` as asserted by the `if` or *termination* condition `n > 1` together with the *base case* `factorial(1) == 1` does indeed compute the factorial of a positive integer `n`. It is actually not very difficult to apply structural induction, even if you have never heard of it, but it is also not very interesting here, so we leave it at that.
-
-The key intuition for showing termination of a recursive procedure such as `factorial` is that the procedure recurses on instances of the problem whose size is *monotonically* decreasing (here `n - 1`), similar to the iterative version of `factorial`, and that there exists a *smallest* instance that is thus always eventually reached (here value `1`). Note that the code again works for `n == 0` as well.
-
-So, the iterative and recursive versions of `factorial` compute the same function. What about algorithmic complexity and performance? As it turns out, the recursive version also runs in linear time in the value of `n`, just like the iterative version. In fact, given an integer value for `n`, the iterative version performs exactly as many loop iterations as the recursive version calls itself recursively.
-
-> Space complexity: how much memory needs a program to run?
-
-There is a difference though which is the *space complexity* of the two versions, that is, the amount of memory needed to run the code. The iterative version only requires *constant space*, that is, a constant amount of memory, independent of the input, namely to store the values of `n` and `f`. The recursive version, however, requires *linear space* in the value of `n` because during recursion it needs to remember all values of `n` from the original value of `n` down to `2`.
-
-The values are stored in memory automatically because each time a procedure such as `factorial` is called its actual parameters are stored in memory where the procedure can pick them up and work on them. But this also means that, if a procedure calls itself and after that still has something to do before it returns, its current actual parameters (here the value of `n`) remain in memory while the new actual parameters (here the value of `n - 1`) are stored in memory as well, and so on. Our example with `4 * (3 * (2 * 1))` shows that. Before we can multiply `4` by `(3 * (2 * 1))` we need to remember `4` in memory and multiply `3` by `(2 * 1)` first. However, we can only do that after storing `3` in memory and multiplying `2` by `1` first. This is a serious drawback of the recursive version, especially for large values of `n`.
-
-> Tail recursion: recurse to iterate
-
-The good news, however, is that in some cases we can change the recursive version such that it only requires constant space while still using a special form of recursion called *tail recursion*. Consider the following code which computes exactly the same function as the iterative and recursive versions but only requires constant space to run:
-
-```c
-int tail_recursive(int f, int n) {
-  if (n > 1)
-  	return tail_recursive(f * n, n - 1);
-  else
-  	return f;
-}
-
-int factorial(int n) {
-  return tail_recursive(1, n);
-}
-```
-
-A recursive procedure is *tail-recursive* if every procedure call done by the procedure is tail-recursive. A procedure call is *tail-recursive* if it is the *last* operation done before returning hence the name. The statement `return tail_recursive(f * n, n - 1);` does exactly that. It is a tail-recursive procedure call by the procedure `tail_recursive` to itself. In contrast, the procedure call `factorial(n - 1)` in the statement `return n * factorial(n - 1);` of the recursive version of `factorial` is not tail-recursive because, before returning, `n` still needs to be multiplied by the value returned by `factorial(n - 1)` which requires remembering the value of `n` in each call to `factorial`. Let us have a look at the execution of the code, again for `n == 4`:
-
-```c
-factorial(4) == tail_recursive(1, 4) == tail_recursive(1 * 4, 3) == tail_recursive(4 * 3, 2) == tail_recursive(12 * 2, 1) == 24
-```
-
-That looks quite similar to what the iterative version does! It computes `1 * 4 * 3 * 2`, just like the iterative version, instead of `4 * (3 * (2 * 1))`, as done by the recursive version. Tail recursion combines the advantages of iteration (memory usage) and recursion (functional correctness) but not all problems can be solved using tail recursion, namely those that intrinsically require non-constant space. However, in that case even iteration requires non-constant space.
-
-Before moving on, we take another look at iteration versus recursion. The following code is yet another implementation of factorial revealing that iteration and tail-recursion is essentially the same thing. It involves the use of a *global variable* `f`, in contrast to a *local variable* `f`, as in the iterative version. The text to the right of any double slashes `//` is called a *comment* and just meant to help us understand the code and the point we are trying to make. Comments are completely ignored by the machine. For the machine, it is as if they are not there:
-
-```c
-int f; // global variable (!)
-
-void tail_recursive(int n) {
-  if (n > 1) {             // while (n > 1) {
-  	f = f * n;             //   f = f * n;
-                           //
-  	tail_recursive(n - 1); //   n = n - 1;
-  }                        // }
-}
-
-int factorial(int n) {
-  f = 1;
-
-  tail_recursive(n); // while (n > 1) { f = f * n; n = n - 1; }
-
-  return f;
-}
-```
-
-So, first of all, what is the difference between a global and a local variable? It is the *scope* of the variable, that is, where in the code the variable can be used and where not, and it is the *memory* for the value of the variable, that is, where in memory and in particular how often the value is stored.
-
-> A global variable can be used in all procedures
-
-A global variable is declared outside of any procedure body, can be used in all procedures, and its value is stored in memory only once. In short, it can be used everywhere and it only has one value. In the above code, `f` in `tail_recursive` and `factorial` refers to the same global variable `f`. Thus, instead of returning values, `tail_recursive` may operate directly on `f` and thus communicate with other procedures such as `factorial` implicitly through `f`. In fact, the return type of `tail_recursive` is not `int` but `void` which means that `tail_recursive` neither returns any value explicitly nor can be called in a `return` statement.
-
-> A local variable can only be used in the procedure in which it is declared
-
-In contrast, a local variable can only be used in the procedure in which it is declared such as the local variable `f` in the iterative version of `factorial`. Moreover, the value of a local variable of a given procedure is stored in memory for each call to the procedure. This is exactly like formal and actual parameters!
-
-Remember, the recursive version of `factorial` stores the value of `n` for each call to `factorial` to be able to multiply it by the result of the next call to `factorial`. Local variables are therefore just a special case of formal parameters. We could live without local variables and just use formal parameters. However, using local variables is more concise than using formal parameters for storing information that is only relevant within a procedure.
-
-> Tail recursion is iteration by recursion
-
-Interestingly, the above code looks almost like the code of the iterative version! That is because tail recursion is like iteration, just by different means. Tail recursion uses a procedure with an `if` statement and a termination condition, here `n > 1`, rather than a `while` loop with the same loop condition. The loop itself is constructed by the tail-recursive procedure call, here `tail_recursive(n - 1);`.
-
-So, you might ask why all this matters. Well, there is an important lesson to be learned here. When it comes to programming there are lots of different ways of writing code that in the end may do exactly the same thing. First of all, there are lots of different programming languages. But even if you stick to just one language, there are still lots of different choices to be made such as iteration versus recursion and global versus local variables. To make matters worse, these concepts may be called something else in other programming languages. However, their fundamental nature is always the same. An important goal of this book is to enable you to make informed decisions no matter which programming environment and language you actually use.
-
-> Pointers: from numbers to data
-
-There is one more thing in C\* you have not seen yet. It is called *pointers*. They actually gave C\* its name because pointers in C are declared and *dereferenced* using the asterisk symbol `*`. They are the only means in C\* to construct any kind of *data structure* beyond mere integers. In other words, what you have seen of C\* so far only allows us to implement numerical functions, at least when using C\* as intended. Nevertheless, we would like to write code that handles not just numbers but any kind of information, of course. Pointers allow us to do that. For example, the expression `*n` does not evaluate to the value of `n` but instead evaluates to the value stored in memory where the value of `n` points to. However, understanding pointers in detail requires a bit more background on how digital memory works. We therefore come back to the topic in subsequent chapters.
-
-By now, you have seen all features of C\* except pointers. We have shown you what C\* code looks like and what it means. But programming in C\*, or any other programming language, requires practice and curiosity. Try to verify your understanding of the language by writing small programs in C\*, similar to our code examples, and running them through selfie. Try to predict what your code does and then use selfie to see if it actually does that. If not, try to find out why by modifying your code.
-
-Before moving on, let us have a look at the output of selfie when compiling itself to machine code:
-
-```bash
-./selfie -c selfie.c
-```
-
-The first few lines of output give you an idea of the size of the system in terms of the C\* language constructs we just introduced:
-
-```
-./selfie: ================================================================================
-./selfie: this is the selfie system from selfie.cs.uni-salzburg.at with
-./selfie: 64-bit unsigned integers and 64-bit pointers hosted on macOS
-./selfie: ================================================================================
-./selfie: selfie compiling selfie.c to 64-bit RISC-U with 64-bit starc
-./selfie: --------------------------------------------------------------------------------
-./selfie: 356585 characters read in 12123 lines and 1737 comments
-./selfie: with 213753(59.94%) characters in 49836 actual symbols
-./selfie: 484 global variables, 654 procedures, 493 string literals
-./selfie: 1343 assignments, 91 while, 905 if, 3092 calls, 612 return
-./selfie: --------------------------------------------------------------------------------
-./selfie: 19355 symbol table lookups in 2 iterations on average
-```
-
-What you see here is a *profile* of the compiled source code, reported by the selfie compiler called `starc`. For example, there are 484 global variables and 654 procedures in the source code of selfie. Some concepts we have not yet seen such as symbols and string literals are introduced in the programming chapter. The rest of the output provides insight into the machine code that selfie generated for itself:
-
-```
-./selfie: 182752 bytes generated with 42224 instructions and 13856 bytes of data
-./selfie: --------------------------------------------------------------------------------
-./selfie: profile: instruction: total(ratio%)
-./selfie: init:    lui: 2665(6.31%), addi: 12332(29.20%)
-./selfie: memory:  ld: 7847(18.58%), sd: 7579(17.94%)
-./selfie: compute: add: 3665(8.67%), sub: 726(1.71%), mul: 520(1.23%)
-./selfie: compute: divu: 93(0.22%), remu: 29(0.06%)
-./selfie: compare: sltu: 710(1.68%)
-./selfie: control: beq: 1000(2.36%), jal: 4389(10.39%), jalr: 661(1.56%)
-./selfie: system:  ecall: 8(0.01%)
-./selfie: --------------------------------------------------------------------------------
-./selfie: profile: data: total(bytes)
-./selfie: global variables:       485(3880)
-./selfie: unique string literals: 377(9976)
-./selfie: unique big integers:    0(0)
-./selfie: ################################################################################
-```
-
-For example, the system generated 3,665 `add` instructions which is 8.67% of all 42,224 generated instructions. In the following, let us take a closer look using the `double.c` example.
-
-### RISC-U Machine Code
-
-Source code such as the above code examples is nice and, most importantly, readable by humans but that code is actually not what is running on a computer. To a machine, source code is just text like any other, a mere sequence of characters with no meaning. So, how do we run that code on a computer or, in other words, how does that code gets its meaning?
-
-> The meaning of code is created through translation and interpretation
-
-Essentially, there are only two different techniques: *translation* and *interpretation*. In analogy to natural languages, translation refers to the process of translating source code from one language to another. If source and target languages are programming and machine languages, respectively, we speak of *compilation* rather than translation. For example, C\* source code is compiled to RISC-U machine code by a *compiler* such as the selfie compiler.
-
-> Translation is optional, interpretation is not
-
-Interpretation refers to the process of executing source and even machine code in small steps according to rules precisely defined at the level of individual statements or even parts of a statement, down to individual *machine instructions* in case of machine code. While translation is optional and only needed for improving performance, interpretation is always needed for running any code, even if we were just writing machine code. Fundamentally, a computer or in fact the *processor* of a computer is an *interpreter* of machine code in hardware. In other words, running code always involves at least one interpreter which is the processor, independently of whether the original code is source or machine code. For many programming languages, however, there do exist interpreters written in software. A prominent example is Python! If you are interested in Python, you may want to check out the autograder of the selfie system which is written in Python.
-
-So, how do we run a program written in C\*? Let us have a closer look at the above example of running the `double` procedure stored in a file called `double.c`:
-
-```c
-1 int double(int n) {
-2   return n + n;
-3 }
-4
-5 int main() {
-6   return double(42);
-7 }
-```
-
-using selfie as follows:
-
-```bash
-./selfie -c examples/double.c -m 1
-```
-
-This time we show *line numbers* 1 to 7 of the code as a way to refer to individual lines.
-
-Selfie follows a workflow that is standard for programming languages such as C. It first compiles a program written in C\* to RISC-U machine code, as instructed by the `-c` option. We could then take the machine code and run it on a RISC-U processor. Such processors exist but you are unlikely to have access to a computer with such a processor. Therefore, selfie also features an interpreter of RISC-U machine code which is invoked by the `-m` option (ignore the argument `1` for now). In other words, `./selfie -c examples/double.c -m 1` instructs selfie to compile the source code in `double.c` to RISC-U machine code and then execute it right away using its builtin RISC-U interpreter.
-
-Okay, that is all very nice and cool but how can we see what is actually going on? There are essentially two ways. We can ask selfie to generate a human-readable RISC-U assembly file called `double.s` that contains the compiled code of `double.c`, or we can have selfie execute the compiled code and output in our terminal every single machine instruction that it actually executes. Let us try generating the assembly file first using the selfie *disassembler*:
-
-```bash
-./selfie -c examples/double.c -S double.s
-```
-
-Make sure to use an uppercase `S` in the `-S` option. The lowercase version `-s` also works but generates less information. By the way, the term disassembler may be confusing at first but it is correct. An *assembler* does the opposite direction, that is, it assembles machine code from assembly code.
-
-The relevant part of `double.s` looks as follows, with some code omitted (`...`) and some comments (`//`) and formatting (`---`) added by us:
-
-```asm
-...
----
-0x13C(~2): 0xFF810113: addi sp,sp,-8     // int double(int n) {
-0x140(~2): 0x00113023: sd ra,0(sp)
-0x144(~2): 0xFF810113: addi sp,sp,-8
-0x148(~2): 0x00813023: sd s0,0(sp)
-0x14C(~2): 0x00010413: addi s0,sp,0
----
-0x150(~2): 0x01043283: ld t0,16(s0)      //   return n + n;
-0x154(~2): 0x01043303: ld t1,16(s0)
-0x158(~2): 0x006282B3: add t0,t0,t1
-0x15C(~2): 0x00028513: addi a0,t0,0
-0x160(~2): 0x0080006F: jal zero,2[0x168]
----
-0x164(~3): 0x00000513: addi a0,zero,0    // }
-0x168(~3): 0x00013403: ld s0,0(sp)
-0x16C(~3): 0x00810113: addi sp,sp,8
-0x170(~3): 0x00013083: ld ra,0(sp)
-0x174(~3): 0x01010113: addi sp,sp,16
-0x178(~3): 0x00008067: jalr zero,0(ra)
----
-0x17C(~6): 0xFF810113: addi sp,sp,-8     // int main() {
-0x180(~6): 0x00113023: sd ra,0(sp)
-0x184(~6): 0xFF810113: addi sp,sp,-8
-0x188(~6): 0x00813023: sd s0,0(sp)
-0x18C(~6): 0x00010413: addi s0,sp,0
----
-0x190(~6): 0x02A00293: addi t0,zero,42   //   return double(42);
-0x194(~6): 0xFF810113: addi sp,sp,-8
-0x198(~6): 0x00513023: sd t0,0(sp)
-0x19C(~6): 0xFA1FF0EF: jal ra,-24[0x13C]
-0x1A0(~6): 0x00050293: addi t0,a0,0
-0x1A4(~6): 0x00028513: addi a0,t0,0
-0x1A8(~6): 0x0080006F: jal zero,2[0x1B0]
----
-0x1AC(~7): 0x00000513: addi a0,zero,0    // }
-0x1B0(~7): 0x00013403: ld s0,0(sp)
-0x1B4(~7): 0x00810113: addi sp,sp,8
-0x1B8(~7): 0x00013083: ld ra,0(sp)
-0x1BC(~7): 0x00810113: addi sp,sp,8
-0x1C0(~7): 0x00008067: jalr zero,0(ra)
----
-...
-```
-
-Assembly code might look scary or at least cryptic to you but once you get the idea it is surprisingly simple. Each line that begins with `0x` corresponds to a single machine instruction. The number that follows `0x` such as `13C`, for example, is a *memory address* which is similar to a line number in source code. For readability, we highlight blocks of machine instructions using `---`.
-
-> Every C\* statement translates to a block of RISC-U machine instructions
-
-The key observation here is that there is an immediate correspondence between lines of code in `double.c` and blocks of machine instructions in `double.s`. For example, the statement `return n + n;` in line 2 of `double.c` corresponds to the block of machine instructions from `0x150` to `0x160`. In other words, the block of machine instructions shows you how the statement is actually implemented for real!
-
-> RISC-U machine code gives C\* code meaning!
-
-There exists such a correspondence for all C\* code which makes reading machine code compiled by selfie easier. Readers familiar with machine code may notice that the compiled code shown here is inefficient. For example, the machine instruction at `0x164` is redundant and could be removed. However, selfie generates unoptimized code on purpose to keep things simple and maintain the immediate correspondence between C\* and its selfie-compiled machine code. We nevertheless get back to that point in subsequent chapters.
-
-Instead of explaining all of the assembly code we see here, let us focus on just one instruction to get the basic idea. RISC-U is formally introduced and explained in the machine chapter. The following instruction implements the addition operator `+` in the statement `return n + n;` in line 2 of `double.c`:
-
-```asm
-0x158(~2): 0x006282B3: add t0,t0,t1
-```
-
-We go through that line from right to left: `add t0,t0,t1` is the machine instruction in human-readable assembly code, `0x006282B3` is the binary code of the instruction as seen by the processor, and `0x158(~2)` refers to the address `0x158` in memory where the instruction is stored and the approximate line number `2` of the source code from which the instruction was compiled. In general, the line numbers are only approximate because generating accurate line numbers would make the selfie compiler more complicated.
-
-> A machine instruction says what to do **and** which instruction is next
-
-So, what does `add t0,t0,t1` do? It instructs the processor to add the values stored in its *registers* `t0` and `t1`, then store the result in `t0`, and finally move on to the next instruction at address `0x15C`. In other words, `add t0,t0,t1` is similar to an assignment `t0 = t0 + t1` but involving registers, not variables.
-
-> Registers are the fastest and most valuable memory of a computer
-
-Registers is where most of the work is done. There are usually only a few registers but those are the fastest and most valuable memory in a computer. For example, `t0` and `t1` are 2 out of a total of just 32 registers of a RISC-U processor. In our example, if the values of `t0` and `t1` are both the value of `n` right before executing the instruction, then the value of `t0` is obviously the value of `n + n` right after executing the instruction. So, that is actually what is going on here and exactly what we need before returning to the `main` procedure!
-
-But you are right! We could have done the same thing using `add t0,t0,t0` and not even involve `t1` at all. But, again, this would be optimized code which is not easy to generate by a system designed for simplicity. So, we leave it at that for now. It is an exciting topic to study though and there is still a lot of research going on about how to do this best. After all, we want our code to be as fast and use as few instructions as possible.
-
-What about `0x158`, `0x15C`, and `0x006282B3`? Well, all three are *hexadecimal numbers* using *hexadecimal notation*, as indicated by the *prefix* `0x`. The only difference between hexadecimal and decimal notation is that hexadecimal notation supports 16 rather than 10 different characters per digit, that is, `0` to `9` as well as `A` to `F` where `A` stands for the decimal value 10, `B` for 11, `C` for 12, `D` for 13, `E` for 14, and `F` for 15. Note that hexa is derived from the Greek word for six and decimal from Latin for tenth. The etymologically correct term for hexadecimal is *senidenary* but anyway not used in practice.
-
-Each digit of a hexadecimal number represents 16-times rather than 10-times more value than the digit to its immediate right. Thus `0x15C`, for example, stands for the decimal value 348 because (**1** * 16 + **5**) * 16 + **12** is equal to 348 where **12** is represented by `C`. We say that hexadecimal notation uses *base* 16 whereas decimal notation uses base 10, that is, `0x15C` is just a shortcut for (**1** * 16 + **5**) * 16 + **12** and 348 is in fact a shortcut for (**3** * 10 + **4**) * 10 + **8**.
-
-> Everything in a computer is encoded in bits!
-
-Why do we use hexadecimal rather than decimal notation? There are essentially two reasons, both rooted in the need to talk about *binary numbers* a lot. Everything in a computer is encoded in *bits* including memory addresses and machine code. The hexadecimal number `0x15C`, for example, represents the following sequence of bits which effectively constitutes a binary number:
-
-```
-0001 0101 1100
-```
-
-Binary notation uses base 2 since it supports just 2 characters per digit or in fact bit, that is, `0` and `1`. The beauty of hexadecimal numbers is that each hexadecimal digit corresponds to exactly 4 bits called *nibble* hence our spacing! Here, `0001` stands for the `1` in `0x15C`, `0101` for the `5`, and `1100` for the `C`. In analogy to hexadecimal and decimal notation, each digit or bit of a binary number represents 2-times more value than the bit to its immediate right. Thus `1100`, for example, is a shortcut for ((**1** * 2 + **1**) * 2 + **0**) * 2 + **0** which evaluates to 12 represented by `C`.
-
-> Hexadecimal numbers need exactly 4-times fewer digits than binary numbers
-
-In sum, *conversion* between hexadecimal and binary numbers is easy, which is one of the reasons as to why hexadecimal notation is so popular in computer science. Another reason is that hexadecimal notation is significantly more *compact* than binary notation, exactly 4-times more compact to be precise. Mathematically speaking, hexadecimal is popular because base 16 is a power of base 2 (convertibility), namely, 2 to the power of factor 4 (compactness).
-
-In contrast, using decimal notation to represent binary numbers is cumbersome because base 10 is not a power of base 2. When dealing with computers, binary encoding is the reason why we are often confronted with powers of 2 such as 2, 4, 8, 16, 32, 64, 128, 256, 512, and so on, in contrast to powers of 10 such as 10, 100, 1000, et cetera. The information chapter has more on that!
-
-Before we move on, let us have a quick look at the binary code `0x006282B3` of the above machine instruction spelled out in a sequence of bits:
-
-```
-0000 0000 0110 0010 1000 0010 1011 0011
-```
-
-What you see here is what the processor sees when executing `add t0,t0,t1`. It sees just these bits and nothing else. If you change a single bit, the machine will do something else. Why are machine instructions encoded like that? Time and space! We need to *encode* machine instructions in as few bits as possible to save space (memory) and the processor needs to *decode* those bits again as fast as possible to save time. There is more on that in the machine chapter.
-
-Let us now instruct selfie to show us the compiled code during actual execution using the `-d` option (again, ignore the argument `1` for now) which invokes the system's *debugger*:
-
-```bash
-./selfie -c examples/double.c -d 1
-```
-
-A debugger is a software tool for finding flaws in software called *bugs*. Lots of information will fly by in your terminal. Here is an interesting snippet that involves the `add t0,t0,t1` instruction:
-
-```asm
-...
-pc==0x10150(~2): ld t0,16(s0): s0==0xFFFFFF98,mem[0xFFFFFFA8]==42 |- t0==42(0x2A) -> t0==42(0x2A)==mem[0xFFFFFFA8]
-pc==0x10154(~2): ld t1,16(s0): s0==0xFFFFFF98,mem[0xFFFFFFA8]==42 |- t1==0(0x0) -> t1==42(0x2A)==mem[0xFFFFFFA8]
-pc==0x10158(~2): add t0,t0,t1: t0==42(0x2A),t1==42(0x2A) |- t0==42(0x2A) -> t0==84(0x54)
-pc==0x1015C(~2): addi a0,t0,0: t0==84(0x54) |- a0==73728(0x12000) -> a0==84(0x54)
-...
-```
-
-We focus on this part in particular:
-
-```asm
-... add t0,t0,t1: t0==42(0x2A),t1==42(0x2A) |- t0==42(0x2A) -> t0==84(0x54)
-```
-
-When executing a machine instruction such as `add t0,t0,t1`, selfie reports, to the left of the symbol `|-`, the *machine state* on which the instruction depends before executing it, and, to the right of the symbol `->`, how the state changed after executing the instruction. Here, the state on which the instruction depends are the values of registers `t0` and `t1` which are both `42` in decimal and `0x2A` in hexadecimal. After executing the instruction the machine state has changed with the value of `t0` set to `84` in decimal and `0x54` in hexadecimal, which is the result of adding the values of `t0` and `t1`. In between `|-` and `->`, selfie reports, before executing the instruction, the machine state that the instruction actually changes, which is obviously the value of `t0`.
-
-> A computer changes from one machine state to another by executing one machine instruction after another
-
-It may be hard to believe but all a computer does is execute one machine instruction after another in a seemingly endless chain of instructions. Using the above output of selfie we can even reconstruct every single step the machine has taken and how its state has evolved over time.
-
-> A computer is in exactly one machine state at any given time
-
-What is very important here is to realize that a computer can only be in one machine state at any given time. That state is essentially all bits the machine can store in all of its memory including its registers. By executing one instruction that state changes but only by very few bits. Yet all you see your laptop and smartphone does is the result of executing one instruction after another.
-
-> Computers can do magical things just because they can store billions of bits and can execute billions of instructions per second with very little energy
-
-So, where does the magic come from? Simple. It is just about being able to store lots of bits and change them very fast and very efficiently. But that point of view makes us feel like we have reached the bottom of a very deep ocean, right? Well, we could go even deeper and look at how the electronic circuits of a computer actually work. However, computer scientists generally look up from the level of bits rather than further down, and we do that too.
-
-Notice that we have come down here all the way from C\* code. Going back up would takes us from the level of machine code in binary and hexadecimal notation to assembly code and finally back to C\* code. Each level is an *abstraction* of the levels below and an attempt to stay focused by ignoring irrelevant details. For example, variables in C\* allow us to focus on numerical calculations rather than having to figure out where to store variable values in memory and which registers to use in calculations. Instead, we use compilers such as the selfie compiler to deal with such details.
-
-> High-level programming languages versus low-level machine code
-
-In computer science, people speak of *high-level* programming languages such as C\* and *low-level* machine code such as RISC-U where high level means more abstract and low level means less abstract. This may be confused with a *high-level* understanding of something complicated where high means deep, but not so here! For example, variables and statements in C\* are high-level concepts not because they are particularly deep ideas but because they are more abstract concepts than registers and machine instructions in RISC-U.
-
-> Abstraction is how computer scientists deal with complexity
-
-Abstraction is a key concept in computer science and many other fields for dealing with complexity. The abstractions we see here have been developed over many years and are widely accepted among computer scientists and developers. There is, however, disagreement in how to teach and learn about them. For example, some believe it is sufficient to learn how to program simply by programming, similar to learning a new language by just speaking it. We call that the top-down approach. Others believe learning how to program requires understanding the mathematical and technical foundation of programming languages. We refer to that as the bottom-up approach.
-
-The truth probably lies, as so often, somewhere in the middle, and also depends on what your goals are. In this chapter we apply the top-down approach, on purpose, of course. However, in the rest of the book we follow the bottom-up approach but from a systems perspective. This means that we begin with the absolute basics and then show you how things can be put together to form something bigger than the mere sum of its individual parts. The reason is that we would like you to know, well, how to program, but far beyond that to understand the basic principles of computer science and how those combine to true magic. Programming skills and other skills beyond just programming derive from that, not the other way around.
-
-In the following, we give you an example by introducing a formal language whose purpose is not to develop code but instead describe the *syntactic* structure of other formal languages, in particular programming languages and even assembly. We speak of EBNF, of course. This is computer science beyond just programming!
-
-Actually, we already saw EBNF before. Let us quickly go back to self-compiling selfie but this time also running selfie right after self-compilation:
-
-```bash
-./selfie -c selfie.c -m 1
-```
-
-The output of the selfie compiler is the same as before. The interesting part is the output of selfie after that when running itself:
-
-```
-...
-./selfie: 64-bit mipster executing 64-bit RISC-U binary selfie.c with 1MB physical memory
-./selfie: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-> selfie.c { -c { source } | -o binary | ( -s | -S ) assembly | -l binary } [ ( -m | -d | -r | -y ) 0-4096 ... ]
-
-./selfie: <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-./selfie: 64-bit mipster terminating 64-bit RISC-U binary selfie.c with exit code 0
-...
-```
-
-Selfie responds with its synopsis which is written in EBNF! But have a look at the rest of the output first before we talk about EBNF:
-
-```
-...
-./selfie: --------------------------------------------------------------------------------
-./selfie: summary: 81425 executed instructions in total [15.50% nops]
-./selfie:          0.19MB mapped memory [19.53% of 1MB physical memory]
-./selfie: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-./selfie: context: > selfie.c
-./selfie:          81425 executed instructions [100.00% share, factor 1.00]
-./selfie:          0.28KB peak stack size
-./selfie:          0.00MB allocated in 8 mallocs (0.00MB or 100.00% actually accessed)
-./selfie:          15 exceptions handled by ./selfie, one every 5428 executed instructions
-./selfie:          14 syscalls, 1 page faults, 0 timer interrupts
-./selfie: --------------------------------------------------------------------------------
-./selfie: profile: instruction: total(ratio%)[nops%]
-./selfie: init:    lui: 60(0.07%)[0.00%], addi: 31249(38.37%)[12.81%]
-./selfie: memory:  ld: 19157(23.52%)[11.97%], sd: 13200(16.21%)[34.82%]
-./selfie: compute: add: 2330(2.86%)[7.25%], sub: 407(0.49%)[30.22%], mul: 2791(3.42%)[13.68%]
-./selfie: compute: divu: 952(1.16%)[6.61%], remu: 1077(1.32%)[22.00%]
-./selfie: compare: sltu: 700(0.85%)[1.42%]
-./selfie: control: beq: 848(1.04%)[87.26%], jal: 5815(7.14%)[0.00%], jalr: 2825(3.46%)[0.00%]
-./selfie: system:  ecall: 14(0.01%)
-./selfie: --------------------------------------------------------------------------------
-...
-```
-
-Selfie reports how many instructions it executed just to print its synopsis: 81,425 instructions! The system also provides another *profile* but this time of the executed instructions, not the generated instructions. For example, the `add` instruction was executed 2,330 times which is 2.86% of all executed instructions. There is even more detailed information after that which we skip here. The machine chapter has more on that.
-
-### EBNF Grammar
-
-Inventing and then using formal languages comes with a number of fundamental challenges related to their *syntax* and their *semantics*. However, before we can even talk about their semantics, that is, their actual meaning we need to say what exactly a *sentence* in a formal language is in terms of its syntax regardless of its meaning. This is a *specification* problem. Moreover, reliably checking whether some possibly long sequence of characters is a sentence in a formal language requires constructing software that is able to do that for us. For example, whenever we write a program we would like to use a computer to check as fast as possible if the program is in fact, say, a C\* program never mind its actual meaning. This is an *implementation* problem.
-
-> Syntax is a prerequisite for semantics
-
-Specifying the syntax of a formal language and efficiently checking whether some sequence of characters is a sentence according to that syntax are prerequisites of constructing semantics. This may all sound very complicated but computer scientists have figured out an elegant and efficient way for dealing with syntax. Here it is!
-
-Let us begin with something simple. How do we specify what, say, the syntax of a decimal number is? It is easy in English: a decimal number is a sequence of decimal digits with at least one digit. But how do we say that formally? There are formal languages called grammars that have been designed exactly for this purpose. We use Extended Backus-Naur Form (EBNF) which was originally proposed by computer scientists John Warner Backus and Peter Naur, and later extended with repetition and optionality operators by Niklaus Wirth.
-
-In EBNF, a decimal number, or in fact the *language of decimal numbers* is defined by the following grammar:
-
-```ebnf
-decimal_number = digit { digit } .
-
-digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" .
-```
-
-Similar to C\* code, EBNF reads like a sentence in English: a decimal number is a digit followed by any number of digits, as indicated by the *repetition* operator `{ }`, which includes zero repetitions, and a digit is either `0` or `1` or `2` or `3` or `4` or `5` or `6` or `7` or `8` or `9`, as indicated by the *choice* operator `|`. That was easy, right? Well, there is a tiny mistake in there. Can you spot it?
-
-The above grammar actually says that even a sequence of just `0`s is a decimal number, for example, `00000`. We call that a *bug*, just like a bug in software. Well, we do not want bugs in our grammar, but leave it up to you to fix, that is, *debug* it as an exercise. Hint: you need to define what a `non_zero_digit` is and then use that in the right place. No worries if you cannot figure it out here, we solve the puzzle below.
-
-> A non-terminal is like a variable, a terminal is like a value
-
-Here is a bit of terminology and background. Each line in EBNF is called a *production* where the left-hand side (LHS) of the production operator `=` is called a *non-terminal* such as `digit`, for example, which is similar to a variable. Their counterpart is a *terminal* in double quotes such as `"0"`, for example, which is similar to a value. Anything between two double quotes is meant to be part of the *vocabulary* of the language defined by the grammar while non-terminals can be named anything as long as there is not more than one production per non-terminal.
-
-> A production is similar to an assignment in C\*
-
-The right-hand side (RHS) of `=` is an EBNF *expression* of non-terminals, terminals, and EBNF operators such as `{ }` and `|`, followed by a dot `.` at the end. EBNF productions and expressions are similar to assignments and arithmetic expressions in C\*, which we point out below. There is also two more EBNF operators that we introduce below along with the exact structure of EBNF expressions, using EBNF, of course.
-
-So, how about defining what a hexadecimal number is? Here is the EBNF for that:
-
-```ebnf
-hexadecimal_number = "0x" hexadecimal_digit { hexadecimal_digit } .
-
-hexadecimal_digit = digit | "A" | "B" | "C" | "D" | "E" | "F" .
-```
-
-Not so hard either, right? There is one thing that the grammars for decimal and hexadecimal numbers have in common. They can both be reduced to a single EBNF production by something we call *substitution*. Here, we just take the second production and substitute it into the RHS of the first production in all places where the non-terminal in the LHS of the second production occurs. The result for the grammar of decimal numbers, for example, is:
-
-```ebnf
-decimal_number = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" { "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" } .
-```
-
-The important point is that we got rid of all non-terminals in the RHS of the production for decimal numbers. But why would we do that? It is harder to read for sure and introduces a lot of *redundancy*. Well, on the other hand, it is now easy to fix the `00000` bug using parentheses in the right place (which is also where your `non_zero_digit` non-terminal should be):
-
-```ebnf
-decimal_number = "0" | ( "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ) { "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" } .
-```
-
-But this is still not the reason. We try squeezing everything into a single EBNF production without any non-terminals in its RHS because, if we succeed, we know that we are dealing with a particularly interesting subset of grammars called *regular grammars* or *regular expressions* which define *regular languages* such as the language of decimal and hexadecimal numbers.
-
-> A regular expression is an EBNF production without any non-terminals in its RHS
-
-Our definition of regular expressions is just one out of many possible definitions that are nevertheless all equivalent. Regular expressions are interesting because they are easy to implement using an abstract *model of computation* called *finite state machine* (FSM) which is even simpler than that of a processor but still capable of doing useful work.
-
-> Specification by regular expression, implementation by finite state machine
-
-For any regular expression there exists an FSM that can be implemented in C\*, for example, to check efficiently whether a given sequence of characters is indeed a sentence in the language defined by the regular expression. In other words, there is an FSM to check if a sequence of characters is a decimal number or not, for example. The key idea is to match those characters with terminals in the regular expression which is exactly what an FSM can do, not more but also not less. The programming chapter has more on that.
-
-There are, however, grammars that cannot be expressed in a single EBNF production and are therefore not regular. Those are called *context-free*. The language of arithmetic expressions in C\* is an example of a context-free language that can only be defined by a context-free grammar, that is, by more than one EBNF production. For simplicity, we show you here a context-free grammar in EBNF that defines C\* assignments involving just a subset of all possible arithmetic C\* expressions which nevertheless still require a context-free grammar:
-
-```ebnf
-assignment = variable "=" expression .
-
-expression = term { ( "+" | "-" ) term } .
-term       = factor { ( "*" | "/" ) factor } .
-factor     = variable | value | "(" expression ")" .
-
-variable = letter { letter | digit | "_" } .
-value    = decimal_number | hexadecimal_number .
-
-letter = "a" | ... | "z" | "A" | ... | "Z" .
-```
-
-Let us first look at the productions for `letter`, and then `value` and `variable`. The production for `letter` is obviously intended to define the (regular) language of lowercase and uppercase letters. The dots `...` are not EBNF, they are just there to save space.
-
-> A variable name always begins with a letter, a value always with a digit
-
-A `value` is either a decimal or a hexadecimal number. A `variable` or better a `variable` name is a bit more interesting. It is supposed to start with a letter which may be followed by any number of letters, digits, and underscores `_`, including none at all which would make it a single-letter name such as `x`, for example. By the way, there is a good reason why we want variable names to start with a letter. It allows us to know upon seeing the first character in a sequence of characters whether we are dealing with a variable or a value. This makes reading code easier for the machine, and maybe even for us.
-
-The language of variables and values are both regular. You may want to follow up on that and check their regularity by transforming their productions into productions with no non-terminals in their RHSs! They get quite long but it is possible.
-
-So, how does a language look like that is not regular? The language of arithmetic expressions is an example, and as a consequence of that, the language of assignments as well since an `assignment` is obviously a `variable` followed by the assignment operator `=` followed by an `expression`.
-
-Let us go through the EBNF of an `expression` step by step. An `expression` is a `term` possibly followed by any number of either an addition operator `+` or a subtraction operator `-` followed by another `term`. In turn, a `term` is a `factor` possibly followed by any number of either a multiplication operator `*` or a division operator `/` followed by another `factor`. Finally, a `factor` is either a `variable` or a `value` or, and this is where it gets interesting, a left parenthesis `(` followed by, well, an `expression` followed by a right parenthesis `)`.
-
-> Recursion in EBNF enables arbitrarily nested structures
-
-The occurrence of `expression` in the RHS of the production for `factor` is recursion in EBNF! The recursion prevents us from being able to substitute the productions for `expression`, `term`, and `factor` into a single EBNF production, effectively making the language of expressions context-free. If we were to remove the recursion the language of expressions would be regular. We nevertheless need to use recursion here because arithmetic expressions may contain arbitrarily *nested subexpressions* and not just terms of factors. Recall the above procedure `fancy` which involves the subexpression `(n + 1)`:
-
-```c
-int fancy(int n) {
-  return n * (n + 1) - n / 2 + 42;
-}
-```
-
-The subexpression `(n + 1)` in `n * (n + 1) - n / 2 + 42` may in fact be any arithmetic expression which is only possible because of recursion in the EBNF of expressions. Without recursion we can only say something like `n * n + 1 - n / 2 + 42`, for example, which is *semantically* equivalent to `(n * n) + 1 - (n / 2) + 42` since multiplication and division operators have precedence over addition and subtraction operators. This is even more apparent when looking at the *structure* of `n * n + 1 - n / 2 + 42` in its *derivation tree*, here using a text-based form of pictures called ASCII art, showing the tree up-side-down with the root at the top and the leaves at the bottom, as it is commonly done in computer science:
-
-```
-             _____________
-             |       |   |
-expression: "+"     "-" "+"
-            / \       \   \
-term:     "*"  \     "/"   \
-          / \   \    / \    \
-factor:  n   n   1  n   2    42
-```
-
-The derivation tree shows how `n * n + 1 - n / 2 + 42` relates to the grammar. In particular, with a derivation tree, it is easy to calculate the value of an expression. Given a value for `n`, say, `4`, start at the leaves by replacing `n` by `4` and then propagate the values of the subexpressions upwards to the root. The result is `57`.
-
-> Grammars define syntax but may also have an effect on semantics
-
-What if for some reason we would like to give addition and subtraction precedence over multiplication and division? Easy. Just exchange `"+"` and `"*"` as well as `"-"` and `"/"` in the EBNF of expressions. In other words, grammars may have an effect on semantics, not just syntax!
-
-Fortunately, recursion in EBNF even allows us to control the structure of expressions to overrule the precedence and associativity of arithmetic operators using parenthesis as grouping operators, for example. The derivation tree of `n * (n + 1) - n / 2 + 42` reveals its structural difference to `n * n + 1 - n / 2 + 42` right away:
-
-```
-             ___________
-             |         |
-expression: "-"       "+"
-            / \____     \
-term:     "*"      "/"   \
-          / \      / \    \
-factor:  n "( )"  n   2    42
-             |
-expression: "+"
-            / \
-term:      /   \
-          /     \
-factor:  n       1
-```
-
-To calculate the value of the expression, again with `4` as value for `n`, start at the leaves by replacing `n` by `4` and then propagate the values of the subexpressions upwards to the root. This time the result is `60`.
-
-There is, however, a subtle issue here. EBNF can express precedence but not associativity which controls the grouping of operators that have the same precedence such as `+` and `-`. So far, we silently assumed that expressions are grouped from left to right, not from right to left, which does make sense, however, because `-` in particular is left-associative, not *right-associative*. For example, `n * n + 1 - n / 2 + 42` is grouped as in `(n * n + 1 - n / 2) + 42`, not `n * n + 1 - (n / 2 + 42)`.
-
-> Specification by context-free grammar, implementation by pushdown automaton
-
-Before moving on, we would like to answer an important question: is there a model of computation similar to finite state machines that can implement context-free grammars? The answer is yes. Any context-free grammar can be implemented by a *pushdown automaton* (PDA) which is a model of computation that can do just a bit more than a finite state machine but is still simpler than that of a processor.
-
-> A pushdown automaton is a finite state machine with a stack
-
-More precisely, a PDA is a finite state machine plus a *stack*. Similar to regular expressions and finite state machines, there is a PDA to check if a sequence of characters is an arithmetic expression or not, for example. Again, the key idea is to match those characters with terminals in the grammar. However, a PDA also needs to make sure that there are as many right parentheses as there are left parentheses, for example. For this purpose, it pushes each left parenthesis down onto its stack and pops one off the stack with each right parenthesis. When it is done, an empty stack indicates success. This is a limited form of counting which is fundamental in recognizing nested structure. Again, the programming chapter has more on that.
-
-There is one thing that is important to realize here. All we do with these grammars and machines is formalizing the process of reading that we as humans do without even noticing what is happening. By going through this exercise of formalization we not only enable us to build software that can do this for us incredibly fast and efficiently but also sharpen our own understanding of notation and its meaning. Here is the final step demonstrating that. How about defining the syntax of EBNF using EBNF? The following EBNF does exactly that:
-
-```ebnf
-EBNF = { production } .
-
-production = non_terminal "=" expression "." .
-
-expression = term { "|" term } .
-term       = factor { " " factor } .
-factor     = non_terminal | terminal |
-             "{" expression "}" | "[" expression "]" | "(" expression ")" .
-
-non_terminal = variable .
-terminal     = """ { character } """ .
-
-character = letter | digit | ... .
-```
-
-By now, you should be able to read the EBNF just like sentences in English. There are a few aspects we should point out. Here, by `expression` we mean an EBNF expression, not an arithmetic expression. However, syntactically they are quite similar which is why we use the same terminology. Even EBNF productions and assignments are almost identical, syntactically! There are also two EBNF operators of which you have seen only one but probably without noticing. An EBNF term is a sequence of factors which are connected by the (invisible) *sequential composition* operator `" "` between them that has in fact precedence over the choice operator `|`, just like `*` over `+`, for example. And there is the *optionality* operator `[ ]` that we have not used yet. Anything in between those brackets may appear in a sentence but does not have to. The synopsis of selfie uses those. To see the synopsis again, this time without self-compilation, just type in your terminal:
-
-```bash
-./selfie
-```
-
-which responds with:
-
-```
-./selfie { -c { source } | -o binary | ( -s | -S ) assembly | -l binary } [ ( -m | -d | -r | -y ) 0-4096 ... ]
-```
-
-Not using the optional part `[ ( -m | -d | -r | -y ) 0-4096 ... ]` simply allows us to invoke selfie as compiler without running any code as we did before. EBNF is a beautiful way of saying just that and lots of other things. Try for yourself to invoke selfie with different options by just following the rules of its synopsis! You may even want to check out the source code in `selfie.c` that implements the finite state machine for recognizing the synopsis. It is in the procedure called `selfie` at the end of the file.
-
-The final question about EBNF that often comes up in class is why context-free grammars are called context-free. The answer is simple. Any non-terminal `N` in the RHS of an EBNF production `P` may be replaced by the RHS of the production `D` that defines the non-terminal, independently of the context in which `N` appears in `P`. This is because the LHS of a production must be a non-terminal, nothing else. We went through that exercise before when checking whether an EBNF is regular or not by trying to substitute all non-terminals occurring in any RHS with their definitions. As you can see here, this is not possible with the EBNF of EBNF because `expression` also occurs in the RHS of a production just like with arithmetic expressions which means that the EBNF of EBNF is context-free but not regular. Are there grammars that are not context-free? Yes, of course. Just surround the non-terminal in the LHS of a production with terminals. That would make your grammar *context-sensitive*. However, context-free grammars are all we need here, so we stick to that.
-
-The purpose of this chapter was to give you an idea of what it means to express your thoughts in formal languages rather than just English. Formalization is key in computer science and many other scientific fields. It may appear very cumbersome to do that at first but you probably already see the power of formalization.
-
-We introduced the programming language C\* which allows you to develop code. The language is simple enough to understand its meaning completely down to every single detail. Then we introduced the machine language RISC-U which gives you an idea of how a computer actually works and executes code. We also showed you how C\* translates to RISC-U. This is important for understanding the true meaning of C\*. Finally, we introduced EBNF, a formal grammar for specifying the syntax of programming languages and other formal languages including itself. While EBNF is not executable on a computer, unlike C\* and RISC-U code, it can be implemented in C\* based on finite state machines and pushdown automata. The programming chapter shows how this works. Seeing a formal language like EBNF is nevertheless important for understanding that computer science is not just about programming but also about modeling complex structure such as the syntax of programming languages. There are lots of other formal languages in computer science intended for modeling rather than programming. EBNF is just one example.
-
-With C\*, RISC-U, and EBNF introduced here by example, we are ready to take on the rest of the book in which we take a bottom-up approach from bits and bytes all the way to computing in the cloud. In particular, we fill you in on all the important details missing in this chapter that are necessary to see the big picture eventually. Here are also our recommendations for textbooks that provide the technical background of this chapter.
-
-### Recommended Readings 2
-
-> The C Programming Language by Brian W. Kernighan and Dennis M. Ritchie
-
-This book is seminal work introducing the programming language C. It is a must have for anyone not just interested in C but also more modern programming languages whose design has likely been influenced by C.
-
-> Computer Architecture: A Quantitative Approach by John L. Hennessy and David A. Patterson
-
-This is seminal work on computer architecture that belongs in any computer science library. Make sure to get the latest edition that features the machine model ([RISC-V](https://riscv.org)) we introduce in the machine chapter and use throughout the book.
-
-> Foundations of Computer Science by Alfred V. Aho and Jeffrey D. Ullman
-
-This book is also seminal work and the de-facto standard introduction to the theory of computer science. EBNF is mentioned in this book in its original Backus-Naur Form (BNF). You may want to have this book in your computer science library as well.
-
-## Information
+## Size
 
 Computer science is about the automation of everything. Think of something you would like to do but then not do it yourself but have a machine do it for you. Whether this is always possible is still being debated but not our concern here. Well, I believe that it is always possible but many people and thus companies often underestimate the enormous complexity involved in seemingly simple tasks such as driving a car. The issue is that whatever problem you are trying to solve you first need to *encode* the *information* involved in solving the problem in such a way that a machine can handle it. And then you need to tell the machine every single step of how to *manipulate* that information which is tedious even for extremely simple tasks. Finally, you need to *decode* the result back into something a human can experience.
 
@@ -1125,6 +380,42 @@ more examples/encoding.c
 ```
 
 The examples code is written in such a way that you should be able to understand it, at least intuitively. Lines that begin with `//` are comments ignored by the machine but still there to help you. If you feel adventurous go ahead, use your text editor, and change `examples/encoding.c` a bit. For example, replace 85 with different numbers and then run selfie again using the above command.
+
+### Orders of Magnitude
+
+Before we look at how anything is encoded in bits, let us practice reading the sizes involved, because every later claim in this book is a claim about how big something is, and a number you cannot place is a number you cannot argue with. The figure below is the map of the whole book. On the left, the small: one thing. Then eighty steps, each ten times the last, take us from one thing to every atom in the observable universe, about $10^{80}$, and that is the whole physical world in eighty decades. Then a wall, and no number of steps crosses it. Past the wall, endlessness comes in two sizes, one that counts every notation and one that counts every meaning, and the second is strictly bigger. This chapter lives on the left of the wall. The next two live just past it, among the countable, and the meaning chapter is about the box beyond them.
+
+![The axis: small, vast, then two sizes of endless](../docs/figures/scale.svg "The axis: small, vast, then two sizes of endless")
+
+> A million, a billion, a trillion
+
+Three words one syllable apart, three different worlds. A million seconds is eleven and a half days. A billion seconds is almost thirty-two years. A trillion seconds is about 31,700 years, which takes you back to someone painting the walls of the Chauvet cave. The prefixes for bytes work the same way: kilo, mega, giga, tera are a thousand, a million, a billion, a trillion. One byte holds one character, so a megabyte is a five-hundred-page book of plain text, a gigabyte is a thousand such books, and a terabyte is a million. There is a wrinkle that this book meets again and again, because it is the thesis in miniature: in memory, kilo means 1,024, not 1,000, because memory comes in powers of two, and so a "1 TB" disk holds $10^{12}$ bytes, which is only 931 gibibytes of the kind memory is measured in. GB is one notation with two meanings, and the notation does not say which.
+
+> A bit is one distinction
+
+A bit is one distinction: this, not that. Add a bit and you do not *add* states, you *double* them. Ten bits are a thousand states, twenty are a million, thirty are a billion. Doubling is the most underestimated operation in human reasoning and the entire engine of computing. The figure shows sixteen bits and the curve that the doubling draws.
+
+![Sixteen bits: 65,536 states, and the doubling curve](../docs/figures/bits.svg "Sixteen bits: 65,536 states, and the doubling curve")
+
+> Polynomial or exponential?
+
+The word *exponential* gets used for anything that grows fast, and students who have heard it that way have a hard time with what follows, so let us separate it from fast. Line up the shapes: a constant, a logarithm, a line, a square, a cube. On ordinary axes, by $n = 16$ the cube has reached 4,096 and everything below it looks like a floor, while $2^n$ left the page at $n = 12$. On axes that are both logarithmic, which is the only way to see all of them at once, every polynomial becomes a straight line whose slope is its degree, 0, 1, 2, 3; the logarithm bends flat; and the exponential bends up and leaves at $n = 30$, when the cube stands at 27,000 against a billion. Polynomials differ from each other by a slope. The exponential differs from all of them by kind.
+
+![Growth: constant, logarithmic, linear, quadratic, cubic and exponential, on linear and on log-log axes](../docs/figures/growth.svg "Growth: constant, logarithmic, linear, quadratic, cubic and exponential, on linear and on log-log axes")
+
+Here is the test that tells them apart without a picture. Multiply the input by ten: a linear function multiplies by ten, a quadratic by a hundred, a cubic by a thousand, always a fixed factor set by the degree, which is what polynomial means; $2^n$ goes from $10^{30}$ at $n = 100$ to $10^{301}$ at $n = 1{,}000$, and there is no factor. Now add one to the input: every polynomial moves by a little, ten percent, twenty-one percent, thirty-three percent; $2^n$ doubles. If adding one to the input multiplies the output, you are looking at an exponential. Every bit added to a memory is exactly that plus one. And the logarithm is the exponential read backwards: multiply the input by ten and it goes up by a constant, about 3.3, which is why ten times the states cost three more bits, and why so few bits suffice for what comes next. The line between polynomial and exponential returns in the cost chapter as the line between what can be done and what cannot.
+
+How many bits does it take to have more states than the universe has atoms? Students guess millions, or billions. The answer is 266, because $2^{266}$ is about $1.2 \times 10^{80}$. Thirty-four bytes of memory, which is less than this sentence, have more states than there are atoms. The figure puts that on the log scale, next to the number of people alive and the number of molecules in a spoonful of water.
+
+![A log scale to ten to the eighty, and 266 bits just past its end](../docs/figures/ruler.svg "A log scale to ten to the eighty, and 266 bits just past its end")
+
+> Testing shows presence, not absence
+
+Now apply that to a machine. The RISC-U machine of this book has 4 GB of memory, which is $2^{35}$ bits, so its state space has $2^{34,359,738,368}$ states, a number with more than ten billion decimal digits. Your phone, with 8 GB, has twice as many bits and a state space you could not write down in a lifetime. In a space that big, good states and bad states look alike, and a test run of a program visits exactly one path through it. The figure shows what a test suite does: it lights up a few dozen points in a field, and somewhere in the dark is the state that divides by zero. Testing shows presence, not absence. Keep this picture for the cost chapter, where we build a tool that shows absence, within a bound, and for the machines chapter, where you will hear that a system was tested extensively.
+
+![A state space: the states a test visits, and one bad state untested](../docs/figures/needle.svg "A state space: the states a test visits, and one bad state untested")
+
+The vastness is not the problem. It is the inventory. Everything a machine will ever do is somewhere in that space, and the rest of this chapter is about how the things we care about, numbers, text, images, code, are laid out in it.
 
 ### Bits
 
@@ -1282,6 +573,18 @@ This means we are adding 1 and 1 plus the carry bit 1. The result is of course 1
 
 So, who would have thought that binary notation and addition works exactly the same as decimal notation and addition? The only difference is the base and thus the number of symbols available per digit. Now, just one more thought about this. Notice that binary and decimal addition takes as many steps as there are digits in the addend with the most digits. This is why manual counting in anything but unary is less convenient. However, since any positional notation with base higher than 1 is exponentially more compact than unary, addition is effectively still fast because the *value* of the involved numbers can get very large even with relatively few digits. Also, there are ways to improve on the number of steps necessary to perform binary addition which we nevertheless ignore here.
 
+> Why binary, and not ternary or decimal?
+
+Students ask this every year, and the answer has two halves that should be kept apart. The first half is mathematics. Unary writes $n$ as $n$ bars; any positional base $b$ writes it in about $\log_b n$ digits. Going from base 1 to base 2 is therefore an exponential saving, and it is the saving that matters: 85 bars against seven bits. Going from base 2 to any higher base $b$ saves only a factor of $\log_2 b$, the same factor for every $n$: decimal is about 3.3 times shorter than binary whether the number has ten bits or ten billion. The saving has a price, and every positional base pays it in full: in unary, counting is appending a bar and adding is concatenation, constant time per bar; in any positional notation an addition walks the digits and propagates carries, which takes as many steps as there are digits, that is, logarithmically many in the value. So the mathematics says leave unary, and then falls silent, because all bases above one are within a constant factor of each other.
+
+![Why binary: digits needed per base, and the levels one digit must tell apart](../docs/figures/bases.svg "Why binary")
+
+The second half is physics. A base-$b$ digit must hold one of $b$ distinguishable states, and the hardware pays per state it can tell apart, not per digit. The gap between neighbouring states is what noise has to cross, and it shrinks as $b$ grows; two states, on and off, put the gap as far apart as the supply voltage allows and leave nothing in between to calibrate. That is what a transistor is: a switch. There is a classical argument that if cost is proportional to $b$ per digit, the product $b \cdot \log_b n$ is smallest near $e$, so that 3 beats 2 by about five percent; five percent buys no factory, and a switch that needs no calibration does. The honest exception confirms the rule: flash memory stores two, three or four bits per cell as four, eight or sixteen charge levels, a constant-factor saving paid for in error correction and endurance, and the cells are read back out as bits.
+
+Ternary deserves one more sentence, because with the digits $-1$, $0$ and $1$ instead of $0$, $1$ and $2$ it is the prettier system: every integer has exactly one representation, negative numbers need no convention on top, and negating a number is negating every digit. The Setun computer, built at Moscow State University in 1958, worked this way, and about fifty were made. It lost to the transistor and to a supply of parts that were all binary, not to a better idea. Which is worth remembering when we next look at how binary machines handle negative numbers: as a convention laid over the bits.
+
+And one more base, because nature settled the same question differently. DNA is written in base 4, with the nucleotides A, C, G and T as its digits. The physics is chemistry: a nucleotide is a discrete molecule, not a voltage level, so there is no noise band between one digit and the next and four states cost nothing in reliability. What the four buy is pairing: A binds only to T and G only to C, so every strand carries its own complement, and complementary pairing is how the text is copied and how a copy is checked. Two letters would pair as well, but at half the information density for the same chemistry, and the code that reads the text in words of three letters, $4^3 = 64$ codons for twenty amino acids and a stop, would need words of five. The argument is the one above with a different physics plugged in, and it comes back in the last chapter, where the machinery that copies and interprets DNA is the self-copying machine.
+
 Okay, but why do we make you go through all this? It is not just because binary addition is one of the most important operations computers including your smartphone perform, in fact, billions of times per second. It is also to show you something that is even more basic than binary addition. It is called Boolean algebra, the fundamental building block of all modern computing devices.
 
 ### Boolean Algebra
@@ -1339,15 +642,15 @@ These formulae are known as De Morgan’s Laws, something I remember from my fir
 
 An AND operator, for example, can be constructed by two *transistors* connected in a sequence that transmits high voltage only if the input to both transistors is high voltage. A transistor is essentially just a switch and the fundamental building block of digital devices. Its miniaturization began in the late 1950s and has started the computer revolution.
 
-![A Half Adder](figures/half-adder.png "A Half Adder")
+![A Half Adder](../docs/figures/half-adder.svg "A Half Adder")
 
 The AND and XOR operators can then be arranged as logic gates to construct a so-called *half adder* in an electronic circuit which performs binary addition of two addend bits as described above.
 
-![A Full Adder](figures/full-adder.png "A Full Adder")
+![A Full Adder](../docs/figures/full-adder.svg "A Full Adder")
 
 We can then take two half adders and an OR operator as logic gate to construct a *full adder* which performs binary addition of three bits: two addend bits, like a half adder, plus a carry bit, also called *carry-in*. A full adder computes, like a half adder, a sum bit and a carry bit, also called *carry-out*, which is 1 if either or both of the carry bits of the two half adders are 1. A full adder requires, depending on technology, several dozen transistors.
 
-![A 7-bit Adder](figures/7-bit-adder.png "A 7-bit Adder")
+![A 7-bit Adder](../docs/figures/7-bit-adder.svg "A 7-bit Adder")
 
 Finally, we can take 7 full adders, one for each bit in the example of the previous section, and connect them in a chain of full adders to form a 7-bit adder where the carry-out of each full adder is fed to the carry-in of the more-significant full adder to the left of it, resembling what we do when adding two binary numbers by hand. In an actual electronic circuit, the exact same thing happens by having the involved bits travel as low and high voltage through the circuit. Now, imagine that a modern computer typically features 32-bit and even 64-bit adders which in turn require around one- to two-thousand transistors, respectively. Only the dramatic miniaturization of transistors made that possible.
 
@@ -1381,7 +684,7 @@ The negative complement or *radix complement* of a number depends on the *radix*
 
 So, 93 represents -7 here.
 
-![Tens Complement](figures/tens-complement.png "Tens Complement")
+![Tens Complement](../docs/figures/tens-complement.svg "Tens Complement")
 
 In fact, instead of encoding 0 and the first 99 positive numbers from 1 to 99 in the decimal numbers 0 to 99, we only encode 0 and the first 49 positive numbers from 1 to 49 in 0 to 49, and the first 50 negative numbers from -1 to -50 in 99 to 50. Oddly, this encoding supports 49 positive numbers and 50 negative numbers, that is, exactly one more negative number which is -50, encoded by, well, 50.
 
@@ -1911,7 +1214,7 @@ Notice, for example, the very first ASCII character '/' in `selfie.c`. That char
 
 ### Bytes
 
-![A Byte](figures/byte.png "A Byte")
+![A Byte](../docs/figures/byte.svg "A Byte")
 
 A *byte* is a unit of information, abbreviated by the upper-case letter *B*, that consists of eight bits and can therefore distinguish exactly 256 different things. Why eight bits? This was far from obvious in the early days of computing. Fundamentally, what we need is to package bits into something larger because processing bits individually is just too cumbersome and too slow in particular. So, one idea is to use seven bits since they fit ASCII characters. However, seven is not a power of two but eight is! Eight bits are two times four bits which allows us to use exactly two digits in hexadecimal notation such as 0x55, for example, to denote a byte. In this case, each of the two digits is called a *nibble*.
 
@@ -1927,7 +1230,7 @@ Digital memory is fascinating because it is an extremely simple concept while be
 
 Why do we and, in fact, everyone else use byte-addressed memory? Well, it took quite some time to come to that agreement in the computer science community. An important reason is that ASCII characters stored in byte-addressed memory have unique addresses since every ASCII character fits into exactly one byte (with the MSB set to 0). Another reason is that at some point in the past many machines would access memory at the level of individual bytes. These days are mostly over but we are still using byte-addressed memory. What actually happens today when memory is accessed depends on the technology. Usually, if a machine needs to access one byte stored in memory, a whole bunch in the immediate neighborhood of that byte is transferred as well. This can be just a few but also dozens, hundreds, and even thousands of bytes, which is fine because in most scenarios, if the machine needs access to one byte, it is likely to need access to the bytes around that byte as well. Think of 64-bit integers, for example, which require eight bytes each, but there are also even larger structures such as text, for example. The speed at which memory access happens also varies, often by orders of magnitude, depending on the technology. However, the granularity and the speed of memory access is not important for us right now, so we simply assume in this chapter that bytes are accessed individually and ignore speed altogether.
 
-![Memory](figures/memory.png "Memory")
+![Memory](../docs/figures/memory.svg "Memory")
 
 Digital memory always provides two things: *storage* and an *address space*! And it is important to distinguish the two because there can be address spaces without storage but no storage without an address space. How else would you find anything? Also, the size of storage and address spaces are measured quite differently. The amount of storage is obviously measured in number of bytes. Sounds simple but there is quite a bit of potential confusion here. First of all, when we speak of storage we mean something that can store information. Whether that storage is *volatile* or *non-volatile* is of no concern to us. *Volatile memory* such as main memory looses all information when power is cut whereas *non-volatile memory* such a USB stick does not. However, the terms memory and volatile memory as well as the terms storage and non-volatile memory are often used synonymously but not here. So, please keep that in mind.
 
@@ -1945,7 +1248,7 @@ Below is a summary of the relevant prefixes. We include kilobits et cetera for l
 
 So, by now we know how storage is measured but how about address spaces? Why not simply do the same? After all, there are as many addresses as there are bytes in byte-addressed memory. The reason why they are measured differently is because address spaces do not cost anything. They are free whereas storage is not. However, addresses are not free since addresses need to be encoded and stored! The size of an address space is thus measured in the number of bits necessary to encode the highest address in binary.
 
-![Pointers](figures/pointers.png "Pointers")
+![Pointers](../docs/figures/pointers.svg "Pointers")
 
 Suppose we use eight bits, that is, one byte to encode an address in binary. In that case we speak of an 8-bit address space. Since one byte can encode the unsigned integers 0 to 255, an 8-bit address space can address 256 bytes of storage in byte-addressed memory. This is not much but there is still something absolutely awesome about that. Each byte can encode the 8-bit address of any other byte in 256 bytes of memory including its own address. For example, we could store, say, 85 as `01010101` at address 0 and, say, 7 as `00000111` at address 85, and, say, 0 as `00000000` at address 7, encoding a cycle from address 0 via address 85 to address 7 and then back to address 0. In this case, `01010101`, `00000111`, and `00000000` are interpreted as *pointers* which can be used to encode any kind of arbitrarily complex graph structure.
 
@@ -1964,20 +1267,20 @@ Here, the relevant output should be similar to this:
 ```
 ...
 ./selfie: --------------------------------------------------------------------------------
-./selfie: summary: 363556041 executed instructions in total [17.29% nops]
-./selfie:          2.39MB mapped memory [79.68% of 3MB physical memory]
+./selfie: summary: 394514542 executed instructions in total [19.11% nops]
+./selfie:          2.46MB mapped memory [82.16% of 3MB physical memory]
 ./selfie: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ./selfie: context: > selfie.c
-./selfie:          363556041 executed instructions [100.00% share, factor 1.00]
+./selfie:          394514542 executed instructions [100.00% share, factor 1.00]
 ./selfie:          2.28KB peak stack size
-./selfie:          3.27MB allocated in 24561 mallocs (2.19MB or 66.98% actually accessed)
-./selfie:          381781 exceptions handled by ./selfie, one every 952 executed instructions
-./selfie:          381213 syscalls, 562 page faults, 6 timer interrupts
+./selfie:          3.32MB allocated in 25295 mallocs (2.26MB or 68.15% actually accessed)
+./selfie:          391733 exceptions handled by ./selfie, one every 1007 executed instructions
+./selfie:          391146 syscalls, 580 page faults, 7 timer interrupts
 ./selfie: --------------------------------------------------------------------------------
 ...
 ```
 
-We configured selfie with 3MB of main memory storage (physical memory) using the `-m` option (with argument `3` which stands for `3MB`) and then self-compiled selfie. In total, selfie *allocated* addresses for 3.27MB of main memory but ended up *accessing* only 2.19MB, that is, using only 66.98% of the 3.27MB in memory storage. Moreover, selfie needed an additional 0.20MB of memory storage for its code, that is, in sum 2.39MB of (mapped) memory which is 79.68% of the 3MB available physical memory. In order to run, selfie also allocates memory for a stack that grows and shrinks during execution. Nevertheless, the stack usually requires relatively little memory in the range of a few kilobytes, not megabytes, in this case no more than 2.28KB at its peak. That memory is part of the 2.39MB of (mapped) memory.
+We configured selfie with 3MB of main memory storage (physical memory) using the `-m` option (with argument `3` which stands for `3MB`) and then self-compiled selfie. In total, selfie *allocated* addresses for 3.32MB of main memory but ended up *accessing* only 2.26MB, that is, using only 68.15% of the 3.32MB in memory storage. Moreover, selfie needed an additional 0.20MB of memory storage for its code, that is, in sum 2.46MB of (mapped) memory which is 82.16% of the 3MB available physical memory. In order to run, selfie also allocates memory for a stack that grows and shrinks during execution. Nevertheless, the stack usually requires relatively little memory in the range of a few kilobytes, not megabytes, in this case no more than 2.28KB at its peak. That memory is part of the 2.46MB of (mapped) memory.
 
 Let us take a closer look at how digital memory can in principle be used to store any type of information. The key question is where to do that in memory, in particular with information that does not fit into a single byte. There are essentially two different ways of answering that question which can also be combined. Suppose we need to store, say, eight bytes. We can either store each of the eight bytes somewhere in memory, not necessarily next to each other, that is, *non-contiguously*, or we store the eight bytes somewhere in memory but all next to each other, that is, in a *contiguous* block of memory.
 
@@ -1985,7 +1288,7 @@ Let us take a closer look at how digital memory can in principle be used to stor
 
 Both ways have advantages and disadvantages. Non-contiguous storing of information is great because it gives us freedom in where to store information. However, we still need to remember where each of the eight bytes is stored which may require pointers which in turn may need to be stored as well. Contiguous storing of information is also great because we only need to remember where the first of the eight bytes is stored. However, finding enough space that fits eight bytes in a row may be hard. Think of memory where every other byte is already taken. In that case, half of memory is still available but we still cannot store eight bytes in a row. This phenomenon is called *fragmentation*. You may have heard of the problem in the context of harddrives that need to be defragmented, for example. However, any type of digital memory has that problem if information is stored contiguously. We get back to the issue in more detail in the machine and programming chapters.
 
-![Contiguous Memory](figures/contiguous.png "Contiguous Memory")
+![Contiguous Memory](../docs/figures/contiguous.svg "Contiguous Memory")
 
 There is nevertheless one advantage of contiguous storing of information that makes it worth the effort. Given the address of the first of the eight bytes in memory, say, 85 we can calculate the address of, say, the eighth byte by adding 7 to 85. In other words, we use addition of two unsigned integers or in fact a pointer (85) and an unsigned integer (7) to calculate the address of the eighth byte (92). Why is this so cool? Because it is fast! Actually it is very fast, especially compared to finding individual bytes in memory through pointers. But it is also cool because it is an application of integer addition that comes at a surprise. Addition in digital devices is probably more used for calculating memory addresses than for calculating the sum of whatever quantities. Addition therefore facilitates computation in general rather than just numerical calculations.
 
@@ -1999,11 +1302,11 @@ Text including some simple formatting such as linefeeds can be represented by a 
 
 Whichever of the three ways of storing text contiguously in memory we use, all three share the problem of finding enough contiguous space in memory. This is not a big deal for short text but for longer text it is, especially if some time later we decide to insert a new character in the middle of the text somewhere. In that case, all characters to the right of the new character need to be shifted in memory by one character to make room for the new character, if there is still room. If not, all text needs to be copied somewhere else where there is enough contiguous space for one more character! By the way, if we used paper to write down that text we had the exact same problem. How can the work involved in shifting and copying lots of characters at least be somewhat reduced?
 
-![Non-contiguous storing of text with two contiguously stored paragraphs](figures/text.png "Text")
+![Non-contiguous storing of text with two contiguously stored paragraphs](../docs/figures/text.svg "Text")
 
 Easy. We cut the text into smaller, more convenient chunks, say, into paragraphs which we then store individually, still contiguously, but as a whole separately, that is, non-contiguously in any order somewhere in memory. In order to maintain the original order of the paragraphs, we need to remember where they are in memory. This is done by pointers, one for each paragraph pointing to where it begins in memory. We then collect all pointers and store them contiguously in the original order of the paragraphs they point to. Done. Inserting a new character now affects only the involved paragraph but not the whole text. This is our first example of how to combine contiguous and non-contiguous storing of information for trading off the advantages and disadvantages of both techniques.
 
-![NULL-terminated string of ASCII characters "science" stored contiguously in memory at address 85 and above](figures/string.png "String")
+![NULL-terminated string of ASCII characters "science" stored contiguously in memory at address 85 and above](../docs/figures/string.svg "String")
 
 Before taking the next step towards how files are stored and organized, which is surprisingly easy with what we know now, we would like to clarify some important terminology. Computer scientists often call a sequence of characters a *string*, not text, especially if the string is relatively short. In writing and in particular in source code, strings are usually enclosed in double quotes such as "science", for example. In that case, "science" is called a *string literal*, that is, it is literally a string.
 
@@ -2021,11 +1324,11 @@ The other thing about filenames is that they often suggest what the *format* of 
 
 Here is a word of advice. The simpler and more widely used a format is the less likely it is that a file in that format cannot be *opened*, that is, decoded, processed, and encoded again. This is because the software that opens a file in such a format is simpler and more robust as well and therefore less likely to be buggy. So, the more critical the information is that you would like to keep in a file the simpler and more widely used the format of that file should be. I am writing this book in a text file that can be opened by almost anything! Sure, if you are dealing with sensitive information the situation is a lot more complicated than that. But in that case you should be even more motivated to keep reading.
 
-![A directory of files "a" and "b" stored contiguously in memory at address 85 and 7, respectively, and above](figures/directory.png "Directory")
+![A directory of files "a" and "b" stored contiguously in memory at address 85 and 7, respectively, and above](../docs/figures/directory.svg "Directory")
 
 The next question we need to deal with has a surprisingly simple answer that you may know but have not looked at this way. How is the name of a file and its address in memory associated with each other? The answer is by a *folder* or, equivalently, a *directory*! In fact, a folder is, from the perspective of the machine, just another file which contains, for each file "in" the folder, the name of the file as well as the address of the file in memory plus *meta* information such as the length of the file and the day and time it was created and modified, for example.
 
-![A tree of folders, subfolders, and files with the pathname "/p/q" of file "a" highlighted](figures/tree.png "Tree")
+![A tree of folders, subfolders, and files with the pathname "/p/q" of file "a" highlighted](../docs/figures/file-tree.svg "Tree")
 
 Since for the machine a folder is just a file, we can immediately create an elaborate, arbitrarily deep hierarchy of folders. Just put one folder into another, making the former a *subfolder* of the latter, and so on. Computer scientists call the structure created by folders and subfolders a *tree* which makes sense when you look at it upside down. Consequently, the folder that contains everything is called *root* while the files and empty folders are called *leaves*. The names of the folders on a *branch* or *path* from the root folder to any other folder or file constitute what is called a *pathname* with the names separated by a character that does not occur in names such as the slash `/` symbol. The special pathname "/" denotes the root directory. The name of a given folder or file plus its pathname uniquely identify it in the whole tree because there can never be two entries in any folder with the same name.
 
@@ -2083,7 +1386,7 @@ A file is a named sequence of bytes, any bytes. Text is an unnamed sequence of b
 
 By now you can probably guess what a digital *image* is? It is a sequence of bytes, right! But seriously, if we do not care about performance, that is, the amount of bytes we need to encode an image, a *bitmap* does the job perfectly. A bitmap is a rectangular grid of pixels, just like your computer screen. The color of each pixel is encoded in, say, one byte which represents an unsigned integer. Each pixel can thus have 256 different colors including black and white. This is called *color depth*. If you want more, just increase the number of bytes per pixel. Three bytes is standard today enabling more than sixteen million different colors per pixel. If you want more resolution, just increase the number of pixels in your bitmap. For example, 4K resolution is 4,096 times 2,160 pixels which is more than eight million pixels requiring, at three bytes per pixel, a bitmap of around 25.3MB. To get to the unit of MB, just calculate 4096\*2160\*3 and divide that by 1MB which is 2^20^B.
 
-![An image encoded and stored contiguously in memory in row-major](figures/image.png "Image")
+![An image encoded and stored contiguously in memory in row-major](../docs/figures/image.svg "Image")
 
 Bitmaps are stored contiguously in memory, usually in *row-major*, that is, horizontal line by horizontal line starting in the top left corner. Another choice for storing a two-dimensional structure (bitmap) in a one-dimensional medium (byte-addressed memory) is *column-major*, that is, vertical line by vertical line. To show an image stored as a bitmap in memory on screen, your machine takes one byte after the other from the bitmap in memory and sets the color of the corresponding pixel on the screen accordingly. Since there are usually millions of pixels, modern machines include special hardware, which does that so fast that the process is invisible to the human eye. Conversely, if you take a picture with your phone or in fact any digital camera, the camera sensor produces a bitmap and stores that in memory, also using special hardware.
 
@@ -2105,7 +1408,7 @@ One more thing before we continue with something that needs even more bytes than
 
 Yes, even digital *video* is just a sequence of bytes, typically a rather long sequence of bytes. On a higher level of abstraction, video is a sequence of images that are shown in rapid succession on a screen. The problem with digital video in the early days of computing was the prohibitive amount of bytes necessary to encode it while *efficient* and *effective* compression techniques were not yet available. Here, effective means that the amount of bytes is reduced to the extent that it can be managed while quality is preserved, and efficient means that encoding and decoding can still be done in *real time* so that video can be recorded and shown.
 
-![A video encoded and stored contiguously in memory frame by frame](figures/video.png "Video")
+![A video encoded and stored contiguously in memory frame by frame](../docs/figures/video.svg "Video")
 
 The key difference between video and *still* images is that video is *streaming media*. In other words, video needs to be encoded and decoded in real time at the rate at which the individual images of a video, also called *frames*, are produced. Therefore, while the size of text, images, video, and files in general is measured in number of bytes, there is another quantity that is relevant with video. It is the *frame rate* of the video measured in frames per second (fps) and in particular its *bit rate* which is measured in bits per second (bps), that is, the number of bits per second that need to be processed to handle the video in real time. The usual prefixes of bps such as kilo, mega, and giga are in base 10 which is generally the case for any *data rates* including bytes per second:
 
@@ -2124,7 +1427,7 @@ In recent years, video compression has become so effective and efficient that ev
 
 As usual, digital *audio* is yet another sequence of bytes, usually by far not as many as video of the same length but still enough to worry about. In particular, audio is streaming media, just like video, and requires encoding and decoding in real time. The difference to video is that we are not dealing with a sequence of images that are shown in rapid succession on a screen but with a sequence of *samples* that are played in rapid succession on a speaker. A sample is a binary number with a given number of bits called *bit depth*, analogous to color depth, that represents, say, a signed integer which encodes the amplitude of the audio signal at the time of taking the sample. Think of the amplitude as the distance of a microphone's or speaker's membrane, or in fact your eardrums or vocal cords, from their resting position at the time of taking the sample. This is a beautiful application of signed integers!
 
-![Audio encoded with 8-bit bit depth and stored contiguously in memory sample by sample](figures/audio.png "Audio")
+![Audio encoded with 8-bit bit depth and stored contiguously in memory sample by sample](../docs/figures/audio.svg "Audio")
 
 So, how often do we have to take a sample? In other words, the question is what an adequate *sampling rate* is, in analogy to the frame rate of video. Well, it depends on the highest frequency we would like to capture. Humans can typically hear frequencies between around 20Hz and 20kHz where Hz stands for cycles per second and is an abbreviation of *Hertz*, the name of a famous physicist. The prefixes kilo, mega, and giga in Hz are in base 10:
 
@@ -2148,7 +1451,7 @@ Everything done by a computer is encoded in bits including code. We heard that b
 
 Code exists in very different forms such as *source code* like `selfie.c` or actual *machine code*. The latter is a sequence of bytes that *instructs* a computer to perform computation with data by manipulating the bits encoding the data whereas the former is just text that still needs to be translated to machine code before it can instruct the machine to do anything. Machine code is for machines, source code is for humans. The machine chapter explains what machine code is and the programming chapter explains what source code is. For now, we focus on machine code and explain how it works intuitively.
 
-![Machine code encoded in 32 bits (4 bytes) per instruction and stored contiguously in memory instruction by instruction](figures/code.png "Code")
+![Machine code encoded in 32 bits (4 bytes) per instruction and stored contiguously in memory instruction by instruction](../docs/figures/code.svg "Code")
 
 Machine code or just code is a sequence of *machine instructions* where each instruction is encoded in four bytes, at least in our case here. There are machines that use different encodings but our choice is quite common and as good as any other for our purpose. Four bytes are 32 bits. This means we could distinguish 2^32^ different instructions in four bytes, that is, around four billion different instructions. This is way too many! A computer usually distinguishes a few dozen to a few hundred and sometimes even a few thousand instructions but not more than that. Out of the 32 bits encoding an instruction only a few bits are therefore used to encode which instruction it actually is. The remaining bits encode the *parameters* and *arguments* of an instruction which are typically addresses or just integers. For example, there is usually an instruction that makes the machine load two integers from memory, add them, and store the result back in memory. We saw that before. There are of course similar instructions for integer subtraction, multiplication, division, and remainder. The other thing these instructions do, and all instruction have that in common, is that they tell the machine where the next instruction in memory is. And that's it! Really!
 
@@ -2167,8 +1470,8 @@ more selfie.s
 The output should be similar to this:
 
 ```
-0x0(~1): 0x0003D2B7: lui t0,0x3D
-0x4(~1): 0x62028293: addi t0,t0,1568
+0x0(~1): 0x0003F2B7: lui t0,0x3F
+0x4(~1): 0x85828293: addi t0,t0,-1960
 0x8(~1): 0x00028193: addi gp,t0,0
 0xC(~1): 0x00000513: addi a0,zero,0
 0x10(~1): 0x0D600893: addi a7,zero,214
@@ -2185,7 +1488,7 @@ The output should be similar to this:
 0x3C(~1): 0x00513023: sd t0,0(sp)
 0x40(~1): 0x01010293: addi t0,sp,16
 0x44(~1): 0x00513423: sd t0,8(sp)
-0x48(~1): 0x2D4290EF: jal ra,42165[0x2931C]
+0x48(~1): 0x6A42A0EF: jal ra,43433[0x2A6EC]
 ...
 ```
 
@@ -2231,7 +1534,7 @@ This is where life and in particular evolution comes in. Evolution is the proces
 
 The simplicity of that model is striking! But how can this ever work? Well, just like computing it is ultimately a matter of time, space, and energy. We need lots of time, or conversely mutate very fast and select effectively. We need lots of space for mutating and selecting in parallel, or conversely use space very efficiently, that is, be super tiny. And we need lots of energy, or conversely be very energy efficient. In other words, quantities matter! A few more zeroes in a number can make all the difference, in life and in computing. So, let us take a look at a real machine and see what it actually takes to compute.
 
-### Recommended Readings 3
+### Recommended Readings 2
 
 > Ones and Zeros: Understanding Boolean Algebra, Digital Circuits, and the Logic of Sets by John R. Gregg
 
@@ -2241,17 +1544,840 @@ We have only scratched the surface of how Boolean Algebra and digital circuits a
 
 This is a book that takes the topic of this chapter a lot further. If you are interested in the fundamentals of information and are not afraid of mathematical formulae, add it to your computer science library and reading list.
 
+## Part II: Countable
+
+Everything you can write down is a finite sequence of symbols, and finite sequences can be listed. This part is about notation: the three formal languages of this book, the machine that reads one of them, and the fact that a program, a proof, and a machine are all just numbers. That fact is what makes a machine able to read a machine, and, eventually, itself.
+
+## Notation
+
+Gödel, Escher, Bach told me a lesson that I still remember after reading the book thirty years ago: the importance of language and the joy that comes with it! And by language I mean *formal* language, not *natural* language like English or German. Understanding the nature of information requires formal language. Once you understand a few of those formal languages you will see their enormous power.
+
+> Station II: everything you can write down is countable
+
+This chapter is the second station on the axis of the book, and it is on the countable side of the wall. Every formal language in it, and every text written in any of them, is a finite sequence of symbols from a finite alphabet. Finite sequences can be listed, shortest first: every C\* program, every RISC-U binary, every grammar, and every sentence of this book shows up at some finite position on that list, so each has a number, and that number is its Gödel number. The meaning chapter takes it from there, to the things that cannot be listed. Here we learn the three notations themselves.
+
+> Formal languages have formal semantics
+
+That power is rooted in a key property: formal languages have *formal* semantics. Their meaning is mathematically precise which enables us to communicate, not just with mindless machines to make them do smart things without understanding anything, but also with each other, understanding everything with mathematical rigor. In fact, once you learn how to express your ideas in formal languages, which includes programming languages but not only, you will change the way you think.
+
+> C\*
+
+We introduce three different formal languages in this book. All three are simple versions of languages used in practice in all kinds of software projects and millions of lines of code. The first language is called C\*, pronounced "C Star". C\* is a tiny subset of the programming language C which is still among the most widely used programming languages in the world. C\* has been developed by us for educational purposes and is the programming language in which selfie is written. Even if you have never written code, C\* is easy to understand. You will learn it here.
+
+> RISC-U
+
+The second language is called RISC-U, pronounced "Risk You". RISC-U is a tiny subset of the machine language RISC-V, pronounced "Risk Five". RISC-V like all machine languages comes in two flavors, *assembly* and *binary*. Assembly code is a textual and thus human-readable form of binary code which can actually be executed by a real processor. Again, RISC-U is so simple that you can easily understand it, even without any prior knowledge in computer science.
+
+> EBNF
+
+The third language is called EBNF which stands for *Extended Backus-Naur Form*. EBNF is a formal language or *grammar* for describing the *syntax* of formal languages. EBNF can even describe its own syntax which is the simplest form of self-reference we see in this book. We use EBNF to define (parts of) the syntax of C\*, RISC-U assembly, and, well, even (all of) EBNF. That gives you the first glimpse of self-reference in a formal language.
+
+In the following, we introduce a few code examples written in C\*, and then show you how some of that code translates to actual RISC-U assembly and even RISC-U binary code. We then show you how EBNF is used to define some of the C\* and RISC-U assembly syntax and finally the EBNF syntax itself.
+
+Most importantly, take your time! We go through almost every detail and motivate everything. In my experience, few people are used to that and have a hard time slowing down to the extent we do that here. However, learning and truly understanding formal languages requires patience and focus. The good news is that you do not have to do that with all formal languages you may need to learn throughout your career. But doing it once, as opposed to never, makes all the difference!
+
+### Programming Language C\*
+
+C\* is a tiny subset of the programming language C. In a nutshell, for readers familiar with basic programming language terminology, C\* features global variable declarations with optional initialization as well as procedures with parameters and local variables. C\* has five statements (assignment, while loop, if-then-else, procedure call, and return) and standard arithmetic (`+`, `-`, `*`, `/`, `%`) and comparison (`==`, `!=`, `<`, `>`, `<=`, `>=`) operators over variables and procedure calls as well as integer, character, and string literals. C\* includes the unary `*` operator for dereferencing pointers hence the name but excludes data types other than `uint64_t` and `uint64_t*` (`int` is bootstrapped to `uint64_t`), bitwise and Boolean operators, and many other features. The C\* grammar is LL(1) with 7 keywords and 22 symbols. Whitespace as well as single-line (`//`) and multi-line (`/*` to `*/`) comments are ignored. For more information see:
+
+[https://github.com/cksystemsteaching/selfie/blob/main/grammar.md](https://github.com/cksystemsteaching/selfie/blob/main/grammar.md)
+
+The following example is C\* code that implements a simple *numerical function* in a *procedure* called `double` for calculating the doubled value of a given *whole number* or *integer* represented by a *formal parameter* `n`:
+
+```c
+int double(int n) {
+  return n + n;
+}
+```
+
+As intended by the designers of the programming language C, and in fact many other programming languages including C\*, the code can be read like a sentence in English: *define* a procedure `double` with a formal parameter `n` as follows. Given an integer value for `n`, return the value to which the *arithmetic expression* `n + n` evaluates. The line `return n + n;` is called a `return` *statement*. However, the difference between C and English is that C code is more succinct and, more importantly, its meaning is precisely defined, as opposed to the meaning of a sentence in English.
+
+First of all, the code needs to be written according to strict syntactic rules. We need to say `int` and `return`, also called *keywords*, exactly as is, and even the parentheses, the braces, and the semicolon need to be where they are. But the code also contains information about how large the value of `n` as well as its doubled value as returned by `double` can ever be. This is done using the `int` keyword which specifies the *range* or *type* of the involved values.
+
+> The range of numerical values on a computer is always finite!
+
+Most importantly, the `double` procedure you see here is not a mathematical function on arbitrarily large numerical values. It is code that instructs a machine to compute the doubled value of whole numbers within a given finite range. This is a big difference!
+
+When I started coding as teenager, I was confronted with lots of these numerical functions written in code. It took me some time to understand why I had to study those, instead of writing code that makes my computer immediately do something more interesting like a game I can talk about with normal people like my parents. If you feel like that, bear with me. We will get there.
+
+The reason why we first look at numerical functions written in code is because such code has an immediate connection to something we all know and understand, at least intuitively: elementary arithmetic! That helps understanding the true meaning of code early on.
+
+So, let us try and use selfie to run the `double` procedure on some actual number, say, `42` also called an *integer literal*. Here is the C\* *program* to do that:
+
+```c
+int double(int n) {
+  return n + n;
+}
+
+int main() {
+  return double(42);
+}
+```
+
+We have prepared that code in a text file called `double.c` in the `examples` folder of the selfie system. So, just type in your terminal:
+
+```bash
+./selfie -c examples/double.c -m 1
+```
+
+Selfie responds with quite a bit of text but just look for `double.c exiting with exit code 84`. That's it! The above code instructs selfie to return the result of `double(42)` which is obviously `84`. The way this works is simple. Each program must contain a procedure called `main` to actually do anything useful. That procedure is always the first to run and everything follows from there. When `main` returns, program execution is finished and whatever `main` returns is shown as *exit code*.
+
+> Procedures may have formal parameters and be called with actual parameters
+
+There are a number of important concepts here. There are *procedure definitions* such as `int double(int n) { ... }` introducing a procedure called `double` with a formal parameter `n` of type `int` and a so-called *return type* `int` to the left of `double` which specifies the type of values the procedure returns. Formal parameters and return type as in `int double(int n)` form what is called the *procedure signature*. The actual code of the procedure is in between curly braces and is called *procedure body*. Similarly, there is a procedure definition for `main` as well. And there are *procedure calls* such as `double(42)` in the `main` procedure invoking the procedure `double` on an *actual parameter* `42`. Note that we may also refer to formal parameters just as *parameters* and to actual parameters as *arguments*.
+
+> Procedures are defined exactly once but may be used in procedure calls many times
+
+Procedure definitions must be uniquely identified, say, by name, as in C\*, but can then be used in procedure calls as many times as you like from anywhere in the code. Makes sense? Okay, then let us try to change the definition or in fact implementation of `double`:
+
+```c
+int double(int n) {
+  return 2 * n;
+}
+```
+
+This version of `double` computes the same value as the previous version of `double`, just using multiplication rather than addition, that is, `2` times `n` or simply `2 * n` rather than `n + n`. We can obviously implement other procedures as well such as a procedure that computes the square value of an integer `n`:
+
+```c
+int square(int n) {
+  return n * n;
+}
+```
+
+In addition to `+` and `*`, C\* also supports the other two *operators* of elementary arithmetic for subtraction and division, denoted `-` and `/`, respectively, as well as remainder, denoted `%`, and parentheses for *grouping* arithmetic expressions to overrule the *precedence* of `*`, `/`, and `%` over `+` and `-`, as well as the *associativity* of `-`, `/`, and `%`. Remember, in elementary arithmetic `1 + 2 * 3` is equal to `1 + (2 * 3)`, not `(1 + 2) * 3`, because `*` has higher precedence than `+`, and `1 - 2 + 3` is equal to `(1 - 2) + 3`, not `1 - (2 + 3)`, because `-` and `+` are *left-associative*. So, we may say something like this:
+
+```c
+int fancy(int n) {
+  return n * (n + 1) - n / 2 + 42;
+}
+```
+
+In C\* and many other programming languages, such arithmetic expressions are standard and widely used in practice. You may want to try a few others and see how selfie responds. Below we show you the exact rules, written in EBNF, for constructing arithmetic expressions.
+
+Let us now experiment with something that goes beyond arithmetic expressions. How about a procedure that returns the larger of two given values? Here is a procedure called `max` that does exactly that:
+
+```c
+int max(int n, int m) {
+  if (n < m)
+  	return m;
+  else
+  	return n;
+}
+```
+
+Again, the code can be read like a sentence in English: define a procedure `max` with two formal parameters `n` and `m` as follows. Given integer values for `n` and `m`, return the value of `m` if the value of `n` is less than the value of `m`. Otherwise, return the value of `n`. This is a *conditional statement*, which in C\* is called an `if` *statement*. The *comparison* or *relational expression* `n < m` is called an `if` *condition* which can evaluate either to *true* or to *false*. The statement `return m` is part of the `if` *body* of the `if` statement while the statement `return n` is part of the `else` *body* of the `if` statement.
+
+> Conditional: if this is true do that else do that
+
+Conditional statements are a powerful concept for controlling program execution. They allow us to make a choice on anything we are interested in and we can use any number of them to form a whole sequence of choices. However, any such sequence must be finite because programs are finite artifacts. But what if we would like our program to do something where, at the time of writing the program, we do not know how much work is involved and in particular how many choices need to be made when running the program? The concept that allows us to do that is called a *loop statement* which is even more powerful than a conditional statement. Here is an example written in C\* featuring a `while` *loop* over a *variable* `c`:
+
+```c
+int count(int n) {
+  int c;
+
+  c = 0;
+
+  while (c < n)
+    c = c + 1;
+
+  return c;
+}
+```
+
+Again, the code can be read like an English sentence: define a procedure `count` with a formal parameter `n` as follows. First, *declare* a variable `c` and then *initialize* the value of `c` to `0`. After that, given an integer value for `n`, if the value of `c` is less than the value of `n`, increment the value of `c` by `1`, and keep doing that until the value of `c` is not less than the value of `n` anymore. When this happens, return the value of `c`.
+
+> Loop: as long as this is true keep doing that
+
+The comparison `c < n` is called a `while` *condition* or *loop condition*. If the condition evaluates to true, the `while` *body* or *loop body*, here `c = c + 1`, is executed once and then the condition is evaluated again, and so on. If the condition evaluates to false, the loop body is not executed, effectively terminating the loop, and instead the statement after the loop, here `return c`, is executed.
+
+> Loops subsume conditionals
+
+Interestingly, loops are strictly more expressive than conditionals. In other words, a program containing conditionals can always be rewritten into a program without conditionals just using loops instead. Those loops will be a bit strange because they will only loop at most once to mimic conditionals properly. The other way around is of course not possible. Loops can in general not be replaced by conditionals. So, why do we have conditionals? Well, just making choices without looping is a common sight in programs and deserves a dedicated language element to make the code more readable but also more efficient. Figuring out that a loop always operates like a conditional is not easy for a machine and even impossible in general.
+
+> Assignment is not equality!
+
+Before we take another look at the `while` loop, let us focus on the statement `c = c + 1` which is called an *assignment*. Here, most importantly, `=` does not denote *equality* in a mathematical sense. Instead, here and in many other circumstances in computer science, especially code, `=` denotes an assignment of a value to a variable. With `c = c + 1` we do not assert equality between `c` and `c + 1`. Instead, we denote the process of assigning to the variable `c` occurring in the *left-hand side* (LHS) of the assignment operator `=` the value to which the arithmetic expression `c + 1` occurring in the *right-hand side* (RHS) of `=` evaluates *before* the assignment is actually done.
+
+In fact, *after* the assignment is done, evaluating `c + 1` again would result in a different value than the value of `c`! This is because `c` also occurs in the expression `c + 1`. But even if it does not, as in the `c = 0` assignment for example, where the value of `c` is actually equal to `0` *after* the assignment is done, an assignment is still a different statement than asserting equality because `c` may very well have a different value than `0` *before* the assignment is done. The difference is sometimes emphasized by using `:=` to denote an assignment instead of just `=`. Unfortunately, however, `=` is standard notation for assignments in many programming languages which is why we stick to using `=`. Equality, on the other hand, is denoted by `==` in many programming languages, so we use `==` to assert or just check equality from now on. In C\*, besides `==`, `<`, and `>`, there are also `!=` for checking *inequality*, `<=` for checking *less-than-or-equal-to*, and `>=` for checking *greater-than-or-equal-to*.
+
+> Imperative programming: do that and then do that
+
+The presence of assignments in a programming language indicates that the language supports a *programming paradigm* called *imperative programming* in which a computer is told what to do in a sequence of statements, especially assignments, that are in a *before-and-after* relationship. Doing so in procedures is a form of imperative programming called *procedural programming*. The `count` procedure is our first example of an imperative and even procedural program.
+
+> Iteration: do that again and again
+
+Moreover, `count` makes a computer solve a problem *iteratively* in a loop which takes more or less time to finish depending on the input of the program. To some extent this is also possible just using conditional statements. However, loops are a different story. They can even loop forever which means that programs with loops may not *terminate* and, as a result, not respond anymore like apps on your smartphone sometimes do.
+
+Thus showing that a program computes the desired result generally requires showing that it computes the result in *finitely* many iterations. That can actually become quite tricky even with proper training. In our case here, however, it is easy to see that `count` does indeed always terminate since the value of `c` is incremented in each iteration of the `while` loop and thus always *eventually*, that is, in finitely many iterations, makes the loop condition `c < n` evaluate to false terminating the loop.
+
+> C\* is computationally universal, also called Turing-complete
+
+Interestingly, the elements of C\* you have seen so far are enough to do anything any other programming language can do. We say that C\* is *computationally universal* or *Turing-complete*. If you take a program written in any other programming language, we can always rewrite it into a program written in C\* that computes exactly the same as the original. It may be cumbersome to do that but it is always possible. Hard to believe but true!
+
+Let us analyze what `count` really does. The procedure effectively returns, well, the value of `n`, after "counting" from `0` to `n`. In other words, `count(n)` implements the *identity* function, at least for `n == 0` and for all *positive* values of `n`, that is, all numbers greater than `0`. Let us ignore *negative* values of `n`, that is, numbers less than `0`, for now. In that case, we could also implement `count` as follows:
+
+```c
+int count(int n) {
+  return n;
+}
+```
+
+So, what is the difference between the two versions of `count`? Well, in terms of functionality there is no difference as long as we ignore negative values of `n`. However, there is a significant difference in *algorithmic complexity* and thus *performance*, that is, the time it takes `count` to finish.
+
+> Algorithmic complexity: how fast runs a program on increasingly larger input?
+>
+> Performance: how fast runs a program on a given machine for a given input?
+
+The first version of `count` with the `while` loop can actually become quite slow for large values of `n` whereas the second version always takes the same amount of time independently of the value of `n`. We say that the first version runs in *linear time* in the value of `n`, since it takes as many loop iterations to complete as the value of `n`, while the second version runs in *constant time*. In short, their algorithmic complexity is linear and constant, respectively.
+
+Their performance may nevertheless be similar for small values of `n` because computers can go through a few loop iterations very fast. However, the second version will certainly be noticeably faster than the first version for large values of `n`. Algorithmic complexity is essentially the performance of a program or in fact the *algorithm* implemented by a program as a (unitless) function of the size of the input to the program. It tells you about a performance trend but not actual performance which can only be measured by running the program on some machine and input. We get back to algorithmic complexity and performance in subsequent chapters.
+
+While avoiding linear time here is easy using the second version, it may be more difficult to do so in other circumstances. Here is a code example that runs in linear time in the value of `n` and is not so easy to make faster while producing the same result. It computes the *factorial* of a positive integer `n` iteratively in a loop:
+
+```c
+int factorial(int n) {
+  int f;
+
+  f = 1;
+
+  while (n > 1) {
+    f = f * n;
+
+    n = n - 1;
+  }
+
+  return f;
+}
+```
+
+Remember, the factorial of a positive integer `n` is the product of all positive values less than or equal to `n`, that is, the factorial of `n` is equal to `n * (n - 1) * ... * 2 * 1` for all `n > 0`. For example, the factorial of `4` is equal to `4 * 3 * 2 * 1` which is obviously `24`. The factorial of `1` and even the factorial of `0` are both equal to `1`, the latter by convention.
+
+The above code reads in English as follows: define a procedure `factorial` with a formal parameter `n` as follows. First, declare a variable `f` and then initialize the value of `f` to `1`. Then, given an integer value for `n`, if the value of `n` is greater than `1`, multiply the value of `f` by the value of `n` and then decrement the value of `n` by `1`, and keep doing that until the value of `n` is not greater than `1` anymore. When this happens, return the value of `f`. So, the code actually computes `1 * n * (n - 1) * ... * 2` which is obviously equal to `n * (n - 1) * ... * 2 * 1` due to the *associativity* of multiplication or, in fact here, just because of the special case that `1` is the multiplicative identity. Also, `factorial` always terminates since the value of `n` is decremented in each iteration of the `while` loop and thus always eventually makes the loop condition `n > 1` evaluate to false terminating the loop. In fact, `factorial` therefore does, as promised, run in linear time in the value of `n`. Note that the code also works for `n == 0`.
+
+Now, there is one more thing that is truly remarkable. Instead of computing the factorial iteratively in a loop, we may also compute it *recursively* using code that looks quite different and yet computes exactly the same result as the iterative version:
+
+```c
+int factorial(int n) {
+  if (n > 1)
+  	return n * factorial(n - 1);
+  else
+  	return 1;
+}
+```
+
+This time the code is even in English a lot shorter: define a procedure `factorial` with a formal parameter `n` as follows. Given an integer value for `n`, if the value of `n` is greater than `1`, return the value of `n` multiplied by the value of `factorial(n - 1)`. Otherwise, return `1`. This is brilliant! The code is not only more compact but also does not even require any additional language elements. In fact, it requires less, in particular no assignments.
+
+> Functional programming: just tell me what to do but not how
+
+Procedural programming without imperative programming, that is, programming procedures without assignments, follows a programming paradigm called *functional programming* since procedures without assignments resemble mathematical functions. Indeed, the above code almost looks like the mathematical definition of factorials and actually appears not to say how to compute factorials.
+
+> Recursion: solve a problem by assuming there is a partial solution
+
+But what is the catch? Well, the code uses *recursion* which is a concept that takes time and effort to understand. We explain it here but also revisit it again later. Recursion is a method for solving a problem using solutions to smaller instances of the problem through *self-reference*.
+
+In our example, the `factorial` procedure, given an integer value for `n`, calls *itself* on the value of `n - 1` which is obviously smaller than the value of `n`. This may sound strange but it still works because the *definition* of a procedure such as `int factorial(int n) { ... }` (with a formal parameter `int n`) and the *use* of a procedure such as `factorial(n - 1)` (with an actual parameter `n - 1`) are two entirely different concepts that take effect at different times. Code is defined *before* it is executed whereas code is only used *when* it is executed.
+
+Nevertheless, similar to the iterative version of `factorial`, we still need to argue that this version of `factorial` also computes the factorial of a positive integer `n` in finitely many steps. For simplicity, let us do that just for a given integer value of `n`, say, `4` by looking at the execution of the code as follows:
+
+```c
+factorial(4) == 4 * factorial(3) == 4 * (3 * factorial(2)) == 4 * (3 * (2 * factorial(1))) == 4 * (3 * (2 * 1))
+```
+
+where `4 * (3 * (2 * 1))` is obviously equal to `4 * 3 * 2 * 1`, again due to the associativity of multiplication.
+
+In general, we need to use *structural induction* to argue that the *inductive step* `factorial(n) == n * factorial(n - 1)` for all `n > 1` as asserted by the `if` or *termination* condition `n > 1` together with the *base case* `factorial(1) == 1` does indeed compute the factorial of a positive integer `n`. It is actually not very difficult to apply structural induction, even if you have never heard of it, but it is also not very interesting here, so we leave it at that.
+
+The key intuition for showing termination of a recursive procedure such as `factorial` is that the procedure recurses on instances of the problem whose size is *monotonically* decreasing (here `n - 1`), similar to the iterative version of `factorial`, and that there exists a *smallest* instance that is thus always eventually reached (here value `1`). Note that the code again works for `n == 0` as well.
+
+So, the iterative and recursive versions of `factorial` compute the same function. What about algorithmic complexity and performance? As it turns out, the recursive version also runs in linear time in the value of `n`, just like the iterative version. In fact, given an integer value for `n`, the iterative version performs exactly as many loop iterations as the recursive version calls itself recursively.
+
+> Space complexity: how much memory needs a program to run?
+
+There is a difference though which is the *space complexity* of the two versions, that is, the amount of memory needed to run the code. The iterative version only requires *constant space*, that is, a constant amount of memory, independent of the input, namely to store the values of `n` and `f`. The recursive version, however, requires *linear space* in the value of `n` because during recursion it needs to remember all values of `n` from the original value of `n` down to `2`.
+
+The values are stored in memory automatically because each time a procedure such as `factorial` is called its actual parameters are stored in memory where the procedure can pick them up and work on them. But this also means that, if a procedure calls itself and after that still has something to do before it returns, its current actual parameters (here the value of `n`) remain in memory while the new actual parameters (here the value of `n - 1`) are stored in memory as well, and so on. Our example with `4 * (3 * (2 * 1))` shows that. Before we can multiply `4` by `(3 * (2 * 1))` we need to remember `4` in memory and multiply `3` by `(2 * 1)` first. However, we can only do that after storing `3` in memory and multiplying `2` by `1` first. This is a serious drawback of the recursive version, especially for large values of `n`.
+
+> Tail recursion: recurse to iterate
+
+The good news, however, is that in some cases we can change the recursive version such that it only requires constant space while still using a special form of recursion called *tail recursion*. Consider the following code which computes exactly the same function as the iterative and recursive versions but only requires constant space to run:
+
+```c
+int tail_recursive(int f, int n) {
+  if (n > 1)
+  	return tail_recursive(f * n, n - 1);
+  else
+  	return f;
+}
+
+int factorial(int n) {
+  return tail_recursive(1, n);
+}
+```
+
+A recursive procedure is *tail-recursive* if every procedure call done by the procedure is tail-recursive. A procedure call is *tail-recursive* if it is the *last* operation done before returning hence the name. The statement `return tail_recursive(f * n, n - 1);` does exactly that. It is a tail-recursive procedure call by the procedure `tail_recursive` to itself. In contrast, the procedure call `factorial(n - 1)` in the statement `return n * factorial(n - 1);` of the recursive version of `factorial` is not tail-recursive because, before returning, `n` still needs to be multiplied by the value returned by `factorial(n - 1)` which requires remembering the value of `n` in each call to `factorial`. Let us have a look at the execution of the code, again for `n == 4`:
+
+```c
+factorial(4) == tail_recursive(1, 4) == tail_recursive(1 * 4, 3) == tail_recursive(4 * 3, 2) == tail_recursive(12 * 2, 1) == 24
+```
+
+That looks quite similar to what the iterative version does! It computes `1 * 4 * 3 * 2`, just like the iterative version, instead of `4 * (3 * (2 * 1))`, as done by the recursive version. Tail recursion combines the advantages of iteration (memory usage) and recursion (functional correctness) but not all problems can be solved using tail recursion, namely those that intrinsically require non-constant space. However, in that case even iteration requires non-constant space.
+
+Before moving on, we take another look at iteration versus recursion. The following code is yet another implementation of factorial revealing that iteration and tail-recursion is essentially the same thing. It involves the use of a *global variable* `f`, in contrast to a *local variable* `f`, as in the iterative version. The text to the right of any double slashes `//` is called a *comment* and just meant to help us understand the code and the point we are trying to make. Comments are completely ignored by the machine. For the machine, it is as if they are not there:
+
+```c
+int f; // global variable (!)
+
+void tail_recursive(int n) {
+  if (n > 1) {             // while (n > 1) {
+  	f = f * n;             //   f = f * n;
+                           //
+  	tail_recursive(n - 1); //   n = n - 1;
+  }                        // }
+}
+
+int factorial(int n) {
+  f = 1;
+
+  tail_recursive(n); // while (n > 1) { f = f * n; n = n - 1; }
+
+  return f;
+}
+```
+
+So, first of all, what is the difference between a global and a local variable? It is the *scope* of the variable, that is, where in the code the variable can be used and where not, and it is the *memory* for the value of the variable, that is, where in memory and in particular how often the value is stored.
+
+> A global variable can be used in all procedures
+
+A global variable is declared outside of any procedure body, can be used in all procedures, and its value is stored in memory only once. In short, it can be used everywhere and it only has one value. In the above code, `f` in `tail_recursive` and `factorial` refers to the same global variable `f`. Thus, instead of returning values, `tail_recursive` may operate directly on `f` and thus communicate with other procedures such as `factorial` implicitly through `f`. In fact, the return type of `tail_recursive` is not `int` but `void` which means that `tail_recursive` neither returns any value explicitly nor can be called in a `return` statement.
+
+> A local variable can only be used in the procedure in which it is declared
+
+In contrast, a local variable can only be used in the procedure in which it is declared such as the local variable `f` in the iterative version of `factorial`. Moreover, the value of a local variable of a given procedure is stored in memory for each call to the procedure. This is exactly like formal and actual parameters!
+
+Remember, the recursive version of `factorial` stores the value of `n` for each call to `factorial` to be able to multiply it by the result of the next call to `factorial`. Local variables are therefore just a special case of formal parameters. We could live without local variables and just use formal parameters. However, using local variables is more concise than using formal parameters for storing information that is only relevant within a procedure.
+
+> Tail recursion is iteration by recursion
+
+Interestingly, the above code looks almost like the code of the iterative version! That is because tail recursion is like iteration, just by different means. Tail recursion uses a procedure with an `if` statement and a termination condition, here `n > 1`, rather than a `while` loop with the same loop condition. The loop itself is constructed by the tail-recursive procedure call, here `tail_recursive(n - 1);`.
+
+So, you might ask why all this matters. Well, there is an important lesson to be learned here. When it comes to programming there are lots of different ways of writing code that in the end may do exactly the same thing. First of all, there are lots of different programming languages. But even if you stick to just one language, there are still lots of different choices to be made such as iteration versus recursion and global versus local variables. To make matters worse, these concepts may be called something else in other programming languages. However, their fundamental nature is always the same. An important goal of this book is to enable you to make informed decisions no matter which programming environment and language you actually use.
+
+> Pointers: from numbers to data
+
+There is one more thing in C\* you have not seen yet. It is called *pointers*. They actually gave C\* its name because pointers in C are declared and *dereferenced* using the asterisk symbol `*`. They are the only means in C\* to construct any kind of *data structure* beyond mere integers. In other words, what you have seen of C\* so far only allows us to implement numerical functions, at least when using C\* as intended. Nevertheless, we would like to write code that handles not just numbers but any kind of information, of course. Pointers allow us to do that. For example, the expression `*n` does not evaluate to the value of `n` but instead evaluates to the value stored in memory where the value of `n` points to. However, understanding pointers in detail requires a bit more background on how digital memory works. We therefore come back to the topic in subsequent chapters.
+
+By now, you have seen all features of C\* except pointers. We have shown you what C\* code looks like and what it means. But programming in C\*, or any other programming language, requires practice and curiosity. Try to verify your understanding of the language by writing small programs in C\*, similar to our code examples, and running them through selfie. Try to predict what your code does and then use selfie to see if it actually does that. If not, try to find out why by modifying your code.
+
+Before moving on, let us have a look at the output of selfie when compiling itself to machine code:
+
+```bash
+./selfie -c selfie.c
+```
+
+The first few lines of output give you an idea of the size of the system in terms of the C\* language constructs we just introduced:
+
+```
+./selfie: ================================================================================
+./selfie: this is the selfie system from selfie.cs.uni-salzburg.at with
+./selfie: 64-bit unsigned integers and 64-bit pointers hosted on macOS
+./selfie: ================================================================================
+./selfie: selfie compiling selfie.c to 64-bit RISC-U with 64-bit starc
+./selfie: --------------------------------------------------------------------------------
+./selfie: 365784 characters read in 12394 lines and 1741 comments
+./selfie: with 219888(60.11%) characters in 51329 actual symbols
+./selfie: 491 global variables, 661 procedures, 512 string literals
+./selfie: 1408 assignments, 92 while, 956 if, 3190 calls, 622 return
+./selfie: --------------------------------------------------------------------------------
+./selfie: 21689 symbol table lookups in 2 iterations on average
+```
+
+What you see here is a *profile* of the compiled source code, reported by the selfie compiler called `starc`. For example, there are 484 global variables and 654 procedures in the source code of selfie. Some concepts we have not yet seen such as symbols and string literals are introduced in the programming chapter. The rest of the output provides insight into the machine code that selfie generated for itself:
+
+```
+./selfie: 188392 bytes generated with 43492 instructions and 14424 bytes of data
+./selfie: --------------------------------------------------------------------------------
+./selfie: profile: instruction: total(ratio%)
+./selfie: init:    lui: 2736(6.29%), addi: 12716(29.23%)
+./selfie: memory:  ld: 8055(18.52%), sd: 7862(18.07%)
+./selfie: compute: add: 3742(8.60%), sub: 760(1.74%), mul: 516(1.18%)
+./selfie: compute: divu: 92(0.21%), remu: 29(0.06%)
+./selfie: compare: sltu: 740(1.70%)
+./selfie: control: beq: 1052(2.41%), jal: 4516(10.38%), jalr: 668(1.53%)
+./selfie: system:  ecall: 8(0.01%)
+./selfie: --------------------------------------------------------------------------------
+./selfie: profile: data: total(bytes)
+./selfie: global variables:       492(3936)
+./selfie: unique string literals: 392(10488)
+./selfie: unique big integers:    0(0)
+./selfie: ################################################################################
+```
+
+For example, the system generated 3,742 `add` instructions which is 8.60% of all 43,492 generated instructions. In the following, let us take a closer look using the `double.c` example.
+
+### RISC-U Machine Code
+
+Source code such as the above code examples is nice and, most importantly, readable by humans but that code is actually not what is running on a computer. To a machine, source code is just text like any other, a mere sequence of characters with no meaning. So, how do we run that code on a computer or, in other words, how does that code gets its meaning?
+
+> The meaning of code is created through translation and interpretation
+
+Essentially, there are only two different techniques: *translation* and *interpretation*. In analogy to natural languages, translation refers to the process of translating source code from one language to another. If source and target languages are programming and machine languages, respectively, we speak of *compilation* rather than translation. For example, C\* source code is compiled to RISC-U machine code by a *compiler* such as the selfie compiler.
+
+> Translation is optional, interpretation is not
+
+Interpretation refers to the process of executing source and even machine code in small steps according to rules precisely defined at the level of individual statements or even parts of a statement, down to individual *machine instructions* in case of machine code. While translation is optional and only needed for improving performance, interpretation is always needed for running any code, even if we were just writing machine code. Fundamentally, a computer or in fact the *processor* of a computer is an *interpreter* of machine code in hardware. In other words, running code always involves at least one interpreter which is the processor, independently of whether the original code is source or machine code. For many programming languages, however, there do exist interpreters written in software. A prominent example is Python! If you are interested in Python, you may want to check out the autograder of the selfie system which is written in Python.
+
+So, how do we run a program written in C\*? Let us have a closer look at the above example of running the `double` procedure stored in a file called `double.c`:
+
+```c
+1 int double(int n) {
+2   return n + n;
+3 }
+4
+5 int main() {
+6   return double(42);
+7 }
+```
+
+using selfie as follows:
+
+```bash
+./selfie -c examples/double.c -m 1
+```
+
+This time we show *line numbers* 1 to 7 of the code as a way to refer to individual lines.
+
+Selfie follows a workflow that is standard for programming languages such as C. It first compiles a program written in C\* to RISC-U machine code, as instructed by the `-c` option. We could then take the machine code and run it on a RISC-U processor. Such processors exist but you are unlikely to have access to a computer with such a processor. Therefore, selfie also features an interpreter of RISC-U machine code which is invoked by the `-m` option (ignore the argument `1` for now). In other words, `./selfie -c examples/double.c -m 1` instructs selfie to compile the source code in `double.c` to RISC-U machine code and then execute it right away using its builtin RISC-U interpreter.
+
+Okay, that is all very nice and cool but how can we see what is actually going on? There are essentially two ways. We can ask selfie to generate a human-readable RISC-U assembly file called `double.s` that contains the compiled code of `double.c`, or we can have selfie execute the compiled code and output in our terminal every single machine instruction that it actually executes. Let us try generating the assembly file first using the selfie *disassembler*:
+
+```bash
+./selfie -c examples/double.c -S double.s
+```
+
+Make sure to use an uppercase `S` in the `-S` option. The lowercase version `-s` also works but generates less information. By the way, the term disassembler may be confusing at first but it is correct. An *assembler* does the opposite direction, that is, it assembles machine code from assembly code.
+
+The relevant part of `double.s` looks as follows, with some code omitted (`...`) and some comments (`//`) and formatting (`---`) added by us:
+
+```asm
+...
+---
+0x13C(~2): 0xFF810113: addi sp,sp,-8     // int double(int n) {
+0x140(~2): 0x00113023: sd ra,0(sp)
+0x144(~2): 0xFF810113: addi sp,sp,-8
+0x148(~2): 0x00813023: sd s0,0(sp)
+0x14C(~2): 0x00010413: addi s0,sp,0
+---
+0x150(~2): 0x01043283: ld t0,16(s0)      //   return n + n;
+0x154(~2): 0x01043303: ld t1,16(s0)
+0x158(~2): 0x006282B3: add t0,t0,t1
+0x15C(~2): 0x00028513: addi a0,t0,0
+0x160(~2): 0x0080006F: jal zero,2[0x168]
+---
+0x164(~3): 0x00000513: addi a0,zero,0    // }
+0x168(~3): 0x00013403: ld s0,0(sp)
+0x16C(~3): 0x00810113: addi sp,sp,8
+0x170(~3): 0x00013083: ld ra,0(sp)
+0x174(~3): 0x01010113: addi sp,sp,16
+0x178(~3): 0x00008067: jalr zero,0(ra)
+---
+0x17C(~6): 0xFF810113: addi sp,sp,-8     // int main() {
+0x180(~6): 0x00113023: sd ra,0(sp)
+0x184(~6): 0xFF810113: addi sp,sp,-8
+0x188(~6): 0x00813023: sd s0,0(sp)
+0x18C(~6): 0x00010413: addi s0,sp,0
+---
+0x190(~6): 0x02A00293: addi t0,zero,42   //   return double(42);
+0x194(~6): 0xFF810113: addi sp,sp,-8
+0x198(~6): 0x00513023: sd t0,0(sp)
+0x19C(~6): 0xFA1FF0EF: jal ra,-24[0x13C]
+0x1A0(~6): 0x00050293: addi t0,a0,0
+0x1A4(~6): 0x00028513: addi a0,t0,0
+0x1A8(~6): 0x0080006F: jal zero,2[0x1B0]
+---
+0x1AC(~7): 0x00000513: addi a0,zero,0    // }
+0x1B0(~7): 0x00013403: ld s0,0(sp)
+0x1B4(~7): 0x00810113: addi sp,sp,8
+0x1B8(~7): 0x00013083: ld ra,0(sp)
+0x1BC(~7): 0x00810113: addi sp,sp,8
+0x1C0(~7): 0x00008067: jalr zero,0(ra)
+---
+...
+```
+
+Assembly code might look scary or at least cryptic to you but once you get the idea it is surprisingly simple. Each line that begins with `0x` corresponds to a single machine instruction. The number that follows `0x` such as `13C`, for example, is a *memory address* which is similar to a line number in source code. For readability, we highlight blocks of machine instructions using `---`.
+
+> Every C\* statement translates to a block of RISC-U machine instructions
+
+The key observation here is that there is an immediate correspondence between lines of code in `double.c` and blocks of machine instructions in `double.s`. For example, the statement `return n + n;` in line 2 of `double.c` corresponds to the block of machine instructions from `0x150` to `0x160`. In other words, the block of machine instructions shows you how the statement is actually implemented for real!
+
+> RISC-U machine code gives C\* code meaning!
+
+There exists such a correspondence for all C\* code which makes reading machine code compiled by selfie easier. Readers familiar with machine code may notice that the compiled code shown here is inefficient. For example, the machine instruction at `0x164` is redundant and could be removed. However, selfie generates unoptimized code on purpose to keep things simple and maintain the immediate correspondence between C\* and its selfie-compiled machine code. We nevertheless get back to that point in subsequent chapters.
+
+Instead of explaining all of the assembly code we see here, let us focus on just one instruction to get the basic idea. RISC-U is formally introduced and explained in the machine chapter. The following instruction implements the addition operator `+` in the statement `return n + n;` in line 2 of `double.c`:
+
+```asm
+0x158(~2): 0x006282B3: add t0,t0,t1
+```
+
+We go through that line from right to left: `add t0,t0,t1` is the machine instruction in human-readable assembly code, `0x006282B3` is the binary code of the instruction as seen by the processor, and `0x158(~2)` refers to the address `0x158` in memory where the instruction is stored and the approximate line number `2` of the source code from which the instruction was compiled. In general, the line numbers are only approximate because generating accurate line numbers would make the selfie compiler more complicated.
+
+> A machine instruction says what to do **and** which instruction is next
+
+So, what does `add t0,t0,t1` do? It instructs the processor to add the values stored in its *registers* `t0` and `t1`, then store the result in `t0`, and finally move on to the next instruction at address `0x15C`. In other words, `add t0,t0,t1` is similar to an assignment `t0 = t0 + t1` but involving registers, not variables.
+
+> Registers are the fastest and most valuable memory of a computer
+
+Registers is where most of the work is done. There are usually only a few registers but those are the fastest and most valuable memory in a computer. For example, `t0` and `t1` are 2 out of a total of just 32 registers of a RISC-U processor. In our example, if the values of `t0` and `t1` are both the value of `n` right before executing the instruction, then the value of `t0` is obviously the value of `n + n` right after executing the instruction. So, that is actually what is going on here and exactly what we need before returning to the `main` procedure!
+
+But you are right! We could have done the same thing using `add t0,t0,t0` and not even involve `t1` at all. But, again, this would be optimized code which is not easy to generate by a system designed for simplicity. So, we leave it at that for now. It is an exciting topic to study though and there is still a lot of research going on about how to do this best. After all, we want our code to be as fast and use as few instructions as possible.
+
+What about `0x158`, `0x15C`, and `0x006282B3`? Well, all three are *hexadecimal numbers* using *hexadecimal notation*, as indicated by the *prefix* `0x`. The only difference between hexadecimal and decimal notation is that hexadecimal notation supports 16 rather than 10 different characters per digit, that is, `0` to `9` as well as `A` to `F` where `A` stands for the decimal value 10, `B` for 11, `C` for 12, `D` for 13, `E` for 14, and `F` for 15. Note that hexa is derived from the Greek word for six and decimal from Latin for tenth. The etymologically correct term for hexadecimal is *senidenary* but anyway not used in practice.
+
+Each digit of a hexadecimal number represents 16-times rather than 10-times more value than the digit to its immediate right. Thus `0x15C`, for example, stands for the decimal value 348 because (**1** * 16 + **5**) * 16 + **12** is equal to 348 where **12** is represented by `C`. We say that hexadecimal notation uses *base* 16 whereas decimal notation uses base 10, that is, `0x15C` is just a shortcut for (**1** * 16 + **5**) * 16 + **12** and 348 is in fact a shortcut for (**3** * 10 + **4**) * 10 + **8**.
+
+> Everything in a computer is encoded in bits!
+
+Why do we use hexadecimal rather than decimal notation? There are essentially two reasons, both rooted in the need to talk about *binary numbers* a lot. Everything in a computer is encoded in *bits* including memory addresses and machine code. The hexadecimal number `0x15C`, for example, represents the following sequence of bits which effectively constitutes a binary number:
+
+```
+0001 0101 1100
+```
+
+Binary notation uses base 2 since it supports just 2 characters per digit or in fact bit, that is, `0` and `1`. The beauty of hexadecimal numbers is that each hexadecimal digit corresponds to exactly 4 bits called *nibble* hence our spacing! Here, `0001` stands for the `1` in `0x15C`, `0101` for the `5`, and `1100` for the `C`. In analogy to hexadecimal and decimal notation, each digit or bit of a binary number represents 2-times more value than the bit to its immediate right. Thus `1100`, for example, is a shortcut for ((**1** * 2 + **1**) * 2 + **0**) * 2 + **0** which evaluates to 12 represented by `C`.
+
+> Hexadecimal numbers need exactly 4-times fewer digits than binary numbers
+
+In sum, *conversion* between hexadecimal and binary numbers is easy, which is one of the reasons as to why hexadecimal notation is so popular in computer science. Another reason is that hexadecimal notation is significantly more *compact* than binary notation, exactly 4-times more compact to be precise. Mathematically speaking, hexadecimal is popular because base 16 is a power of base 2 (convertibility), namely, 2 to the power of factor 4 (compactness).
+
+In contrast, using decimal notation to represent binary numbers is cumbersome because base 10 is not a power of base 2. When dealing with computers, binary encoding is the reason why we are often confronted with powers of 2 such as 2, 4, 8, 16, 32, 64, 128, 256, 512, and so on, in contrast to powers of 10 such as 10, 100, 1000, et cetera. The size chapter has more on that!
+
+Before we move on, let us have a quick look at the binary code `0x006282B3` of the above machine instruction spelled out in a sequence of bits:
+
+```
+0000 0000 0110 0010 1000 0010 1011 0011
+```
+
+What you see here is what the processor sees when executing `add t0,t0,t1`. It sees just these bits and nothing else. If you change a single bit, the machine will do something else. Why are machine instructions encoded like that? Time and space! We need to *encode* machine instructions in as few bits as possible to save space (memory) and the processor needs to *decode* those bits again as fast as possible to save time. There is more on that in the machine chapter.
+
+Let us now instruct selfie to show us the compiled code during actual execution using the `-d` option (again, ignore the argument `1` for now) which invokes the system's *debugger*:
+
+```bash
+./selfie -c examples/double.c -d 1
+```
+
+A debugger is a software tool for finding flaws in software called *bugs*. Lots of information will fly by in your terminal. Here is an interesting snippet that involves the `add t0,t0,t1` instruction:
+
+```asm
+...
+pc==0x10150(~2): ld t0,16(s0): s0==0xFFFFFF98,mem[0xFFFFFFA8]==42 |- t0==42(0x2A) -> t0==42(0x2A)==mem[0xFFFFFFA8]
+pc==0x10154(~2): ld t1,16(s0): s0==0xFFFFFF98,mem[0xFFFFFFA8]==42 |- t1==0(0x0) -> t1==42(0x2A)==mem[0xFFFFFFA8]
+pc==0x10158(~2): add t0,t0,t1: t0==42(0x2A),t1==42(0x2A) |- t0==42(0x2A) -> t0==84(0x54)
+pc==0x1015C(~2): addi a0,t0,0: t0==84(0x54) |- a0==73728(0x12000) -> a0==84(0x54)
+...
+```
+
+We focus on this part in particular:
+
+```asm
+... add t0,t0,t1: t0==42(0x2A),t1==42(0x2A) |- t0==42(0x2A) -> t0==84(0x54)
+```
+
+When executing a machine instruction such as `add t0,t0,t1`, selfie reports, to the left of the symbol `|-`, the *machine state* on which the instruction depends before executing it, and, to the right of the symbol `->`, how the state changed after executing the instruction. Here, the state on which the instruction depends are the values of registers `t0` and `t1` which are both `42` in decimal and `0x2A` in hexadecimal. After executing the instruction the machine state has changed with the value of `t0` set to `84` in decimal and `0x54` in hexadecimal, which is the result of adding the values of `t0` and `t1`. In between `|-` and `->`, selfie reports, before executing the instruction, the machine state that the instruction actually changes, which is obviously the value of `t0`.
+
+> A computer changes from one machine state to another by executing one machine instruction after another
+
+It may be hard to believe but all a computer does is execute one machine instruction after another in a seemingly endless chain of instructions. Using the above output of selfie we can even reconstruct every single step the machine has taken and how its state has evolved over time.
+
+> A computer is in exactly one machine state at any given time
+
+What is very important here is to realize that a computer can only be in one machine state at any given time. That state is essentially all bits the machine can store in all of its memory including its registers. By executing one instruction that state changes but only by very few bits. Yet all you see your laptop and smartphone does is the result of executing one instruction after another.
+
+> Computers can do magical things just because they can store billions of bits and can execute billions of instructions per second with very little energy
+
+So, where does the magic come from? Simple. It is just about being able to store lots of bits and change them very fast and very efficiently. But that point of view makes us feel like we have reached the bottom of a very deep ocean, right? Well, we could go even deeper and look at how the electronic circuits of a computer actually work. However, computer scientists generally look up from the level of bits rather than further down, and we do that too.
+
+Notice that we have come down here all the way from C\* code. Going back up would takes us from the level of machine code in binary and hexadecimal notation to assembly code and finally back to C\* code. Each level is an *abstraction* of the levels below and an attempt to stay focused by ignoring irrelevant details. For example, variables in C\* allow us to focus on numerical calculations rather than having to figure out where to store variable values in memory and which registers to use in calculations. Instead, we use compilers such as the selfie compiler to deal with such details.
+
+> High-level programming languages versus low-level machine code
+
+In computer science, people speak of *high-level* programming languages such as C\* and *low-level* machine code such as RISC-U where high level means more abstract and low level means less abstract. This may be confused with a *high-level* understanding of something complicated where high means deep, but not so here! For example, variables and statements in C\* are high-level concepts not because they are particularly deep ideas but because they are more abstract concepts than registers and machine instructions in RISC-U.
+
+> Abstraction is how computer scientists deal with complexity
+
+Abstraction is a key concept in computer science and many other fields for dealing with complexity. The abstractions we see here have been developed over many years and are widely accepted among computer scientists and developers. There is, however, disagreement in how to teach and learn about them. For example, some believe it is sufficient to learn how to program simply by programming, similar to learning a new language by just speaking it. We call that the top-down approach. Others believe learning how to program requires understanding the mathematical and technical foundation of programming languages. We refer to that as the bottom-up approach.
+
+The truth probably lies, as so often, somewhere in the middle, and also depends on what your goals are. In this chapter we apply the top-down approach, on purpose, of course. However, in the rest of the book we follow the bottom-up approach but from a systems perspective. This means that we begin with the absolute basics and then show you how things can be put together to form something bigger than the mere sum of its individual parts. The reason is that we would like you to know, well, how to program, but far beyond that to understand the basic principles of computer science and how those combine to true magic. Programming skills and other skills beyond just programming derive from that, not the other way around.
+
+In the following, we give you an example by introducing a formal language whose purpose is not to develop code but instead describe the *syntactic* structure of other formal languages, in particular programming languages and even assembly. We speak of EBNF, of course. This is computer science beyond just programming!
+
+Actually, we already saw EBNF before. Let us quickly go back to self-compiling selfie but this time also running selfie right after self-compilation:
+
+```bash
+./selfie -c selfie.c -m 1
+```
+
+The output of the selfie compiler is the same as before. The interesting part is the output of selfie after that when running itself:
+
+```
+...
+./selfie: 64-bit mipster executing 64-bit RISC-U binary selfie.c with 1MB physical memory
+./selfie: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+> selfie.c { -c { source } | -o binary | ( -s | -S ) assembly | -l binary } [ ( -m | -d | -r | -y ) 0-4096 ... ]
+
+./selfie: <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+./selfie: 64-bit mipster terminating 64-bit RISC-U binary selfie.c with exit code 0
+...
+```
+
+Selfie responds with its synopsis which is written in EBNF! But have a look at the rest of the output first before we talk about EBNF:
+
+```
+...
+./selfie: --------------------------------------------------------------------------------
+./selfie: summary: 85754 executed instructions in total [17.66% nops]
+./selfie:          0.19MB mapped memory [19.92% of 1MB physical memory]
+./selfie: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+./selfie: context: > selfie.c
+./selfie:          85754 executed instructions [100.00% share, factor 1.00]
+./selfie:          0.28KB peak stack size
+./selfie:          0.00MB allocated in 8 mallocs (0.00MB or 100.00% actually accessed)
+./selfie:          15 exceptions handled by ./selfie, one every 5716 executed instructions
+./selfie:          14 syscalls, 1 page faults, 0 timer interrupts
+./selfie: --------------------------------------------------------------------------------
+./selfie: profile: instruction: total(ratio%)[nops%]
+./selfie: init:    lui: 61(0.07%)[0.00%], addi: 31269(36.46%)[12.81%]
+./selfie: memory:  ld: 21307(24.84%)[17.60%], sd: 13210(15.40%)[34.80%]
+./selfie: compute: add: 2332(2.71%)[7.24%], sub: 408(0.47%)[30.14%], mul: 2792(3.25%)[13.68%]
+./selfie: compute: divu: 952(1.11%)[6.61%], remu: 1077(1.25%)[22.00%]
+./selfie: compare: sltu: 1769(2.06%)[0.56%]
+./selfie: control: beq: 1917(2.23%)[94.36%], jal: 5819(6.78%)[0.00%], jalr: 2827(3.29%)[0.00%]
+./selfie: system:  ecall: 14(0.01%)
+./selfie: --------------------------------------------------------------------------------
+...
+```
+
+Selfie reports how many instructions it executed just to print its synopsis: 85,754 instructions! The system also provides another *profile* but this time of the executed instructions, not the generated instructions. For example, the `add` instruction was executed 2,332 times which is 2.71% of all executed instructions. There is even more detailed information after that which we skip here. The machine chapter has more on that.
+
+### EBNF Grammar
+
+Inventing and then using formal languages comes with a number of fundamental challenges related to their *syntax* and their *semantics*. However, before we can even talk about their semantics, that is, their actual meaning we need to say what exactly a *sentence* in a formal language is in terms of its syntax regardless of its meaning. This is a *specification* problem. Moreover, reliably checking whether some possibly long sequence of characters is a sentence in a formal language requires constructing software that is able to do that for us. For example, whenever we write a program we would like to use a computer to check as fast as possible if the program is in fact, say, a C\* program never mind its actual meaning. This is an *implementation* problem.
+
+> Syntax is a prerequisite for semantics
+
+Specifying the syntax of a formal language and efficiently checking whether some sequence of characters is a sentence according to that syntax are prerequisites of constructing semantics. This may all sound very complicated but computer scientists have figured out an elegant and efficient way for dealing with syntax. Here it is!
+
+Let us begin with something simple. How do we specify what, say, the syntax of a decimal number is? It is easy in English: a decimal number is a sequence of decimal digits with at least one digit. But how do we say that formally? There are formal languages called grammars that have been designed exactly for this purpose. We use Extended Backus-Naur Form (EBNF) which was originally proposed by computer scientists John Warner Backus and Peter Naur, and later extended with repetition and optionality operators by Niklaus Wirth.
+
+In EBNF, a decimal number, or in fact the *language of decimal numbers* is defined by the following grammar:
+
+```ebnf
+decimal_number = digit { digit } .
+
+digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" .
+```
+
+Similar to C\* code, EBNF reads like a sentence in English: a decimal number is a digit followed by any number of digits, as indicated by the *repetition* operator `{ }`, which includes zero repetitions, and a digit is either `0` or `1` or `2` or `3` or `4` or `5` or `6` or `7` or `8` or `9`, as indicated by the *choice* operator `|`. That was easy, right? Well, there is a tiny mistake in there. Can you spot it?
+
+The above grammar actually says that even a sequence of just `0`s is a decimal number, for example, `00000`. We call that a *bug*, just like a bug in software. Well, we do not want bugs in our grammar, but leave it up to you to fix, that is, *debug* it as an exercise. Hint: you need to define what a `non_zero_digit` is and then use that in the right place. No worries if you cannot figure it out here, we solve the puzzle below.
+
+> A non-terminal is like a variable, a terminal is like a value
+
+Here is a bit of terminology and background. Each line in EBNF is called a *production* where the left-hand side (LHS) of the production operator `=` is called a *non-terminal* such as `digit`, for example, which is similar to a variable. Their counterpart is a *terminal* in double quotes such as `"0"`, for example, which is similar to a value. Anything between two double quotes is meant to be part of the *vocabulary* of the language defined by the grammar while non-terminals can be named anything as long as there is not more than one production per non-terminal.
+
+> A production is similar to an assignment in C\*
+
+The right-hand side (RHS) of `=` is an EBNF *expression* of non-terminals, terminals, and EBNF operators such as `{ }` and `|`, followed by a dot `.` at the end. EBNF productions and expressions are similar to assignments and arithmetic expressions in C\*, which we point out below. There is also two more EBNF operators that we introduce below along with the exact structure of EBNF expressions, using EBNF, of course.
+
+So, how about defining what a hexadecimal number is? Here is the EBNF for that:
+
+```ebnf
+hexadecimal_number = "0x" hexadecimal_digit { hexadecimal_digit } .
+
+hexadecimal_digit = digit | "A" | "B" | "C" | "D" | "E" | "F" .
+```
+
+Not so hard either, right? There is one thing that the grammars for decimal and hexadecimal numbers have in common. They can both be reduced to a single EBNF production by something we call *substitution*. Here, we just take the second production and substitute it into the RHS of the first production in all places where the non-terminal in the LHS of the second production occurs. The result for the grammar of decimal numbers, for example, is:
+
+```ebnf
+decimal_number = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" { "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" } .
+```
+
+The important point is that we got rid of all non-terminals in the RHS of the production for decimal numbers. But why would we do that? It is harder to read for sure and introduces a lot of *redundancy*. Well, on the other hand, it is now easy to fix the `00000` bug using parentheses in the right place (which is also where your `non_zero_digit` non-terminal should be):
+
+```ebnf
+decimal_number = "0" | ( "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ) { "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" } .
+```
+
+But this is still not the reason. We try squeezing everything into a single EBNF production without any non-terminals in its RHS because, if we succeed, we know that we are dealing with a particularly interesting subset of grammars called *regular grammars* or *regular expressions* which define *regular languages* such as the language of decimal and hexadecimal numbers.
+
+> A regular expression is an EBNF production without any non-terminals in its RHS
+
+Our definition of regular expressions is just one out of many possible definitions that are nevertheless all equivalent. Regular expressions are interesting because they are easy to implement using an abstract *model of computation* called *finite state machine* (FSM) which is even simpler than that of a processor but still capable of doing useful work.
+
+> Specification by regular expression, implementation by finite state machine
+
+For any regular expression there exists an FSM that can be implemented in C\*, for example, to check efficiently whether a given sequence of characters is indeed a sentence in the language defined by the regular expression. In other words, there is an FSM to check if a sequence of characters is a decimal number or not, for example. The key idea is to match those characters with terminals in the regular expression which is exactly what an FSM can do, not more but also not less. The programming chapter has more on that.
+
+There are, however, grammars that cannot be expressed in a single EBNF production and are therefore not regular. Those are called *context-free*. The language of arithmetic expressions in C\* is an example of a context-free language that can only be defined by a context-free grammar, that is, by more than one EBNF production. For simplicity, we show you here a context-free grammar in EBNF that defines C\* assignments involving just a subset of all possible arithmetic C\* expressions which nevertheless still require a context-free grammar:
+
+```ebnf
+assignment = variable "=" expression .
+
+expression = term { ( "+" | "-" ) term } .
+term       = factor { ( "*" | "/" ) factor } .
+factor     = variable | value | "(" expression ")" .
+
+variable = letter { letter | digit | "_" } .
+value    = decimal_number | hexadecimal_number .
+
+letter = "a" | ... | "z" | "A" | ... | "Z" .
+```
+
+Let us first look at the productions for `letter`, and then `value` and `variable`. The production for `letter` is obviously intended to define the (regular) language of lowercase and uppercase letters. The dots `...` are not EBNF, they are just there to save space.
+
+> A variable name always begins with a letter, a value always with a digit
+
+A `value` is either a decimal or a hexadecimal number. A `variable` or better a `variable` name is a bit more interesting. It is supposed to start with a letter which may be followed by any number of letters, digits, and underscores `_`, including none at all which would make it a single-letter name such as `x`, for example. By the way, there is a good reason why we want variable names to start with a letter. It allows us to know upon seeing the first character in a sequence of characters whether we are dealing with a variable or a value. This makes reading code easier for the machine, and maybe even for us.
+
+The language of variables and values are both regular. You may want to follow up on that and check their regularity by transforming their productions into productions with no non-terminals in their RHSs! They get quite long but it is possible.
+
+So, how does a language look like that is not regular? The language of arithmetic expressions is an example, and as a consequence of that, the language of assignments as well since an `assignment` is obviously a `variable` followed by the assignment operator `=` followed by an `expression`.
+
+Let us go through the EBNF of an `expression` step by step. An `expression` is a `term` possibly followed by any number of either an addition operator `+` or a subtraction operator `-` followed by another `term`. In turn, a `term` is a `factor` possibly followed by any number of either a multiplication operator `*` or a division operator `/` followed by another `factor`. Finally, a `factor` is either a `variable` or a `value` or, and this is where it gets interesting, a left parenthesis `(` followed by, well, an `expression` followed by a right parenthesis `)`.
+
+> Recursion in EBNF enables arbitrarily nested structures
+
+The occurrence of `expression` in the RHS of the production for `factor` is recursion in EBNF! The recursion prevents us from being able to substitute the productions for `expression`, `term`, and `factor` into a single EBNF production, effectively making the language of expressions context-free. If we were to remove the recursion the language of expressions would be regular. We nevertheless need to use recursion here because arithmetic expressions may contain arbitrarily *nested subexpressions* and not just terms of factors. Recall the above procedure `fancy` which involves the subexpression `(n + 1)`:
+
+```c
+int fancy(int n) {
+  return n * (n + 1) - n / 2 + 42;
+}
+```
+
+The subexpression `(n + 1)` in `n * (n + 1) - n / 2 + 42` may in fact be any arithmetic expression which is only possible because of recursion in the EBNF of expressions. Without recursion we can only say something like `n * n + 1 - n / 2 + 42`, for example, which is *semantically* equivalent to `(n * n) + 1 - (n / 2) + 42` since multiplication and division operators have precedence over addition and subtraction operators. This is even more apparent when looking at the *structure* of `n * n + 1 - n / 2 + 42` in its *derivation tree*, here using a text-based form of pictures called ASCII art, showing the tree up-side-down with the root at the top and the leaves at the bottom, as it is commonly done in computer science:
+
+```
+             _____________
+             |       |   |
+expression: "+"     "-" "+"
+            / \       \   \
+term:     "*"  \     "/"   \
+          / \   \    / \    \
+factor:  n   n   1  n   2    42
+```
+
+The derivation tree shows how `n * n + 1 - n / 2 + 42` relates to the grammar. In particular, with a derivation tree, it is easy to calculate the value of an expression. Given a value for `n`, say, `4`, start at the leaves by replacing `n` by `4` and then propagate the values of the subexpressions upwards to the root. The result is `57`.
+
+> Grammars define syntax but may also have an effect on semantics
+
+What if for some reason we would like to give addition and subtraction precedence over multiplication and division? Easy. Just exchange `"+"` and `"*"` as well as `"-"` and `"/"` in the EBNF of expressions. In other words, grammars may have an effect on semantics, not just syntax!
+
+Fortunately, recursion in EBNF even allows us to control the structure of expressions to overrule the precedence and associativity of arithmetic operators using parenthesis as grouping operators, for example. The derivation tree of `n * (n + 1) - n / 2 + 42` reveals its structural difference to `n * n + 1 - n / 2 + 42` right away:
+
+```
+             ___________
+             |         |
+expression: "-"       "+"
+            / \____     \
+term:     "*"      "/"   \
+          / \      / \    \
+factor:  n "( )"  n   2    42
+             |
+expression: "+"
+            / \
+term:      /   \
+          /     \
+factor:  n       1
+```
+
+To calculate the value of the expression, again with `4` as value for `n`, start at the leaves by replacing `n` by `4` and then propagate the values of the subexpressions upwards to the root. This time the result is `60`.
+
+There is, however, a subtle issue here. EBNF can express precedence but not associativity which controls the grouping of operators that have the same precedence such as `+` and `-`. So far, we silently assumed that expressions are grouped from left to right, not from right to left, which does make sense, however, because `-` in particular is left-associative, not *right-associative*. For example, `n * n + 1 - n / 2 + 42` is grouped as in `(n * n + 1 - n / 2) + 42`, not `n * n + 1 - (n / 2 + 42)`.
+
+> Specification by context-free grammar, implementation by pushdown automaton
+
+Before moving on, we would like to answer an important question: is there a model of computation similar to finite state machines that can implement context-free grammars? The answer is yes. Any context-free grammar can be implemented by a *pushdown automaton* (PDA) which is a model of computation that can do just a bit more than a finite state machine but is still simpler than that of a processor.
+
+> A pushdown automaton is a finite state machine with a stack
+
+More precisely, a PDA is a finite state machine plus a *stack*. Similar to regular expressions and finite state machines, there is a PDA to check if a sequence of characters is an arithmetic expression or not, for example. Again, the key idea is to match those characters with terminals in the grammar. However, a PDA also needs to make sure that there are as many right parentheses as there are left parentheses, for example. For this purpose, it pushes each left parenthesis down onto its stack and pops one off the stack with each right parenthesis. When it is done, an empty stack indicates success. This is a limited form of counting which is fundamental in recognizing nested structure. Again, the programming chapter has more on that.
+
+There is one thing that is important to realize here. All we do with these grammars and machines is formalizing the process of reading that we as humans do without even noticing what is happening. By going through this exercise of formalization we not only enable us to build software that can do this for us incredibly fast and efficiently but also sharpen our own understanding of notation and its meaning. Here is the final step demonstrating that. How about defining the syntax of EBNF using EBNF? The following EBNF does exactly that:
+
+```ebnf
+EBNF = { production } .
+
+production = non_terminal "=" expression "." .
+
+expression = term { "|" term } .
+term       = factor { " " factor } .
+factor     = non_terminal | terminal |
+             "{" expression "}" | "[" expression "]" | "(" expression ")" .
+
+non_terminal = variable .
+terminal     = """ { character } """ .
+
+character = letter | digit | ... .
+```
+
+> The first self-reference, and the simplest
+
+Notice what just happened: a notation described its own syntax, and nothing strange followed. Every production in this book, including the eight above, is a sentence of the language the eight define, and you can check that by hand with no further background. It is harmless because a text about texts is still a finite text, read by the same finite procedure as any other. Hold on to the example. Self-reference is the guiding principle of this book, and it returns three times with the same move made on meaning instead of notation: a compiler that compiles its own source in the programming chapter, a program asked about its own halting in the meaning chapter, and a kernel that must isolate itself in the computing chapter. There it is not harmless; there it is where the limits live.
+
+By now, you should be able to read the EBNF just like sentences in English. There are a few aspects we should point out. Here, by `expression` we mean an EBNF expression, not an arithmetic expression. However, syntactically they are quite similar which is why we use the same terminology. Even EBNF productions and assignments are almost identical, syntactically! There are also two EBNF operators of which you have seen only one but probably without noticing. An EBNF term is a sequence of factors which are connected by the (invisible) *sequential composition* operator `" "` between them that has in fact precedence over the choice operator `|`, just like `*` over `+`, for example. And there is the *optionality* operator `[ ]` that we have not used yet. Anything in between those brackets may appear in a sentence but does not have to. The synopsis of selfie uses those. To see the synopsis again, this time without self-compilation, just type in your terminal:
+
+```bash
+./selfie
+```
+
+which responds with:
+
+```
+./selfie { -c { source } | -o binary | ( -s | -S ) assembly | -l binary } [ ( -m | -d | -r | -y ) 0-4096 ... ]
+```
+
+Not using the optional part `[ ( -m | -d | -r | -y ) 0-4096 ... ]` simply allows us to invoke selfie as compiler without running any code as we did before. EBNF is a beautiful way of saying just that and lots of other things. Try for yourself to invoke selfie with different options by just following the rules of its synopsis! You may even want to check out the source code in `selfie.c` that implements the finite state machine for recognizing the synopsis. It is in the procedure called `selfie` at the end of the file.
+
+The final question about EBNF that often comes up in class is why context-free grammars are called context-free. The answer is simple. Any non-terminal `N` in the RHS of an EBNF production `P` may be replaced by the RHS of the production `D` that defines the non-terminal, independently of the context in which `N` appears in `P`. This is because the LHS of a production must be a non-terminal, nothing else. We went through that exercise before when checking whether an EBNF is regular or not by trying to substitute all non-terminals occurring in any RHS with their definitions. As you can see here, this is not possible with the EBNF of EBNF because `expression` also occurs in the RHS of a production just like with arithmetic expressions which means that the EBNF of EBNF is context-free but not regular. Are there grammars that are not context-free? Yes, of course. Just surround the non-terminal in the LHS of a production with terminals. That would make your grammar *context-sensitive*. However, context-free grammars are all we need here, so we stick to that.
+
+The purpose of this chapter was to give you an idea of what it means to express your thoughts in formal languages rather than just English. Formalization is key in computer science and many other scientific fields. It may appear very cumbersome to do that at first but you probably already see the power of formalization.
+
+We introduced the programming language C\* which allows you to develop code. The language is simple enough to understand its meaning completely down to every single detail. Then we introduced the machine language RISC-U which gives you an idea of how a computer actually works and executes code. We also showed you how C\* translates to RISC-U. This is important for understanding the true meaning of C\*. Finally, we introduced EBNF, a formal grammar for specifying the syntax of programming languages and other formal languages including itself. While EBNF is not executable on a computer, unlike C\* and RISC-U code, it can be implemented in C\* based on finite state machines and pushdown automata. The programming chapter shows how this works. Seeing a formal language like EBNF is nevertheless important for understanding that computer science is not just about programming but also about modeling complex structure such as the syntax of programming languages. There are lots of other formal languages in computer science intended for modeling rather than programming. EBNF is just one example.
+
+With C\*, RISC-U, and EBNF introduced here by example, we are ready to take on the rest of the book in which we take a bottom-up approach from bits and bytes all the way to computing in the cloud. In particular, we fill you in on all the important details missing in this chapter that are necessary to see the big picture eventually. Here are also our recommendations for textbooks that provide the technical background of this chapter.
+
+### Recommended Readings 3
+
+> The C Programming Language by Brian W. Kernighan and Dennis M. Ritchie
+
+This book is seminal work introducing the programming language C. It is a must have for anyone not just interested in C but also more modern programming languages whose design has likely been influenced by C.
+
+> Computer Architecture: A Quantitative Approach by John L. Hennessy and David A. Patterson
+
+This is seminal work on computer architecture that belongs in any computer science library. Make sure to get the latest edition that features the machine model ([RISC-V](https://riscv.org)) we introduce in the machine chapter and use throughout the book.
+
+> Foundations of Computer Science by Alfred V. Aho and Jeffrey D. Ullman
+
+This book is also seminal work and the de-facto standard introduction to the theory of computer science. EBNF is mentioned in this book in its original Backus-Naur Form (BNF). You may want to have this book in your computer science library as well.
+
 ## Machine
 
 The machine and its code is a mystery to many even though the basic principles governing its design are surprisingly simple and accessible to everyone. But simplicity is not the only reason why we dedicate a whole chapter to the topic. Knowing how a computer does its magic through mere yet extremely fast manipulation of enormous amounts of bits is the key to understanding virtually everything else in computer science, in particular the motivation of why things are done in certain ways and not others, hence the name of the field!
 
 For many years, there has been a trend towards ignoring the machine when teaching people how to code. After all, high-level programming languages are designed to abstract from the low-level details of the machine. However, not knowing what they abstract from has made coding the most casual engineering discipline among all fields of engineering. The result is not just low code quality almost everywhere but also high tolerance for that among users and decision makers. Electrical, mechanical, and civil engineers would never get away with what software engineers are allowed to do. This is surprising given that learning about the machine and how it connects to everything else takes a fraction of the time it takes to learn a high-level programming language!
 
+> Station II: a finite machine, and the universal one
+
+Two things from the axis of the book apply to everything in this chapter. First, the machine is finite. Its 4 GB of memory alone are $2^{35}$ bits, so it is a finite state machine with at least $2^{34,359,738,368}$ states, as the size chapter computed, and it is deterministic: the same state and the same input give the same next state, always. Second, the emulator we build for it in this chapter, `mipster`, is not just a convenience. It is one machine that runs every program written for the machine, itself included, and the meaning chapter names it: the universal machine that Turing described in 1936, and the reason nobody owns a calculator, a typewriter, a map, and a record player as four separate objects. When you reach the emulation section, you will be looking at a page of C\* per instruction group that is, in every sense that matters, that machine.
+
 > Von Neumann versus Harvard
 
 Digital devices that contain a CPU, and these are essentially all devices from a simple microcontroller in a washing machine to a large server in a data center, are instances of a so-called *von Neumann machine* or *von Neumann architecture* named after *John von Neumann* who described the model in 1945. The idea is to store all information, code and data, encoded in bits in the same memory, next to each other, that is, in the same address space and then connect a CPU to that memory with a *memory bus* that transports the bits, usually more than one at a time, between CPU and memory. Literally think of the memory bus as a bus transporting a group of bits from a specific memory address to the CPU and back. However, the memory bus is infamous for being called the *von Neumann bottleneck* since everything, code and data, needs to be transported on that bus when the machine is running.
 
-![von Neumann Architecture](figures/vonNeumann.png "von Neumann Architecture")
+![von Neumann Architecture](../docs/figures/von-neumann.svg "von Neumann Architecture")
 
 An alternative model to a von Neumann machine that addresses the von Neumann bottleneck is the *Harvard architecture* which features separate memories for code and for data connected to the CPU via separate memory buses. The advantage of the Harvard architecture over a von Neumann machine is that it can fetch code and data simultaneously since there are at least two memory buses. There is special-purpose hardware such as *graphics processing units* or *GPUs* that benefit from this feature and are in fact Harvard machines. However, these days even a von Neumann machine performs similar to a Harvard architecture by using separate *memory caches* for code and data from which the CPU can fetch code and data simultaneously as long as the information is in the caches. We nevertheless skip the details here but recommend following up with books on computer architecture if you are interested.
 
@@ -2279,7 +2405,7 @@ The ISA we use in selfie is called *RISC-U* where *U* stands for *unsigned*. The
 
 > All arithmetic and logical calculations happen in registers
 
-Before taking a closer look at individual RISC-U instructions, we first need to understand the *register model* of the machine. The RISC-U ISA features 32 general-purpose 64-bit registers and one 64-bit *program counter*, just like the 64-bit RISC-V ISA. A *register* is CPU-internal storage for exactly one machine word. RISC-U registers are addressed from 0 to 31 which is a 5-bit *address space* since 2^5^ is 32. In other words, 5 bits are enough to identify any of the 32 registers. All arithmetic and logical calculations are done in these registers by a circuit called the *Arithmetic Logic Unit* or *ALU*. A full adder, which we explained in the information chapter, is an example of an important ALU component. Note that register 0, also called `zero`, is special. It always contains the 64-bit integer value 0, even after trying to store a non-zero value in that register. The purpose of that register is to initialize other registers. We show how that works below.
+Before taking a closer look at individual RISC-U instructions, we first need to understand the *register model* of the machine. The RISC-U ISA features 32 general-purpose 64-bit registers and one 64-bit *program counter*, just like the 64-bit RISC-V ISA. A *register* is CPU-internal storage for exactly one machine word. RISC-U registers are addressed from 0 to 31 which is a 5-bit *address space* since 2^5^ is 32. In other words, 5 bits are enough to identify any of the 32 registers. All arithmetic and logical calculations are done in these registers by a circuit called the *Arithmetic Logic Unit* or *ALU*. A full adder, which we explained in the size chapter, is an example of an important ALU component. Note that register 0, also called `zero`, is special. It always contains the 64-bit integer value 0, even after trying to store a non-zero value in that register. The purpose of that register is to initialize other registers. We show how that works below.
 
 > The program counter determines which bits are interpreted as code
 
@@ -2287,9 +2413,9 @@ The *program counter* of a CPU, and they all have one, is like a register but wi
 
 > All day long: fetch, decode, execute
 
-So, what exactly does a processor do? We briefly mentioned that in the information chapter but would like to go back to that here. The only thing a processor does is *fetch* a machine word (here 32 bits) from memory at the address where the program counter points to, *decode* the machine word to figure out which instruction it actually is and what its parameters and arguments are, and finally *execute* the instruction. For this purpose, the processor maintains a hidden *instruction register* denoted `ir` that stores the currently executed instruction. Most importantly, all instructions have in common that they make the processor set the `pc` to another memory address when done. Then the processor fetches the next instruction into `ir`, as told by the current instruction, decodes it, executes it, and so on, until power is cut.
+So, what exactly does a processor do? We briefly mentioned that in the size chapter but would like to go back to that here. The only thing a processor does is *fetch* a machine word (here 32 bits) from memory at the address where the program counter points to, *decode* the machine word to figure out which instruction it actually is and what its parameters and arguments are, and finally *execute* the instruction. For this purpose, the processor maintains a hidden *instruction register* denoted `ir` that stores the currently executed instruction. Most importantly, all instructions have in common that they make the processor set the `pc` to another memory address when done. Then the processor fetches the next instruction into `ir`, as told by the current instruction, decodes it, executes it, and so on, until power is cut.
 
-![RISC-U ISA](figures/machine.png "RISC-U ISA")
+![RISC-U ISA](../docs/figures/risc-u-machine.svg "RISC-U ISA")
 
 In addition to the program counter, some instructions make the processor change either the value of one of the 32 general-purpose 64-bit registers or the value of a 64-bit machine word in memory. This means that a RISC-U processor, upon executing any instruction, changes no more than 128 bits: 64 bits of the program counter and possibly another 64 bits in a register or a machine word in memory. That's all!
 
@@ -2303,7 +2429,7 @@ Before we move on to explaining memory, we should briefly mention what a *multi-
 
 ### Memory
 
-The *memory model* of the RISC-U ISA in selfie is based on byte-addressed memory, as introduced in the information chapter. More specifically, a RISC-U machine has a 32-bit *main memory address space* with up to 4GB of byte-addressed *main memory storage* where all memory access is 64-bit *word-aligned* except when instructions are fetched which is done 32-bit *word-aligned*. This means that whenever the CPU accesses memory (load or store) it can only do so at memory addresses that are multiples of 8 bytes (64 bits) unless the CPU fetches an instruction which is done at memory addresses that are multiples of 4 bytes (32 bits). That makes sense because each instruction occupies exactly 32 bits in memory.
+The *memory model* of the RISC-U ISA in selfie is based on byte-addressed memory, as introduced in the size chapter. More specifically, a RISC-U machine has a 32-bit *main memory address space* with up to 4GB of byte-addressed *main memory storage* where all memory access is 64-bit *word-aligned* except when instructions are fetched which is done 32-bit *word-aligned*. This means that whenever the CPU accesses memory (load or store) it can only do so at memory addresses that are multiples of 8 bytes (64 bits) unless the CPU fetches an instruction which is done at memory addresses that are multiples of 4 bytes (32 bits). That makes sense because each instruction occupies exactly 32 bits in memory.
 
 Let us count how many bits a RISC-U machine can store. There are the 2112 bits of the registers and program counter plus 4\*2^30^\*8=34,359,738,368 bits of main memory which are 34,359,740,480 bits in total. This means that there are 2^34359740480^ different states in which a RISC-U machine can be which is an absolutely mind-blowing number, especially considering that your smartphone is likely to be quite similar to a RISC-U machine.
 
@@ -2337,7 +2463,7 @@ Nevertheless, it is quite educational to understand how a machine does I/O in pr
 
 So, suppose Alice says something to the White Rabbit. Until the moment in time when the sound of her voice reaches the rabbit‘s ears, the White Rabbit does not know that she says anything, given that he cannot see her speaking, of course. If he could see her, we could anyway tell the same story just using vision rather than hearing. Now, when the sound hits the rabbit‘s ears, it does so at a certain bit rate at which the bits need to be stored and processed in the rabbit's brain.
 
-Remember the information chapter, in particular how audio is encoded? Yes, of course, you do. Alright, but there is a difference between hearing and actually listening as we all know. Alice needs to get the rabbit‘s attention which takes time since the rabbit does not yet know that she started saying something. In the world of machines the duration of that time is called *latency*.
+Remember the size chapter, in particular how audio is encoded? Yes, of course, you do. Alright, but there is a difference between hearing and actually listening as we all know. Alice needs to get the rabbit‘s attention which takes time since the rabbit does not yet know that she started saying something. In the world of machines the duration of that time is called *latency*.
 
 Here is the issue with latency. If the bits arrive, say, at a rate of 1000 bits per second (1kbps) and the latency is 1 second (the rabbit is really distracted), then at least 1000 bits (1kb) need to be stored, or we say *buffered*, in the rabbit's brain before processing begins to avoid losing any information. However, if the rabbit's brain can then process the bits at a rate of at least 1kbps, no more than 1kb need to be buffered at any time. In fact, after buffering the first 1kb in the order in which the bits arrived, the buffered bits, starting with the bit that arrived first, may be overwritten with the next 1kb. In this case, the storage for the 1kb is called a *cyclic buffer*.
 
@@ -2388,27 +2514,27 @@ The relevant output should be similar to this:
 ```
 ...
 ./selfie: vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-./selfie: 182752 bytes generated with 42224 instructions and 13856 bytes of data
+./selfie: 188392 bytes generated with 43492 instructions and 14424 bytes of data
 ./selfie: --------------------------------------------------------------------------------
 ./selfie: profile: instruction: total(ratio%)
-./selfie: init:    lui: 2665(6.31%), addi: 12332(29.20%)
-./selfie: memory:  ld: 7847(18.58%), sd: 7579(17.94%)
-./selfie: compute: add: 3665(8.67%), sub: 726(1.71%), mul: 520(1.23%)
-./selfie: compute: divu: 93(0.22%), remu: 29(0.06%)
-./selfie: compare: sltu: 710(1.68%)
-./selfie: control: beq: 1000(2.36%), jal: 4389(10.39%), jalr: 661(1.56%)
+./selfie: init:    lui: 2736(6.29%), addi: 12716(29.23%)
+./selfie: memory:  ld: 8055(18.52%), sd: 7862(18.07%)
+./selfie: compute: add: 3742(8.60%), sub: 760(1.74%), mul: 516(1.18%)
+./selfie: compute: divu: 92(0.21%), remu: 29(0.06%)
+./selfie: compare: sltu: 740(1.70%)
+./selfie: control: beq: 1052(2.41%), jal: 4516(10.38%), jalr: 668(1.53%)
 ./selfie: system:  ecall: 8(0.01%)
 ./selfie: --------------------------------------------------------------------------------
 ./selfie: profile: data: total(bytes)
-./selfie: global variables:       485(3880)
-./selfie: unique string literals: 377(9976)
+./selfie: global variables:       492(3936)
+./selfie: unique string literals: 392(10488)
 ./selfie: unique big integers:    0(0)
 ./selfie: ################################################################################
 ```
 
-Selfie reports that it generated 42,224 RISC-U machine instructions as well as 13,856 bytes of data needed to run the code. Moreover, as mentioned before, selfie outputs how many instructions of each type it generated. The `addi` instruction is with 29.20% the most common instruction while the `ecall` instruction is with 0.01% the least common.
+Selfie reports that it generated 43,492 RISC-U machine instructions as well as 14,424 bytes of data needed to run the code. Moreover, as mentioned before, selfie outputs how many instructions of each type it generated. The `addi` instruction is with 29.23% the most common instruction while the `ecall` instruction is with 0.01% the least common.
 
-In order to explain all RISC-U machine instructions we use as running example the assembly code generated for the procedure `count` introduced in the language chapter. Here is the source code again, this time with a `main` procedure that invokes `count` to count from `0` to `10000` and then return `10000`:
+In order to explain all RISC-U machine instructions we use as running example the assembly code generated for the procedure `count` introduced in the notation chapter. Here is the source code again, this time with a `main` procedure that invokes `count` to count from `0` to `10000` and then return `10000`:
 
 ```c
 int count(int n) {
@@ -2447,7 +2573,7 @@ where selfie stores the assembly code in a text file called `count.s` and respon
 ./selfie: 0 global variables, 2 procedures, 0 string literals
 ./selfie: 2 assignments, 1 while, 0 if, 1 calls, 2 return
 ./selfie: --------------------------------------------------------------------------------
-./selfie: 12 symbol table lookups in 1 iterations on average
+./selfie: 14 symbol table lookups in 0 iterations on average
 ./selfie: vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 ./selfie: 512 bytes generated with 126 instructions and 8 bytes of data
 ./selfie: --------------------------------------------------------------------------------
@@ -2709,11 +2835,11 @@ Let us go back to the example. You might ask yourself how `addi t0,sp,16` is ini
 0x1C(~1): 0x00800293: addi t0,zero,8
 ```
 
-Since `zero == 0` is always true, the instruction effectively makes the CPU perform `t0 = 8`. How about initializing registers with negative numbers? That is possible too, for example, using `addi t0,zero,-8`. Negative numbers such as `-8` are encoded in two's complement. So, where is the catch? Well, we can only use immediate values with `addi` that fit into 12 bits including the sign bit. In other words, the immediate value can only be a signed integer value between -2^11^ and 2^11^-1. Now you know why you had to go through the information chapter and two's complement in particular. In any case, we show below how `addi` can be combined with the `lui` instruction to get larger integer values into registers.
+Since `zero == 0` is always true, the instruction effectively makes the CPU perform `t0 = 8`. How about initializing registers with negative numbers? That is possible too, for example, using `addi t0,zero,-8`. Negative numbers such as `-8` are encoded in two's complement. So, where is the catch? Well, we can only use immediate values with `addi` that fit into 12 bits including the sign bit. In other words, the immediate value can only be a signed integer value between -2^11^ and 2^11^-1. Now you know why you had to go through the size chapter and two's complement in particular. In any case, we show below how `addi` can be combined with the `lui` instruction to get larger integer values into registers.
 
 There is one important detail that we should mention here. How does the CPU add a signed 12-bit integer to a 64-bit integer in a register, even if that register just contains 0? Prior to addition, the CPU *sign-extends* the 12-bit immediate value `imm` from 12 to 64 bits. If the sign bit, that is, bit 11 of `imm` is 0, then all bits from 12 to 63 are *reset*, that is, set to 0. If the sign bit is 1, then all bits from 12 to 63 are *set*, that is, set to 1. Thus the sign-extended version of `imm` is a signed 64-bit integer that encodes exactly the same value as `imm` encodes in 12 bits. That's it!
 
-The actual addition of the 64-bit integer in a register and the sign-extended version of `imm` is then done exactly like we described it in the information chapter. Overflows beyond the MSB, that is, bit 63 are ignored. So, the `+` in `sp + 16` in the example above denotes 64-bit integer addition with *wrap-around semantics*. For example, if `sp` contains UINT64_MAX, then `sp + 16` evaluates to `15` because `UINT64_MAX + 1` is 0. Strange but true. That phenomenon has lead to many issues with code including costly bugs and is therefore important to keep in mind.
+The actual addition of the 64-bit integer in a register and the sign-extended version of `imm` is then done exactly like we described it in the size chapter. Overflows beyond the MSB, that is, bit 63 are ignored. So, the `+` in `sp + 16` in the example above denotes 64-bit integer addition with *wrap-around semantics*. For example, if `sp` contains UINT64_MAX, then `sp + 16` evaluates to `15` because `UINT64_MAX + 1` is 0. Strange but true. That phenomenon has lead to many issues with code including costly bugs and is therefore important to keep in mind.
 
 Let us explore two more important use cases of `addi`, other than just initializing registers with immediate values, taken from the running example:
 
@@ -2852,7 +2978,7 @@ Before executing the instruction, the value in `gp` is `0x11008`, just as we lef
 
 Why do we have the machine do this? Intuitively, all we do here is prepare the machine so that there is a way to find information in memory later when running a program. In short, we need a *memory layout*. Where do we store the values of global variables, local variables, actual parameters, and possibly lots of other things? Here, the `gp` register takes on an important role which is why it is initialized to a value that is never changed after that. Take a look at the following illustration of the memory layout used in selfie and many other systems, at least in principle.
 
-![Memory Layout](figures/layout.png "Memory Layout")
+![Memory Layout](../docs/figures/layout.svg "Memory Layout")
 
 First of all, memory is partitioned into two parts: *statically* allocated memory in the lower part of memory and *dynamically* allocated memory in the higher part of memory. By lower and higher we mean addresses with lower and higher values, respectively. We may also just speak of static and dynamic memory. The boundary between static and dynamic memory is initially marked by the *program break*. While the original boundary never changes, the program break may grow from lower to higher addresses during code execution. We therefore use something else to remember the original boundary: the `gp` register where `gp` stands for *global pointer*. To be exact, `gp` points to the lowest address of dynamic memory. Any address lower than that is part of static memory.
 
@@ -2986,24 +3112,24 @@ The relevant output should be similar to this:
 ```
 ...
 ./selfie: --------------------------------------------------------------------------------
-./selfie: summary: 363556041 executed instructions in total [17.29% nops]
-./selfie:          2.39MB mapped memory [79.68% of 3MB physical memory]
+./selfie: summary: 394514542 executed instructions in total [19.11% nops]
+./selfie:          2.46MB mapped memory [82.16% of 3MB physical memory]
 ./selfie: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ...
 ./selfie: --------------------------------------------------------------------------------
 ./selfie: profile: instruction: total(ratio%)[nops%]
-./selfie: init:    lui: 815641(0.22%)[0.00%], addi: 139654242(38.41%)[15.08%]
-./selfie: memory:  ld: 83132286(22.86%)[13.90%], sd: 56594058(15.56%)[27.55%]
-./selfie: compute: add: 9141065(2.51%)[26.30%], sub: 4314604(1.18%)[9.49%], mul: 9066351(2.49%)[37.58%]
-./selfie: compute: divu: 3601572(0.99%)[40.76%], remu: 3682679(1.01%)[53.64%]
-./selfie: compare: sltu: 5755232(1.58%)[2.41%]
-./selfie: control: beq: 8156026(2.24%)[59.51%], jal: 26331739(7.24%)[0.00%], jalr: 12929333(3.55%)[0.00%]
-./selfie: system:  ecall: 381213(0.10%)
+./selfie: init:    lui: 844972(0.21%)[0.00%], addi: 145115501(36.78%)[15.08%]
+./selfie: memory:  ld: 94728816(24.01%)[18.96%], sd: 58800893(14.90%)[27.39%]
+./selfie: compute: add: 9449947(2.39%)[26.36%], sub: 4517081(1.14%)[9.42%], mul: 9375415(2.37%)[37.68%]
+./selfie: compute: divu: 3724966(0.94%)[40.99%], remu: 3808203(0.96%)[53.66%]
+./selfie: compare: sltu: 10246923(2.59%)[1.91%]
+./selfie: control: beq: 12703776(3.22%)[72.71%], jal: 27366919(6.93%)[0.00%], jalr: 13439984(3.40%)[0.00%]
+./selfie: system:  ecall: 391146(0.09%)
 ./selfie: --------------------------------------------------------------------------------
 ...
 ```
 
-While only 0.22% of all executed instructions were `lui` instructions, around 76% were `addi`, `ld`, and `sd` instructions (38.41% + 22.86% + 15.56%). In other words, three quarters of all executed instructions are just these four instructions. That ratio is likely to be lower if we were to optimize the code generated by the selfie compiler but it still shows their importance. By the way, `lui` was executed less often because the 12-bit immediate values of `addi`, `ld`, and `sd` are often enough to get the job done.
+While only 0.21% of all executed instructions were `lui` instructions, around 76% were `addi`, `ld`, and `sd` instructions (36.78% + 24.01% + 14.90%). In other words, three quarters of all executed instructions are just these four instructions. That ratio is likely to be lower if we were to optimize the code generated by the selfie compiler but it still shows their importance. By the way, `lui` was executed less often because the 12-bit immediate values of `addi`, `ld`, and `sd` are often enough to get the job done.
 
 Our next topic are the classical arithmetic instructions that most CPUs feature in one form or another.
 
@@ -3098,7 +3224,7 @@ Let us take another quick look back at the above profile when self-compiling. Tu
 
 > Unsigned integer comparison is different from signed integer comparison
 
-There are two more things to discuss before moving on. Firstly, integer comparison, just like division and remainder, works differently for unsigned and signed interpretation of integers. We already mentioned an example in the information chapter. Here is another example. At first sight, the comparison `1 < -1` is obviously false but only if the operands are interpreted as signed integers. Otherwise, `1 < -1` is actually equal to `1 < UINT64_MAX` which is obviously true. Thus, as confusing it might be, `1 < -1` is actually true in C\*. However, the example does demonstrate the importance of understanding how information is encoded and operated on, which is why we show it here.
+There are two more things to discuss before moving on. Firstly, integer comparison, just like division and remainder, works differently for unsigned and signed interpretation of integers. We already mentioned an example in the size chapter. Here is another example. At first sight, the comparison `1 < -1` is obviously false but only if the operands are interpreted as signed integers. Otherwise, `1 < -1` is actually equal to `1 < UINT64_MAX` which is obviously true. Thus, as confusing it might be, `1 < -1` is actually true in C\*. However, the example does demonstrate the importance of understanding how information is encoded and operated on, which is why we show it here.
 
 Secondly, `<` and thus `sltu` are enough to implement the six integer comparison operators we mentioned above. For example, when using `sltu` to implement `<`, the comparison `a <= b` is true if the expression `1 - (b < a)` evaluates to `1`, and it is false if `1 - (b < a)` evaluates to `0`. In other words, combining `sltu` with an `addi` instruction for initializing a register with `1` and a `sub` instruction for subtracting from that register the value of `b < a` as calculated by the `sltu` instruction is enough to implement `a <= b`. Try to figure out the other five cases! The `compile_expression` procedure in `selfie.c` shows the details for you to validate your solutions. Yet keep in mind that selfie does all that for educational purposes. Dedicated machine instructions are of course faster and therefore used in production systems.
 
@@ -3381,13 +3507,13 @@ As mentioned before, selfie reports how much physical memory was actually needed
 ```
 ...
 ./selfie: --------------------------------------------------------------------------------
-./selfie: summary: 363556041 executed instructions in total [17.29% nops]
-./selfie:          2.39MB mapped memory [119.53% of 2MB physical memory]
+./selfie: summary: 394514542 executed instructions in total [19.11% nops]
+./selfie:          2.46MB mapped memory [123.24% of 2MB physical memory]
 ./selfie: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ...
 ```
 
-In this case, 2.39MB of the available 2MB of physical memory were needed, that is, `mipster` tolerated memory usage of 119.53% above the threshold of 2MB.
+In this case, 2.46MB of the available 2MB of physical memory were needed, that is, `mipster` tolerated memory usage of 123.24% above the threshold of 2MB.
 
 > Console arguments of selfie
 
@@ -3619,8 +3745,8 @@ Check out the first appearance of L1 cache profiling data in the output:
 ...
 ./selfie: --------------------------------------------------------------------------------
 ./selfie: L1 caches:     accesses,hits,misses
-./selfie: data:          442192764,426977522(96.56%),15215242(3.44%)
-./selfie: instruction:   1129138332,1071038499(94.85%),58099833(5.14%)
+./selfie: data:          487226968,470934262(96.66%),16292706(3.34%)
+./selfie: instruction:   1228242013,1167255879(95.03%),60986134(4.96%)
 ./selfie: ################################################################################
 ...
 ```
@@ -3641,9 +3767,9 @@ In the presence of locality, caches increase instruction throughput. However, th
 
 > Lower and upper bounds
 
-When it comes to performance there is one innovation that is incredibly useful to *predict* rather than *measure* performance and thereby minimize its dependency on hardware including any optimizations. It is called *algorithmic complexity*, also called *asymptotic complexity*. We mentioned this concept in the language chapter already. Consider the following performance graph:
+When it comes to performance there is one innovation that is incredibly useful to *predict* rather than *measure* performance and thereby minimize its dependency on hardware including any optimizations. It is called *algorithmic complexity*, also called *asymptotic complexity*. We mentioned this concept in the notation chapter already. Consider the following performance graph:
 
-![Performance](figures/performance.png "Performance")
+![Performance](../docs/figures/performance.svg "Performance")
 
 The graph shows the actual performance (y-axis) of a program running on some hardware, and inputs of increasing size (x-axis). Performance may be execution time, memory consumption, or any other metric related to the cost of running the program. Input size may be measured in bytes, for example.
 
@@ -3651,7 +3777,7 @@ What would it take to predict instead of measuring that performance? Well, we ne
 
 Once we are able to do all that we can compare programs and, in fact, the algorithms they implement in terms of their algorithmic complexity, that is, predicted performance for all inputs, independently of how they are implemented and run on just some input. This is very important! Consider the following algorithmic complexity graph:
 
-![Algorithmic Complexity](figures/complexity.png "Algorithmic Complexity")
+![Algorithmic Complexity](../docs/figures/complexity.svg "Algorithmic Complexity")
 
 It shows the most important types of algorithmic complexity which help us categorize algorithms. Here, the best is *constant* complexity denoted *O(1)* where performance is independent of input size, and the worst is *exponential* complexity denoted *O(2^n^)* where cost grows exponentially in input size. In between are *logarithmic* complexity denoted *O(log n)*, then *linear* complexity *O(n)*, and finally *square* complexity denoted *O(n^2^)*. The latter two generalize to *polynomial* complexity if the exponent may be any constant greater than zero such as *cubic* complexity denoted *O(n^3^)* and so on. Lots of other choices are possible too, including worse than exponential and in between logarithmic and linear.
 
@@ -3669,7 +3795,7 @@ The second ingredient is the Big-O and Big-Omega notation. For example, *O(n)* a
 
 However, keep in mind that the constant factors *k* in Big-O and Big-Omega notation may very well play an important role in actual performance, at least on smaller inputs. Consider the following performance graph:
 
-![Constants](figures/constants.png "Constants")
+![Constants](../docs/figures/constants.svg "Constants")
 
 Suddenly, the world seems to be upside down. Up to input sizes of *s_0*, the program with exponential complexity is in fact the fastest program while the program with constant complexity is the slowest, with all others in between. The lesson to be learned here is that if there are algorithms with different algorithmic complexity that solve the same problem, the algorithm with the best complexity may not always be the best choice. That also depends on the workload, that is, the input size that the program will be running on in practice. Nevertheless, algorithmic complexity is an important tool for abstracting code into a simple formula that captures a key property. In the programming and computing chapters we hear more about how to come up with the algorithmic complexity of an algorithm.
 
@@ -3710,20 +3836,20 @@ The `-o` option instructs selfie to write the machine code compiled from `selfie
 ./selfie: <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 ./selfie: 64-bit mipster terminating 64-bit RISC-U binary selfie.m with exit code 0
 ./selfie: --------------------------------------------------------------------------------
-./selfie: summary: 81425 executed instructions in total [15.50% nops]
-./selfie:          0.19MB mapped memory [19.53% of 1MB physical memory]
+./selfie: summary: 85754 executed instructions in total [17.66% nops]
+./selfie:          0.19MB mapped memory [19.92% of 1MB physical memory]
 ./selfie: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ./selfie: context: > selfie.m
-./selfie:          81425 executed instructions [100.00% share, factor 1.00]
+./selfie:          85754 executed instructions [100.00% share, factor 1.00]
 ./selfie:          0.28KB peak stack size
 ./selfie:          0.00MB allocated in 8 mallocs (0.00MB or 100.00% actually accessed)
-./selfie:          15 exceptions handled by ./selfie, one every 5428 executed instructions
+./selfie:          15 exceptions handled by ./selfie, one every 5716 executed instructions
 ./selfie:          14 syscalls, 1 page faults, 0 timer interrupts
 ./selfie: --------------------------------------------------------------------------------
 ...
 ```
 
-Selfie running on `mipster` took around 81k RISC-U instructions and less than 1MB memory to print its synopsis. We have seen those numbers before. The following command does what the above two invocations of selfie do in a single invocation of selfie:
+Selfie running on `mipster` took around 86k RISC-U instructions and less than 1MB memory to print its synopsis. We have seen those numbers before. The following command does what the above two invocations of selfie do in a single invocation of selfie:
 
 ```bash
 ./selfie -c selfie.c -o selfie.m -m 1
@@ -3759,14 +3885,14 @@ This *self-executes* `mipster` by running a `mipster` instance, say, `OS` on ano
 > selfie.m: <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 > selfie.m: 64-bit mipster terminating 64-bit RISC-U binary selfie.m with exit code 0
 > selfie.m: --------------------------------------------------------------------------------
-> selfie.m: summary: 82019 executed instructions in total [15.48% nops]
-> selfie.m:          0.19MB mapped memory [19.92% of 1MB physical memory]
+> selfie.m: summary: 86380 executed instructions in total [17.65% nops]
+> selfie.m:          0.20MB mapped memory [20.31% of 1MB physical memory]
 > selfie.m: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 > selfie.m: context: >> selfie.m
-> selfie.m:          82019 executed instructions [100.00% share, factor 1.00]
+> selfie.m:          86380 executed instructions [100.00% share, factor 1.00]
 > selfie.m:          0.28KB peak stack size
 > selfie.m:          0.00MB allocated in 8 mallocs (0.00MB or 100.00% actually accessed)
-> selfie.m:          15 exceptions handled by > selfie.m, one every 5467 executed instructions
+> selfie.m:          15 exceptions handled by > selfie.m, one every 5758 executed instructions
 > selfie.m:          14 syscalls, 1 page faults, 0 timer interrupts
 > selfie.m: --------------------------------------------------------------------------------
 ...
@@ -3774,26 +3900,26 @@ This *self-executes* `mipster` by running a `mipster` instance, say, `OS` on ano
 ./selfie: <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 ./selfie: 64-bit mipster terminating 64-bit RISC-U binary selfie.m with exit code 0
 ./selfie: --------------------------------------------------------------------------------
-./selfie: summary: 200980764 executed instructions in total [13.34% nops]
-./selfie:          2.26MB mapped memory [75.39% of 3MB physical memory]
+./selfie: summary: 222410917 executed instructions in total [14.62% nops]
+./selfie:          2.73MB mapped memory [91.28% of 3MB physical memory]
 ./selfie: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ./selfie: context: > selfie.m
-./selfie:          200980764 executed instructions [100.00% share, factor 1.00]
-./selfie:          0.67KB peak stack size
-./selfie:          2.87MB allocated in 32 mallocs (2.06MB or 71.78% actually accessed)
-./selfie:          2593 exceptions handled by ./selfie, one every 77508 executed instructions
-./selfie:          166 syscalls, 529 page faults, 1898 timer interrupts
+./selfie:          222410917 executed instructions [100.00% share, factor 1.00]
+./selfie:          0.60KB peak stack size
+./selfie:          3.34MB allocated in 29 mallocs (2.53MB or 75.84% actually accessed)
+./selfie:          2914 exceptions handled by ./selfie, one every 76324 executed instructions
+./selfie:          167 syscalls, 650 page faults, 2097 timer interrupts
 ./selfie: --------------------------------------------------------------------------------
 ...
 ```
 
-This time selfie printing its synopsis on `mipster` instance `OS` took around 82k RISC-U instructions and less than 1MB memory. In fact, it took just a few hundred instructions more than before. The reason is that the synopsis printed by selfie contains one more `>` character than before, that is, `>> selfie.m ...` rather than `> selfie.m ...`. It takes a few hundred instructions to print that additional character. But why is there one more `>` character?
+This time selfie printing its synopsis on `mipster` instance `OS` took around 86k RISC-U instructions and less than 1MB memory. In fact, it took just a few hundred instructions more than before. The reason is that the synopsis printed by selfie contains one more `>` character than before, that is, `>> selfie.m ...` rather than `> selfie.m ...`. It takes a few hundred instructions to print that additional character. But why is there one more `>` character?
 
 > Boot level
 
 Well, the number of `>` characters indicate the *boot level* on which the code runs. Here, `mipster` instance `HW` runs on boot level 0, `mipster` instance `OS` runs on boot level 1, and selfie printing its synopsis runs on boot level 2. In short, the boot level increases by 1 with each `mipster` instance. Console output generated by boot levels higher than `0` are shown by a sequence of greater-than `>` characters, making it easier to understand the output. Hence console output generated by boot levels `1` and `2` is prefixed by `>` and `>>`, respectively.
 
-Alright, but then check this out. The `mipster` instance `HW` took around 200 million (!) RISC-U instructions and around 2MB memory to run `OS`. This means that, on average, `HW` executed around 2.5k instructions just so that `OS` executes a single instruction. In other words, `mipster` takes, at least on this workload, on average around 2.5k RISC-U instructions to implement a single RISC-U instruction, and around 2MB of memory in addition for the whole run. Have you noticed that the synopsis is actually printed a bit slower on your console? That is because execution is slowed down by a factor of 2.5k.
+Alright, but then check this out. The `mipster` instance `HW` took around 222 million (!) RISC-U instructions and less than 3MB memory to run `OS`. This means that, on average, `HW` executed around 2.6k instructions just so that `OS` executes a single instruction. In other words, `mipster` takes, at least on this workload, on average around 2.6k RISC-U instructions to implement a single RISC-U instruction, and less than 3MB of memory in addition for the whole run. Have you noticed that the synopsis is actually printed a bit slower on your console? That is because execution is slowed down by a factor of 2.6k.
 
 What if we stack even more `mipster` instances onto each other just to see what happens? On my laptop, I ran three `mipster` instances, calling the third `mipster` instance `VMM`, assuming that `VMM` runs in between `mipster` instances `HW` and `OS`, and allocating 5MB rather than 3MB of physical memory to `HW`:
 
@@ -3844,14 +3970,14 @@ The relevant output is:
 >> selfie.m: <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 >> selfie.m: 64-bit mipster terminating 64-bit RISC-U binary selfie.m with exit code 0
 >> selfie.m: --------------------------------------------------------------------------------
->> selfie.m: summary: 82613 executed instructions in total [15.49% nops]
->> selfie.m:          0.19MB mapped memory [19.92% of 1MB physical memory]
+>> selfie.m: summary: 87006 executed instructions in total [17.65% nops]
+>> selfie.m:          0.20MB mapped memory [20.31% of 1MB physical memory]
 >> selfie.m: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 >> selfie.m: context: >>> selfie.m
->> selfie.m:          82613 executed instructions [100.00% share, factor 1.00]
+>> selfie.m:          87006 executed instructions [100.00% share, factor 1.00]
 >> selfie.m:          0.28KB peak stack size
 >> selfie.m:          0.00MB allocated in 8 mallocs (0.00MB or 100.00% actually accessed)
->> selfie.m:          15 exceptions handled by >> selfie.m, one every 5507 executed instructions
+>> selfie.m:          15 exceptions handled by >> selfie.m, one every 5800 executed instructions
 >> selfie.m:          14 syscalls, 1 page faults, 0 timer interrupts
 >> selfie.m: --------------------------------------------------------------------------------
 ...
@@ -3859,38 +3985,38 @@ The relevant output is:
 > selfie.m: <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 > selfie.m: 64-bit hypster terminating 64-bit RISC-U binary selfie.m with exit code 0
 > selfie.m: --------------------------------------------------------------------------------
-> selfie.m: summary: 2.27MB mapped memory [75.78% of 3MB physical memory]
+> selfie.m: summary: 2.75MB mapped memory [91.66% of 3MB physical memory]
 > selfie.m: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 > selfie.m: context: >> selfie.m
-> selfie.m:          2607 exceptions handled by > selfie.m
-> selfie.m:          166 syscalls, 529 page faults, 1912 timer interrupts
+> selfie.m:          2928 exceptions handled by > selfie.m
+> selfie.m:          167 syscalls, 650 page faults, 2111 timer interrupts
 > selfie.m: ################################################################################
 
 ./selfie: <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 ./selfie: 64-bit mipster terminating 64-bit RISC-U binary selfie.m with exit code 0
 ./selfie: --------------------------------------------------------------------------------
-./selfie: summary: 241719900 executed instructions in total [13.75% nops]
-./selfie:          3.22MB mapped memory [80.66% of 4MB physical memory]
+./selfie: summary: 266572876 executed instructions in total [14.87% nops]
+./selfie:          4.14MB mapped memory [103.51% of 4MB physical memory]
 ./selfie: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ./selfie: context: >> selfie.m
-./selfie:          202267404 executed instructions [83.68% share, factor 1.19]
-./selfie:          0.70KB peak stack size
-./selfie:          2.87MB allocated in 32 mallocs (2.06MB or 71.78% actually accessed)
-./selfie:          2607 exceptions handled by > selfie.m, one every 77586 executed instructions
-./selfie:          166 syscalls, 529 page faults, 1912 timer interrupts
+./selfie:          223841974 executed instructions [83.97% share, factor 1.19]
+./selfie:          0.61KB peak stack size
+./selfie:          3.34MB allocated in 29 mallocs (2.53MB or 75.84% actually accessed)
+./selfie:          2928 exceptions handled by > selfie.m, one every 76448 executed instructions
+./selfie:          167 syscalls, 650 page faults, 2111 timer interrupts
 ./selfie: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ./selfie: context: > selfie.m
-./selfie:          39452496 executed instructions [16.32% share, factor 6.12]
-./selfie:          2607 exceptions handled by 15133 instructions each [19.50% overhead, factor 1.19]
+./selfie:          42730902 executed instructions [16.02% share, factor 6.23]
+./selfie:          2928 exceptions handled by 14593 instructions each [19.08% overhead, factor 1.19]
 ./selfie:          0.73KB peak stack size
-./selfie:          5.04MB allocated in 36 mallocs (3.01MB or 59.75% actually accessed)
-./selfie:          1319 exceptions handled by ./selfie, one every 29910 executed instructions
-./selfie:          197 syscalls, 772 page faults, 350 timer interrupts
+./selfie:          5.51MB allocated in 32 mallocs (3.92MB or 71.17% actually accessed)
+./selfie:          1574 exceptions handled by ./selfie, one every 27147 executed instructions
+./selfie:          201 syscalls, 1005 page faults, 368 timer interrupts
 ./selfie: --------------------------------------------------------------------------------
 ...
 ```
 
-Now we are back from billions to millions of instructions. This time `HW` took around 241 million RISC-U instructions to run both `VMM` and `OS`, compared to the 200 million RISC-U instructions to run just `OS`. This means that `VMM` introduces an overhead over `OS` of just around 20%. In other words, `VMM` slows down `OS` by a factor of around 1.2 instructions for each instruction of `OS`. How is this possible?
+Now we are back from billions to millions of instructions. This time `HW` took around 267 million RISC-U instructions to run both `VMM` and `OS`, compared to the 222 million RISC-U instructions to run just `OS`. This means that `VMM` introduces an overhead over `OS` of just around 20%. In other words, `VMM` slows down `OS` by a factor of around 1.2 instructions for each instruction of `OS`. How is this possible?
 
 The key observation is that `VMM` is RISC-U code that executes RISC-U code, that is, the RISC-U code of `OS` in this case. But if `HW` can execute the RISC-U code of `VMM`, it can also execute the RISC-U code of `OS`, effectively bypassing `VMM`. The option `-y` with argument `3` in the above invocation of selfie does exactly that. Instead of launching a `mipster` instance, it creates a `hypster` instance for `VMM` which, similar to a `mipster` instance, executes `OS`, yet not by interpretation but by instructing `HW` to execute `OS` on its behalf, through something called a *context switch*. Note that the `hypster` instance for `VMM` executed `0` instructions of the `OS` instance! Instead, the `mipster` instance `HW` executed the `OS` instance. The 20% overhead of the `VMM` instance comes from context switching and other systems-related work and may become even less if `OS` were to run longer amortizing bootstrapping cost even more.
 
@@ -3946,6 +4072,273 @@ We already mentioned this book but since it fits here as well we recommend it ag
 
 This is the default choice when it comes to algorithms and data structures. If algorithmic complexity is something that captured your imagination follow up with this book.
 
+## Part III: Uncountable
+
+What we want to talk about cannot be listed. Behaviors, truths, and meanings outnumber programs, proofs, and sentences, not by a lot, but incomparably. This part first proves that, then shows what it forbids and what it opens, and then builds the two pieces of software that construct meaning on a machine anyway: the compiler, which defines the meaning of the language it is written in, and the operating system, which must isolate itself from the things it isolates. Both are exactly as limited as the first chapter of this part says, and both work.
+
+## Meaning
+
+This is probably the most exciting part of the book for me to write up which is a bit strange since it is not my area of research. In fact, it has always been the most elusive to me especially in my early career as a computer science student. The way I was taught computer science was upside down compared to this book. The curriculum essentially started with this part, and a lot of mathematics, and almost no motivation. Some professors considered motivation not just as unnecessary but as a sign of being not academic and thus evil. I only understood that point of view much later and can now appreciate it. The idea is to open up yourself to pure reasoning out of immense curiosity, like a child but equipped with deep technical knowledge. The only thing that matters is to come up with interesting questions and then explore ways to answer them. Unfortunately, no one really told us. We had to find out ourselves which was quite painful but in the end worth it. Science is all about asking the right question, and not just finding answers, but no one knows what those questions really are until much later. Science, and art, requires people who enjoy being lost but free rather than always knowing what to do. My role as a professor is to get you to the point of being comfortable when lost using your technical knowledge as the only source of certainty and thus real confidence.
+
+Here is where we are on the axis of this book. Part I was about the finite: bits, and how quickly a few of them add up to more states than there are atoms. Part II was about the countable: everything we can write down, and the machine that reads it. Both parts have one thing in common. Everything in them can be listed. You may not live long enough to see the end of the list, but there is a list. This part is about what cannot be listed, and the surprise is that it is exactly the stuff we want to talk about: what a program does, what a sentence means, whether something is true. In other words, this chapter is about the difference between *notation* and *meaning*, and the fact that there is incomparably more of the latter than of the former. Everything after this chapter, the compiler, the operating system, the cost of computing, and the machines that talk, is this one difference wearing different clothes. So take your time here. As the wizards say, this is the load-bearing wall.
+
+There is also something personal here. As PhD student I worked on a problem in the grey area between what can be computed and what cannot, and finally managed with my advisor and another colleague to show that there is a solution to the problem that can be computed. While working on the problem we never knew if it can be done or not, and there was no one we could have asked, anywhere. That work is still among the intellectually most challenging things I have ever done. What kept me going was exactly the material in this chapter: knowing precisely where the edge is, so that being lost next to it feels like exploring rather than drowning.
+
+### Counting Without Numbers
+
+> Two sets are the same size if you can pair them up
+
+How do you know that you have as many fingers on your left hand as on your right hand? You can count both and compare the numbers. But you can also do something simpler and more fundamental. Put the fingertips together, one against one. If every finger on the left meets exactly one finger on the right and nothing is left over on either side, the two hands have the same number of fingers, and you did not need to know what that number is. Two sets are the same size if you can *pair them up*. Every element on the left gets exactly one partner on the right, every element on the right gets exactly one partner on the left, nobody is left out, nobody is used twice.
+
+This may sound like a triviality for fingers but it is the only definition of size that keeps working when sets become infinite. Take the natural numbers 1, 2, 3, and so on, and take only the even numbers 2, 4, 6, and so on. Which set is bigger? Intuitively the even numbers are half of all numbers. But pair each number $n$ with the even number $2n$, as in the figure below, and you get a perfect pairing: every number has exactly one even partner, every even number has exactly one partner, and nothing is left over on either side. By the only definition we have, there are as many even numbers as there are numbers. The part is as big as the whole.
+
+![The counting numbers paired with the even numbers](../docs/figures/pairing.svg "The counting numbers paired with the even numbers")
+
+Galileo noticed this in 1638 and found it so disturbing that he concluded the notions of bigger and smaller simply do not apply to infinite collections. Georg Cantor, some 250 years later, did the opposite. He took the pairing as the definition and followed it wherever it led, which turned out to be one of the most consequential places anyone has ever gone in mathematics. A set that can be paired up with the natural numbers 1, 2, 3, and so on, is called *countable*. The word is well chosen. If you can pair a set with the natural numbers, you can *list* it: here is the first element, here is the second, here is the third, and so on, forever, with every element showing up at some finite position on the list. Countable means listable. Keep that operational meaning in mind, it does all the work in this chapter.
+
+> Everything we can write down is countable
+
+Here is the first big consequence. A program is a finite string of symbols. So is a proof. So is a specification, a sentence, a musical score, a chemical formula, a prompt typed into a chat bot, and the text of this book. Anything you can write down is a finite sequence of characters from a finite alphabet. Can we list all of them? Yes, and the recipe is simple. List all strings of length zero, of which there is exactly one, the empty string. Then all strings of length one, in alphabetical order. Then all strings of length two, and so on. Every finite text, whatever it is, has some finite length and therefore shows up at some finite position on that list. The figure shows the beginning of the list over the alphabet of just two symbols, 0 and 1.
+
+![Every finite text, listed](../docs/figures/enum.svg "Every finite text, listed")
+
+So all programs that will ever be written form a countable list. Same for all proofs. Same for all sentences of English, or German, or any language with a finite alphabet, which is all of them. Same for all C\* programs, of course, and all RISC-U binaries, and all texts anyone will ever type into any machine. Note what this does not say. It does not say that notation is small. Countable is already infinite, we are not being cheap here. It says that notation is finite-and-discrete, that each piece of it is a finite object, and that finite objects can be lined up.
+
+> Give every text a number
+
+There is a second way of saying the same thing that is even more useful for us. If every text has a position on the list, then every text has a *number*, namely its position. Conversely, every number denotes a text. We have been doing this all along in this book without making a fuss about it. In the size chapter we saw that a text is a sequence of bytes, and a sequence of bytes is just a very long binary number. In the machine chapter we saw that a RISC-U binary is a sequence of 32-bit instructions, again just a number. When selfie compiles its own source code and writes the result with the `-o` option:
+
+```bash
+./selfie -c selfie.c -o selfie.m
+```
+
+the file `selfie.m` is one number, 194,648 bytes long. That is all a file is. Kurt Gödel used this idea in 1931 for a purpose we get to below, and the method of assigning a unique natural number to every formula, proof, or program is therefore called *Gödelisierung* or *Gödel numbering*. The figure shows the idea on a single line of code: the text, and the number that is its ASCII codes written one after the other.
+
+![Give every text a number, and a program can read itself](../docs/figures/godel.svg "Give every text a number, and a program can read itself")
+
+Why does this matter? Because once notation is a number, notation is something you can *compute with*. Arithmetic can talk about arithmetic. A program can read a program, which is what a compiler does, and run a program, which is what an emulator does, and, once a program can read programs, it can read *itself*. Every computer you have ever used is this idea in metal. Von Neumann's stored-program architecture, code in the same memory as data, is Gödel numbering as hardware. Self-reference is not a trick that a few wizards play with selfie. It is the invoice for being expressive enough to be useful, and every student who has ever installed an app has paid it without noticing.
+
+### What We Want to Talk About Is Not
+
+> A subset of the numbers is one yes-or-no answer per number
+
+Now for the other side. Consider all the ways of picking out some of the natural numbers: the even numbers, the prime numbers, just the number 3, none of them, all of them. Each such collection is called a *subset* of the natural numbers. How do you pin one down? Walk through the numbers 1, 2, 3, and so on, and for each one answer *in* or *out*, forever. That answer sheet is an infinitely long sequence of bits, one bit per number, with 1 for in and 0 for out. And every infinitely long sequence of bits is the answer sheet of exactly one subset. A subset and an infinite bit string are the same object seen twice. The figure shows a few of them as answer sheets: the empty set says no to everything, its opposite says yes to everything, the evens alternate, the primes have no pattern anyone can predict but do have a rule, and the set containing just 3 says yes exactly once.
+
+![Subsets of the counting numbers as answer sheets, and one with no name](../docs/figures/powerset.svg "Subsets of the counting numbers as answer sheets, and one with no name")
+
+Then there is the last row, which has no rule and no name. That is what nearly every subset looks like. To specify it, you have to transmit the answers themselves, forever. There is nothing shorter to say about it than the bits. Remember this row. It is the first time we meet something that cannot be compressed, and we meet it again when we talk about what a machine can and cannot learn.
+
+Why do we care about subsets of the natural numbers, of all things? Because an infinitely long sequence of bits is a complete answer to an endless list of yes-or-no questions, and that is what a *behavior* is. What does a program do on input 1? On input 2? On input 3? Whether it halts, whether it outputs a particular value, whether it is correct: for every input there is an answer, and the whole behavior is the whole infinite sheet. A function from numbers to numbers is such a sheet. A real number written in binary is such a sheet. A fate, if you like, is such a sheet. So the question of how many subsets of the natural numbers there are is the question of how many *meanings* there are, and the claim we now prove is that there are more of them than can ever be listed. Not a long list. Not an infinite list. No list.
+
+> Hand me a list of every subset, and I will build one that is not on it
+
+Suppose someone claims to have listed every subset: $S_1, S_2, S_3, \dots$, every single one of them somewhere on the list. Write the list as a table, one row per subset, one column per number, with a filled dot for in and a hollow dot for out, as in the figure. Now go down the *diagonal* of the table and ask each row about its own number. Is 1 in $S_1$? Is 2 in $S_2$? Is $n$ in $S_n$? Then build a new subset $D$ by answering the opposite every time: $D$ contains $n$ exactly if $n$ is *not* in $S_n$. Nothing exotic is going on. This is a rule anyone can apply, one number at a time: 1 is in $S_1$, so 1 stays out of $D$; 2 is out of $S_2$, so 2 goes into $D$; and so on down the diagonal.
+
+![The diagonal argument on subsets](../docs/figures/diagset.svg "The diagonal argument on subsets")
+
+Where is $D$ on the list? It is not $S_1$, because they disagree about the number 1. It is not $S_2$, because they disagree about 2. It is not $S_n$ for any $n$ whatsoever, because $D$ and $S_n$ disagree about $n$, by construction, at exactly one place, and one place is enough. Somebody always says at this point that $D$ must be further down the list. Point at row $n$, for that further down $n$, and ask what $D$ and $S_n$ say about the number $n$. They disagree. So the list left something out. And notice that we made no assumption about the list at all. It was an arbitrary list. So every list fails, so no list exists. That is the whole proof. If you have seen a proof by contradiction before you recognize the shape. If you have not, you have just seen your first one, and it is one of the good ones.
+
+> The same move, on the numbers between 0 and 1
+
+To see that the argument is about the shape and not about subsets, run it again on a different kind of object. Suppose you could list the real numbers between 0 and 1: $r_1, r_2, r_3, \dots$, each written out as an endless decimal expansion, as in the figure. Take the first digit of the first number, the second digit of the second, the $n$-th digit of the $n$-th. The diagonal again. Build a new number $x$ by changing every one of those digits. Then $x$ differs from $r_1$ in the first decimal place, from $r_2$ in the second, from $r_n$ in the $n$-th, so $x$ is on no row, and the list was not a list of all of them.
+
+![The diagonal argument on decimal expansions](../docs/figures/diagreal.svg "The diagonal argument on decimal expansions")
+
+There is one place in this version that needs care, and it is worth the twenty seconds because it is what separates a proof from a slogan. Change each digit to 5, or to 4 if it was already 5. That keeps you clear of the trailing nines. The number $0.4999\dots$ and the number $0.5000\dots$ are the same number written twice, and a proof that only produced a number differing from every row in that way would have proved nothing. Every serious textbook patches this, most popular accounts do not.
+
+> Between any two numbers there is another, but that is not the reason
+
+There is a picture that most people meet before they meet the proof, and it is worth having, as long as you do not let it do the work. Pick two real numbers as close together as you like. Their midpoint lies strictly between them. Now take those two and do it again, forever, as in the figure. There is no *next* real number: nothing to step from, nothing to step to. A list is nothing but firsts and nexts, which is the wrong shape for a line with no grain.
+
+![Between any two numbers there is another, and again, forever](../docs/figures/dense.svg "Between any two numbers there is another, and again, forever")
+
+The feeling is right but the reason is wrong, and here is the counterexample you already know. The fractions are dense in exactly the same way, between any two of them there is another, and yet the fractions *can* be listed: write every fraction $p/q$ into a grid with numerators along one side and denominators along the other, and walk the grid corner by corner, diagonal by diagonal. Every fraction shows up at some finite position. So density cannot be what makes the real numbers uncountable. Only the diagonal tells the two cases apart. If there is one methodological habit to keep from this chapter, it is this one: when an intuition and a proof agree, check which of them you are actually relying on.
+
+> The diagonal, once and for all
+
+Cantor proved the general theorem in 1891. For every set $S$, the set of all subsets of $S$ is strictly larger than $S$. In particular the real numbers cannot be listed. You have seen the proof twice, once on subsets and once on decimals, and it was the same proof both times, because a subset is an infinite bit string and so is a decimal expansion. Power set, real numbers, bit sequences: three costumes, one size. And notice where self-reference entered. The proof builds an object from the list that asks of each row "do you contain yourself here?" and then answers the opposite. The list is used against itself. Bertrand Russell turned the same trick on set theory itself in 1901 with the set of all sets that do not contain themselves. Same diagonal, aimed at the foundations.
+
+Cantor, like so many other influential scientists, faced considerable skepticism and even hostility for this. If you are interested, check the literature on that. It is an important lesson for everyone. For me personally, Cantor is one of those few scientific idols that I have, and I am someone who does not believe in idols.
+
+### The Result Everything Hangs On
+
+Put the two halves together. Programs are countable. Behaviors are uncountable. So almost every behavior has no program. Proofs are countable. Truths about the natural numbers, each a subset of them if you like, are uncountable. So almost every truth has no proof. Sentences are countable. The distinctions the world admits are uncountable. So almost everything is unsaid.
+
+![Notations are countable, meanings are not](../docs/figures/gap.svg "Notations are countable, meanings are not")
+
+Note that "almost every" here is not a figure of speech. It is exact. The expressible is a vanishing sliver, of measure zero as the mathematicians say, inside the meaningful. And note what we used to get there: nothing. No logic, no machines, no computability. Pure counting already tells us that notation can never catch up with meaning. Gödel and Turing, below, only make it concrete and constructive. They do not just tell us that unnameable things exist. They write down specific questions that no notation can answer.
+
+> Scarcity of notation is a job description
+
+Before we go there, let me turn the result over, because every apparently negative result in this book is read twice, once for what it forbids and once for what it opens. What it forbids is a final language. No vocabulary, mathematical, legal, musical, or neural, will ever cover the space of meanings. What it opens is an inexhaustible supply of things worth naming. Every new notation captures meaning that was previously unreachable, and there is always more left. Calculus, double-entry bookkeeping, staff notation, the periodic table, chemical formulae, DNA sequencing, type systems: each was a raid on the uncountable, and the supply of raids never runs out. Gregory Chaitin's version of the same fact is that almost all numbers are random, that is, incompressible, that is, nameless. That is not a wall. It is unclaimed territory, and the act of claiming it is what every discipline calls progress. This is the first place in the book where the title question shows through. Hold on to it.
+
+### Syntax and Semantics
+
+> The score is not the music
+
+Let us be precise about the two sides now, because everything in the rest of the book depends on keeping them apart. *Syntax* is notation: marks on paper, finite, discrete, checkable, copyable. `1 + 1`, a staff of crotchets, H₂O, a line of C\* code, this sentence. *Semantics* is meaning: what the marks are *about*. The number two. Sound in a room. A molecule that dissolves salt. A machine's behavior over all inputs. A *semantics* in the technical sense is a function from notation to meaning, and defining that function precisely is the founding act of every exact discipline. Musicians know this better than anyone. A score under-determines the performance, two conductors give you two pieces, and yet the score is what can be printed, posted, copied, and criticized. Notation travels. Meaning has to be reconstructed at the other end.
+
+Philosophers have found this repeatedly. Frege in 1892 with sense and reference, Saussure with signifier and signified, Korzybski in 1931 with the map that is not the territory, Magritte in 1929 with a painting of a pipe captioned "this is not a pipe". Computer science did not discover the distinction. What computer science did was meet it where a machine forces the notation to be exact, which is why the limits were noticed here most sharply.
+
+> Natural language is compression, formal language is commitment
+
+"I saw the man with the telescope." Two readings, one string. English resolves it with a shared world you and I already have, and that shared world is why English is so powerful, and why it cannot be a foundation. Its semantics is *us*, and we differ. A formal language pays a price, in narrowness, pedantry, and effort, to buy one thing: a meaning that does not depend on who is reading. This is what we said in the selfie chapter when we called formal languages designed and engineered. Natural language is ambiguous, elastic, forgiving, persuasive; it needs a mind and is learned by living. Formal language is single-valued, brittle, exact; it proves, it needs a machine, and it is defined by decree. Do not let formal win a beauty contest. Natural language is the more remarkable artifact. You cannot compute with a poem, and you cannot fall in love in first-order logic. The point is division of labor, and progress happens whenever someone moves a piece of the world from the left column to the right. Keep this in mind for the last chapters of the book. Prompting a machine in English is negotiation. Writing a test, a type, a grammar, a unit of measurement, a contract, is legislation.
+
+### Truths With No Proof
+
+Now the constructive part, and the heart of the book. We have Gödel numbering: every formula, every proof, every program is a number. So a formal system that can talk about numbers can talk about formulas, proofs, and programs, including its own. Gödel used exactly this in 1931 to build, inside any consistent formal system rich enough to describe arithmetic, a sentence that says, in effect, *this sentence has no proof in this system*. Now ask whether that sentence can be proved. If it could, the system would prove a falsehood, since the sentence says of itself that it has no proof. So, if the system is consistent, the sentence is unprovable. But that is exactly what the sentence says. So it is *true*. There is a truth with no proof.
+
+> Gödel's first incompleteness theorem
+
+Any consistent formal system rich enough to describe arithmetic contains statements that are true but not provable within it. This is the same diagonal. Cantor built a row that is not on the list. Gödel builds a truth that is not on the list of provable things. And adding the missing truth as a new axiom does not help: the construction simply runs again in the enlarged system. Note carefully what is *not* claimed. No single statement is forever unknowable; you may prove it in a stronger system. What is claimed is that no system is ever finished. Proof is a finite object you can check. Truth is not. Proof is syntax. Truth is semantics. They are not the same size, and we already knew that from counting; Gödel tells us where to look.
+
+> Gödel's second incompleteness theorem
+
+Such a system cannot prove its own consistency, unless it is inconsistent, in which case it proves everything, including its own consistency. Read this as engineering, because that is how it shows up in this book. A trustworthy system cannot be the source of its own trust. Confidence has to come from *outside*: a stronger theory, an experiment, an independent auditor, reality. Alfred Tarski closed the circle in 1936: no sufficiently expressive language can define truth for its own sentences. Truth always lives one level up.
+
+> Trusting trust
+
+Here is the second theorem in the only form most programmers ever meet it. Ken Thompson, in his 1984 Turing award lecture, described a compiler that recognizes when it is compiling the login program and inserts a back door, and that also recognizes when it is compiling a compiler and inserts the code that does both. Once such a compiler is in circulation, the back door survives even if every line of the compiler's source code is inspected and found clean, because the source is not what compiled the compiler. You cannot trust code that you did not totally create yourself, Thompson concluded, and by that he meant all the way down. Now recall what selfie does when it compiles itself and runs the result to compile itself again:
+
+```bash
+make self-self-check
+```
+
+The two binaries come out identical, 194,648 bytes each. What does that prove? Exactly one thing: that selfie *agrees with itself*. It does not prove that selfie is correct. A compiler that consistently mistranslated one construct would reproduce the mistake perfectly and pass the check. The fixed point is real, and it is beautiful, but it is a proof of self-agreement, and Gödel's second theorem says that this is the most any system can give you about itself. The outside check, in this case, is a second, independent compiler: David Wheeler showed in 2005 that compiling a compiler with two unrelated compilers and comparing the results detects Thompson's attack. We return to this in the programming chapter when we build the fixed point with our own hands.
+
+### The Machine, and What It Cannot Decide
+
+Gödel's results are about proofs. Alan Turing, in 1936, moved the same argument to *computation*, and in doing so he invented the computer. To follow him we need a precise notion of what a computation is, which is the one thing the machine chapter deliberately left open.
+
+> Turing machine
+
+The notion of *computability* is not something set in stone. No one knows how to do that. However, there is a definition that most computer scientists agree on as meaningful and useful simply because no one has, in almost 100 years, been able to find an alternative definition that increases computability beyond the commonly accepted definition. Well, there are different definitions of computability but they have all been found to be semantically equivalent. Here is how this works. We simply define a machine model and then say that whatever some machine in that model can compute is computable and whatever no machine in that model can compute is not computable. How about that? Turing was among the first to do that, and the machine he invented is called, well, the Turing machine. The machine model became so influential that an award, created much later, called the Turing award became the most important award in computer science, commonly considered the Nobel prize in computer science, for the lack of an actual Nobel prize in computer science.
+
+A *Turing machine* (TM) consists of two components: a *finite state machine* that encodes a program, and a *tape* of *cells* that works as main memory. Each cell contains a symbol out of a finite alphabet of symbols that always includes a special blank symbol. The input of a TM is stored on the tape before the machine begins executing. Unlike the main memory of a real computer, the tape is assumed to be infinite in size. However, the only symbol that may occur infinitely often on the tape is the blank symbol. In other words, the tape is infinitely large but there may still only be finitely many non-blank symbols on the tape at any time. Again, unlike the main memory we are used to, the tape is accessed, not by address, but by a cursor called the *head* that may slide across the tape in either direction. Upon each state transition of its FSM, a TM reads the content of the cell where the head currently points to and then, based on what it read, writes a symbol from its alphabet to that cell, then either moves the head left or right one cell, or keeps the head where it is, and finally transitions to a new state, out of the finitely many states of its FSM. A TM terminates when reaching an accepting state of its FSM. There are many variants of Turing machines. This one here is just closest to the original. For more details including formal definitions, see the recommended readings at the end of this chapter.
+
+> Turing complete, Turing equivalent, the Church-Turing thesis, and the algorithm
+
+The first time I saw that machine model as student I was utterly confused for the lack of a better word. I really did not expect computer science to be grounded in something like that. My fellow students and me all dealt with the confusion by making fun of the model. How can such a primitive machine be as powerful as any other known machine in terms of what those machines can compute? To be clear, any program written in any known low-level machine or high-level programming language can be implemented by a Turing machine that computes exactly the same as that program! In other words, Turing machines are computationally at least as powerful as any such language. But what about the other direction? What if we can implement any Turing machine in a program written in a given language? Well, in that case, we call that language *computationally universal* or *Turing-complete*. Most machine and programming languages are Turing-complete whereas simpler formalisms such as finite state machines and pushdown automata are not. However, what is truly fascinating is the fact that both directions hold for all known Turing-complete languages, meaning that they are also *Turing-equivalent*, that is, they can compute exactly the same as Turing machines, not more, but also not less. The commonly accepted claim that Turing completeness implies Turing equivalence is famously known as the *Church-Turing thesis*, which nevertheless remains a thesis to this day, as there may exist something that can compute more than what Turing machines can compute but nothing has been found yet. There is one important and to many surprising insight here. What algorithms really are is rooted in that assumption! An *algorithm* is essentially a finite description of a computation that can be performed by a Turing machine. Imagine, everything you see that is done by computers today, including generative AI, can be done by a Turing machine. Only when you really understand that, rationalizing any claims on what the future of computing might hold will be within your reach.
+
+> Infinite versus unbounded
+
+There is an interesting twist with machine models such as Turing machines. True, there are no arithmetic operators and no indirect addressing of memory, but the lack thereof only results in a performance penalty. The critically important ingredient is the principled infinity of memory to avoid a-priori bounds on memory when studying computability. In fact, any formalism that does not support unbounded memory can strictly speaking not be Turing-complete which includes virtually all machine languages, and many programming languages. How do we deal with that? Well, as computer scientists call it, we solve the problem by turning a bug into a feature. Strictly speaking, all digital computing devices are in fact just finite state machines, with a state space so large, as we saw in the size chapter, that we simply assume it is infinite. So, if a given language is claimed to be Turing-complete, then this is usually done under the implicit assumption that there is unbounded memory. We need to be careful with terminology here. Infinite and unbounded is not the same thing. At any moment during any computation, the amount of information held in memory is always finite. Infinity is only there as a means to avoid any a-priori bound on the size of memory of a Turing machine.
+
+> Random-access machines, and machines closer to ours
+
+Turing machines are quite different from real computers. That is not a problem when studying computability but for studying the cost of computing, which is the topic of a later chapter, it can make a difference. Computer scientists have therefore developed Turing-complete machine models that are closer in nature to real machines such as the *Random-Access Machine* (RAM) model. A RAM consists of a finite state machine that encodes a program and an unbounded number of registers where each register can hold an unbounded number of bits, with machine instructions for register initialization, addition and subtraction, register access, and comparison and branching. Most notably, there are no instructions for multiplication and division as such would provide an exponential advantage when applied to values that can get arbitrarily large. Most results in asymptotic complexity are based on RAM. Real machines can reproduce those results, if correct, within the bounds of their arithmetic logic units and main memory. Our RISC-U machine is, for the purpose of this chapter, a RAM with 32 registers of 64 bits each and 4 GB of memory, that is, a finite state machine so large that we pretend it is a RAM.
+
+> One machine that can be any machine
+
+Here is the part of Turing's 1936 paper that changed the world, and it is the halting proof's move run forwards, so let us take it first. A machine used to *be* its job. To sort instead of add, you built a different machine. Turing's move was to put the machine's *description* on the tape, as data, and to build one machine $U$ that reads any description and does whatever the described machine would do. That machine is called the *Universal Turing Machine* (UTM), and the fact that a single machine can compute whatever any other machine can compute was, at the time, surprising and highly inspirational. It is *universality*: one piece of hardware, every possible behavior, because the behavior arrives as notation. The figure sets three machines that each are their job against one machine that becomes any of them, and, on the last step, is handed its own description.
+
+![Three machines that are their job, and one machine that becomes any of them](../docs/figures/universal.svg "Three machines that are their job, and one machine that becomes any of them")
+
+Your phone is not phone-shaped. It is $U$ holding a description, which is why a new app needs no new hardware, and why nobody reading this owns a calculator, a typewriter, a map, and a record player as four objects. Shortly after Turing, von Neumann invented the architecture that takes the UTM and replaces its tape with random-access memory storing both code and data, which is the architecture of the machine chapter. And we have already built a UTM in this book, without calling it that. The `mipster` emulator in selfie is one universal machine, about a page of C\* per instruction group, that runs every program written for RISC-U, including selfie itself:
+
+```bash
+./selfie -c selfie.c -o selfie.m -m 2 -l selfie.m -m 1
+```
+
+Assuming unbounded memory, `mipster` is Turing-complete. The `hypster` virtual machine monitor is a UTM by different means: instead of interpreting code itself, it context switches to the machine it runs on to execute code on its behalf. That difference is the entire topic of the computing chapter. Here we only need one consequence of universality, and it is the key to everything that follows. Any universal machine can simulate any other, so what is computable does not depend on which machine you picked. And a machine that can be any machine can have *any* behavior, which is exactly why nothing general about behavior can be decided. The gift and the limit are the same fact.
+
+> The halting problem
+
+Let us now focus on what is not computable. We say that whatever cannot be computed by a Turing machine is *not computable* or *undecidable*, in contrast to something that is computable or *decidable*. The first time I was confronted with undecidability, as young student, I could not imagine what an example of an undecidable problem could be, let alone how to formalize that. Fortunately, there is a famous, easy-to-understand undecidable problem called the *halting problem*. Imagine that!
+
+The halting problem is to compute whether a given program $P$ terminates or *halts* on a given input $x$. We can of course just run $P$ on $x$ and see what happens. If $P$ halts, we are done. But while $P$ has not yet halted, we do not know if it ever will. Are there other methods, some form of program analysis, that could work? There are methods that determine termination for some programs, and they are useful. The issue is that there is no method that works for *all* programs and all inputs, and that is the key to the halting problem. We are looking for a program $H(P, x)$ that always terminates and answers correctly, for any $P$ and $x$, whether $P$ halts on $x$.
+
+Suppose such an $H$ existed. Then build a new program $D$ that takes a program $P$ as input, asks $H$ whether $P$ halts on input $P$, and then does the opposite: if $H$ says yes, $D$ loops forever; if $H$ says no, $D$ halts. Nothing about $D$ is hard to write. It is a procedure call, a conditional, a loop, and a return, all of which we have in C\*. Now run $D$ on its own description, $D(D)$, which we can do because a program is a number. Does it halt? If $D(D)$ halts, then $H$ said that $D$ does not halt on $D$, so $H$ was wrong. If $D(D)$ does not halt, then $H$ said that it does, so $H$ was wrong again. Either way $H$ gave a wrong answer on at least one input. So no such $H$ exists. That is the whole proof, and the figure shows it: the decider, the wrapper that feeds the decider its own description, and the contradiction.
+
+![The halting construction](../docs/figures/halt.svg "The halting construction")
+
+Look at what we just did. We handed a program a description of a program and used the answer against it. That is the diagonal one more time: the return values of $H$ form a table with a row for every program and a column for every input, $D$ walks the diagonal where program and input are the same, and flips. And the dual use of $D$ as both code and data, the thing that makes $D(D)$ meaningful at all, is the self-reference. Remember selfie compiling selfie, or `mipster` executing `mipster`? Same thing. Turing was answering David Hilbert's decision problem in the negative, and the byproduct of the negative answer was the design of the universal machine, which is to say the machine on every desk. The limit and the machine arrived in the same paper. Limits are where technology comes from.
+
+> Impact of the halting problem
+
+Interpreting the undecidability of the halting problem in practice is interesting. Compilers, operating systems, and virtual machine monitors obviously cannot determine whether some arbitrary program terminates or not. That does not mean they cannot do that for some programs, but the effort in doing so for realistic programs is considerable. We are all used to those apps that do not respond anymore, seemingly requiring intervention by manually terminating them. Your laptop or smartphone not doing that for you is an immediate consequence of the undecidability of the halting problem. Even you cannot generally know if an unresponsive app would have responded again if you had waited just a bit more. The computing chapter shows what an operating system does instead of deciding: it *bounds*. A timer interrupt takes the processor away from a program after a fixed number of instructions whether or not the program was about to finish. That is not a solution to the halting problem. It is the engineering answer to not having one.
+
+> Rice's theorem
+
+It is not just halting. In 1953 Henry Rice proved that *every* non-trivial property of the behavior of programs is undecidable, where non-trivial means that some programs have the property and some do not. Only questions about the *text* of programs are safe. How long is the code? Does it parse? Which procedures does it call? Are the types consistent? Does it contain a loop? A compiler answers all of these, always, in finite time. Is it correct? Is it equivalent to that other program? Can it divide by zero? Can it read outside its memory? Does it ever leak the key? Is it safe? No program decides any of these for all programs. In our vocabulary, syntax is decidable and semantics is not, and the line runs exactly where Cantor drew it: programs are countable and behaviors are not.
+
+Rice's theorem is, in my experience, the most useful theorem a systems student can own, and it is one sentence. Frame it as liberating rather than depressing. It tells you in advance that there is no perfect analyzer, so the interesting question is never *can we decide this* but *what approximation do we choose and what do we give up*. Every practical tool, a type checker, a test suite, a linter, a model checker, a fuzzer, a proof assistant, is a deliberate approximation: sound but incomplete, or complete but unsound, or exact only within a bound. Choosing which to give up is the discipline. The workshop of tools around selfie that we meet in the cost chapter, rotor, bitme, babysat, is precisely such a set of choices, each with a stated bound, and each applied to selfie itself.
+
+### Sets of Programs
+
+In order to deepen our understanding of undecidability, let us go up in level of abstraction using *sets* of programs and their input, with Turing machines as our programming paradigm, which can, of course, easily be replaced by any other Turing-complete formalism. We define three infinite sets: the set of all Turing machines with some input on their tape, the set of all Turing machines that halt for the input on their tape, and the set of all Turing machines that do not halt for the input on their tape. The latter two sets are obviously complements of each other while their union is the first set.
+
+> Recursive set, or decidability
+
+The first set is an example of a *recursive set* where the term recursive means computable or *decidable* by a Turing machine. More precisely, a set is recursive if membership in the set can be decided by a Turing machine, that is, there is a Turing machine that can compute if its input is an element of the set or not. Where have we seen such a Turing machine in practice? The parser of the selfie compiler, of course! Given a sequence of characters, the parser decides if the sequence is a syntactically valid C\* program or not. Could we turn the parser into a program that enumerates all syntactically valid C\* programs? Yes, of course, by generating all strings as above and keeping the ones the parser accepts. That program would never terminate, but nevertheless output all such programs eventually, including itself. The complement of a recursive set is also recursive, so we could turn around the program and output all syntactically invalid sequences of characters as well.
+
+> Recursively enumerable set, or semi-decidability
+
+The second set is more difficult, as it is an example of a *recursively enumerable* or *semi-decidable* set that is not recursive! A set is recursively enumerable if there is a Turing machine that can compute if its input is an element of the set but may not terminate if its input is not an element of the set. Thus a recursive set is also recursively enumerable but not necessarily vice versa. Semi-deciding if a Turing machine halts on a given input is easy by just running it and seeing if it halts. But how would a Turing machine *enumerate* all Turing machines that halt on their input? That is also surprisingly easy, once we drop any concerns for performance on the floor, which is hard to do for some people but anyway a good exercise in developing advanced reasoning skills. Take the modified parser that generates all C\* programs, feed the first generated program into the selfie compiler, generate some input, and have `mipster` execute the first instruction of the generated code on that input. If the code terminates, output the program and input. If not, push the next C\* program through that pipeline, but now execute one instruction in the code of both the previously and the newly generated program, and so on, forever. In each round, also generate another input, say, using an unbounded counter, and run all programs generated so far on all inputs generated so far. This is what you can do if memory is unbounded! Every program that halts on some input eventually gets its turn and is output. The method does obviously not work for enumerating programs that do *not* halt.
+
+> Not recursively enumerable set, or undecidability
+
+The third set is the most difficult, since it is not even recursively enumerable, as a result of the undecidability of the halting problem. There is no Turing machine that can determine for *any* given Turing machine if the machine is in the set, let alone enumerate the set. However, its complement is the second set, which is recursively enumerable, so the third set is at least *co-recursively enumerable* or *co-semi-decidable*: there is a Turing machine that can determine if its input is *not* in the set. Are there sets that are neither semi-decidable nor co-semi-decidable? Yes, lots of them, in fact infinitely more, and those are the properly *undecidable* sets. Semi-decidable and co-semi-decidable sets are often called undecidable too, which may lead to confusion. We are guilty of that as well. Using precise terminology takes effort but is important.
+
+> Countable versus recursively enumerable
+
+Here is the connection to the first half of the chapter. All three sets are countable, by Gödel numbering. But only the first two are *effectively* countable by some Turing machine, that is, either recursive or at least recursively enumerable. The third set is countable, as a subset of the first, but not by any machine. So where exactly is the uncountable thing in the halting problem, given that all programs are countable? The programs are countable, and even their computations are finite artifacts at any given moment. But what a machine computes for *any* input is an infinite answer sheet, one of those rows from the powerset figure, and the table of all such sheets is the table we diagonalized. The diagonal produces sheets that no machine fills in. Removing unbounded looping, or unbounded recursion, from any Turing-complete formalism would make the halting problem decidable, at the price of universality, and vice versa. The gift and the limit are the same fact, again.
+
+### Interlude: No Text Contains Its Own Application
+
+This section is for the lawyers, and for everybody else it is Rice's theorem with no mathematics in it. A statute says *no vehicles in the park*. A car, plainly, is a vehicle. And then the arguing starts. An ambulance? A bicycle? A skateboard? A war memorial made from a jeep? H. L. A. Hart called the easy cases the *core* of a rule and the arguable ones its *penumbra*, and Lon Fuller's 1958 reply with the memorial jeep is where the laughter usually comes in. The point to take is that the penumbra is not sloppy drafting, and a smarter legislature does not remove it. No redrafting removes it, it only moves it. The words are finite; the situations are not. The figure lays the cases out on one line, with the band in the middle that the text does not settle.
+
+![No text contains its own application](../docs/figures/penumbra.svg "No text contains its own application")
+
+So law stops trying to settle meaning in the text and builds an institution instead: courts, appeals, precedent. That is not a workaround. It is the only available design when a finite text has to be applied to unbounded situations, and it is the oldest working example of the response this whole book recommends. Computer science calls the same response code review, type checking, and testing. Medicine calls it trials and boards. Science calls it peer review. And Gödel, of all people, at his 1947 citizenship hearing with Einstein at his side, announced that he had found a self-referential flaw by which the Constitution could be legally turned into a dictatorship. The judge steered him off it, and nobody recorded which flaw he meant. The man who found incompleteness in arithmetic went looking for it in a constitution. Enjoy that one, and do not invent the flaw.
+
+### One Idea, Sixty Years, Six Theorems
+
+You now hold a proof technique, not six facts. Here is the pattern, once and for all: assume a complete list; ask each item about itself; answer the opposite.
+
+| Year | Who | The list | The diagonal object |
+|---|---|---|---|
+| 1891 | Cantor | all real numbers | a number on no row |
+| 1901 | Russell | all sets | the set of non-self-members |
+| 1931 | Gödel | all provable sentences | "I am unprovable" |
+| 1936 | Tarski | all definable predicates | "I am false" |
+| 1936 | Turing | all decidable questions | a program that defies its judge |
+| 1953 | Rice | all semantic properties | all of the above, at once |
+
+Learn the move once and you own the century. Students who see the pattern never need to memorize the theorems, and, more importantly, they recognize it when it shows up in a new costume, which it does, twice more in this book: once when a kernel has to isolate itself, and once when a machine is asked to grade its own output.
+
+> No final authority means no ceiling
+
+What all of this forbids is a machine, a method, or a person that settles all questions. No complete rulebook, no self-certifying system, no automatic correctness. What it opens is that mathematics is not a finished building but an open frontier, that engineering is a craft rather than a lookup, and that judgement, yours, never becomes redundant. Donald Knuth put the whole chapter in one line in 1977, in a note to a colleague: "Beware of bugs in the above code; I have only proved it correct, not tried it." A proof is about a model of the world, and the world gets the final word. Proof and testing are two different approximations of truth, and a serious engineer uses both while trusting neither completely. With that, we are ready to build the machinery that constructs meaning on a machine: the compiler, in the next chapter, and the operating system after that. Both are self-referential, both are exactly as limited as this chapter says, and both work.
+
+> Exercises
+
+1. Write down the first sixteen strings over the alphabet {0, 1} in the order of the enumeration figure. What is the position of the string 1011? What string is at position 100?
+2. Take the file `selfie.m` produced by `./selfie -c selfie.c -o selfie.m`. It is a number. How many decimal digits does that number have, roughly? Use the size chapter.
+3. Make up a list of six subsets of the numbers 1 to 6 as answer sheets, and construct the diagonal subset $D$ by hand. Check that $D$ differs from every row.
+4. The fractions are countable. Write down the first ten fractions in the corner-by-corner walk of the grid, skipping repeats such as 2/4.
+5. Write a C\* program that does not halt, compile it with selfie, and run it with `-d 1` for a while. Then explain, in one paragraph, why no change to `mipster` could make it print "this program will never halt" for all such programs.
+6. Which of the following are questions about the text of a C\* program and which about its behavior: does it use the keyword `while`; does it ever execute the `while` loop; does it contain the character `/`; does it ever divide by zero; is it longer than 100 lines; does it print the same as another program? Say for each whether starc can decide it.
+7. Run `make self-self-check`. State, in one sentence each, what the identical binaries prove and what they do not prove.
+
+### Recommended Readings 5
+
+> Introduction to the Theory of Computation by Michael Sipser
+
+This book is my favorite introduction to theoretical computer science, by far. The first time I read it, as student, I found answers to so many questions I had. With this book, there is no need to feel intimidated by the subject. Everything in this chapter that we only sketched, Turing machines, decidability, reductions, and the formal definitions of the sets of programs, is done properly there.
+
+> Gödel's Proof by Ernest Nagel and James R. Newman
+
+A short book that walks through the first incompleteness theorem without requiring more mathematics than this chapter did. If you want to see the sentence that says of itself that it has no proof actually constructed, this is the place, and it takes an afternoon.
+
+> Reflections on Trusting Trust by Ken Thompson
+
+The 1984 Turing award lecture, three pages long, and the most instructive thing ever written about what a self-compiling compiler can and cannot certify. Read it before the programming chapter and again after.
+
+> Plato and the Nerd by Edward A. Lee
+
+This book takes what you have learned here and not only puts it in human perspective but also continues the discussion of universality of computing beyond the traditional notion of computability. Even if you have not read our book, but especially if you have, you will be able to appreciate this book.
+
 ## Programming
 
 Almost all code today is written in high-level programming languages. There are many languages to choose from and, for better or worse, there are new languages being developed all the time. Also, modern languages usually come with a whole ecosystem of libraries and tools that play an important role in addition to the language itself. Libraries are collections of code, often written by experts, for others to use. Tools are compilers, interpreters, debuggers, and so on. Selfie includes simple but realistic versions of a code library and tools that you can actually understand in full detail.
@@ -3996,6 +4389,16 @@ Code generation involves encoding machine instructions in the format that the ta
 
 There is one important question that we should consider before moving on. Why do we compile source code to machine code and then have a processor interpret the generated code? We could also design and implement source code interpreters avoiding compilers altogether, right? The answer is yes, we could do that and it has in fact been done for many programming languages such as Python, for example. In essence, both compilation and interpretation have numerous advantages and disadvantages. First of all, a source code interpreter requires a scanner and parser just like a compiler. The real difference is in the immediate execution of source code instead of generating machine code. A drawback of source code interpretation is that it is usually slower than compiling the code first and then executing the generated code instead. However, modern source code interpreters often have compilers built in that internally generate machine code on demand instead of interpreting source code. The javascript interpreter in your web browser does that enabling advanced web applications such as gmail. Awesome, right? Well, for our purposes here, it is important to cover both compilation and interpretation as the two fundamental techniques for creating the semantics of programming and machine languages. We nevertheless only discuss compilation of source code here and interpretation of machine code, as already done in the machine chapter.
 
+> Station III: a compiler defines the meaning of the language it is written in
+
+This is the chapter where the book's distinction becomes a program. Everything the compiler does divides cleanly along it. The scanner and the parser are about *syntax*: they decide whether a text is a C\* program, and a successful parse is a *proof* that it is, a derivation in the grammar, which is why a parser always terminates and always answers. The code generator is about *semantics*: it constructs the meaning of the program, as machine code, and the machine chapter's emulator then runs that meaning. The figure shows the whole of it in one line: the text on the left, what the machine does on the right, and the compiler in between, whose own source is in the left box.
+
+![A compiler defines the meaning of the language it is written in](../docs/figures/meaning.svg "A compiler defines the meaning of the language it is written in")
+
+Two theorems from the meaning chapter run through the chapter. Rice's theorem says that everything the compiler decides is about the text, and that every question about behavior it appears to answer, in a type warning, in a check for an undeclared identifier, is either a question about the text in disguise or an approximation. And Gödel's second theorem, in Thompson's engineering form, says what the fixed point at the end of the chapter, selfie compiling selfie and getting the same bytes, proves and does not prove. Watch for both.
+
+![The whole pipeline: nothing in the middle left out](../docs/figures/pipeline.svg "The whole pipeline: nothing in the middle left out")
+
 ### Literals
 
 Literals in programming languages are arguably the most basic programming element. They represent a value that remains the same, that is, *constant* throughout the execution of the program. C\* features three kinds of literals: integer literals in decimal notation such as `85`, character literals such `'H'`, and string literals such as `"Hello World!"`. They are called literals because the programmer really means them to be as they appear in the program, literally. In contrast, variable names, for example, are just names such as `x` or `y` or `i_am_a_variable`. Which name you pick is not important as long as you use the name consistently in all places where you would like to talk about that particular variable. So, `x` and `'x'` are very different things. By `x` you mean the variable `x` whereas by `'x'` you literally mean the character `x`.
@@ -4030,7 +4433,7 @@ Note that the parenthesis `(` and `)` around the first digit are necessary since
 
 #### Modeling
 
-![Integer Literal FSM](figures/integer-literal-FSM.png "Integer Literal FSM")
+![Integer Literal FSM](../docs/figures/integer-literal-fsm.svg "Integer Literal FSM")
 
 > Finite State Machines!
 
@@ -4076,7 +4479,7 @@ A non-deterministic FSM or *non-deterministic finite automaton* (NFA) may contai
 
 Computer science professors including me nevertheless love to keep talking about this kind of theoretical material. As students we were asked to prove the equivalence in expressive power of regular expressions and finite state machines, and study the conversion algorithms and their algorithmic complexity. For some this was horror, especially since quite often little to no motivation was given in the "good" old days. Well, those days are over. You already saw plenty of motivation right here and will see how powerful things get below. If you are interested in following up consider the recommended readings. It will definitely sharpen your mind even further.
 
-Before proceeding to the third problem of how to design and implement an algorithm for our regular expression and FSM, we still need to fix a bug in the regular expression for integer literals that we saw earlier in the language chapter. Recall that the language of the regular expression above includes not just the sequence of a single digit `0` but also any sequence of characters that begins with any number of digits `0` such as `000` or `007`, for example. But it is easy to fix that:
+Before proceeding to the third problem of how to design and implement an algorithm for our regular expression and FSM, we still need to fix a bug in the regular expression for integer literals that we saw earlier in the notation chapter. Recall that the language of the regular expression above includes not just the sequence of a single digit `0` but also any sequence of characters that begins with any number of digits `0` such as `000` or `007`, for example. But it is easy to fix that:
 
 ```ebnf
 integer = "0" | non_zero_digit { digit } .
@@ -4086,7 +4489,7 @@ non_zero_digit = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" .
 digit = "0" | non_zero_digit .
 ```
 
-![Correct Integer Literal FSM](figures/correct-integer-literal-FSM.png "Correct Integer Literal FSM")
+![Correct Integer Literal FSM](../docs/figures/correct-integer-literal-fsm.svg "Correct Integer Literal FSM")
 
 The finite state machine that matches the correct regular expression is shown above. Here, we only need to divert the state transition labelled `"0"` to a new accepting state that does not have any further state transitions. The rest stays the same. We have nevertheless not included the fix in the C\* grammar to keep it as an introductory exercise for students.
 
@@ -4094,7 +4497,7 @@ The finite state machine that matches the correct regular expression is shown ab
 
 Let us move on to the third problem of designing and implementing an algorithm for efficiently scanning integer literals in decimal notation and computing the numerical value they represent. You probably notice already that the amount of detail involved in the specification, modeling, and implementation problems not only increases inversely proportional to the level of abstraction but also seemingly exponential. Little detail in specification, more detail in modeling, and a lot of detail in implementation. Just take a look at what follows next. Abstraction really does help in managing complexity.
 
-![Scanning Integer Literals](figures/scanning-integer-literals.png "Scanning Integer Literals")
+![Scanning Integer Literals](../docs/figures/scanning-integer-literals.svg "Scanning Integer Literals")
 
 The solution to the implementation problem can be found in selfie in a procedure called `get_symbol`. That procedure does in fact implement the whole scanner of the selfie compiler. The above figure only shows the part of the procedure that scans integer literals. As example, we again use the sequence of characters `85` as input to the code shown on the left. The code itself is shown in the middle. Moreover, the state of main memory after the code finished accepting `85` is shown to the right. For reference, the (correct) regular expression and (correct) finite state machine are also there.
 
@@ -4170,7 +4573,7 @@ These bits are what is actually stored in the machine! Let us take a look at wha
 
 `13624`
 
-So, the decimal number `13624` encodes the string `"85"`. Who would have thought? Why not just use `13624` then? Good question! We could interpret `13624` as representing the decimal value `85`. In this case, syntax and semantics of integer literals would be the same. Well, there are two drawbacks doing that related to time and space. Remember the information chapter? First of all, we would need more space, that is, more bits to encode integer literals, only by a constant factor, but this could still be a problem in practice. Yet the even more important drawback would be that we could not apply standard integer arithmetic in calculations but would need to do something more complicated and likely lose time in doing so. Therefore, computing numerical values of integer literals is worth it, especially since we only need to do it once when compiling code. Before we get to that though we still need to do one more round over the code we have seen so far.
+So, the decimal number `13624` encodes the string `"85"`. Who would have thought? Why not just use `13624` then? Good question! We could interpret `13624` as representing the decimal value `85`. In this case, syntax and semantics of integer literals would be the same. Well, there are two drawbacks doing that related to time and space. Remember the size chapter? First of all, we would need more space, that is, more bits to encode integer literals, only by a constant factor, but this could still be a problem in practice. Yet the even more important drawback would be that we could not apply standard integer arithmetic in calculations but would need to do something more complicated and likely lose time in doing so. Therefore, computing numerical values of integer literals is worth it, especially since we only need to do it once when compiling code. Before we get to that though we still need to do one more round over the code we have seen so far.
 
 > Error handling: printing errors, sure, but then to exit or not to exit?
 
@@ -4184,7 +4587,7 @@ So, when exactly is the limit of scanning 20 digits reached? It is reached when 
 
 *Unsafe* memory access often results in bugs that are extremely hard to find. It happens when you allocated either too little memory, accessed memory outside of the area of allocation, or even inside of the area if you deallocated it prematurely, as we see below. The programming language C and its dialects including C\* are infamous for this problem. Millions of lines of code have been and are still being developed in these languages where unsafe memory access has contributed to bugs that resulted in high cost and even critical failures. So, why not making that impossible in your programming language? Well, computer scientists did that. A prominent example is the programming language *Java* which is referred to as a *safe* programming language in which unsafe memory access is indeed impossible. What is the catch? Performance and access to hardware. Guaranteeing memory safety is very complex and usually comes at a cost in temporal and spatial performance, and makes it more difficult or even impossible to have access to advanced hardware features. C and its dialects are *systems languages* that provide programmers with great freedom to do almost anything at the expense of memory safety. There are also more recent developments in programming languages such as the programming language *Rust* where computer scientists try to maintain the performance of C and its dialects while giving programmers the choice of safe and unsafe memory access.
 
-![Computing Numerical Values](figures/atoi.png "Computing Numerical Values")
+![Computing Numerical Values](../docs/figures/atoi.svg "Computing Numerical Values")
 
 The final step of scanning integer literals is to compute their numerical value. The above figure shows the code in the middle, its input and output on the left, here `85` and `1010101`, respectively, and the state of memory when done on the right. Given a string of digits `s`, the rather famous procedure `atoi` computes the numerical value `n` that `s` represents. The name `atoi` stands for *ASCII to integer*. There is also a procedure called `itoa` that does the opposite for printing integer values, see the selfie source code for its implementation. In essence, `atoi` encodes `s` into `n`, and `itoa` decodes `n` back to `s`.
 
@@ -4230,7 +4633,7 @@ Here are ways to deal with that. On first sight the seemingly simplest way to al
 
 #### Character Literals
 
-![Scanning Character Literals](figures/scanning-character-literals.png "Scanning Character Literals")
+![Scanning Character Literals](../docs/figures/scanning-character-literals.svg "Scanning Character Literals")
 
 Our means to perform static memory allocation is global variables. We have already seen that in the code for scanning integer literals. We use the same method for scanning character literals as shown in the above figure. Here we only need the three global variables `character`, `literal`, and `symbol`. As before the value of `character` is not shown in the state of main memory but it is there of course. Static memory allocation for scanning character literals is clearly sufficient because the length of the sequence of characters that form a character literal is fixed and the numerical value represented by a character literal is just a single byte with UTF-8 encoding.
 
@@ -4252,7 +4655,7 @@ But stack allocation comes with an important limitation. Deallocation of memory 
 
 #### String Literals
 
-![Scanning String Literals](figures/scanning-string-literals.png "Scanning String Literals")
+![Scanning String Literals](../docs/figures/scanning-string-literals.svg "Scanning String Literals")
 
 Scanning string literals is an example of how to address the problem of maintaining information that is needed elsewhere in the code, as shown in the above figure. Here we need the three global variables `character`, `string`, and `symbol`. As before the value of `character` is not shown in the state of main memory.
 
@@ -4386,7 +4789,7 @@ cstar_symbols = integer | character | string | identifier | "," | ";" | "(" | ")
 
 and then substitute all non-terminal symbols in its right-hand side with their definition until only terminal symbols remain. If that process terminates, then the language is indeed regular. Try it! The resulting rule gets quite big but it is finite.
 
-![Scanner](figures/scanner.png "Scanner")
+![Scanner](../docs/figures/scanner.svg "Scanner")
 
 The scanner for all of C\* is depicted in the above figure, in particular the full finite state machine and a sketch of its implementation in the `get_symbol` procedure. The finite state machines for integer, character, and string literals along with the finite state machine for identifiers are part of that.
 
@@ -4545,7 +4948,7 @@ factor = [ cast ] [ "-" ] [ "*" ]
 
 The procedure for parsing a `factor` is `compile_factor`. See how beautiful this is?
 
-![Parsing Literals](figures/parsing-literals.png "Parsing Literals")
+![Parsing Literals](../docs/figures/parsing-literals.svg "Parsing Literals")
 
 The above figure shows the syntactic specification of C\* literals in EBNF as well as the implementation of parsing those literals in C\*. It also shows the machine state after parsing our running example of the integer literal `85`, the character literal `'H'`, and the string literal `"Hello World!"`.
 
@@ -4642,7 +5045,7 @@ As you might guess, we ignore that in selfie and instead opt for simplicity, arg
 
 Then there are are two more procedures: `current_temporary` returns the register most recently allocated by `talloc` and `previous_temporary` returns the register second most recently allocated by `talloc`. Knowing the two most recently allocated registers is sufficient to generate code in all situations encountered by the selfie compiler. Beautiful!
 
-![Emitting Literals](figures/emitting-literals.png "Emitting Literals")
+![Emitting Literals](../docs/figures/emitting-literals.svg "Emitting Literals")
 
 We are finally ready to get to the last step in dealing with literals. The above figure shows the source code involved in generating machine code for literals. The relevant procedures are `load_integer` which emits code into `code_binary` that loads the value of an integer or character literal into a register, and `load_string` which first emits a string literal into `data_binary` and then emits code into `code_binary` that loads the address of that string literal in memory into a register.
 
@@ -4690,7 +5093,7 @@ letter = "a" | ... | "z" | "A" | ... | "Z" .
 
 We already saw what a digit is before when handling integer literals. An identifier obviously must begin with a letter followed by any number of letters, digits, and underscores `"_"`. The reason as to why identifiers must begin with a letter is simple. It allows the scanner to distinguish identifiers from integer literals upon seeing the first character! Very nice.
 
-![Scanning Identifiers](figures/scanning-identifiers.png "Scanning Identifiers")
+![Scanning Identifiers](../docs/figures/scanning-identifiers.svg "Scanning Identifiers")
 
 The finite state machine for recognizing identifiers and the implementation of the FSM in selfie is shown in the above figure. The code is part of the procedure `get_symbol` which we have seen before. As example, we use the sequence of characters `actual_id42` which is obviously a syntactically valid identifier. Similar to integer and string literals, there is a limitation in the length of identifiers given by the global variable `MAX_IDENTIFIER_LENGTH` which is set to 64 in selfie. That is plenty given that identifiers are names of variables in C\*. The same applies to procedure names which are the only other use of identifiers in C\*. Have a quick look at the C\* grammar to confirm that. Handling the syntax of identifiers is straightforward after seeing how the syntax of literals is handled.
 
@@ -4763,7 +5166,7 @@ We have already seen the definition of `type`, `cast`, and `value`. The definiti
 
 There is, however, a remaining challenge that takes some effort to solve. A global variable declaration is de facto static memory allocation in the data segment, preparing for the eventual and possibly repeated definition and use of the declared variable in possibly many places throughout the parsed program. Whenever parsing definition and use of a variable, the memory address of where its value is stored and how it is interpreted must be known. In other words, as mentioned before, whenever encountering a symbolic reference to a variable in source code, we need to be able to resolve it into a direct reference in machine code.
 
-![Global Variable Declaration](figures/global-variable-declaration.png "Global Variable Declaration")
+![Global Variable Declaration](../docs/figures/global-variable-declaration.svg "Global Variable Declaration")
 
 The above figure shows what is involved in parsing global variable declarations with optional definition of initial values. As example, we use `uint64_t x = 42;` to declare and define a global variable `x` with its value interpreted as unsigned 64-bit integer and set to the initial value `42`. The syntax of global variable declarations and definitions is specified in the rule for the start symbol `cstar` of the C\* grammar. Hence the procedure `compile_cstar` is in charge of parsing global variable declarations and definitions. It also parses procedure declarations and definitions which we ignore here. The procedure `compile_type` parses the type keyword `uint64_t` followed by an optional `*`. Upon parsing the identifier that is being declared here, the distinction between variable and procedure declaration is not yet known. A lookahead of 1 is still necessary, as mentioned before.
 
@@ -4792,7 +5195,7 @@ call   = identifier "(" [ expression { "," expression } ] ")" .
 
 In other words, we need to take another look at the procedure `compile_factor` for parsing a `factor`. The relevant part of the grammar also shows that there is a lookahead of 1 necessary to be sure that we are dealing with a global or local variable or a formal parameter, and not a procedure call.
 
-![Variable Use](figures/variable-use.png "Variable Use")
+![Variable Use](../docs/figures/variable-use.svg "Variable Use")
 
 The above figure shows how variable use is parsed and how code is generated for that. As example, we use an assignment `x = x + 7;` where only the second occurrence of `x` is relevant since it denotes the use of `x`. The first occurrence of `x` defines the value of `x` which is relevant later when we get to assignments.
 
@@ -4818,7 +5221,7 @@ Alright, once the parser has found an entry, here for `x`, in one of the two sym
 
 A symbol table is our first example of a non-trivial data structure where there is a lot to learn. An interesting observation is that compiling most aspects of programming languages does not even require symbol tables. Only when it comes to handling a context larger than, say, a line of code, up to even the whole program, finite state machines, even with stacks, reach their limits. We need something that remembers what we have seen, possibly in any order, so that we can use it properly later.
 
-![Symbol Table](figures/symbol-table.png "Symbol Table")
+![Symbol Table](../docs/figures/symbol-table.svg "Symbol Table")
 
 The idea of a symbol table is to keep track of symbols that have grammar attributes that are relevant elsewhere in the code such as their class and type as well the address in memory where the value they might represent is stored, and even the line number where they occurred in source code. A symbol table is a *database*, or more specifically, a *key-value store* that maps a "key", here a symbol, to a unique "value", here the attributes of the symbol. Whenever the parser encounters a symbol with attributes it may store the symbol with its attributes in the symbol table. Later, the parser may search the symbol table to find out about the attributes of a given symbol. The above figure shows an example of a symbol table with entries for an identifier `x` and a string literal `"Hello World!"`. Their "keys" are the strings `"x"` and `"Hello World!"`, respectively. Their "values" are the offsets relative to either the `gp` or `s0` register of where their actual values are stored in the data segment at runtime. We also store other attributes and mention some of them below.
 
@@ -4914,7 +5317,7 @@ But what if some operators have the same precedence such as `+` and `-` as well 
 
 Are there also *right-associative* operators in C\*? Yes, we discuss them as soon as we are done here. Making the `-` operator left-associative makes sense because subtraction is left-associative in elementary arithmetic, along with division and remainder. But what about operators that are actually *associative* in elementary arithmetic such as `+` and `*`? After all, expressions with addition and multiplication can be grouped in any order without an effect on the outcome, at least in elementary arithmetic. Why do we make even them left-associative in C\*, and in fact many other programming languages? Well, mixing associativity of operators with the same precedence may result in grouping conflicts. For example, how would you group the expression `x + 7 - y` if `+` was right-associative? Is it `(x + 7) - y` or `x + (7 - y)`? The former respects left-associativity of `-` but not the right-associativity of `+`, and the latter vice versa. So, left-associativity for `+` and `*` it is.
 
-![Elementary Expressions](figures/elementary-expressions.png "Elementary Expressions")
+![Elementary Expressions](../docs/figures/elementary-expressions.svg "Elementary Expressions")
 
 The above figure shows the pushdown automaton that handles the grammar of elementary expressions. Recall that a pushdown automaton is a finite state machine with a stack. The implementation of that pushdown automaton in a recursive-descent parser implicitly maintains the stack of the automaton using the call stack for procedures. In selfie, those procedures would be the parser procedures named `compile_X` that handle the grammar rules defining non-terminals `X`. For example, similar to the non-terminal `factor` implemented by the procedure `compile_factor`, the non-terminals `expression` and `term` would be implemented by procedures called `compile_expression` and `compile_term`, respectively. The interesting case where these procedures actually form a recursion is the occurrence of the grammar expression `"(" expression ")"` in the right-hand side of the grammar rule that defines the non-terminal `factor`. The procedure `compile_factor` does indeed call the procedure `compile_expression` recursively to handle that part of the rule.
 
@@ -4959,7 +5362,7 @@ In the following, we explain code generation, first for arithmetic operators, si
 
 Compiling arithmetic operators is surprisingly simple as long as there are machine instructions that match the semantics of those operators. In case of C\* and RISC-U they do. To some extent this is also true for comparison operators but only when considering all of RISC-V, not just RISC-U. We therefore look into compiling comparison operators after we are done with arithmetic operators. Among the arithmetic operators of C\*, the operators for multiplication, division, and remainder are even a bit easier to handle than the operators for addition and subtraction since the latter have different semantics depending on the type of their operands. So, for now, let us take the expression `x * 7` as example, instead of `x + 7`.
 
-![Terms](figures/emitting-terms.png "Terms")
+![Terms](../docs/figures/emitting-terms.svg "Terms")
 
 The above figure shows how the procedure `compile_term` implements the grammar rule that defines the non-terminal `term`, including emitting code. As before, the first occurrence of the non-terminal `factor` is handled by a call to the procedure `compile_factor`, followed by a `while` loop that iterates of any number of occurrences of the `*`, `/`, or `%` symbols, and another occurrence of `factor`, which again is handled by a call to `compile_factor`. Besides checking and remembering the type of each factor in local variables `ltype` and `rtype` on the call stack, where `ltype` eventually becomes the type of the parsed term and is return as grammar attribute, the code also remembers the currently parsed operator symbol in a local variable called `operator_symbol`, also on the call stack. This is important. If we just continued parsing without remembering the operator symbol, we would not know what the operator is anymore after parsing the following factor.
 
@@ -4984,17 +5387,17 @@ make self-self
 The relevant output is at the very end:
 
 ```
-./selfie: t0 register:   170535378,85280151,85255227[1.00]
-./selfie: t1 register:   71512534,35780990,35731544[1.00]
-./selfie: t2 register:   15595462,7797731,7797731[1.00]
-./selfie: t3 register:   572688,286344,286344[1.00]
-./selfie: t4 register:   136870,68435,68435[1.00]
-./selfie: t5 register:   109496,54748,54748[1.00]
-./selfie: t6 register:   27374,13687,13687[1.00]
-./selfie: temps total:   258489802,129282086,129207716[1.00]
+./selfie: t0 register:   194024743,97025203,96999540[1.00]
+./selfie: t1 register:   82626055,41338491,41287564[1.00]
+./selfie: t2 register:   16118102,8059051,8059051[1.00]
+./selfie: t3 register:   588938,294469,294469[1.00]
+./selfie: t4 register:   140460,70230,70230[1.00]
+./selfie: t5 register:   112368,56184,56184[1.00]
+./selfie: t6 register:   28092,14046,14046[1.00]
+./selfie: temps total:   293638758,146857674,146781084[1.00]
 ```
 
-For example, register `t0` is accessed around 170 million times, roughly half by reading its value and the other half by writing its value, that is, by a ratio of reads and writes by around 1. Register `t1` is already accessed a lot less, and so on. However, the ratio of reads and writes is about the same for all. Stack allocation for register allocation is clearly visible in these numbers. However, the actual problem is the ratio of reads and writes. It would be better if there were more reads than writes per register because that would mean that registers would be used as actual memory, preventing unnecessary slower main memory access. We could achieve that by using a more involved algorithm for register allocation.
+For example, register `t0` is accessed around 194 million times, roughly half by reading its value and the other half by writing its value, that is, by a ratio of reads and writes by around 1. Register `t1` is already accessed a lot less, and so on. However, the ratio of reads and writes is about the same for all. Stack allocation for register allocation is clearly visible in these numbers. However, the actual problem is the ratio of reads and writes. It would be better if there were more reads than writes per register because that would mean that registers would be used as actual memory, preventing unnecessary slower main memory access. We could achieve that by using a more involved algorithm for register allocation.
 
 > Constant folding
 
@@ -5002,7 +5405,7 @@ Before moving on there is yet another opportunity here to talk about code optimi
 
 The other reason we mention constant folding is because it beautifully shows the tradeoff between compile time and runtime. The more time we spend at compile time trying to compute as much as possible just once before generating code, the more time we may save at runtime recomputing values again and again that could have been computed just once before. While constant folding is relatively easy to do and an interesting exercise for students, other code optimization techniques can be a lot more involved but nevertheless explore the same tradeoff.
 
-![Arithmetic](figures/emitting-arithmetic.png "Arithmetic")
+![Arithmetic](../docs/figures/emitting-arithmetic.svg "Arithmetic")
 
 Compiling arithmetic expressions with operators for addition and subtraction works the same way as compiling terms with operators for multiplication, division, and remainder. Code generation just uses the `add` and `sub` instructions for the operators `+` and `-`, respectively. The above figure shows how the procedure `compile_arithmetic` implements the grammar rule that defines the non-terminal `arithmetic`, including emitting code.
 
@@ -5052,7 +5455,7 @@ Do exactly the same in this exercise, and it will work! There is no need to use 
 
 C\* features operators for comparing unsigned integer values, see the grammar rule that defines the non-terminal `expression`. The syntax of relational expressions is defined in that rule because all involved comparison operators have lower precedence than any of the arithmetic operators in C\*. For example, the expression `x - 1 < 7` is semantically equivalent to the expression `(x - 1) < 7`, not the expression `x - (1 < 7)`.
 
-![Expressions](figures/emitting-expressions.png "Expressions")
+![Expressions](../docs/figures/emitting-expressions.svg "Expressions")
 
 The above figure shows how the procedure `compile_expression` works for the operators `==` and `<`, not showing the code for the other comparison operators. Refer to the source code for those. The occurrence of a comparison operator in an expression is optional and thus implemented by a conditional statement that checks if a comparison operator is present or not. In terms of semantics, the first thing we should note is that all comparison operators must evaluate to either `0` or `1`, nothing else, indicating that the comparison evaluated to false or true, respectively.
 
@@ -5150,7 +5553,7 @@ An assignment turns the value to which an expression evaluates, called *rvalue*,
 
 This takes us to the issue of order of evaluation which is rather sensitive, similar to expressions. Since the addresses of variables and formal parameters in memory are not affected by assignments, the order of evaluating left- and right-hand sides of variable assignments has no effect on the outcome. For simplicity, we therefore decided generating the code that computes the address of the lvalue in an assignment before generating the code that computes the rvalue, followed by generating a single `sd` instruction that completes the actual assignment.
 
-![Assignments](figures/emitting-assignments.png "Assignments")
+![Assignments](../docs/figures/emitting-assignments.svg "Assignments")
 
 The above figure shows how variable assignments are compiled in the procedure `compile_assignment` using our example `x = x + 7`. The code that handles the full C\* grammar of assignments is not shown. Because of the lookahead for distinguishing variable assignments from procedure calls, `compile_assignment` is invoked with the variable in the left-hand side of the assignment, here `x`, already parsed. In this case, the address of the value of the variable in memory at runtime is determined by searching the global and local symbol tables for the variable, similar to occurrences of variables in expressions. In particular, we determine if the address is calculated relative to the `gp` or `s0` register using `get_scope` and remember that in a local variable called `base`, and we determine the involved offset using `get_address` and remember that in a local variable called `offset`.
 
@@ -5206,7 +5609,7 @@ The reason why we raise the issue here is because we would like to reuse in the 
 
 The key to making that work are the temporary registers used in code generation. After compiling an expression with the procedure `compile_expression`, we need to be sure that the value to which the expression evaluates at runtime is stored in the register returned by the procedure `current_temporary`. Only then, we can be sure where to find that value. In the procedure `compile_assignment`, we already exploited that property when identifying the register that holds the value to which the right-hand side of an assignment evaluates. In contrast, after compiling a statement with the procedure `compile_statement`, we need to be sure that no temporary registers are allocated, which is an invariant on temporary registers we mentioned earlier already that needs to hold in between any two statements. Our choice of how we use temporary registers is arguably the simplest way that enables compositional code generation. Other, more efficient choices are possible but too complex for our purpose.
 
-![While Loops](figures/emitting-while-loops.png "While Loops")
+![While Loops](../docs/figures/emitting-while-loops.svg "While Loops")
 
 The above figure shows the code of the procedure `compile_while` for compiling `while` loops with a single-statement loop body. Our example of a `while` loop is shown on the left and the code generated for the example is shown on the right. In order to focus on the generated code, we omit the details on the compile-time and runtime machine states. Notice that the code generated for the expression `x < 7` and the assignment `x = x + 7` appears exactly as before when we compiled both in isolation. Well, there is a tiny but irrelevant notational difference. We use the actual value `-16` as offset for loading and storing the value of `x`, as generated by the selfie compiler for a program in which `x` is the only global variable.
 
@@ -5273,7 +5676,7 @@ else
 
 In short, the `if` statement increments the value of `x` by `7` if the value of `x` is less than `7`. Otherwise, it decrements the value of `x` by `7`. Again, the example reuses the expression `x < 7` and the assignment `x = x + 7` that appeared as examples before. Compositional parsing and code generation is just as important here as it is with `while` loops.
 
-![If Statements](figures/emitting-if-statements.png "If Statements")
+![If Statements](../docs/figures/emitting-if-statements.svg "If Statements")
 
 The above figure shows the code of the procedure `compile_if` for compiling `if` statements with a single-statement `if` body and a single-statement `else` body. Our example of an `if` statement is shown on the left and the code generated for the example is shown on the right. In order to focus on the generated code, we again omit the details on the compile-time and runtime machine states. Also, the code generated for the expression `x < 7` and the assignment `x = x + 7` appears exactly as before when we compiled both in isolation. We again use the actual value `-16` as offset for loading and storing the value of `x`, as generated by the selfie compiler for a program in which `x` is the only global variable.
 
@@ -5357,7 +5760,7 @@ Similar to procedure calls, we distinguish the control flow involved in a return
 
 > Implementation by example
 
-Our first example shows the arguably simplest use of procedures, which does not involve any local variables and parameters, and in fact only one explicit procedure call. The example is inspired by the `factorial` procedures introduced in the language chapter:
+Our first example shows the arguably simplest use of procedures, which does not involve any local variables and parameters, and in fact only one explicit procedure call. The example is inspired by the `factorial` procedures introduced in the notation chapter:
 
 ```c
 uint64_t f = 1;
@@ -5475,7 +5878,7 @@ The target address of the `jal` instruction for the procedure call is the first 
 
 This brings us to the second invariant we need which is on the code generated for procedure calls: the value of the stack pointer `sp` from right before and after executing the code generated for a procedure call is the same. Again, this is important! The invariant implies that the memory allocated on the call stack for executing a procedure call and the procedure body of the callee is deallocated after the execution of the call is done, not less, and also not more. If actual parameters are involved, guaranteeing that the invariant still holds gets even more complicated, as we see below.
 
-![Call Frame](figures/call-frame.png "Call Frame")
+![Call Frame](../docs/figures/call-frame.svg "Call Frame")
 
 Before we continue, take a look at the above figure which provides an overview of the full memory layout created on the call stack by code generated for procedures. Right in the middle, you can already spot where the value of the return address register `ra` is saved. The rest including all terminology is explained below.
 
@@ -5685,7 +6088,7 @@ There is one more thing. How do we know the total number of actual parameters in
 0x1E0(~15): jalr zero,0(ra) // return from main
 ```
 
-The code of the prologue and epilogue that saves and restores the frame pointer `s0` is still redundant here because `main` still does not access any formal parameters and local variables. The code generated for the procedure call to `factorial` is in line of what we saw above. By now, we are done with code generation for data-flow semantics, at least on the level of source code. There is, however, an additional issue on the level of machine code. Consider the following version which repeats the recursive implementation of `factorial` without the use of any global variables from the language chapter:
+The code of the prologue and epilogue that saves and restores the frame pointer `s0` is still redundant here because `main` still does not access any formal parameters and local variables. The code generated for the procedure call to `factorial` is in line of what we saw above. By now, we are done with code generation for data-flow semantics, at least on the level of source code. There is, however, an additional issue on the level of machine code. Consider the following version which repeats the recursive implementation of `factorial` without the use of any global variables from the notation chapter:
 
 ```c
 uint64_t factorial(uint64_t n) {
@@ -6314,6 +6717,20 @@ The code in `encoding.c` uses procedures for printing as implemented in selfie. 
 
 Hard to believe but we have indeed reached the point where everything about programming in C\* and the selfie compiler in particular that comes to our mind has been said. It is finally time to reflect again on what we have achieved and then prepare for the final chapter.
 
+> Station III: the fixed point, and its limit
+
+You have now seen every piece of the compiler, and you have seen that the compiler is written in the language it compiles. So run the loop that the selfie chapter promised. Compile selfie with selfie, then run the result on `mipster` to compile selfie again, and compare the two binaries:
+
+```bash
+make self-self-check
+```
+
+They are identical, 194,648 bytes each, and the figure shows the three stages: `clang` producing a first selfie, that selfie producing `selfie0.m`, and `selfie0.m` producing `selfie1.m`. This is the *fixed point*, and it is the single most beautiful thing selfie does.
+
+![Self-compilation: the same answer twice](../docs/figures/bootstrap.svg "Self-compilation: the same answer twice")
+
+Now say exactly what it proves, because the meaning chapter told you. It proves that selfie agrees with itself. A compiler that consistently mistranslated one construct would reproduce the mistake perfectly and pass the check, and Thompson's compiler that inserts a back door into every compiler it compiles passes it too. The outside check that Gödel's second theorem demands is a second, independent compiler, which is what `clang` is at the first stage, and the tools of the cost chapter, which turn the compiled code into a formula and ask a solver about it. The fixed point is real. It is also exactly as limited as the theorem says, and it works.
+
 ### Apps 2
 
 Are we finally able to develop apps for smartphones, tablets, and laptops, after going through all that material? Well, by now you should definitely be able to figure out how to develop code for apps in whatever programming languages are available for that. However, besides knowing the involved languages, the remaining and still considerable challenge is to figure out how to use their ecosystems, that is, their libraries and development environments. Those can be quite complex and therefore take time to utilize effectively. In any case, if I was young again I would develop apps all the time for no reason other than having fun. Making dumb machines do smart stuff can be extremely rewarding. Try it!
@@ -6328,7 +6745,7 @@ The challenge is to understand and acknowledge that programming languages are fo
 
 Programming even in the most modern programming languages may nevertheless often feel like a straitjacket on your creativity. However, new languages and tools that can significantly improve your experience are being developed all the time. We are still only at the beginning of that process. Tools in particular have a long way to go. Developing and running something as complex as software requires using tools, ideally the best possible tools available. The key challenge is to establish functional correctness as well as performance which is increasingly difficult with software growing in size and complexity. The challenge is so hard that even the most valuable companies in the world are unable to provide correct software that always performs as expected, for both technical as well as economical reasons. As consequence, we have all become accustomed to software bugs and performance issues that we would not tolerate in other domains. In the final chapter, we take a look at the fundamentals and show what is involved in scaling software complexity to the capabilities of modern hardware.
 
-### Recommended Readings 5
+### Recommended Readings 6
 
 > Compilers: Principles, Techniques, and Tools by Alfred V. Aho, Monica S. Lam, Ravi Sethi, and Jeffrey D. Ullman
 
@@ -6342,6 +6759,14 @@ This is also seminal work on computer programming that belongs in any computer s
 
 We have seen the basic principles of encoding *information* in bits, running actual code on a simple yet representative *machine*, and *programming* that machine in a simple yet realistic programming language using tools written in the very same language. This is a remarkable achievement that could easily justify to leave it at that, if it was not for the fact that we are incredibly close to seeing and understanding the probably single most important contribution of computer science to humanity so far. Some might say it is the Internet but there is something more fundamental than that. The nature of information is not just about how to communicate. Information and in particular its meaning only comes to life when it is worked on, known to humans as *reasoning* and to machines as *computing*. In the early days of computer science, computing was something rare and expensive available to only a selected few, and it was highly specialized and bound by severe physical constraints. Today, computing is a commodity virtually independent of any particular hardware and available to anyone with a network connection. All modern technological advancements seem to be either a consequence of that or at least depend on that. In short, everything new involves computing and yet we have only seen a glimpse of the impact of that development. The idea that enables *computing as utility* for everything and everyone is (networked) *virtualization*. The goal of this chapter is to understand what virtualization is, how it works, and why it is so important. However, be patient, it really takes all we have learned so far and more to get there.
 
+> Station III: the operating system that must isolate itself
+
+This chapter is the meaning chapter's second theorem run as engineering, and it helps to know the shape of the argument before the details. There are two ways to build an operating system, and the figure draws both. By *emulation*, the operating system interprets its guest: the guest's code is data being read, so isolation comes for free and there is no self-reference anywhere. By *virtualization*, the operating system context switches its guest onto the very processor the kernel itself runs on, and that buys performance, a factor of twelve on the workload below, at a price. The kernel must now be isolated from the things whose isolation it provides. It needs what it provides, which is the loop the self-reference section of this chapter is about, and which the meaning chapter recognized as Gödel's: no system can be the source of its own trust.
+
+![Two ways to build the same operating system](../docs/figures/emuvirt.svg "Two ways to build the same operating system")
+
+The claim that carries the chapter is that the two designs are *semantically equivalent*. Selfie can demonstrate it rather than assert it: the same guest executes exactly the same 86,380 instructions whether it is hosted by emulation or by virtualization, and only the bill for the host differs. Virtualization is needed only for performance, and it buys that performance by introducing self-reference. In my experience, that one sentence is the thing whose absence stops students from ever understanding what a kernel is, because they are shown only the virtualized design, with the loop tangled into paging and scheduling and never named. So it is named here, first.
+
 > Emulation
 
 Given a particular piece of hardware, say, a 64-bit RISC-V machine, it is always possible to develop a piece of software that emulates such a machine. Selfie does that in the procedure `mipster`. An emulator creates an instance of the machine in software that is indistinguishable from the machine in hardware. In other words, machine code cannot tell whether it is running on emulated or on real hardware, unless the code has a reference to the world outside of such a system, such as the progress of real time revealing the speed of its own progress during execution. Without optimizations, emulation is slower than hardware. An emulator implements, at least logically and `mipster` even for real, an interpreter of machine code in software. The execution of a single machine instruction on the *emulated machine* therefore takes the *emulating machine* on which the emulator runs many machine instructions. We have already looked at that phenomenon at the end of the machine chapter. Let us take an even closer look now. Try the following command in your terminal:
@@ -6350,7 +6775,7 @@ Given a particular piece of hardware, say, a 64-bit RISC-V machine, it is always
 make emu
 ```
 
-As mentioned before in the machine chapter, the command invokes selfie to load its own RISC-U machine code into a `mipster` instance, say, `HW` for hardware, and then have `HW` execute that code, that is, selfie without any further console arguments. In that case, selfie runs on boot level 1 and just prints its synopsis and quits. It takes `HW` around 81k instructions to do so.
+As mentioned before in the machine chapter, the command invokes selfie to load its own RISC-U machine code into a `mipster` instance, say, `HW` for hardware, and then have `HW` execute that code, that is, selfie without any further console arguments. In that case, selfie runs on boot level 1 and just prints its synopsis and quits. It takes `HW` around 86k instructions to do so.
 
 The scenario created by this command is to emulate running selfie without any operating system *bare-metal* directly on 64-bit RISC-V hardware, as represented by the `mipster` instance `HW`. However, a more realistic scenario is to run selfie like an *application* on an *operating system* that *isolates* code execution from the underlying hardware, enabling a user experience that we are all used to, such as running more than one app at the same time. Before we get closer to that, try the following command:
 
@@ -6358,7 +6783,7 @@ The scenario created by this command is to emulate running selfie without any op
 make emu-emu
 ```
 
-Again, as mentioned before in the machine chapter, the command invokes selfie to load its own RISC-U machine code into two `mipster` instances `HW`, as before, and `OS`, for operating system, and then have `HW` execute `OS` and in turn have `OS` execute selfie without any further arguments. Now, selfie runs on boot level 2 and, again, just prints its synopsis and quits. Similar to selfie running on `HW`, it takes selfie running on `OS` around 82k instructions to do that. However, now it takes `HW` around 200 million (!) instructions to execute selfie running on `OS`. This is by a factor of around 2.5k slower!
+Again, as mentioned before in the machine chapter, the command invokes selfie to load its own RISC-U machine code into two `mipster` instances `HW`, as before, and `OS`, for operating system, and then have `HW` execute `OS` and in turn have `OS` execute selfie without any further arguments. Now, selfie runs on boot level 2 and, again, just prints its synopsis and quits. Similar to selfie running on `HW`, it takes selfie running on `OS` around 86k instructions to do that. However, now it takes `HW` around 222 million (!) instructions to execute selfie running on `OS`. This is by a factor of around 2.6k slower!
 
 The reason is that `OS` runs as `mipster` instance which interprets code and is thus slow. Yet logically, `mipster` already does in principle what an operating system does. It *isolates* the code `OS` executes from everything else that might be executing on `HW`. Selfie cannot tell the difference between running bare-metal on `HW`, as before, or running like an application on `OS`, except for the increased boot level, and that is only because we chose to tell selfie about its boot level.
 
@@ -6388,7 +6813,7 @@ The relevant output is:
 > selfie.m: <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 > selfie.m: 64-bit hypster terminating 64-bit RISC-U binary selfie.m with exit code 0
 > selfie.m: --------------------------------------------------------------------------------
-> selfie.m: summary: 0.19MB mapped memory [19.92% of 1MB physical memory]
+> selfie.m: summary: 0.20MB mapped memory [20.31% of 1MB physical memory]
 > selfie.m: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 > selfie.m: context: >> selfie.m
 > selfie.m:          15 exceptions handled by > selfie.m
@@ -6398,28 +6823,28 @@ The relevant output is:
 ./selfie: <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 ./selfie: 64-bit mipster terminating 64-bit RISC-U binary selfie.m with exit code 0
 ./selfie: --------------------------------------------------------------------------------
-./selfie: summary: 16144075 executed instructions in total [14.87% nops]
-./selfie:          0.98MB mapped memory [49.21% of 2MB physical memory]
+./selfie: summary: 17860937 executed instructions in total [15.48% nops]
+./selfie:          1.42MB mapped memory [71.09% of 2MB physical memory]
 ./selfie: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ./selfie: context: >> selfie.m
-./selfie:          82019 executed instructions [0.50% share, factor 196.83]
+./selfie:          86380 executed instructions [0.48% share, factor 206.77]
 ./selfie:          0.28KB peak stack size
 ./selfie:          0.00MB allocated in 8 mallocs (0.00MB or 100.00% actually accessed)
-./selfie:          15 exceptions handled by > selfie.m, one every 5467 executed instructions
+./selfie:          15 exceptions handled by > selfie.m, one every 5758 executed instructions
 ./selfie:          14 syscalls, 1 page faults, 0 timer interrupts
 ./selfie: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ./selfie: context: > selfie.m
-./selfie:          16062056 executed instructions [99.49% share, factor 1.00]
-./selfie:          15 exceptions handled by 1070803 instructions each [19583.33% overhead, factor 196.83]
+./selfie:          17774557 executed instructions [99.52% share, factor 1.00]
+./selfie:          15 exceptions handled by 1184970 instructions each [20577.16% overhead, factor 206.77]
 ./selfie:          0.55KB peak stack size
-./selfie:          2.87MB allocated in 32 mallocs (0.78MB or 27.13% actually accessed)
-./selfie:          398 exceptions handled by ./selfie, one every 40356 executed instructions
-./selfie:          65 syscalls, 200 page faults, 133 timer interrupts
+./selfie:          3.34MB allocated in 29 mallocs (1.21MB or 36.28% actually accessed)
+./selfie:          514 exceptions handled by ./selfie, one every 34580 executed instructions
+./selfie:          66 syscalls, 311 page faults, 137 timer interrupts
 ./selfie: --------------------------------------------------------------------------------
 ...
 ```
 
-Now, it takes `HW` around 16 million instructions to execute selfie running on `OS` while, from the perspective of selfie, there is no difference whatsoever, well, other than speed of execution. Even its boot level is the same as before. An improvement by a factor of around 12 is great but it still leaves us with an overhead of almost 20000% (!), that is, a factor of around 200 slowdown compared to running selfie bare-metal on `HW`.
+Now, it takes `HW` around 18 million instructions to execute selfie running on `OS` while, from the perspective of selfie, there is no difference whatsoever, well, other than speed of execution. Even its boot level is the same as before. An improvement by a factor of around 12 is great but it still leaves us with an overhead of more than 20000% (!), that is, a factor of around 200 slowdown compared to running selfie bare-metal on `HW`.
 
 If we insert another layer of virtualization in between `HW` and `OS` using a `hypster` instance, previously called `VMM` for *virtual machine monitor*, the situation gets worse again. To see that, try the following command:
 
@@ -6450,7 +6875,7 @@ The relevant output is:
 >> selfie.m: <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 >> selfie.m: 64-bit hypster terminating 64-bit RISC-U binary selfie.m with exit code 0
 >> selfie.m: --------------------------------------------------------------------------------
->> selfie.m: summary: 0.19MB mapped memory [19.92% of 1MB physical memory]
+>> selfie.m: summary: 0.20MB mapped memory [20.31% of 1MB physical memory]
 >> selfie.m: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 >> selfie.m: context: >>> selfie.m
 >> selfie.m:          15 exceptions handled by >> selfie.m
@@ -6460,46 +6885,46 @@ The relevant output is:
 > selfie.m: <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 > selfie.m: 64-bit hypster terminating 64-bit RISC-U binary selfie.m with exit code 0
 > selfie.m: --------------------------------------------------------------------------------
-> selfie.m: summary: 0.98MB mapped memory [49.02% of 2MB physical memory]
+> selfie.m: summary: 1.42MB mapped memory [71.09% of 2MB physical memory]
 > selfie.m: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 > selfie.m: context: >> selfie.m
-> selfie.m:          399 exceptions handled by > selfie.m
-> selfie.m:          65 syscalls, 200 page faults, 134 timer interrupts
+> selfie.m:          514 exceptions handled by > selfie.m
+> selfie.m:          66 syscalls, 311 page faults, 137 timer interrupts
 > selfie.m: ################################################################################
 
 ./selfie: <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 ./selfie: 64-bit mipster terminating 64-bit RISC-U binary selfie.m with exit code 0
 ./selfie: --------------------------------------------------------------------------------
-./selfie: summary: 54581784 executed instructions in total [15.52% nops]
-./selfie:          1.94MB mapped memory [64.84% of 3MB physical memory]
+./selfie: summary: 59492501 executed instructions in total [15.93% nops]
+./selfie:          2.82MB mapped memory [94.14% of 3MB physical memory]
 ./selfie: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ./selfie: context: >>> selfie.m
-./selfie:          82613 executed instructions [0.15% share, factor 660.69]
+./selfie:          87006 executed instructions [0.14% share, factor 683.77]
 ./selfie:          0.28KB peak stack size
 ./selfie:          0.00MB allocated in 8 mallocs (0.00MB or 100.00% actually accessed)
-./selfie:          15 exceptions handled by >> selfie.m, one every 5507 executed instructions
+./selfie:          15 exceptions handled by >> selfie.m, one every 5800 executed instructions
 ./selfie:          14 syscalls, 1 page faults, 0 timer interrupts
 ./selfie: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ./selfie: context: >> selfie.m
-./selfie:          16074813 executed instructions [29.45% share, factor 3.39]
-./selfie:          15 exceptions handled by 1071654 instructions each [19457.97% overhead, factor 195.57]
+./selfie:          17788002 executed instructions [29.89% share, factor 3.34]
+./selfie:          15 exceptions handled by 1185866 instructions each [20444.56% overhead, factor 205.44]
 ./selfie:          0.55KB peak stack size
-./selfie:          2.87MB allocated in 32 mallocs (0.78MB or 27.13% actually accessed)
-./selfie:          399 exceptions handled by > selfie.m, one every 40287 executed instructions
-./selfie:          65 syscalls, 200 page faults, 134 timer interrupts
+./selfie:          3.34MB allocated in 29 mallocs (1.21MB or 36.28% actually accessed)
+./selfie:          514 exceptions handled by > selfie.m, one every 34607 executed instructions
+./selfie:          66 syscalls, 311 page faults, 137 timer interrupts
 ./selfie: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ./selfie: context: > selfie.m
-./selfie:          38424358 executed instructions [70.40% share, factor 1.42]
-./selfie:          399 exceptions handled by 96301 instructions each [239.03% overhead, factor 3.39]
+./selfie:          41617493 executed instructions [69.95% share, factor 1.42]
+./selfie:          514 exceptions handled by 80967 instructions each [233.96% overhead, factor 3.33]
 ./selfie:          0.73KB peak stack size
-./selfie:          3.04MB allocated in 34 mallocs (1.73MB or 56.79% actually accessed)
-./selfie:          887 exceptions handled by ./selfie, one every 43319 executed instructions
-./selfie:          94 syscalls, 443 page faults, 350 timer interrupts
+./selfie:          4.51MB allocated in 31 mallocs (2.60MB or 57.61% actually accessed)
+./selfie:          1133 exceptions handled by ./selfie, one every 36732 executed instructions
+./selfie:          99 syscalls, 666 page faults, 368 timer interrupts
 ./selfie: --------------------------------------------------------------------------------
 ...
 ```
 
-In this case, it takes `HW` around 54 million instructions to execute selfie running on `OS` and in turn `OS` running on `VMM` while, from the perspective of selfie, there is again no difference, except for speed of execution and the increased boot level. Now, the system is by a factor of around 660 slower than running selfie bare-metal on `HW`.
+In this case, it takes `HW` around 59 million instructions to execute selfie running on `OS` and in turn `OS` running on `VMM` while, from the perspective of selfie, there is again no difference, except for speed of execution and the increased boot level. Now, the system is by a factor of around 690 slower than running selfie bare-metal on `HW`.
 
 However, production operating systems and virtual machine monitors typically slow down code execution by a factor close to 1 which is the reason why they are so useful. In short, their benefits come with almost no performance penalty. Is `hypster` just a poor design? Well, no. There are two reasons why we do not see negligible overhead. Firstly, selfie just printing its synopsis is not enough work to amortize the overhead of context switching. To see that, try the following command:
 
@@ -6507,19 +6932,19 @@ However, production operating systems and virtual machine monitors typically slo
 make self-emu
 ```
 
-The command invokes selfie to self-compile bare-metal on `HW`. It takes `HW` around 1.1 billion instructions to do that. What if we do the same but on `OS` as `hypster` instance running on `HW`? The following command shows that:
+The command invokes selfie to self-compile bare-metal on `HW`. It takes `HW` around 1.2 billion instructions to do that. What if we do the same but on `OS` as `hypster` instance running on `HW`? The following command shows that:
 
 ```bash
 make self-os-emu
 ```
 
-In this case, it takes `HW` around 1.9 billion instructions! The overhead of `OS` has reduced to a factor of around 1.7 which is much closer to where we want to be. If we increased the amount of work that selfie does when running on `OS`, the overhead would come down even more. Even if we again insert `VMM` in between `HW` and `OS`, the situation does not get much worse. Try the following command.
+In this case, it takes `HW` around 2.1 billion instructions! The overhead of `OS` has reduced to a factor of around 1.7 which is much closer to where we want to be. If we increased the amount of work that selfie does when running on `OS`, the overhead would come down even more. Even if we again insert `VMM` in between `HW` and `OS`, the situation does not get much worse. Try the following command.
 
 ```bash
 make self-os-vmm-emu
 ```
 
-Now, it takes `HW` around 2.7 billion instructions. The overhead by a factor of around 2.4 is worse than 1.7 but still much less than before. The second reason why we are still seeing overhead that is or in fact seems to be not negligible is surprising. In short, we are already where we would like to be but just underestimate the cost of executing code bare-metal and thus overestimate the overhead of virtualizing code execution. We need to take a closer look to understand that. It is an interesting lesson in how to measure performance and interpret the results properly.
+Now, it takes `HW` around 3 billion instructions. The overhead by a factor of around 2.4 is worse than 1.7 but still much less than before. The second reason why we are still seeing overhead that is or in fact seems to be not negligible is surprising. In short, we are already where we would like to be but just underestimate the cost of executing code bare-metal and thus overestimate the overhead of virtualizing code execution. We need to take a closer look to understand that. It is an interesting lesson in how to measure performance and interpret the results properly.
 
 > Performance and Overhead
 
@@ -6527,9 +6952,9 @@ The key observation is that the number of executed instructions does not necessa
 
 The reason is simple. Executing an `ecall` instruction essentially corresponds to executing an entire procedure that in turn may be implemented by any number of instructions. Those instructions are typically part of operating system or virtual machine monitor code that implements system functionality such as reading from and writing to files, for example. Selfie exposes the cost of executing those instructions but only on boot levels higher than 0. On boot level 0, all system functionality is implemented by the system on which selfie runs. Measuring its cost requires stepping out of the selfie system, which is possible but still something we avoid, again for keeping things simple.
 
-Let us go back to our last three examples and analyze the situation with that information in mind. Self-compiling selfie on `HW` takes around 1.1 billion instructions including `ecall` instructions, but without counting the number of instructions that are executed as consequence of executing those `ecall` instructions. That number is exposed when self-compiling selfie on `OS` and in turn `OS` running on `HW`. Then, the output of selfie shows that it took around 0.8 billion instructions to execute `OS`, which is exactly the overhead over just self-compiling selfie on `HW`. Similarly, self-compiling selfie on `OS` with `VMM` running in between `OS` and `HW` shows that it takes another 0.8 billion instructions to execute `VMM`.
+Let us go back to our last three examples and analyze the situation with that information in mind. Self-compiling selfie on `HW` takes around 1.2 billion instructions including `ecall` instructions, but without counting the number of instructions that are executed as consequence of executing those `ecall` instructions. That number is exposed when self-compiling selfie on `OS` and in turn `OS` running on `HW`. Then, the output of selfie shows that it took around 0.9 billion instructions to execute `OS`, which is exactly the overhead over just self-compiling selfie on `HW`. Similarly, self-compiling selfie on `OS` with `VMM` running in between `OS` and `HW` shows that it takes another 0.9 billion instructions to execute `VMM`.
 
-While it is fair to say that most of the 0.8 billion instructions for executing `OS`, as well as `VMM`, implement system functionality such as reading from and writing to files as well as memory management, and are thus *not* overhead, some of those instructions could be avoided if we were to combine the code for self-compiling selfie with the `OS` code, for example, and then run that combined code directly on `HW`. This way we would avoid the code for isolating the execution of selfie on `OS` from the execution of `OS`, in particular the code for context switching. However, that code can be implemented efficiently, to some extent even in selfie, and is therefore worth doing.
+While it is fair to say that most of the 0.9 billion instructions for executing `OS`, as well as `VMM`, implement system functionality such as reading from and writing to files as well as memory management, and are thus *not* overhead, some of those instructions could be avoided if we were to combine the code for self-compiling selfie with the `OS` code, for example, and then run that combined code directly on `HW`. This way we would avoid the code for isolating the execution of selfie on `OS` from the execution of `OS`, in particular the code for context switching. However, that code can be implemented efficiently, to some extent even in selfie, and is therefore worth doing.
 
 > Exceptions, not literally
 
@@ -6546,30 +6971,30 @@ The relevant output is:
 ./selfie: <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 ./selfie: 64-bit mipster terminating 64-bit RISC-U binary selfie.m with exit code 0
 ./selfie: --------------------------------------------------------------------------------
-./selfie: summary: 1946980891 executed instructions in total [17.11% nops]
-./selfie:          3.36MB mapped memory [84.18% of 4MB physical memory]
+./selfie: summary: 2112219497 executed instructions in total [18.35% nops]
+./selfie:          3.87MB mapped memory [96.97% of 4MB physical memory]
 ./selfie: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ./selfie: context: >> selfie.m
-./selfie:          1129157370 executed instructions [57.99% share, factor 1.72]
+./selfie:          1228262089 executed instructions [58.15% share, factor 1.71]
 ./selfie:          2.35KB peak stack size
-./selfie:          3.27MB allocated in 24562 mallocs (2.20MB or 67.14% actually accessed)
-./selfie:          471439 exceptions handled by > selfie.m, one every 2395 executed instructions
-./selfie:          470867 syscalls, 564 page faults, 8 timer interrupts
+./selfie:          3.32MB allocated in 25296 mallocs (2.27MB or 68.31% actually accessed)
+./selfie:          484140 exceptions handled by > selfie.m, one every 2536 executed instructions
+./selfie:          483549 syscalls, 582 page faults, 9 timer interrupts
 ./selfie: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ./selfie: context: > selfie.m
-./selfie:          817823521 executed instructions [42.00% share, factor 2.38]
-./selfie:          471439 exceptions handled by 1734 instructions each [72.43% overhead, factor 1.72]
+./selfie:          883957408 executed instructions [41.84% share, factor 2.38]
+./selfie:          484140 exceptions handled by 1825 instructions each [71.96% overhead, factor 1.71]
 ./selfie:          0.80KB peak stack size
-./selfie:          5.04MB allocated in 36 mallocs (3.15MB or 62.53% actually accessed)
-./selfie:          447508 exceptions handled by ./selfie, one every 1827 executed instructions
-./selfie:          446368 syscalls, 808 page faults, 332 timer interrupts
+./selfie:          5.51MB allocated in 33 mallocs (3.66MB or 66.38% actually accessed)
+./selfie:          459604 exceptions handled by ./selfie, one every 1923 executed instructions
+./selfie:          458317 syscalls, 938 page faults, 349 timer interrupts
 ./selfie: --------------------------------------------------------------------------------
 ...
 ```
 
-Just self-compiling selfie without the overhead for `OS` takes `HW` executing around 1.1 billion instructions (see context `>> selfie.m`). However, doing so *throws* around 471k *exceptions*, on average one every 2.4k executed instructions, of which the majority is caused by *system calls*, or *syscalls* for short, which are invoked when executing `ecall` instructions. Therefore, after executing around 2.4k instructions on average that are not `ecall` instructions, an `ecall` instruction is executed. Here, an exception is essentially a mechanism to divert control of the processor to operating system code for handling the situation, such as executing the code invoked by an `ecall` instruction. The details are not important here. In our case, `OS` handles all exceptions thrown while self-compiling selfie on `OS` (see context `> selfie.m`), which takes executing around 0.8 billion instructions for `OS` and thus around 1.7k instructions per exception. This results in an overhead of around 72% over just self-compiling selfie on `HW`, that is, a slowdown by a factor of around 1.7 in this case.
+Just self-compiling selfie without the overhead for `OS` takes `HW` executing around 1.2 billion instructions (see context `>> selfie.m`). However, doing so *throws* around 484k *exceptions*, on average one every 2.5k executed instructions, of which the majority is caused by *system calls*, or *syscalls* for short, which are invoked when executing `ecall` instructions. Therefore, after executing around 2.5k instructions on average that are not `ecall` instructions, an `ecall` instruction is executed. Here, an exception is essentially a mechanism to divert control of the processor to operating system code for handling the situation, such as executing the code invoked by an `ecall` instruction. The details are not important here. In our case, `OS` handles all exceptions thrown while self-compiling selfie on `OS` (see context `> selfie.m`), which takes executing around 0.9 billion instructions for `OS` and thus around 1.8k instructions per exception. This results in an overhead of around 72% over just self-compiling selfie on `HW`, that is, a slowdown by a factor of around 1.7 in this case.
 
-However, most of what `OS` does is something that needs to be done anyway such as reading input, writing output, and managing memory. Only a fraction of the 1.7k instructions executed per exception is done for context switching. How much exactly is difficult to measure. But what we can say is that self-compiling selfie on `OS` throws on average one exception every 2.4k instructions executed. If we would like to stay below, say, 10% overhead for context switching, we have around 240 instructions to do that. Not bad. Modern operating systems and virtual machine monitors can do that. How about selfie? Let us do an experiment. Consider the following program called `overhead.c` located in the `examples` folder of the selfie repository:
+However, most of what `OS` does is something that needs to be done anyway such as reading input, writing output, and managing memory. Only a fraction of the 1.8k instructions executed per exception is done for context switching. How much exactly is difficult to measure. But what we can say is that self-compiling selfie on `OS` throws on average one exception every 2.5k instructions executed. If we would like to stay below, say, 10% overhead for context switching, we have around 250 instructions to do that. Not bad. Modern operating systems and virtual machine monitors can do that. How about selfie? Let us do an experiment. Consider the following program called `overhead.c` located in the `examples` folder of the selfie repository:
 
 ```c
 uint64_t main() {
@@ -6595,8 +7020,8 @@ It takes a few minutes for the experiment to finish, so just wait for it. The re
 ./selfie: <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 ./selfie: 64-bit mipster terminating 64-bit RISC-U binary selfie.m with exit code 0
 ./selfie: --------------------------------------------------------------------------------
-./selfie: summary: 10022679395 executed instructions in total [19.99% nops]
-./selfie:          0.83MB mapped memory [41.60% of 2MB physical memory]
+./selfie: summary: 10022829391 executed instructions in total [19.99% nops]
+./selfie:          1.26MB mapped memory [63.28% of 2MB physical memory]
 ./selfie: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ./selfie: context: >> examples/overhead.c
 ./selfie:          10000000045 executed instructions [99.78% share, factor 1.00]
@@ -6606,17 +7031,17 @@ It takes a few minutes for the experiment to finish, so just wait for it. The re
 ./selfie:          3 syscalls, 0 page faults, 100001 timer interrupts
 ./selfie: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ./selfie: context: > selfie.m
-./selfie:          22679350 executed instructions [0.22% share, factor 441.92]
-./selfie:          100004 exceptions handled by 226 instructions each [0.22% overhead, factor 1.00]
+./selfie:          22829346 executed instructions [0.22% share, factor 439.03]
+./selfie:          100004 exceptions handled by 228 instructions each [0.22% overhead, factor 1.00]
 ./selfie:          0.76KB peak stack size
-./selfie:          3.22MB allocated in 70 mallocs (0.62MB or 19.49% actually accessed)
-./selfie:          509 exceptions handled by ./selfie, one every 44556 executed instructions
-./selfie:          347 syscalls, 161 page faults, 1 timer interrupts
+./selfie:          3.65MB allocated in 67 mallocs (1.05MB or 28.95% actually accessed)
+./selfie:          620 exceptions handled by ./selfie, one every 36821 executed instructions
+./selfie:          348 syscalls, 271 page faults, 1 timer interrupts
 ./selfie: --------------------------------------------------------------------------------
 ...
 ```
 
-Handling around 100k exceptions took `OS` around 226 instructions each, mostly for exceptions caused by timer interrupts, so there you go. Context switching is part of handling any exception. Selfie can apparently perform context switching, at least on average, in no more than 226 instructions.
+Handling around 100k exceptions took `OS` around 228 instructions each, mostly for exceptions caused by timer interrupts, so there you go. Context switching is part of handling any exception. Selfie can apparently perform context switching, at least on average, in no more than 228 instructions.
 
 > Again, from composability to compositionality
 
@@ -6654,13 +7079,9 @@ Networked virtualization is the key enabling technology for turning computing in
 
 Networked virtualization makes computing feel light and volatile like air flowing in space enabling what is commonly known as *cloud computing*. The idea is to provide virtualized computing resources that not only include CPU time and memory but also non-volatile storage. It is like, well, computing in the cloud. Most modern applications rely on cloud computing. Your phone, tablet, and laptop are only a means to connect to the cloud which often does most of the work. Only when connectivity and privacy is an issue, computing shifts back to your devices. Cloud computing frees people from operating their own hardware and software. Instead, everything becomes just a service. I still remember the times before cloud computing, when I wasted countless hours on maintaining my setup, doing backups, and so on. I believe that the first time I was willing to pay for anything other than hardware was cloud computing, not software. Even paid apps only became acceptable because of the service they gave me access to. But all convenience aside, there is something more important than cloud computing.
 
-> Universality of computing and computability
+> Universality of computing and computability, revisited
 
-Virtualization, as in computing as utility and cloud computing, makes computing widely accessible, technically and economically. In fact, virtualization provides arguably the technically and in particular economically most relevant platforms for computing. Yet two important questions remain, the first being:
-
-1. Universality of computing: can my computer, physical or virtual, in principle compute what any other computer can compute? More precisely, can any program written in any programming or machine language be translated into a program written in the machine language supported by my computer such that the translated program computes exactly the same as the original program? If yes, my computer might deserve to be called *computationally universal*. However, given that there are infinitely many programming and machine languages, how can we ever show that? Well, we cannot. But what we can do is postulate that one particular machine model is computationally universal and then check for each new language that comes along if an emulator of the universal machine model can be implemented in the new language. If yes, the new language may also be considered computationally universal. The machine model that is commonly used for this purpose is called a *Universal Turing Machine* which can simulate, as in execute, any given Turing machine. A Universal Turing Machine is an infinite-memory abstraction of virtual machines, machine emulators, and even physical machines, while a given Turing machine corresponds to a program, that is, hosted, emulated, or executed code. A programming or machine language in which an emulator of a Universal Turing Machine can be implemented is considered computationally universal or *Turing complete*. However, a Universal Turing Machine is only assumed but not shown to be computationally universal. In other words, *universality of computing* must not be confused with *computability*, that is, the second question.
-
-2. Computability: what can in principle be computed and what not? A common misunderstanding is to believe that whatever Turing machines can compute is all that can be computed. For that to be true, all existing and all future Turing-complete programming and machine languages must also be *Turing-equivalent*, that is, can express everything a Universal Turing Machine can do, certainly not less, but also not more. In other words, a Turing-complete language is Turing-equivalent if, for any program written in that language, there is a Turing machine that computes exactly the same as the program. Ever since the introduction of Turing machines, computer scientists suspect that all Turing-complete programming and machine languages are also Turing-equivalent, famously known as the *Church-Turing thesis*. And yes, the almost 100 years that have passed since then have seen many Turing-complete programming and machine languages and none that is not Turing-equivalent. As a result, Turing-completeness appears to be justified as sufficient condition for being computationally universal, which has lead computer scientists to assume that everything Turing machines can compute is *computable*, and everything else is *not computable*. However, this is still just a conjecture and there is no proof! If you are interested in computability, check the recommended readings at the end of this chapter. Either way, important to us here is that the machine models we introduced are all practically relevant instances of Universal Turing Machines and as such explain what universality of computing is.
+Virtualization, as in computing as utility and cloud computing, makes computing widely accessible, technically and economically. In fact, virtualization provides arguably the technically and in particular economically most relevant platforms for computing. The two fundamental questions behind it, whether my computer, physical or virtual, can in principle compute what any other computer can compute, and what can be computed at all, were answered in the meaning chapter: a machine that can run an emulator of the universal Turing machine is computationally universal, and, by the Church-Turing thesis, nothing computes more. What that means here is worth saying once more in the terms of this chapter. The `mipster` emulator is a bounded-memory instance of the universal machine that interprets code itself. The `hypster` virtual machine monitor is the same universal machine by different means: it context switches to the machine it runs on to execute code on its behalf. Both host any program written for RISC-U, including selfie, and neither can decide, by Rice's theorem, anything interesting about what the program it hosts will do. What they can do is *bound* it, in space by paging and in time by the timer interrupt, and isolate it, which is what the rest of this chapter is about.
 
 > Back to the basics: assembler
 
@@ -6758,7 +7179,7 @@ Translating 32-bit virtual to physical addresses involves replacing the 20-bit p
 
 Paging allows mapping individual pages to individual frames anywhere in physical memory. The order in which frames appear in physical memory is irrelevant. Moreover, there is no external fragmentation among frames in physical memory since they are all the same size. Thus any choice of frames is as good as any other. In selfie, the procedure that allocates frames is called `palloc` which implements a simple bump pointer allocator over the available physical memory. There is also a procedure called `pfree` which we nevertheless left empty to have room for future exercises. So, for now allocated frames are never deallocated in selfie.
 
-![Page Table](figures/page-table.png "Page Table")
+![Page Table](../docs/figures/page-table.svg "Page Table")
 
 > Page table
 
@@ -6776,7 +7197,7 @@ Modern systems may implement on-demand paging for all segments of virtual memory
 
 Many programs exhibit spatial locality in the sense that they tend to focus on accessing memory only in specific areas before moving on to focus on accessing memory in other areas. In particular, code tends to focus on executing instructions that are located close to each other in the code segment. Moreover, code tends to focus on accessing data that is located close to each other, at least in the heap and stack segments. The choice of 4KB-pages turns out to be a sweet spot in size that keeps the number of page faults occurring in fast succession low. A translation lookaside buffer leverages spatial locality by caching page table entries for faster address translation, combined with instruction and data caches that leverage locality by caching actual memory content for overall faster memory access. Larger page sizes may improve performance even more but may also introduce more internal fragmentation.
 
-![Paging Page Tables](figures/paging-page-tables.png "Paging Page Tables")
+![Paging Page Tables](../docs/figures/paging-page-tables.svg "Paging Page Tables")
 
 > Paging page tables
 
@@ -6976,7 +7397,7 @@ Most importantly, the procedure `mipster_switch` always eventually returns after
 
 But what if executing the hosted code never causes an exception to be thrown? Well, in order to guarantee eventual preemption, without any cooperation of the hosted code, real systems require actual hardware to make it happen. Before giving up control of the physical machine, a *timer*, which is real hardware, is programmed to go off after a given time has elapsed and *interrupt* the processor by setting the program counter to a given address that refers to system code. Which address that is must be programmed as well. Remember, the only control we have over what a processor executes is the program counter, nothing else. In `mipster`, we simulate a real timer interrupt by counting the number of executed instructions and throw a timer exception when `timeout` many instructions have been executed. The procedure `handle_timer` handles the timer exception. While this sounds easy, and it is, the actual consequences of preemption at any time increase complexity significantly, as soon as virtual machines start communicating. Preemptive systems are nevertheless worth the effort. The fact that you can kill apps on your phone or laptops as you please, even or especially when those apps are unresponsive, is only possible because of preemption. Your system is always eventually in charge, provided of course that the system itself is not buggy. In other words, preemption is a key component in isolating the system from whatever code it hosts and executes.
 
-![Traffic Light Model](figures/traffic-light-model.png "Traffic Light Model")
+![Traffic Light Model](../docs/figures/traffic-light-model.svg "Traffic Light Model")
 
 > Traffic light model
 
@@ -7015,6 +7436,10 @@ There is something important to highlight here before looking into resolving the
 The intrinsic self-reference in virtualization of physical machines manifests in a *bootstrapping problem*. A virtual machine monitor, and similarly operating system kernel, creates the ability to run multiple virtual machines on a single physical machine spatially and temporally isolated from each other. However, a VMM also needs to be isolated from the virtual machines it manages by essentially running the VMM in a virtual machine itself. That self-reference and the difficulty of bootstrapping it explains why virtualization and ultimately all universal computing systems are hard to understand.
 
 Hosting code in virtual machines essentially requires handling exceptions thrown by the hosted code during execution and a VMM is in charge of exactly that. But who is in charge of the exceptions thrown by the code that implements the VMM? In real systems, the answer is that the VMM code is carefully designed not to throw any exceptions, meaning that the VMM code logically runs in a virtual machine but avoids using the abstractions provided by that virtual machine. In essence, that requires the VMM to do all the work that exception handlers do before any reason for throwing exceptions arises. For example, the VMM should not cause any page faults but still be spatially isolated. This can be done by turning off the MMU while running VMM code and instead have the VMM code run in the physical address space of the machine but only by carefully maintaining spatial isolation. Also, all I/O functionality available in virtual machines needs to be implemented in the VMM and connected to real hardware. The VMM may use I/O functionality but not by going through exceptions. Last but not least, a VMM needs to be able to context switch itself to the virtual machines it hosts and back, which typically involves carefully crafted machine code.
+
+The figure shows the loop in its simplest form: the kernel provides isolation, and requires it. The meaning chapter has a name for the shape. A system that certifies itself is exactly what Gödel's second theorem forbids, and the engineering answer here is the same as everywhere else in this book: the certification comes from outside the loop, from a small piece of code that is isolated by construction rather than by the mechanism it implements, written and checked by hand, and kept as small as possible. That piece is the trusted computing base, and keeping it small is the microkernel programme.
+
+![Virtualization is emulation plus self-reference](../docs/figures/selfref.svg "Virtualization is emulation plus self-reference")
 
 > Trusted code base and microkernels
 
@@ -7096,7 +7521,7 @@ make emu-emu
 
 In this scenario, there are two machine contexts, one for running `OS` on `HW`, and one for running selfie without console arguments on `OS`.
 
-![Emulating OS](figures/emu-emu.png "Emulating OS")
+![Emulating OS](../docs/figures/emu-emu.svg "Emulating OS")
 
 In the selfie output, the former context is referred to as `> selfie.m` and the latter as `>> selfie.m`. There is no self-reference in this scenario which means that no exception dispatching and no machine context caching is necessary, even with what could be called *recursive* emulation, as long as there is no virtualization involved. The second scenario is similar to the first scenario except that `OS` is implemented by `hypster`:
 
@@ -7106,7 +7531,7 @@ make os-emu
 
 In this scenario, there are three machine contexts, again one for running `OS` on `HW` and one for hosting selfie without console arguments on `OS`, and a third context that caches the context hosting selfie, for running on `HW`.
 
-![Virtualizing OS](figures/os-emu.png "Virtualizing OS")
+![Virtualizing OS](../docs/figures/os-emu.svg "Virtualizing OS")
 
 In the selfie output, the contexts are referred to as in the first scenario. The cached context appears in the output of `mipster`, also referred to as `>> selfie.m`, whereas the hosted context appears in the output of `hypster`. Exceptions thrown by the cached context are dispatched to `hypster` for handling the exceptions in the hosted context. The third scenario is similar to the second scenario except that there is another `hypster` instance called `VMM` running in between `OS` and `HW` for demonstrating recursive virtualization:
 
@@ -7116,7 +7541,7 @@ make os-vmm-emu
 
 In this scenario, there are five machine contexts, one for running `VMM` on `HW`, one for hosting `OS` on `VMM`, and again one for hosting selfie without console arguments on `OS`, and two contexts that cache the contexts hosting `OS` on `VMM` and selfie, for running both on `HW`.
 
-![VMM Hosting Virtualizing OS](figures/os-vmm-emu.png "VMM Hosting Virtualizing OS")
+![VMM Hosting Virtualizing OS](../docs/figures/os-vmm-emu.svg "VMM Hosting Virtualizing OS")
 
 In the selfie output, the contexts are referred to as in the second scenario. Both cached contexts again appear in the output of `mipster` whereas the hosted contexts appear in the output of their hosting `hypster` instances. Exceptions thrown by the cached contexts are dispatched directly to their hosting `hypster` instances for handling the exceptions in the hosted contexts. By now, you should finally be able understand all selfie output we have seen so far.
 
@@ -7351,7 +7776,7 @@ In addition to dynamic code management, there is also a need for *automatic memo
 
 Memory safety is critically important for handling large amounts of data, especially if data is handled by large amounts of code from different sources such as complex libraries written by others. In fact, the proliferation of libraries in modern programming languages and their extensive use in modern software would not be possible without automatic memory management and garbage collectors in particular. However, memory management will always remain a challenge as it cannot be fully automated. In the end, programmers need to determine which memory can be reused. Automatic memory management only helps in making memory determined as reusable by programmers actually reusable in a safe manner. In my experience, this is something many programmers and computer science students do not know, so let us take a look at that.
 
-![Live versus Dead Memory](figures/live-versus-dead.png "Live versus Dead Memory")
+![Live versus Dead Memory](../docs/figures/live-versus-dead.svg "Live versus Dead Memory")
 
 > Live versus dead memory
 
@@ -7363,7 +7788,7 @@ Stack allocation with procedure calls solves the problem by forcing deallocation
 
 Most automatic memory management, in particular garbage collectors, computes unreachability, directly or indirectly by computing reachability, and then deallocates unreachable memory. Stack allocation is also considered automatic memory management yet without computing but instead assuming unreachability from scoping on programming language level. However, a common misunderstanding is that garbage collectors and other automatic memory management solve the problem of reusing memory. This is not true. There is still programmer intervention required, namely, reachable but dead memory needs to be made unreachable. Only then automatic memory management is able to reuse memory. In other words, the question of life and death, so to speak, still needs to be answered and cannot be automated in general.
 
-![Roots into Heap](figures/roots-into-heap.png "Roots into Heap")
+![Roots into Heap](../docs/figures/roots-into-heap.svg "Roots into Heap")
 
 > Roots into the heap
 
@@ -7652,115 +8077,9 @@ The goal of the exercise is to implement a Treiber Stack in selfie using `lr.d` 
 
 Using atomic instructions for fine-grained concurrency in non-blocking and typically lock-free code has enabled significant improvements in performance and scalability of modern multi-threaded systems. This is an important development as modern hardware tends to get faster only by adding more parallelism in the form of more processors with more cores while individual processing elements seem to have gotten close to the maximum of what is physically possible. However, even parallelism will eventually reach its limits as the limiting factor is the speed of accessing shared memory, that is, the von Neumann bottleneck. The only way out appears to be special-purpose hardware based on models other than the von Neumann architecture. Examples are *graphics processing units* (GPUs) and even quantum computers.
 
-We have reached the end of the engineering side of the computing chapter before going into a more fundamental discussion on the universality of computing. By now, the considerable complexity of modern computing systems should have become apparent. Virtualization as well as concurrency and memory management received most of our attention. There is, of course, also considerable complexity in modern I/O management which we nevertheless ignored. The important message is that new hardware is always going to drive innovation in software, so there is always something exciting to do. But before concluding there is one more thing!
+We have reached the end of the computing chapter, and with it the end of the machinery of this book. The fundamental discussion of what all of it can and cannot compute came first, in the meaning chapter, and what it costs comes next. By now, the considerable complexity of modern computing systems should have become apparent. Virtualization as well as concurrency and memory management received most of our attention. There is, of course, also considerable complexity in modern I/O management which we nevertheless ignored. The important message is that new hardware is always going to drive innovation in software, so there is always something exciting to do. But before concluding there is one more thing!
 
-### Universality of Computing
-
-This is probably the most exciting part of the book for me to write up which is a bit strange since it is not my area of research. In fact, it has always been the most elusive to me especially in my early career as a computer science student. The way I was taught computer science was upside down compared to this book. The curriculum essentially started with this part, and a lot of mathematics, and almost no motivation. Some professors considered motivation not just as unnecessary but as a sign of being not academic and thus evil. I only understood that point of view much later and can now appreciate it. The idea is to open up yourself to pure reasoning out of immense curiosity, like a child but equipped with deep technical knowledge. The only thing that matters is to come up with interesting questions and then explore ways to answer them. Unfortunately, no one really told us. We had to find out ourselves which was quite painful but in the end worth it. Science is all about asking the right question, and not just finding answers, but no one knows what those questions really are until much later. Science, and art, requires people who enjoy being lost but free rather than always knowing what to do. My role as a professor is to get you to the point of being comfortable when lost using your technical knowledge as the only source of certainty and thus real confidence. Let me use the universality of computing as an example.
-
-The question that we ask here is: what can in principle be computed and what not? There is also a related question: how long does it take in principle to compute something that can be computed and how much memory does it take to do so? However, we only focus on the first question which we split into two separate questions, namely what is computable, and what is not. The reason why this is interesting is because there is no clear line between computable and not computable. There is a gray area where no one fully knows what is really going on and which has therefore received and still does receive a lot of attention in computer science. As PhD student I worked on a problem in that grey area and finally managed with my advisor and another colleague to show that there is a solution to the problem that can be computed. While working on the problem we never knew if it can be done or not, and there was no one we could have asked, anywhere. That work is still among the intellectually most challenging things I have ever done. Alright, let us first focus on what is computable, as this is much easier to explain and understand than the opposite, yet with an interesting twist.
-
-> Turing Machine
-
-First up, the notion of *computability* is not something set in stone. No one knows how to do that. However, there is a definition that most computer scientists agree on as meaningful and useful simply because no one has, in almost 100 years, been able to find an alternative definition that increases computability beyond the commonly accepted definition of computability. Well, there are different definitions of computability but they have all been found to be semantically equivalent. Here is how this works. We simply define a machine model and then say that whatever some machine in that model can compute is computable and whatever no machine in that model can compute is not computable. How about that? Alan Turing is a famous computer scientist who was among the first to do that in the 1930s. The machine he invented is called, well, the Turing machine. The machine model became so influential that an award, created much later, called the Turing award became the most important award in computer science, commonly considered the Nobel prize in computer science, for the lack of an actual Nobel prize in computer science.
-
-A *Turing machine* (TM) consists of two components: a *finite state machine* that encodes a program, and a *tape* of *cells* that works as main memory. Each cell contains a symbol out of a finite alphabet of symbols that always includes a special blank symbol. The input of a TM is stored on the tape before the machine begins executing. Unlike the main memory of a real computer, the tape is assumed to be infinite in size. However, the only symbol that may occur infinitely often on the tape is the blank symbol. In other words, the tape is infinitely large but there may still only be finitely many non-blank symbols on the tape at any time. Again, unlike the main memory we are used to, the tape is accessed, not by address, but a cursor called the *head* that may slide across the tape in either direction. In more practical terms, the tape corresponds to a doubly-linked list that may in principle grow arbitrarily in either direction while the memory of a real computer is more like an array of finite size. Upon each state transition of its FSM, a TM reads the content of the cell where the head currently points to and then, based on what it read, writes a symbol from its alphabet to that cell, then either moves the head left or right one cell, or keeps the head where it is, and finally transitions to a new state, out of the finitely many states of its FSM, which is usually provided in a table over all combinations of states and symbols of the alphabet. A TM terminates when reaching an accepting state of its FSM. While finite state machines and pushdown automata consume input from their environment, Turing machines do not. Moreover, the tape of a TM allows random access, that is, memory access in any order, unlike the stack of a pushdown automaton, for example. Turing machines can therefore compute strictly more than pushdown automata, and finite state machines, of course. There are many variants of Turing machines. This one here is just closest to the original. For more details including formal defintions, see the recommended readings at the end of this chapter.
-
-> Turing complete, Turing equivalent, the Church-Turing thesis, and the Algorithm!
-
-Let us reflect on that machine model for a bit. The first time I saw it as student I was utterly confused for the lack of a better word. I really did not expect computer science to be grounded in something like that. My fellow students and me all dealt with the confusion by making fun of the model. How can such a primitive machine be as powerful as any other known machine in terms of what those machines can compute? To be clear, any program written in any known low-level machine or high-level programming language can be implemented by a Turing machine that computes exactly the same as that program! In other words, Turing machines are computationally at least as powerful as any such language. But what about the other direction? What if we can implement any Turing machine in a program written in a given language? Well, in that case, we call that language *computationally universal* or *Turing-complete*. Most machine and programming languages are Turing-complete whereas simpler formalisms such as finite state machines and pushdown automata are not. However, what is truly fascinating is the fact that both directions hold for all known Turing-complete languages, meaning that they are also *Turing-equivalent*, that is, they can compute exactly the same as Turing machines, not more, but also not less. Therefore, the question of whether it is justified presenting Turing machines as computationally universal, and hence calling Turing-complete formalisms computationally universal, comes down to the question of whether Turing completeness implies Turing equivalence. The commonly accepted answer to that question is yes, and famously known as the *Church-Turing thesis*, which nevertheless remains a thesis to this day, as there may exist something that can compute more than what Turing machines can compute but nothing has been found yet. There is one important and to many surprising insight here. Not only the definition of computational universality is based on the assumption that the Church-Turing thesis holds. What algorithms really are is also rooted in that assumption! An *algorithm* is essentially a finite description of a computation that can be performed by a Turing machine.
-
-The issue here is that most people do not know what a Turing machine is, which keeps the concept of an algorithm hard to grasp for most, even though it is a fundamental notion in computer science. Imagine, everything you see that is done by computers today, including generative AI, for example, can be done by a Turing machine. Only when you really understand that, rationalizing any claims on what the future of computing might hold will be within your reach. When it comes to computability, there is in principle no need for a machine with more powerful operators, in particular for arithmetic and memory. The lack of those operators only comes with an increase in asymptotic complexity that is bounded by a polynomial in the size of the input. In practice, it does make a difference, of course, but only in terms of actual performance, not functionality. Turing introduced his machine model, just out of pure curiosity for what can be computed and what not, even before von Neumann introduced the von Neumann architecture and hardware with real potential was available. It is important not to forget that original goal. Turing machines are meant to help studying computability, and complexity, which requires the model to be simple, and yet that field of research is still one of the most challenging in computer science. We do not look much further into that but one lesson to be learned here is still worth emphasizing again. Turing machines demonstrate the truly relevant technical nature of computing, in particular how mindless those machines are and how difficult it is to make them do anything interesting. People making bold claims about the future of computing would be a lot more humble if only they knew and cared.
-
-There is an interesting twist with machine models such as Turing machines. True, there are no arithmetic operators and no indirect addressing of memory that in turn calls for support of at least subtraction to calculate addresses. However, the lack theirof only results in a performance penalty. The critically important ingredient is the principled infinity of memory to avoid a-priori bounds on memory when studying computability, and complexity. In fact, any formalism that does not support unbounded memory can strictly speaking not be Turing-complete which includes virtually all machine languages, and many programming languages. How do we deal with that? Well, as computer scientists call it, we solve the problem by turning a bug into a feature. Again, strictly speaking, all digital computing devices are in fact just finite state machines, and not even pushdown automata whose stack is assumed to be unbounded in size. However, the state space is usually so large that we simply assume that it is infinitely large. So, if a given language is claimed to be Turing-complete, then this is usually done under the implicit assumption that there is unbounded memory.
-
-> Infinite versus unbounded
-
-By the way, we need to be careful with terminology here. Infinite and unbounded is not the same thing. At any moment during any computation, the amount of information held in memory is always finite. The tape of a Turing machine is defined to be infinitely large yet the only symbol allowed to occur on the tape infinitely often is the blank symbol. In other words, infinity is only there as a means to avoid any a-priori bound on the size of memory of a Turing machine. In the following machine model, the concept of infinity is not used but that of unboundedness is.
-
-> Random-Access Machine
-
-Turing machines are quite different from real computers. That is not a problem when studying computability but for studying asymptotic complexity it can make a difference, especially when studying algorithms with low polynomial complexity because of the polynomial overhead of Turing machines compared to more realistic machines that feature arithmetic operators and memory with indirect addressing. Computer scientists have therefore developed Turing-complete machine models that are closer in nature to real machines such as the *Random-Access Machine* (RAM) model. A RAM consists of two components: a finite state machine that encodes a program and an unbounded number of registers where each register can hold an unbounded number of bits. The FSM of a RAM controls the execution of machine instructions for register initialization, addition and subtraction, register access, and comparison and branching. Most notably, there are no instructions for multiplication and division as such would provide an exponential advantage when applied to values that can get arbitrarily large. The result of addition and subtraction can be encoded by at most one more bit than the operands whereas the result of multiplication and division (over rationals) may require as many bits as both operands occupy together. Most results in asymptotic complexity are based on RAM typically assuming constant-time or logarithmic-time addition, subtraction, and memory access. Real machines can reproduce those results, if correct, within the bounds of their Arithmetic Logic Units and main memory.
-
-> Indirect addressing and self-modifying code
-
-Have you noticed that the programs of both Turing machines and random-access machines are always finite and remain so during computation while the content of memory can grow arbitrarily? This is not a problem for Turing machines which use a tape as memory but it is a problem for random-access machines, and real machines as well. How can a usually rather small and always finite amount of code talk about an often rather large and possibly unbounded amount of information stored in random-access memory? Unlike the tape of a Turing machine, registers and digital memory in general require some form of addressing which is usually realized through direct and indirect addressing. Each register, and memory word, is identified by a unique address represented by a natural number. Direct addressing identifies a register, and usually not a memory word, by encoding the address as part of the encoding of a machine instruction. As long as code is considered finite, direct addressing can therefore only identify finitely many registers. Indirect addressing interprets the content of a directly-addressed register as address of any register or memory word. Hence the number of bits in the directly-addressed register determines how much memory can be addressed. In the RAM model, that number is unbounded which in turn enables addressing an unbounded number of registers. Also, direct addressing, combined with register initialization through immediate addressing, is required to bootstrap indirect addressing. Here is an interesting question. What if our real machine does not support indirect addressing? In the early days of digital computers such machines existed. Well, within the encoding limits of machine instructions, indirect addressing can be done through something called *self-modifying code* which sounds a bit like a hack and probably is, as it pretty much died out a long time ago. The idea is to modify addresses in instructions that use direct addressing during code execution. However, the range of possible values remains finite, of course. Imagine reasoning about the correctness of self-modifying code!
-
-> Universal Turing Machine
-
-Is the fact that programs of Turing machines, and random-access machines, are finite limiting computability? The answer is no, as long as there is unbounded memory. Only the fact that the amount of information stored in memory is always finite at any moment during computation does limit computability. We get to that point right below, so for now back to finite programs and one very special program in particular. Turing himself introduced a Turing machine called the *Universal Turing Machine* (UTM) which is capable of computing anything any Turing machine including the UTM itself can compute. The idea is to encode the FSM of a Turing machine and then store the encoding as input on the tape of the UTM which in turn executes the FSM over the rest of the tape. In short, the UTM is an interpreter of Turing machines. Thus showing that a machine or programming language is Turing-complete only involves showing that the UTM can be implemented in that language. At the time, the fact that a single Turing machine can compute whatever any other Turing machine can compute was surprising and highly inspirational. Shortly thereafter, von Neumann invented the von Neumann architecture which essentially takes the UTM and replaces its tape with random-access memory that stores both code and data. That idea has also been applied to the RAM model known as the *Random-Access Stored-Program* (RASP) machine. In essence, the RASP machine is a RAM machine that uses its registers to store not just data but also code.
-
-> TM, RAM, Havard versus UTM, RASP, von Neumann
-
-There is a beautiful *duality* between Turing and random-access machines. What the UTM is to a TM is what the RASP machine is to a RAM machine. Moreover, while TMs and RAMs resemble a Harvard architecture with unbounded memory for data, the UTM and the RASP machine are unbounded-memory instances of the von Neumann architecture. In other words, TMs and RAMs only store data in unbounded memory, keeping code separate from data, whereas the UTM and the RASP machine use unbounded memory to store both code and data.
-
-> Emulation and virtualization
-
-Before moving on to what is not computable, let us put emulation and virtualization into context. The Universal Turing Machine, and even more closely the RASP machine, is an abstract, unbounded-memory model of a processor and thus also a machine emulator such as the `mipster` RISC-U emulator of selfie. Assuming unbounded memory, `mipster` is Turing-complete. What about virtualization and the `hypster` RISC-U virtual machine monitor of selfie in particular? Well, just like `mipster`, a virtual machine monitor such as `hypster` can also be seen as a bounded-memory instance of the UTM, only by different means. The `mipster` emulator interprets code itself whereas the `hypster` virtual machine monitor context switches to the machine it runs on to interpret code on its behalf. Can the UTM be virtualized? Yes, of course. However, while machine virtualization should maintain computational universality of the virtualized machine, the focus of virtualization on performance and security, for example, is quite different from the intended purpose of the UTM to study computability and complexity. Thus we rather focus on what the UTM can tell us about the limitations of digital computers as well as the software that emulates and virtualizes them.
-
-> The Halting Problem
-
-Let us now focus on what is not computable. First up, we say that whatever cannot be computed by a Turing machine is *not computable* or *undecidable*, in contrast to something that is computable or *decidable* meaning there is a Turing machine that computes that. Making that definition more precise involves defining the notion of a *computational problem*. See the recommended literature for more details. Also, there are models of computation in which problems can be solved that no Turing machine can solve. However, such models typically involve infinitely large computational state and are not known to be feasible in practice. The first time I was confronted with undecidability, as young student, I could not imagine what an example of an undecidable problem could be, let alone how to formalize that. Fortunately, there is a famous, easy-to-understand undecidable problem called the *Halting Problem* whose solution is not computable by a Turing machine, or any Turing-equivalent formalism. Imagine that!
-
-Intuitively, the Halting problem is to compute if a given program $P$ terminates or *halts* on a given input $I$. We can of course just run $P$ on $I$ and then see what $P$ does. If $P$ halts on $I$, we are done. However, while $P$ has not yet halted on $I$, we do not know if $P$ will eventually halt on $I$. In fact, if $P$ does not halt on $I$, our method of running $P$ on $I$ will not solve the problem. Are there any other methods such as some form of program analysis, for example, that could work? Well, there are methods to determine program termination but the issue is that there is no method that works for *all* programs and inputs, and that is the key to understanding the Halting problem. Ultimately, we are looking for a program $H$ that can determine for *any* given program $P$ and input $I$ if $P$ halts on $I$ or not. If we look carefully, we notice self-reference in that statement since $P$ could be $H$. However, excluding $H$, even as part of another program, does not make any difference. Self-reference is a key ingredient though but in a different, more fundamental way, as we see below.
-
-> Proof idea of the Halting problem
-
-The standard proof of the undecidability of the Halting problem shows that any program $P$ written in a Turing-complete language with two unbounded parameters and a Boolean return value, like $H$, that always terminates on any input, like $H$ is supposed to, always returns values that are inconsistent with the values returned by $H$, implying that no such $H$ exists. In particular, for any such $P$ with the above signature, there is always a value $S$ for which $H$ returns true, if $P$ returns false, and false, if $P$ returns true, with $S$ being used as input to both parameters of $H$ and $P$. Invoking $H$ on $S$ in this way is asking $H$ if $S$ halts on $S$ or not, thus interpreting $S$ as both a program and an input to a program at the same time. The dual use of $S$ as code and as data is the self-reference that is relevant here. Remember selfie compiling or executing selfie? Same thing. The mystery is of course how to construct $S$. However, that is surprisingly easy. Just write, for each $P$, a program $S$ with one parameter and a Boolean return value that returns false, if $P$ returns false, and does not terminate, if $P$ returns true, with the parameter of $S$ being used as input to both parameters of $P$. The construction of $S$ implies that $S$ halts on $S$, if $P$ returns false, as opposed to $H$ returning true, and does not halt on $S$, if $P$ returns true, again as opposed to $H$ returning false. Done!
-
-> Diagonalization
-
-What can we learn from that proof? There are essentially four easy-to-understand ingredients that are hidden assumptions, and one significantly deeper insight known as *diagonalization*. The return values of any $P$ in the proof can always be represented by a two-dimensional, possibly infinitely large table with a unique row and column for each input value of the two parameters of $P$. The return values on the *diagonal* through that table, where both input values of $P$ are the same, are obtained by $S$, say, with an invocation of $P$, which always terminates, and then either returned, if the value is false, or else never returned by not terminating, say, by looping forever. The diagonalization of $P$ by $S$ is constructed such that no row or column in the table contains it. Diagonalization was first described by Georg Cantor in 1891, long before Turing invented Turing machines and digital computers became available, see below for more. The hidden assumptions we make in the proof are as follows. Firstly, we need to be able to invoke $P$ from within $S$ on the input of $S$ (procedure call). Secondly, we need to be able to choose what to do next based on a value (conditional). Thirdly, we need to be able to loop forever (loop, or recursion). Finally, we need to be able to return a value (return). Those assumptions obviously hold in one form or another in Turing-complete formalisms including C\*, for example.
-
-> Impact of the Halting problem
-
-Interpreting the undecidability of the Halting problem in practice is interesting. For example, compilers, operating systems, and virtual machine monitors obviously cannot determine whether some arbitrary program terminates or not. That does not mean, however, that they cannot do that for some programs. Nevertheless the effort in doing that for realistic programs is considerable, and thus expensive. We are all used to those apps that do not respond anymore, seemingly requiring intervention by manually terminating them. Your laptop or smartphone not doing that for you is an immediate consequence of the undecidability of the Halting problem. But even you can generally not know if an unresponsive app would have again responded if you had waited just a bit more before terminating it, at least not without looking at the code of the app and the circumstances in which the code executes. The undecidability of the Halting problem appears as a negative result and is often presented as such. However, we provide a much more optimistic perspective on that at the end of this chapter, and even conclude the book with that. This is important since the Halting problem implies that many other interesting and economically relevant questions about programs are undecidable too.
-
-In order to deepen our understanding of undecidability, let us go up in level of abstraction using *sets* of programs and their input, with Turing machines as our programming paradigm, which can, of course, easily be replaced by any other Turing-complete formalism. We define three, infinite sets: the set of all Turing machines with some input on their tape, the set of all Turing machines that halt for the input on their tape, and the set of all Turing machines that do not halt for the input on their tape. The latter two sets are obviously complements of each other while their union is equivalent to the first set.
-
-> Recursive set or decidability
-
-The first set is an example of a *recursive set* where the term recursive means computable or *decidable* by a Turing machine. More precisely, a set is recursive if membership in the set can be decided by a Turing machine, that is, there is a Turing machine that can compute if its input is an element of the set or not. Where have we seen such a Turing machine in practice? The parser of the selfie compiler, of course! Given a sequence of characters, as a means to encode any C\* program, the parser decides if the sequence is a syntactically valid C\* program or not. Could we turn the parser into a program that enumerates all syntactically valid C\* programs (with or without input)? Yes, of course. That program would never terminate, but nevertheless output all such programs eventually, including itself. The complement of a recursive set is also recursive, so we could turn around the program and output all syntactically invalid sequences of characters as well.
-
-> Recursively enumerable set, or semi-decidability
-
-The second set is already more difficult to understand than the first set, as it is an example of a *recursively enumerable* or *semi-decidable set* that is not recursive! A set is recursively enumerable if membership in the set can be decided or better *semi-decided* by a Turing machine for all elements of the set, that is, there is a Turing machine that can compute if its input is an element of the set but may not terminate if its input is not an element of the set. Thus a recursive set is also recursively enumerable but not necessarily vice versa. However, if the complement of a recursively enumerable set is also recursively enumerable then the set is recursive. Semi-deciding if a Turing machine halts on a given input is easy by just running it and seeing if it halts but how would a Turing machine enumerate the second set, that is, all Turing machines that halt on a given input? That is also surprisingly easy, once we drop any concerns for performance on the floor, which is hard to do for some people but anyway a good exercise in developing advanced reasoning skills. Just take the modified parser that generates all C\* programs, feed the first generated program into the selfie compiler, then generate some input and have the selfie emulator execute the first instruction of the generated code on that input, see if the code terminates, and if yes, output the original program and input. If not, push the next C\* program through that pipeline, but now execute one instruction in the code of both, the previously and the newly generated program, and so on, without ever terminating. Also, in each round generate another choice of input, say, using an unbounded counter, for example, and run the code of all programs generated so far on all inputs generated so far. This is what you can do if memory is unbounded! A parallel machine would be nice to have but not make any difference in terms of functionality of the code. Either way, the method does obviously not work for enumerating programs, or Turing machines, that do not halt on their input.
-
-> Not recursively enumerable set, or undecidability
-
-The third set is the most difficult to understand among the three sets since it is not even recursively enumerable, as a result of the undecidability of the Halting problem. In other words, there is no Turing machine that can determine for *any* given Turing machine if the machine is in the set, let alone enumerate the set. However, we need to take a closer look since the complement of the third set is obviously the second set which is recursively enumerable. If the complement of a set is recursively enumerable, we say that the set is at least *co-recursively enumerable* or *co-semi-decidable*. This means that there is a Turing machine that can determine if its input is *not* in the set. The immediate next question is if there are sets that are neither semi-decidable nor co-semi-decidable, hence called *undecidable*. The answer is yes, lots of them, in fact infinitely more. However, semi-decidable and co-semi-decidable sets are often called undecidable which may lead to confusion. We are guilty of that too. Using precise terminology takes effort but is important. Nevertheless we focus here on our three sets. See the recommended readings for more details on undecidable sets.
-
-> Cardinality or countable versus uncountable sets
-
-The proof of the undecidability or better co-semi-decidability of the Halting problem is rather technical. Is there a more intuitive take? Yes, by taking another look at diagonalization in the context of sets and in particular their relative size or *cardinality*. Yes, there is a concept that rationalizes the relative size of infinite sets, also due to Georg Cantor. Here is how it works. Imagine the set of natural numbers which is obviously an infinite set. Then take the set of real numbers which is also an infinite set. Intuitively, Cantor showed, using diagonalization in different ways, that there are more real numbers than natural numbers, implying that the set of real numbers is larger, that is, has a higher cardinality than the set of natural numbers, despite the fact that both sets are infinitely large. Originally, Cantor used diagonalization to show that, between any two real numbers, there is a real number that is not contained in any sequence of real numbers, making it impossible to *count* real numbers, that is, associate with every real number a unique natural number. Now, imagine the set of rational numbers which is of course also an infinite set. However, that set is not larger than the set of natural numbers since the value of every rational number can be associated with a unique natural number. If you are curious, check the recommended readings for more details. The difference in cardinality gives rise to the following terminology. Sets no larger than the set of natural numbers such as the set of rational numbers, and the set of natural numbers, obviously, are called *countable* or *countably infinite*, if they are infinite, while sets that are larger than the set of natural numbers such as the set of real numbers are called *uncountable*. But how is that important to us?
-
-> Gödel counting programs
-
-Well, our three sets of Turing machines, with or without input, are all countably infinite sets. This can be shown by encoding every Turing machine, with or without input, into a unique natural number, known as *Gödelisierung* or *Gödel Numbering*, due to Kurt Gödel who invented the method in 1931. Gödel is even more famous for his *incompleteness theorems* applying what we talk about here to mathematical logic but those theorems are a story for another day. Intuitively, Gödelisierung works in two steps. First, a Turing machine is encoded in a unique natural number. The same can be done with any program written in some programming or machine language. Second, those unique natural numbers are then mapped back to increasingly larger natural numbers starting with, say, zero, enabling us to count Turing machines, or, say, C\* programs. Thus there are as many Turing machines, or C\* programs, as there are natural numbers, or finite sequences of bits, if natural numbers are encoded in binary.
-
-> Countable versus recursively enumerable
-
-There is, however, an important difference between the set of all Turing machines with input and the set of all Turing machines that halt on their input versus the set of all Turing machines that do not halt on their input. All three sets are countable but only the first two sets are *effectively* countable by some Turing machine, that is, either recursive, or at least recursively enumerable, as we already explained above. The third set is also countable, as a subset of the first set, but not by a Turing machine, as the set is only co-recursively enumerable. Yet the proof of the undecidability of the Halting problem uses diagonalization showing that there is something uncountable involved in deciding whether Turing machines halt or not. What exactly is that? While Turing machines are countable, the fact that they halt or not is a property of their execution, that is, a property of computation. Yet Turing machines and even their computation are always finite artifacts at any given moment during computation. In other words, both can always be encoded by a finite sequence of bits. However, encoding what a Turing machine computes for *any* input does in general require an infinitely long sequence of bits. For example, the rows and columns of the table we used in the proof of the undecidability of the Halting problem may be infinitely long! In the proof, those sequences are then diagonalized resulting in uncountably many other sequences of bits that cannot occur in any such table and thus cannot be computed by any Turing machine. The computational universality of Turing machines may be seen as a blessing and a curse. Removing unbounded looping, or unbounded recursion, from Turing machines or any other Turing-complete formalism would result in the loss of computational universality but make the Halting problem decidable, and vice versa. However, as we see below, there is an optimistic, even exciting point of view that turns the curse into a blessing.
-
-> Cantor counting computation
-
-After showing that there are uncountably many real numbers using diagonalization, Cantor came up with a simple proof of the uncountability of the set of infinitely long sequences of bits. The idea is to show that any list of infinitely long sequences of bits, written down in a table with one row for each sequence in the list, and then construct another infinitely long sequence of bits from the *flipped* bits on the diagonal through that table. By construction, that sequence cannot occur in the list of sequences of bits. Done! Cantor pushes the idea even further and shows that the power set, that is, the set of all subsets, of any infinite set such as the set of natural numbers, for example, is uncountable. The proof is even simpler. Any list of subsets of an infinite set can be diagonalized into a subset that contains, for each subset in the list, an element that is not in that subset in the list. Again, by construction, the subset obtained in this way cannot occur in that list.
-
-The set of infinitely long sequences of bits, or the powerset of the set of natural numbers, include every computation that Turing machines can perform, and obviously a lot more. With the notion of uncountability through diagonalization, Cantor created the foundation for establishing the limits of computation, decades before digital computers appeared. However, Cantor like so many other influential scientists faced considerable skeptisism and even hostility. If you are interested, check the literature on that. It is an important lesson for everyone. For me personally, Cantor is one of those few scientific idols that I have, and I am someone who does not believe in idols.
-
-### Life 4
-
-Hard to believe but we made it to the very end of this book. Understanding the universality of computing, its challenges and limits, and what it takes to make universal computing available to everyone was our high-level goal. Formalisms, compilers, emulators, operating systems, and virtual machine monitors received most of our attention, as fundamental building blocks of modern computing. We kept Turing machines out of sight until the very end, so that we can appreciate their value in deciphering what digital computing really is. Self-reference, as manifested in our selfie system, has been our guiding principle in all of that, ultimately motivated by the fact that self-reference lies at the heart of the limits but also potential of universal computing, and even mathematical reasoning in general. Let us summarize what we have seen:
-
-1. Information: everything is information, and all information can be encoded in bits. While many people know that somehow, it still makes a big difference to see how this works for important everyday artifacts such as numbers, characters, text, files, images, video, and, of course, code. Seeing that everything stored and processed by a computer is encoded in bits, and nothing else, and in particular understanding that those bits can mean whatever we want them to mean is the most important lesson here. The state of a computer is essentially a giant number that the machine manipulates into a seemingly endless sequence of numbers as the machine executes code. The numbers we see during computation can mean whatever we want. From now on, you may want to keep that in the back of your head whenever you look at a screen. Whatever you see there could come from anywhere and mean anything.
-
-2. Formalisms: computer science is all about models and formalisms. The term programming language is an unfortunate misnomer. Programming languages are formalisms with precise syntax and executable semantics that are quite different from natural languages. However, programming languages can be seen as an act of evolution of natural languages into formalisms that both humans and machines understand, the latter through the fact that programming languages are executable. There are also many other formalisms such as EBNF, for example, that enable us to talk about structure in information with mathematical precision yet without necessarily being executable. Seeing how syntax and in particular semantics of such formalisms is created and how the often intrinsic self-referentiality is resolved is key to understanding elementary computer science. Compilers and interpreters play an important role in creating meaning on a mindless machine. Modern, often highly complex software systems would not exist without them. Again, from now on, look at any new formalism and remind yourself that its meaning may not be what you think it is, but then go in there and find out what its meaning actually is.
-
-3. Computing: the universality of computing and the affordable and instant availability of universal machines is what drives computer science. There seems to be nothing those machines cannot do, despite the fundamental limits and considerable complexity of computing. Generative AI and self-driving cars are only the latest examples. The reason why we claim that there are no limits is because undecidability, and the inherent complexity involved in many computational yet decidable problems, are in fact positive rather than negative results of theoretical computer science. Whenever students come up to me and say that the problems I ask them to solve are extremely difficult or even impossible to solve, I respond that this is an important part of what makes them interesting. Undecidability of many problems is a fact but that does not mean that we cannot get arbitrarily close to approximative solutions that are better than the state of the art. Fundamental impossibility and inherent complexity are the driving forces of computer science and science in general guaranteeing unlimited potential for innovation!
-
-We conclude the book with a brief outlook. On software side, artificial intelligence receives most of the attention right now. On hardware side, it is probably quantum computing. The goals are always the same: smarter software and faster hardware. The hype is considerable, as so often in computer science, with the demand for breakthroughs seemingly having no limits, all the while modern society has not even learned to deal with the previous generation of technology. I have seen those hypes come and go, expectations and anxiety up and down, leaving knowledge of elementary computer science as the only reliable source of advice in a world of universal computing. However, as the hype fades, progress is usually made, sometimes in unforeseen ways. Generative AI is likely going to have considerable impact on science in general and modern society, but probably just as another tool, running on enormous amounts of virtualized machines. The potential of quantum computing appears to be even more speculative at this point. The challenges involved in scaling up quantum computers to sizes relevant in practice are enormous. One thing is for sure, the future of computer science has no limits in innovation, as shown a hundred years ago!
-
-### Recommended Readings 6
+### Recommended Readings 7
 
 > Operating Systems: Principles and Practice by Thomas Anderson and Michael Dahlin
 
@@ -7770,12 +8089,503 @@ This is a standard textbook on operating systems that provides in-depth treatmen
 
 We have not provided any details on computer networking. However, if you are curious about how the technology behind the Internet works, this book is for you.
 
+## Part IV: Cost
+
+Parts II and III were about the possible: what can be written down, what can be computed, what can be decided. This part is about the affordable, and for practical purposes the boundary between impossible and unaffordable hardly matters. A question with a guaranteed answer that arrives after the Sun has burnt out is, for you, a question with no answer. This is also where physics enters the book, because computation is not abstract. Every step of it happens somewhere, takes time, occupies space, and, whenever it forgets, costs energy. And it is where the tools around selfie enter, the ones that turn a program into a logical formula and hand it to a solver, because they are the place where the theory of this part meets your laptop, before the coffee gets cold.
+
+## Cost
+
+I have spent most of my career on the cost side of computing, on how long things take and how much memory and energy they need, and I have found it to be the most honest part of the subject. Decidability tells you whether an answer exists. Cost tells you whether you will ever see it. Students who have just understood the halting problem tend to believe that everything decidable is therefore fine. This chapter is here to take that belief away, gently, and to replace it with something better: an understanding of exactly which decidable questions are hard, why they are hard, why we can often answer them anyway, and what it costs in the currency that cannot be negotiated, joules.
+
+The chapter also does something the rest of the book has been promising since the meaning chapter. Rice's theorem said that every interesting question about what a program does is undecidable, and that every practical tool is therefore an approximation with a stated bound. Here we build such a tool, or rather, we run one that has already been built on top of selfie, and we watch it turn a RISC-V program into a formula, hand the formula to a solver, and come back with an input that makes the program divide by zero. That is *formal methods* at the undergraduate level: not a proof assistant, not a new logic, but the syntax-to-semantics bridge made mechanical, with the approximation visible and chosen.
+
+### Decidable Is Not Doable
+
+> A question with a guaranteed answer you will never receive
+
+Here is a question that is perfectly decidable. Given a logical formula over 100 yes-or-no variables, is there a way of setting the variables that makes the formula true? There is an obvious method that is guaranteed to answer it: try all the settings. There are $2^{100}$ of them, which is about $1.3 \times 10^{30}$. At a billion settings per second, that takes about $4 \times 10^{13}$ years, roughly three thousand times the age of the universe. The answer exists. You will not receive it. The figure shows the shape of the search: two branches per variable, and somewhere among the leaves, perhaps, one that satisfies.
+
+![Exponential search: two to the n branches and one satisfying leaf](../docs/figures/tree.svg "Exponential search: two to the n branches and one satisfying leaf")
+
+This is not an exotic situation. Chess has around $10^{44}$ legal positions, Go around $10^{170}$. Nobody solves these games. We navigate them, with heuristics, structure, and luck. The size chapter already told you what these numbers mean: they are on the finite side of the wall, but so far along the line that the difference from infinity is, for you, nil. The question of this chapter is how to tell in advance which decidable questions are like this, and what to do when yours is.
+
+> Time, space, and energy
+
+Computer scientists measure cost in three currencies. *Time* is the number of steps a computation takes, in practice the number of machine instructions, as the machine chapter counted them. *Space* is the amount of memory it needs. *Energy* is what the machine draws from the wall while doing it, and we come back to it at the end of the chapter because it is the currency with a law of physics attached. Time and space are usually measured as functions of the size $n$ of the input, and the only distinction that matters at the scale of this chapter is the one between *polynomial* and *exponential*. A method that takes $n^2$ or $n^3$ steps on an input of size $n$ is called polynomial, and $n$ can be a million before it hurts. A method that takes $2^n$ steps is exponential, and $n$ cannot be a hundred. The class of questions that some method answers in polynomial time is called *P*, for polynomial. Sorting a list, finding the shortest route on a map, checking whether a C\* program is syntactically valid, and running `mipster` for a given number of instructions are all in P. Nobody argues about whether these are affordable.
+
+### Hard to Find, Easy to Check
+
+> NP
+
+Now look at the formula question again from a different angle. Finding a satisfying setting of the variables may take forever. But *checking* one takes no time at all: plug the values in and evaluate the formula, which is a polynomial amount of work. That asymmetry has a name. *NP* is the class of questions whose yes-answers come with a *certificate* that can be checked in polynomial time, even if finding the certificate appears to need exponential search. The satisfying assignment is the certificate. A route that visits every city in a given budget is a certificate. A schedule that fits every lecture into the available rooms without conflict is a certificate. A folded protein of low enough energy is a certificate. A proof of a theorem, of a given length, is a certificate. Every question in P is also in NP, because you can check by simply solving. The question nobody has answered is whether the reverse holds: is everything that is easy to check also easy to find? That is the *P versus NP* question, and it is the most consequential open question in the exact sciences. Most researchers bet no.
+
+> Cook, Levin, Karp, and NP-completeness
+
+In 1971 Stephen Cook, and independently Leonid Levin, proved something that turned NP from a definition into a landscape. They showed that the formula question, called *satisfiability* or *SAT*, is at least as hard as every question in NP: any question in NP can be translated, in polynomial time, into a formula that is satisfiable exactly if the answer is yes. In 1972 Richard Karp showed the same for twenty-one other questions, scheduling, routing, packing, colouring, covering, among them, and by now there are thousands. A question with this property, that everything in NP translates to it, is called *NP-hard*, and if it is also in NP itself, *NP-complete*. So all of these are the same question in disguise. Crack one of them in polynomial time and you have cracked all of them, and P equals NP. Nobody has, in more than fifty years of trying.
+
+The translation is worth pausing on, because it is the theme of this book at work. Cook's proof takes an arbitrary machine that checks certificates in polynomial time and writes its entire computation down as a formula: one variable for each bit of the machine's state at each step, and clauses saying that each step follows from the previous one according to the machine's rules. A computation, which is semantics, becomes a formula, which is syntax, and the formula is satisfiable exactly if some certificate makes the machine say yes. Keep this in mind. Below we run a program that does exactly this to RISC-V code, and it is not a proof technique there, it is a tool.
+
+> The asymmetry, everywhere
+
+The gap between finding and checking is not a fact about computers. Composing a symphony versus hearing that it is off. Writing a proof versus reading it. Designing a protein versus assaying it. Doing the homework versus grading it. Writing the program versus running the test. In each case producing the object is the expensive side and checking it is the cheap side, and the two are different problems. This is the one piece of this chapter that the last chapters of the book need, so let me say it plainly. Generation is expensive. Verification is cheap. That asymmetry is what makes delegation rational: you can accept work you could not have produced yourself, provided you can check it. When you cannot check it, delegation is faith. Every healthy division of labor, and, as we see in the machines chapter, every safe way to use a machine that generates text, is built on that gap.
+
+> Hardness is load-bearing
+
+Read the result twice, as always. What it forbids is brute force as a strategy. You cannot search your way to correctness, to a cure, or to a business plan. What it opens is everything that relies on some problems being hard. Every private message, every digital signature, every payment, every password you rely on today exists because some questions are easy to check and, as far as anyone knows, hard to find. Difficulty is the raw material of security, and the reason that abstraction, theory, and taste are worth more than compute. A world in which P equals NP would be spectacular and also strange: mathematics automated, cryptography dead, and, since anything findable would be found, nothing left to discover. The universe we appear to live in trades away that power for a currency called difficulty, and then spends it on privacy and on discovery.
+
+### Propositional Logic and SAT
+
+Let us now be precise about the formula question, because the rest of the chapter runs on it. *Propositional logic* is the formal language of the Boolean algebra we met in the size chapter, with *variables* that stand for bits, and the operators *not*, *and*, and *or*. A *literal* is a variable or its negation, say $x_3$ or $\neg x_3$. A *clause* is an *or* of literals, say $x_2 \vee x_3 \vee \neg x_4$. A formula in *conjunctive normal form* (CNF) is an *and* of clauses, and every propositional formula can be brought into that form. A CNF formula is satisfied by an assignment of true or false to its variables if every clause contains at least one literal that is true. The formula is *satisfiable* if some assignment satisfies it, and *unsatisfiable* otherwise. That is all SAT is: given a CNF formula, is it satisfiable, and if so, show me an assignment.
+
+> DIMACS, and a formula by Rivest
+
+CNF formulas have a standard notation, called DIMACS after the institute that standardized it, which is so simple that it deserves to be shown. Variables are numbered from 1, a literal is a number or its negative, a clause is a line of literals ending in 0, and the header says how many variables and clauses there are. Selfie ships one such formula, in `examples/sat/rivest.cnf`:
+
+```
+c Rivest's unsatisfiable four-variable eight-clause formula
+c omitting the last clause to make the instance satisfiable
+c with -1 -2 3 and either 4 or -4
+c
+p cnf 4 7
+2 3 -4 0
+1 3 4 0
+-1 2 4 0
+-1 -2 3 0
+-2 -3 4 0
+-1 -3 -4 0
+1 -2 -4 0
+c1 2 -3 0
+```
+
+Ronald Rivest, the R in RSA, constructed an eight-clause formula over four variables that is unsatisfiable in a particularly symmetric way. A clause with three literals over four variables rules out exactly two of the sixteen possible assignments, and Rivest's eight clauses rule out sixteen different ones, so together they rule out every assignment, and removing any single clause makes the formula satisfiable. The file omits the last clause, which is left in as a comment, so the instance is satisfiable. We use it because four variables are few enough to reason about by hand and seven clauses are many enough to make a solver do something.
+
+> Babysat, the executable specification
+
+The simplest possible SAT solver enumerates all $2^n$ assignments and checks the formula for each. That is exactly what `babysat` does, a solver of about four hundred lines written in C\* on top of selfie, and it is deliberately more naive than even the most naive solver in Donald Knuth's treatment of the subject. It is not meant to be fast. It is meant to be an *executable specification* of what a SAT solver is, so that when we talk about better solvers below, there is no doubt about what they compute. Build it and run it on the formula:
+
+```bash
+make babysat
+./babysat examples/sat/rivest.cnf
+```
+
+The relevant output is:
+
+```
+./babysat: 7 clauses with 4 declared variables loaded from examples/sat/rivest.cnf
+./babysat: examples/sat/rivest.cnf is satisfiable with -1 -2 3 4
+```
+
+So $x_1$ false, $x_2$ false, $x_3$ true, $x_4$ true satisfies the formula, and if you check the seven clauses by hand you will find that it does, and that $x_4$ could equally have been false. Sixteen assignments, one of the first ones works, no problem. Now add variables. Each one doubles the work. At a hundred variables `babysat` becomes the machine that answers after the Sun. And because `babysat` is written in C\*, selfie can run it on `mipster`, which is what `make sat` does, so that even the solver is something you can watch execute instruction by instruction.
+
+> Why SAT is hard, and why solvers work anyway
+
+Nobody has found a polynomial-time algorithm for SAT, and if the standard conjecture holds nobody ever will. In the worst case, every known method examines a number of cases that grows exponentially with the number of variables. There is even a place where the hardness can be measured. Generate random formulas with three literals per clause and vary the ratio of clauses to variables. With few clauses, almost every formula is satisfiable and easy. With many clauses, almost every formula is unsatisfiable and, again, easy, because contradictions surface quickly. Near a ratio of about 4.26 clauses per variable, the formulas switch from mostly satisfiable to mostly unsatisfiable, and right there they become dramatically hard for every solver. That *phase transition*, discovered in the 1990s, is the closest thing we have to a picture of where the difficulty lives.
+
+And yet modern SAT solvers routinely handle formulas with millions of variables and clauses, arising from chip design, software verification, scheduling, and planning, in seconds. There is no contradiction. The exponential is a worst case, and the formulas that come from real problems are not random. They have structure, and the whole art of solving is exploiting it. Defeating typical cases of an intractable problem is one of engineering's great quiet victories, and it is a hopeful data point for everything in this book: hardness in the worst case leaves enormous room for cleverness in practice.
+
+### How Modern SAT Solvers Work
+
+> DPLL
+
+The first real algorithm dates from 1962 and carries the initials of Davis, Putnam, Logemann, and Loveland. DPLL improves on enumeration in two ways, and both are things a human would do. First, *unit propagation*: if a clause has all but one of its literals false under the current partial assignment, the remaining literal must be true, so set it, and repeat, because that may make other clauses unit. Second, *pure literals*: if a variable occurs only positively in the remaining clauses, set it to true, and dually. Only when neither rule applies does the solver *decide*, picking an unassigned variable and trying one value. If a clause becomes entirely false, a *conflict*, the solver *backtracks* to the most recent decision and tries the other value. That is a depth-first walk of the tree in the figure above, with unit propagation pruning whole subtrees before the walk enters them. It is exponential in the worst case and vastly better than enumeration in almost every other case.
+
+> CDCL, on Rivest's formula
+
+What modern solvers add, starting with GRASP in 1996 and Chaff in 2001, is called *conflict-driven clause learning* (CDCL), and the idea is that a conflict is information. When DPLL backtracks it forgets why it failed and may run into the same failure again in another part of the tree. A CDCL solver instead analyses the conflict, works out which of its decisions were actually responsible, and writes that down as a new clause, a *learned clause*, which is a theorem about the formula: it is implied by the original clauses and it rules out the failed combination forever. Then it jumps back, not to the last decision but to the earliest decision at which the learned clause becomes unit, which is called *non-chronological backjumping*, and continues. Let us do it by hand on Rivest's seven clauses, because it is small enough and it shows everything.
+
+Decide $x_1 = $ true. Unit propagation finds nothing yet. Decide $x_2 = $ true. Now the clause $\neg x_1 \vee \neg x_2 \vee x_3$ has two false literals, so $x_3$ must be true; and then $\neg x_2 \vee \neg x_3 \vee x_4$ forces $x_4$ true; and now $\neg x_1 \vee \neg x_3 \vee \neg x_4$ is entirely false. Conflict. Which decisions were responsible? Following the implications backwards, $x_4$ came from $x_3$ and $x_2$, $x_3$ came from $x_1$ and $x_2$, so the conflict rests on $x_1$ and $x_2$ together, and the solver learns the clause $\neg x_1 \vee \neg x_2$: if $x_1$ is true, $x_2$ cannot be. It backjumps to the point right after the decision $x_1 = $ true, where the learned clause is unit and sets $x_2 = $ false. Propagation now forces $x_4$ true from $\neg x_1 \vee x_2 \vee x_4$, then $x_3$ false from $\neg x_1 \vee \neg x_3 \vee \neg x_4$, and then $x_2 \vee x_3 \vee \neg x_4$ is entirely false. Conflict again, and this time everything traces back to the single decision $x_1 = $ true, so the solver learns the clause $\neg x_1$, one literal long: $x_1$ is false in every satisfying assignment. That is a fact about the formula that was not written in it, and it was found by failing twice.
+
+With $x_1 = $ false the solver decides $x_2 = $ true, propagates $x_4$ false from $x_1 \vee \neg x_2 \vee \neg x_4$, then $x_3$ true from $x_1 \vee x_3 \vee x_4$, and hits $\neg x_2 \vee \neg x_3 \vee x_4$ entirely false. It learns $\neg x_2$. With $x_1$ and $x_2$ both false, deciding $x_3 = $ true satisfies every remaining clause whatever $x_4$ is, and the solver reports what `babysat` reported, having examined four assignments instead of sixteen, and, more importantly, having *learned* along the way that $x_1$ and $x_2$ must be false, which is exactly the comment in the file.
+
+> The engineering around it
+
+Three more ideas make CDCL the workhorse it is, and all three are about cost. *Two watched literals* is a data structure that finds unit clauses without scanning every clause on every assignment: each clause keeps an eye on just two of its literals, and only when one of those becomes false does the solver look at the clause at all. *Variable ordering* heuristics such as VSIDS decide next on the variables that have been involved in recent conflicts, on the theory that the difficulty is concentrated there. And *restarts* throw away the current partial assignment every so often while keeping the learned clauses, so that the solver, now wiser, walks the tree in a different order. None of this changes what SAT is. All of it changes what SAT costs, and the difference is millions of variables.
+
+### From Machine Words to Formulas
+
+> Theories, and SMT
+
+A SAT solver speaks Boolean. A program speaks in 64-bit words, adds and multiplies them, and reads and writes memory. To ask a solver about a program we need a formal language that has words and memory in it, and that is what *satisfiability modulo theories* (SMT) provides. An SMT formula is a propositional formula whose atoms are statements in some *theory*: the theory of *bitvectors*, which has fixed-width words and the arithmetic and logic operations of a machine on them, and the theory of *arrays*, which has read and write operations on an indexed store, which is to say memory. SMT-LIB is the standard notation for such formulas, and Z3 and Bitwuzla are two solvers that read it. The question is the same as before: is there an assignment of values to the variables, now words and arrays, that makes the formula true?
+
+> Bit-blasting, or Cook and Levin made concrete
+
+How does a solver decide a formula about 64-bit words? The most direct way is called *bit-blasting*, and you already know how it works from the size chapter. A 64-bit word is sixty-four Boolean variables. An addition of two words is the 64-bit adder we built out of half adders and full adders, which is a circuit of *and*, *or*, and *not* gates, which is a propositional formula over the bits. A comparison is a circuit. A multiplication is a bigger circuit. Every operation of the machine on words becomes a formula over the bits of the words, using a fresh variable for each gate output, a translation named after Tseitin. Arrays are handled by adding, on demand, the axiom that reading an index you just wrote returns what you wrote, and that reading a different index returns what was there before. So an SMT formula about a machine becomes a SAT formula, only much bigger, and off it goes to CDCL. This is the construction in Cook's proof, a machine's computation written down as a formula, but here it is an engineering practice: the machine is RISC-V, the formula has a few million clauses, and the solver answers in seconds.
+
+### Models of Machines
+
+We now have everything needed to build the tool the meaning chapter promised. Take a RISC-V program. Write down, as a formula, what the machine does in one step: how the program counter changes, how each register changes, how memory changes, depending on the instruction at the program counter and on the input. Write down what a *bad* state is: the machine is about to divide by zero, or to read memory it does not own, or to exit with a non-zero code. Then ask the solver: is there an input such that, after $k$ steps, the machine is in a bad state?
+
+> Rotor
+
+That tool is called `rotor`, it is built on selfie, and it produces such models for full RISC-V code, including all of selfie and itself, in the BTOR2 notation. Rotor takes a C\* program, compiles it with selfie's compiler, and generates the model of the RISC-V machine running that binary. Try it on the smallest interesting example in the repository, a program that reads one byte of input and divides by it after subtracting 48, the ASCII code of the digit 0:
+
+```c
+uint64_t main() {
+  uint64_t  a;
+  uint64_t* x;
+
+  x = malloc(sizeof(uint64_t));
+
+  *x = 0; // touch memory
+
+  read(0, x, 1);
+
+  *x = *x - 48;
+
+  // division by zero if the input is '0' (== 48 == b00110000)
+  a = 41 + (1 / *x);
+
+  // division by zero if the input is '2' (== 50 == b00110010)
+  if (*x == 2)
+    a = 41 + (1 / 0);
+
+  if (a == 42)
+    // non-zero exit code if the input is '1' (== 49 == b00110001)
+    return 1;
+  else
+    return 0;
+}
+```
+
+Type `0` and the program divides by zero. Type `1` and it exits with code 1. Type `2` and it divides by zero on the other line. Type anything else and it exits with code 0. Now generate the model:
+
+```bash
+make rotor
+./rotor -c examples/symbolic/division-by-zero-3-35.c - 0
+```
+
+The `-` says to write the model next to the source file, and the `0` is the exit code that counts as good. Rotor reports:
+
+```
+./rotor: 15161 lines of model formulae generated
+./rotor: 237537 characters of model formulae written into examples/symbolic/division-by-zero-3-35-rotorized.btor2
+```
+
+> BTOR2: state, init, next, bad
+
+Open the file. It is a formula in the BTOR2 notation, and it is readable, because rotor comments every line. There are *sorts*, which are the types: 1-bit Booleans, 64-bit words, and arrays of words indexed by addresses. There are *states*: the program counter, the register file, the code segment, the data, heap, and stack segments of memory, the program break, the file descriptor, and one more that matters, an *input buffer* that is left uninitialized, so that the solver may choose its contents. There are *init* lines that say what each state is before the first step: the program counter is the entry point, the code segment holds the binary, the registers are zero. There are *next* lines that say what each state is after a step, as a function of the current states, and this is where the RISC-V semantics lives: every instruction the machine can execute is written down, bit-precisely, as an *if-then-else* over the instruction at the program counter. And there are twenty-four *bad* lines, each a Boolean that is true if the machine is about to do something it must not:
+
+```
+36027 bad 36026 core-0-division-by-zero ; core-0 division by zero
+38010 bad 38009 core-0-load-invalid-address ; core-0 load at invalid address
+40095 bad 40094 core-0-load-seg-fault ; core-0 load segmentation fault
+40903 bad 40902 core-0-bad-exit-code ; exit(0)
+```
+
+among illegal instructions, unaligned fetches, stores outside the segments, and unknown system calls. The whole model has about fifteen thousand lines for this program, and the number of lines grows linearly with the size of the binary: rotor generates a model of all of selfie, forty-three thousand instructions, in the same way and in about the same time it takes to compile it. The figure shows the shape of such a model and what unrolling it means.
+
+![A BTOR2 model: state, init, next, bad, unrolled k steps](../docs/figures/btor2.svg "A BTOR2 model: state, init, next, bad, unrolled k steps")
+
+> Bounded model checking
+
+A model like this is a machine, described as a formula, that has not run yet. To run it symbolically, *unroll* it: make a copy of every state for step 0, step 1, up to step $k$, connect each copy to the next by the *next* formulas, fix step 0 by the *init* formulas, and ask the solver whether any *bad* formula can be true at any step up to $k$. The unrolled formula has size proportional to $k$ times the size of the model, and it is satisfiable exactly if there is an input on which the machine reaches a bad state within $k$ instructions. That is *bounded model checking*, and the tool that does it for rotor's models is called `bitme`, a Python program that drives Z3 or Bitwuzla, or, alternatively, its own reasoning engine based on binary decision diagrams:
+
+```bash
+tools/bitme.py -kmax 120 --use-bitwuzla examples/symbolic/division-by-zero-3-35-rotorized.btor2
+```
+
+Bitme walks the steps one at a time, and at each step it asks about every bad state. For the first seventy-five steps the answer is no: the program is setting up its stack, calling `malloc`, calling `read`. Then, at step 76, at which the division instruction is fetched, the answer for `core-0-division-by-zero` is yes, and the satisfying assignment the solver returns contains the value of the uninitialized input buffer: the byte 48, the character `0`. At step 89 the second division in the program becomes reachable, with the character `2`, and at step 106 the exit property, which we told rotor to flag for the exit code 0, becomes reachable with the byte 12, one of the many inputs that take the program to its normal end. The step numbers move with the versions of rotor and bitme; the inputs do not. The solver *found* the failing inputs. Nobody told it to try `0`. It derived, from the formula, that among all $2^8$ possible input bytes those are the ones that reach a bad state, in the same way the CDCL example above derived that $x_1$ must be false.
+
+> What a bound buys, and what it does not
+
+Stop and compare this with testing. In the size chapter we said that a test run visits one state in a space of $2^{34,359,738,368}$, so testing shows presence, not absence. Bounded model checking, for every input, for every path, up to $k$ steps, shows *absence*: if bitme reports no bad state up to $k$, there is no input that reaches one within $k$ instructions, and that is a theorem, not an observation. What it does not show is anything about step $k+1$. The bound is the approximation. Rice's theorem said that no tool decides whether a program can divide by zero, and this tool does not: it decides whether a program can divide by zero *within k steps*, which is a question about a finite object and therefore decidable, and it pays for the answer in solver time that grows with $k$. Choosing $k$ is choosing what to give up. That is the whole of formal methods in one sentence, and the workshop around selfie is a set of such choices, each stated. Rotor also generates models with no code in them, where the code segment is left for the solver to choose, so that the solver *synthesizes* a program that reaches a given state. That is the same formula asked the other way round, and it is where the cost of this chapter meets the machines of the next.
+
+### Every Step That Forgets Costs Energy
+
+Computation is not abstract. In 1961 Rolf Landauer showed that erasing one bit of information at temperature $T$ costs at least $kT \ln 2$ of energy, where $k$ is Boltzmann's constant, which at room temperature is about $3 \times 10^{-21}$ joules. The reason is that a bit is one distinction, as the size chapter defined it, and erasing it means two possible states of the memory collapse into one, so the memory's entropy falls, and the second law of thermodynamics says that entropy cannot vanish: it leaves as heat. Information is physical. Today's transistors sit several orders of magnitude above Landauer's floor, but the floor stays where it is for any device that overwrites.
+
+> Why a search pays it
+
+A search visits a state and moves on, and moving on means that the register which held the last candidate now holds the next one. That is an overwrite, which is an erasure. Make it concrete with a counter. Just counting through the 266-bit space of the size chapter, the one with more states than the universe has atoms, flips the lowest bit $2^{266}$ times, every flip overwrites the old bit, and the counter alone costs $2^{266} \times 3 \times 10^{-21}$ joules, about $3 \times 10^{59}$. The Sun radiates about $4 \times 10^{26}$ watts for about ten billion years, roughly $10^{44}$ joules in all. So counting the states, never mind checking them, costs a few thousand trillion suns. You cannot visit the states. You cannot even count them. The figure puts the numbers on one log scale.
+
+![Joules on a log scale: from erasing one bit to brute-forcing 266 of them](../docs/figures/energy.svg "Joules on a log scale: from erasing one bit to brute-forcing 266 of them")
+
+Meanwhile a human brain runs on about 20 watts, a dim light bulb, doing things that data centres cannot. That number is the standing proof that whatever intelligence is, it can be done orders of magnitude more cheaply than we currently do it, and it comes back in the next chapter. Reversible computing lowers the Landauer bill in principle, at the price of time and of error correction, which forgets again. Time, space, energy: one budget. Any claim about intelligence that ignores it is a claim about magic.
+
+### A Language Without a Metric Is Decoration
+
+There is one more thing that a mature field needs, and it belongs here because it is the cost of knowing whether you are getting anywhere. Notation lets you say it. Semantics fixes what it means. A *metric* tells you whether you are getting closer. Running time, memory, energy, error rate, coverage, latency, yield, mortality, loss on a held-out set: every mature field runs on invented measures, and the machine chapter's performance section is nothing but the invention of a few for selfie. A metric is a semantics for the word *better*, and like every semantics it is approximate.
+
+> Goodhart's law
+
+And every metric decays the moment it becomes a target. Charles Goodhart said it in 1975: when a measure becomes a target, it ceases to be a good measure. Teaching to the test. Optimising engagement. Publishing to the h-index. Training to the benchmark. In 1989 a clinical trial found drugs that suppressed the arrhythmia they were designed to suppress, a measure everyone had agreed was the right one, and raised the death rate. Same failure, five fields. This is why the third item, measurement, needs constant reinvention, and why measurement, too, is an unending process rather than a solved problem. Whenever this book quotes a number, an instruction count, a byte count, a factor of 2,593, ask what it measures and how it would be gamed. The next chapter is about a machine whose metrics are gamed by construction.
+
+> Exercises
+
+1. Compute, on paper, how many years it takes to try $2^{60}$ assignments at a billion per second, and then at a trillion per second. Note how little the second number helps.
+2. Check by hand that `-1 -2 3 4` satisfies every clause of `rivest.cnf`, and that `-1 -2 3 -4` does too. Then add the commented-out eighth clause back in and show that no assignment satisfies all eight.
+3. Run `babysat` on a CNF file you write yourself with 5 variables. Then run it on one with 25 variables and time it. Estimate the number of variables at which it would take a day.
+4. Redo the CDCL example starting with the decision $x_4 = $ true instead of $x_1 = $ true. Which clauses does the solver learn?
+5. Write, as a CNF, the statement that a 2-bit adder produces the sum 3 from inputs 1 and 2. You will need Tseitin variables for the gate outputs.
+6. Generate the rotor model of `examples/symbolic/simple-if-else-1-35.c` and count its state, init, next, and bad lines. Then run bitme on it with a bound of 100 and report which bad states are reachable and with what input.
+7. Change the bound in the previous exercise to 20 and explain what a report of *no bad state* now means and does not mean.
+8. Using Landauer's limit, compute the minimum energy needed to erase the entire memory of an 8 GB phone once. Compare it with the energy in a phone battery, about $4 \times 10^4$ joules.
+
+### Recommended Readings 8
+
 > Introduction to the Theory of Computation by Michael Sipser
 
-This book is my favorite introduction to theoretical computer science, by far. The first time I read it, as student, I found answers to so many questions I had. With this book, there is no need to feel intimidated by the subject. I would even say that this is one of the best technical books in computer science.
+The same book as in the meaning chapter, now its second half: time and space complexity, P, NP, the Cook-Levin theorem, and the reductions that make the landscape of NP-complete problems.
 
-> Plato and the Nerd by Edward A. Lee
+> The Art of Computer Programming, Volume 4, Fascicle 6: Satisfiability by Donald E. Knuth
 
-Last but not least, this book takes what you have learned here and not only puts it in human perspective but also continues the discussion of universality of computing beyond the traditional notion of computability. Even if you have not read our book, but especially if you have, you will be able to appreciate this book.
+Three hundred pages on SAT solving by the author of the standard encyclopedia of computer science, including the solvers `sat0` through `sat13` in increasing sophistication. `babysat` is deliberately more naive than `sat0`. If you want to write a solver that is not, start here.
+
+> Decision Procedures: An Algorithmic Point of View by Daniel Kroening and Ofer Strichman
+
+The textbook on SMT: the theories of bitvectors and arrays, bit-blasting, and how a SAT solver is combined with theory reasoning. It is written for exactly the purpose this chapter has, checking programs.
+
+> Handbook of Model Checking edited by Edmund M. Clarke, Thomas A. Henzinger, Helmut Veith, and Roderick Bloem
+
+Bounded model checking is one chapter of this. My postdoc advisor is one of the editors, and the book is where the field defines its terms.
+
+> Feynman Lectures on Computation by Richard P. Feynman
+
+Feynman's lectures cover reversible computing and the thermodynamics of computation, that is, Landauer's limit, in his own inimitable way, along with Turing machines and the theory of computation. It is the book to read if you want the physics of this chapter done properly.
+
+## Part V: Machines
+
+Now the question everyone actually came with. The machines that talk, write code, and pass exams are remarkable, and they are among the most useful artifacts ever built. They are also computations. Everything established in the first four parts of this book, on size, on notation, on meaning, and on cost, applies to them exactly as it applies to a spreadsheet, and the purpose of this part is to show where, mechanically, without a verdict. The tone matters here. This is not debunking and it is not hype. It is the same microscope, pointed at the newest specimen.
+
+## Machines
+
+The recent advent of chat bots and other tools based on generative AI is often seen as a challenge to higher education and modern society in general. Some even claim the end of the world as we know it is near. Yet the common narrative about the seemingly unlimited potential of generative AI is just another example of how little the nature of information is understood, or ignored for whatever reason, economical or otherwise. How can anyone remain motivated to study something intrinsically complex if machines are about to take over? Well, generative AI is no more intelligent than the user that interacts with it. It is a mirror of your own intelligence, just more polished than others, which is why so many are fascinated by it, often not realizing that they are just fascinated by themselves. If you ask the wrong question you get nothing. If you ask the right question you might get something. However, knowing what to ask is not easy. It requires not just knowledge of a subject but true understanding through real training, and that is exactly what this book has been trying to give you.
+
+I wrote those sentences for the first edition of this book, before the machines got as good as they are now, and I have not changed a word, because nothing in them depends on how good the machines are. This chapter explains why. It describes what a large language model mechanically is, in the terms of the earlier chapters, and then reads the four parts of the book against it: the size of its state space, the notation it is trained on, the meaning it does not have access to, and the cost it pays. Each of those readings is an instance of a theorem, never an opinion about a product, which is why the chapter will still be right when the current generation of machines has been replaced by the next.
+
+### What a Large Language Model Is
+
+> Tokens in, a distribution out, one sample, and round again
+
+The name is exact, so start with it. A *language model* is a model of *language*, that is, of notation, and *large* refers to the number of parameters, which is in the billions. Here is the whole mechanism, and the figure draws it. The input is a sequence of *tokens*, which are words or pieces of words drawn from a fixed vocabulary of some tens of thousands, and each token is, of course, a number. The sequence is called the *context*, and there is a maximum length, the *context window*, which is all the machine can see. The model is a function, computed by a fixed program, from the context to a *probability distribution over the next token*: for each of the tens of thousands of tokens in the vocabulary, a number saying how likely it is to come next. One token is then *sampled* from that distribution, appended to the context, and the whole thing runs again. That is all. When you type a question and receive an answer, this loop ran once per token of the answer, and the answer became part of the next question.
+
+![A large language model as a mechanism](../docs/figures/tokens.svg "A large language model as a mechanism")
+
+> The function, and how it was found
+
+The function from context to distribution is computed by a *neural network*, which is a program that does an enormous amount of multiplication and addition on numbers called *weights* or *parameters*, arranged in layers. The particular arrangement in today's models is called a *transformer*, and its characteristic operation, called *attention*, lets each position in the context compute which earlier positions to weigh most when predicting what comes next. I name it and do not derive it, because the derivation is not what this chapter is about; there are excellent accounts in the recommended readings. What matters here is what kind of object the network is. It is arithmetic on bits. In principle it is a C\* program, and given enough time and memory, `mipster` would run it, one RISC-U instruction at a time. It computes exactly what any Turing machine can compute, and nothing else, and the meaning chapter told you what that means.
+
+The weights are not written by anyone. They are found by *training*: the network is shown an enormous amount of text, essentially everything that could be collected, and for each position it is asked to predict the next token. When it is wrong, every weight is nudged slightly in the direction that would have made the actual next token more likely, a procedure called gradient descent, and this is repeated across trillions of tokens. The signal the machine is trained on is therefore entirely *syntactic*: which symbol follows which. Meaning is never handed to it. That it works as well as it does is the genuine surprise of the decade, and an honest scientist says so. Training as a whole is a form of *compression*: the model is a few hundred billion numbers that reproduce, approximately, the regularities of a few hundred terabytes of text, and the meaning chapter's row with no name, the subset that cannot be compressed, is the reminder that compression has a limit that is not a matter of engineering.
+
+> Everything is bits, again
+
+It cost megawatts for weeks to find the weights, and you run on twenty watts. Neither figure changes what kind of object the model is. Every one of its parameters is a number of some bits, so the size chapter applies unchanged: a model with a few hundred billion parameters is a point in a state space that cannot be inspected, and its behavior, its output on every possible context, is one of those infinite answer sheets, of which it can only ever be sampled. So when a laboratory says that a model has been tested extensively, remember the needle in the size chapter. Testing shows presence, not absence. Whatever a test suite exercised, the machine did; whatever it did not, nobody knows.
+
+### A Hallucination Is a Proof-Shaped Object That Is Not True
+
+> Plausible, provable, true
+
+Fluency is syntax. Correctness is semantics. We have built a machine of extraordinary fluency, so the gap between the two, which the meaning chapter spent its whole length on, is something you now meet before breakfast. The figure draws three regions. *True* is what holds in the world, whether or not anyone can show it. *Provable* is strictly inside true, and the gap between them is Gödel's. *Plausible*, what reads well, overlaps true and sticks out of it. The crescent that is plausible and not true is what a *hallucination* is: an answer with the shape of an answer, the tone of an answer, and the confidence of an answer, generated by a machine whose only training signal was shape, tone, and confidence.
+
+![Plausible, provable, true](../docs/figures/venn.svg "Plausible, provable, true")
+
+This is not a defect to be patched away, and it is important to see why, because the reason is a theorem and not a limitation of current engineering. A system trained on notation alone has, by construction, no access to what the notation is about. Stevan Harnad named the problem in 1990: symbols defined only in terms of other symbols never touch the world. The dictionary defines every word using other words, and if you do not already know some of them, the dictionary is useless. So the durable response to a hallucination is neither *trust it more* nor *trust it less*. It is to check the output against something that has a semantics: a compiler, a test, an experiment, a source, a measurement, a colleague. Notice that this is exactly what retrieval, tool use, unit tests, and human review are, the things that empirically help these machines most. They are all ways of importing an external semantics. That is the engineering response to Gödel's second theorem, and it works, partially, never completely, and the machine cannot supply it itself.
+
+### World Models
+
+> Predict what happens, not what is said
+
+The most serious response to the previous section, and I take it seriously, is that the next generation of machines will not be trained on text at all. A *world model* is a system that learns the state of the world, its dynamics, and the consequences of actions, by predicting what *happens* rather than what is *said*. That is an attempt at real semantics, at precisely the grounding Harnad asked for: fix the interpretation of a symbol by prediction against a world rather than by agreement with other text. The figure draws the two routes to the same world. The long way round goes through a transcript, a text, which is a lossy and wildly redundant recording of the world, so that learning from it is the expensive route. The short way goes straight at whatever wrote the transcript.
+
+![Two routes to the same world](../docs/figures/worldmodel.svg "Two routes to the same world")
+
+There is a cost argument here with commercial teeth, and it is the cost chapter's. A system that learns the dynamics directly should need far less data, compute, and energy for the same competence. On a fixed budget, efficiency is capability, so world models may well outperform language models outright, and the honest forecast is that today's architecture is unlikely to be the last. The twenty-watt brain of the cost chapter is the standing proof that the job can be done orders of magnitude more cheaply than we are doing it.
+
+> And still a finite notation, sitting inside the world it models
+
+What no architecture escapes is Parts II to IV of this book, because a model is still a finite object, a program and its parameters, sitting inside the world it models. Counting: models are countable, behaviors are not. Rice: whether this model is right is a semantic property, undecidable. Gödel: no self-certificate from inside. Cost: the state space did not shrink, only the map did. Better maps, arriving faster and cheaper, of a territory that stays uncountable, and still no map that certifies itself. The dashed border around the whole figure is there because every box in it is inside the thing being modelled. If you are asked whether world models change the definition this book ends on, the answer is no. They are an example of it.
+
+### The Loops Are Already Closed
+
+Self-reference is the guiding principle of this book, and here is where it shows up in the machines. Models are now trained on text that models wrote, and the degradation when that loop tightens has been measured and named, *model collapse*, in 2024. Models grade models, and the judge and the candidate share the same blind spots. Models write the code that trains models, and agents invoke themselves. The figure draws the loop: model, output, corpus, training, and round again.
+
+![The loops are closed](../docs/figures/loop.svg "The loops are closed")
+
+Now apply the meaning chapter. *Is this system safe?* is a semantic property of a program. Rice's theorem says there is no general decision procedure for it, not because we are not clever enough, but as a matter of mathematics. And by Gödel's second theorem, no system this expressive can certify itself: an explanation of its own output is more output, fluent, plausible, and not a certificate. Introspection is not audit. Every debate about the safety of these systems that assumes a sufficiently smart system could simply verify itself is refuted by a theorem from 1931. Which is not despair. It tells you exactly where to spend effort: on external, independent, bounded checks, which is the arrow entering the loop from outside in the figure, and which is what the whole cost chapter was about.
+
+### The Gate
+
+Let us put the argument of this chapter into one picture, because it is the picture the whole book has been drawing. You prompt a machine in English, and what comes back is plausible notation: fluent, confident, and, as this chapter has said, nothing about whether it is true. Two things can happen next. Unchecked, the answer is accepted because it reads well, and then there is no semantics anywhere in the loop. Checked, it meets a compiler, a test, a proof, a measurement, a semantics in the exact sense of the meaning chapter, and is either kept or sent back round as the next question. The figure draws the two routes, and the part drawn in the colour of meaning is the part the machine does not supply.
+
+![A generator supplies notation; the semantics has to come from somewhere else](../docs/figures/gate.svg "A generator supplies notation; the semantics has to come from somewhere else")
+
+This is not a new observation about a new machine. It is the fourth appearance of one theorem. Cantor's list needed an object built from outside it. Gödel's system needed a stronger system to certify it. Thompson's compiler needed a second, independent compiler. And the generator needs a check that it cannot be, and in every case the something from outside is a language with a semantics that somebody understands. In the terms of this book, the gate is the most concrete thing there is. Ask a machine for a C\* program. Then `./selfie -c` it: does it parse? Run it on `mipster`: does it do what you asked, on the inputs you tried? Run `rotor` and `bitme` on it: can it divide by zero, or read outside its memory, within a thousand steps, on any input? Each of those is a semantics, each is an approximation with a stated bound, and none of them is available to the machine that wrote the program, because the only semantics in the loop is the one you brought.
+
+### Generation Got Cheap, Verification Did Not
+
+Here is what actually changed, and it is the cost chapter's asymmetry at consumer scale. Before, producing a draft, a proof sketch, a program, an image, a translation was expensive and therefore scarce, and scarcity did our filtering for us. Now production is nearly free and unbounded in volume, and the filter has to be supplied deliberately, by specification, by measurement, by review. Recall from the cost chapter: hard to find, easy to check. That is a description of a healthy relationship with a machine. You may accept work you could not have produced, provided you can check it, and when you cannot check it, delegation is faith.
+
+So value migrates to the two ends the machine does not occupy: deciding what should be true, which is *specification*, and establishing that it is, which is *verification*. Both are acts of meaning. Neither is automated by better generation, and the better generation gets, the more they are worth. The practical advice that follows for a student choosing what to learn is not *avoid the machines*. It is *own the ends*: be the person who can state precisely what is wanted, in a language with a semantics, and who can tell whether it was delivered. Those skills appreciate as generation gets cheaper, and every chapter of this book was training in exactly them. The next chapter, the last, says what that makes intelligence.
+
+> Exercises
+
+1. Ask a chat bot to write a C\* program that reads a number and prints its factorial. Compile it with `./selfie -c`. If it does not compile, that is data; note why. If it does, run it on `mipster` with three inputs.
+2. Ask the same bot whether its program can divide by zero or read outside its memory. Then generate the program's rotor model and run bitme on it with a bound of 500. Compare the two answers and say which one is a certificate.
+3. Find a hallucination: ask a bot for the exact page number of a claim in a book you own, and check. Place the answer in the three regions of the figure and explain which region it fell in and why the machine could not have known.
+4. A model has 70 billion parameters of 16 bits each. How many bits is that, how many states, and how does it compare with the 8 GB phone of the size chapter?
+5. A training run consumed 20 megawatts for 90 days. Compute the joules, and compare with a human brain running for 80 years at 20 watts.
+6. Write down, in one sentence each, the four appearances of the one theorem behind the gate figure, and for each name the thing that came from outside.
+
+### Recommended Readings 9
+
+> Attention Is All You Need by Ashish Vaswani and others
+
+The 2017 paper that introduced the transformer. It is short, it is readable with the mathematics of this book plus some linear algebra, and it is the derivation this chapter deliberately skipped. Read it to see that there is nothing in the machine but arithmetic.
+
+> The Symbol Grounding Problem by Stevan Harnad
+
+The 1990 paper that names the reason a system trained on symbols alone cannot reach what the symbols are about. Everything in this chapter about hallucination and about world models is downstream of it.
+
+> AI Models Collapse When Trained on Recursively Generated Data by Ilia Shumailov and others
+
+The 2024 paper that measured what happens when the loop in the figure tightens. It is the loop of this book, run as an experiment.
+
+> A Path Towards Autonomous Machine Intelligence by Yann LeCun
+
+A 2022 position paper laying out the world-model programme by one of its most prominent advocates. Read it against the previous section and note which of the four limits it names and which it does not.
+
+> Gödel, Escher, Bach by Douglas Hofstadter
+
+The book from the first chapter, again. Its last chapters are about exactly the questions this chapter raises, written forty years before the machines that make them urgent, which is the best evidence I know that the questions are not about the machines.
+
+## Part VI: Intelligence
+
+Hard to believe but we made it to the very end of this book. The question in its title was asked in the introduction and answered there in one sentence, to be earned. The earning is done. This part collects what the earlier parts established, shows that none of it was about computers, and then says what intelligence is, in a form that does not care which machine is current, which company leads, or what happens next year.
+
+## Intelligence
+
+Let me begin the last chapter the way I began the first one, with what I remember from school. I remember being asked to prove something and being scared. I also remember, much later, the moment I understood that the fear was pointing at the most interesting thing in the room. A proof is a finite object, and you can check it. What it is a proof *of* is not finite, and you cannot. Everything in this book has been about that gap, and I have come to believe that being able to stand in it comfortably, knowing exactly where its edges are, is the closest thing to a definition of intelligence that I can defend. So this chapter is going to defend it. But first, one more tour, because the argument was never about computers, and you should see it in three other places before you see it in the definition.
+
+### Everywhere
+
+> Life was running a formal language long before we invented one
+
+Your genome is about 3.2 billion base pairs. Each base is one of four letters, so two bits, which makes the genome about 800 megabytes, roughly the size of a large app. The letters are read three at a time, and each triple, called a codon, denotes one of twenty amino acids or a stop, which is a lookup table exactly like ASCII, only older by four billion years. That is a formal language, with an alphabet, a syntax, and a semantics, and it was running before there was anyone to notice. The size chapter's thought experiment about evolution as enumeration and selection was this fact from the other side.
+
+Here is the part that belongs in this book. John von Neumann asked in the 1940s what a machine that builds copies of itself would have to look like, and he found that it needs one description used in two ways. A *copier* duplicates the description, letter by letter, without ever interpreting it. An *interpreter* reads the description and builds what it says, and among the things it builds are the copier and the interpreter. Interpret the description only, and the offspring inherits machinery but no description, so it could never reproduce in turn. Copy it only, and there is a text with nothing to run it. Reproduction needs one string used both ways, as instructions and as inert data, and that is this book's distinction, four billion years old. The figure runs the architecture as a cell runs it: one strand, a DNA polymerase head that copies it without reading it, and a ribosome head that executes the same letters three at a time.
+
+![The self-copying machine](../docs/figures/vonneumann.svg "The self-copying machine")
+
+Look at what the ribosome is. It is one machine that prints *any* protein, because which protein is data on the strand. That is the universal machine of the meaning chapter, $U$, built out of chemistry. Turing did not invent universality. He noticed it.
+
+And biology also has the cost chapter's lesson, in the strongest form I know. A modest protein has around $10^{300}$ possible shapes. Sampling them all would outlast the universe many times over, and yet real proteins fold in milliseconds, a puzzle known as Levinthal's paradox since 1969. Nature does not search. It funnels. That is *intractable yet done daily*, the most encouraging shape a hard problem can have, and the one place where the machines of the previous chapter have unambiguously won, protein structure prediction, did not win by exhaustion either. AlphaFold learned an approximation, and its value was settled by a metric the field had already invented and by experiments it could not fake. And the self-reference that selfie makes visible, a compiler compiling its own source, an emulator executing its own code, is not a party trick that computer scientists play. It is how you and I got here.
+
+> The postulate nobody could prove was a door, not a wall
+
+Euclid's fifth postulate says, in effect, that through a point beside a line there is exactly one parallel to that line. For two thousand years mathematicians tried to prove it from the other four, and failed, and the failure was the point. The postulate was *independent*: a choice, not a fact. János Bolyai and Nikolai Lobachevsky got out in the 1820s not by proving it but by changing it, and the figure asks the one question in three panels: through a point beside a line, how many parallels? One, on a flat surface. None, on a sphere. Many, on a saddle. All three geometries are consistent. The only thing to see is whether the candidates touch the given line.
+
+![Through a point beside a line: one parallel, none, or many](../docs/figures/parallels.svg "Through a point beside a line: one parallel, none, or many")
+
+The payoff is why this is not a digression. Bernhard Riemann built the machinery of curved space in 1854 for nothing in particular, and Einstein could not have written general relativity without it. Dmitri Mendeleev left holes in his table in 1869 and named elements nobody had seen. Paul Dirac's equation had a solution nobody wanted, and the positron turned up in 1932. Three times, a notation described something before anyone had seen it. That is the meaning chapter's claim, that every new notation is a raid on the uncountable, with the dates filled in.
+
+> Working memory holds about four things, and what counts as a thing is up to you
+
+Here is the same argument run on the mind, and you can run it on yourself. Read these thirteen letters once, look away, and repeat them: F B I C I A N A S A U S B. Almost nobody can. Now read them again, grouped: FBI CIA NASA USB. Everybody can. Nothing on the page changed. The same thirteen letters in the same order. The whole difference is in the reader, and the reader who does not know what NASA is sees four letters where you see one. Psychologists call the group a *chunk*, and the finding, due to George Miller in 1956 and sharpened since, is that working memory holds about four of them, a hardware constant that never grows. But a chunk is one symbol of a language you already own. A chess master shown a real position for five seconds puts nearly every piece back; shown a random board, the master is barely better than a beginner. Same four slots, tens of thousands more patterns to point them at.
+
+So the four slots never grow. What grows is what one slot can mean. That is what growing up is, and it is what a discipline is, run on one person. When the input does not fit any pattern you have, Jean Piaget called what happens next *accommodation*: the scheme itself has to change. A new property, or a new language. It is the definition this chapter ends on, run by a child, every day.
+
+> Every leap in every field was a new notation
+
+Ask anyone in any field what the notation of their field is and what it made possible, and the answers are always good. Double-entry bookkeeping, Pacioli in 1494: the firm, the audit, capitalism. Staff notation, Guido d'Arezzo around 1025: polyphony, composition at scale. Linear perspective, Alberti in 1435: depth, and a space to compose in. Calculus, Newton and Leibniz in the 1670s: motion, orbits, engineering. Chemical formulae and the periodic table, 1869: the prediction of unknown elements. Diagnostic criteria and trial protocols in medicine: evidence instead of authority. Generative grammar, Chomsky in 1957: language as a formal object. Turing machines in 1936: all of the above, mechanized. None of these was a discovery of new facts. Each was a new language, or a new property an old language could finally express. The facts followed.
+
+### The Question, Replaced
+
+> Stop asking whether it is intelligent
+
+The introduction promised a better question than the one in the title, and here it is. *Is it intelligent? Does it truly understand? Is it conscious? Will it always behave?* Each of these asks for a semantic verdict on a system, in a language, English, that has no semantics for the words used. Psychology met this problem first and answered it best: you cannot measure a construct, only an operational definition of it, and the definition is never the thing. Dijkstra put it more sharply in 1984: the question of whether machines can think is about as relevant as the question of whether submarines can swim. The word *swim* was coined for bodies with muscles. Whether what a submarine does is swimming is a question about our word, not about the submarine.
+
+So replace the noun question with questions that are decidable, today, by anyone. What language did I state my requirement in? What are its semantics? What is my metric, and how will it be gamed? What is the budget, in time, space, and energy? Who checks the result, from outside? The right question is never about the machine's essence. It is about your language, your semantics, your metric, your check. This is why the method is future-proof: it never mentions a model, a vendor, or a year. The same five questions worked for the steam engine and the spreadsheet, and they will work for whatever arrives after the machines of the previous chapter.
+
+> Six habits with no expiry date
+
+If you take one page from this book, take this one. *Name the language.* State what you want in something with a semantics: a type, a grammar, a schema, a unit, a test, an acceptance criterion. English negotiates; formality commits. *Attach a metric, and name its failure.* If you cannot say what better means, you are wandering, and once you can, write down how the metric will be gamed, because it will be. *Delegate generation, own verification.* Accept work you could not have produced; never work you cannot check. That is the only shape delegation has ever had. *Budget time, space, and energy.* Know how big your space is and how much of it you can afford to visit. Most doomed projects were doomed arithmetically on day one. *Break every loop from outside.* Nothing certifies itself, not a model, not a company, not you. Import an independent check: an experiment, a proof, a person allowed to say no. *Trust the unproven, then formalize it.* When answers get hard to check, what is missing is a language, not more effort. Take the truth you can see but not yet prove, and build the notation that proves it.
+
+> No theorem says your bridge will hold, and you crossed one this morning
+
+Aviation, medicine, and civil engineering never had decidability either. Their questions are semantic, their state spaces astronomical, their proofs unavailable. They became extraordinarily safe anyway, with layered approximations: standards, redundancy, staged testing, incident reporting, licensing, liability, and the freedom to say *not yet*. None of it is proof. All of it is accumulated, measured approximation, and it worked. Commercial aviation drove an undecidable safety property down to a few deaths per billion passenger-kilometres by approximation and institutions. So *we cannot prove it safe* was never a reason for paralysis and never a licence for recklessness. It is the normal condition of every mature engineering discipline, and the reason those disciplines built institutions instead of theorems. Software, and the machines of the previous chapter in particular, is early in exactly that process. Being early is a job opening, whatever you are studying.
+
+### So, What Is Intelligence?
+
+> Every notation was invented by someone who saw a truth before it could be proved
+
+Fermat asserted his last theorem in the margin of a book; Wiles proved it 358 years later. Riemann's hypothesis has been assumed true, and built upon, for 165 years. Mendeleev left blank cells for unseen elements. Darwin had no genetics. In each case the notation came *after* the conviction, and the conviction was not deduced from anything. Gödel makes this precise. No mechanical procedure yields the next axiom. Deciding what to hold true is not a step inside the system; it is a step to a new one. And, symmetrically, that step is not automatable, not because machines are weak, but because there is no algorithm there to automate. Scale does not help. It was never a compute problem. Be careful and fair here. The claim is not that machines cannot participate; they may well help, and they already propose conjectures. The claim is that no procedure guarantees the step, so it stays genuinely open work for whoever attempts it, human or machine.
+
+> The definition
+
+Intelligence is developing new formal languages, or at least new properties in existing ones, which requires discovering and understanding promising *unproven* truth. New languages and properties let us ask new questions about that truth, and then answer them in proofs. Forever.
+
+The definition has two halves, and they map onto a university. *Developing the skills to answer* is proving, computing, measuring, building. It is rigorous, cumulative, and teachable, and it is what an undergraduate program gives you. *Choosing the questions* is deciding which unproven truth is worth formalizing. It is not deducible and not teachable by rote, and it is what advanced, graduate-level study is for. Both are necessary. Notice where the difficulty sits: not in the proving, which machines do superbly, but in the finding, which nothing yet does reliably. And notice what the definition is not: not a threshold, not a score, not a possession. It is an activity with a direction and no terminating condition. Test it against a student learning statistics, a field adopting an instrument, an evolutionary lineage inventing the codon, a model being fine-tuned. All satisfy it, and none of it can be obsoleted by a product launch.
+
+> And what is computer science
+
+Along the way this book has also earned a definition of its own subject, which the name misleads about twice: it is not about computers, and it is only sometimes a science. Computer science is the exact study of notation a machine can execute, of what can be written down, what can be computed, what can be decided, and what can be afforded, and therefore of the gap, measured precisely, between notation and meaning. Four verbs, one per part of this book. The machine is where notation is forced to be exact, so the gap was noticed here first and measured here most sharply. But the theorems hold for any notation: a statute, a genome, a score, a model. And the subject cannot be completed, not from lack of ambition, but as a consequence of its own theorems: no final language, no complete system, no self-certificate, no decision procedure for meaning.
+
+> Selfie, against the definition
+
+Read the specimen of this book against that definition, one card at a time. A language and its meaning: C\*, seven keywords, one type and pointers to it, and `starc`, which gives it a semantics, and which is written in C\*, so the dictionary is written in the language it defines. A machine: RISC-U, fourteen instructions, thirty-two registers, four gigabytes, and `mipster`, one universal machine that runs every program for it, itself included. A fixed point and its limit: selfie compiles itself and gets the same bytes twice, which proves that it agrees with itself, and Thompson says what that cannot prove. And so the workshop of tools around it, the figure, turns its execution into logic and supplies the outside checks that the fixed point cannot: a model generator, a model checker, a fuzzer, a solver, a binary translator, each applied to selfie and to itself. The only argument for selfie's size is the one the size chapter made. An artifact you can read to the end is qualitatively different from one you can only sample, because reading to the end is the only way the semantics is ever actually pinned down.
+
+![The workshop that grew out of one file](../docs/figures/galaxy.svg "The workshop that grew out of one file")
+
+> This is exactly why you study a field in depth
+
+Not because the machines are unavailable. They are extravagantly available, and they will get better every year of your career. But discovering and understanding promising unproven truth requires having lived inside a subject long enough to feel where it is thin, where it is wrong, and where it is about to give. No summary, no search, and no generated answer transfers that. It is built, slowly, and it is yours. It is the four slots of working memory pointing at ten thousand patterns, and the patterns took years. And it need not be computer science. Every field has unproven truth in front of it: history, medicine, ecology, music theory, economics, law. The method in this book is field-independent; the depth has to be specific. Pick the field, or fields, whose unsolved problems still make you *strangely comfortable*. It is a better selection criterion than any salary table.
+
+> Truth can only be approximated, and the approximating never stops
+
+Read the whole book twice, one last time. What we lost: completeness, certainty, a final theory, a final language, a decision procedure for meaning, and any machine that could hand us all of it. What we have instead: work that cannot be finished, and therefore cannot be taken away. An unbounded frontier where every new notation makes yesterday's unreachable truths reachable, on every single day, forever. A finishable world would be a world where curiosity has an end date. What the theorems actually deny us is redundancy. Undecidable does not mean unknowable. It means unfinishable, and unfinishable work is the only kind that never becomes obsolete. The halting problem, applied to progress, gives the most hopeful result in science: this computation does not terminate.
+
+### Life 4
+
+Understanding the universality of computing, its challenges and limits, and what it takes to make universal computing available to everyone was the high-level goal of the first edition of this book. This edition kept all of that and asked what it was for. Self-reference, as manifested in our selfie system, has been our guiding principle in all of it, and it turned out to be the guiding principle of the answer too. Let us summarize what we have seen, along the axis.
+
+1. Size: everything is information, and all information can be encoded in bits, and a few bytes of it have more states than the universe has atoms. The state of a computer is a giant number that the machine manipulates into an endless sequence of numbers as it executes code, and those numbers can mean whatever we want. Whatever you see on a screen could come from anywhere and mean anything, and no test will ever have seen more than a vanishing fraction of what a machine can do. Testing shows presence, not absence.
+
+2. Notation: computer science is all about formalisms. Programming languages are formalisms with precise syntax and executable semantics, quite different from natural languages, and so are grammars, machine languages, and the models a solver reads. Everything written in any of them is a finite text, so it can be listed, and it is a number, so a machine can compute with it. That is what lets a compiler read a program, an emulator run one, and a system describe itself.
+
+3. Meaning: what we want to talk about, behaviors, truths, and meanings, cannot be listed. So almost every truth has no proof, no system is ever finished, no system certifies itself, no program decides what programs do, and every tool that says anything useful about meaning is an approximation with a stated bound. The machinery of this book, the compiler that defines the meaning of its own language and the operating system that isolates itself, is exactly that limited, and it works.
+
+4. Cost: decidable is not doable. Some questions have answers that arrive after the Sun has burnt out; some of those, the hard-to-find and easy-to-check ones, are the same question in thousands of disguises; and clever solvers answer many of them anyway, by exploiting structure. Turning a program into a formula and handing it to a solver is where syntax becomes semantics on your laptop, within a bound you chose. And every step that forgets costs energy, so time, space, and energy are one budget.
+
+5. Machines: the machines that talk are computations, trained on notation, asked for meaning. A hallucination is the gap of this book at consumer scale. Whatever they become, they are finite objects inside the world they model, and no such object certifies itself. Generation got cheap and verification did not, so the value migrates to the two ends the machine does not occupy, which are the two ends this book trained you for.
+
+We conclude the book with a brief outlook, as before. On the software side, artificial intelligence receives most of the attention right now. On the hardware side, it is probably quantum computing. The goals are always the same: smarter software and faster hardware. The hype is considerable, as so often in computer science, with the demand for breakthroughs seemingly having no limits, all the while modern society has not even learned to deal with the previous generation of technology. I have seen those hypes come and go, expectations and anxiety up and down, leaving knowledge of the basic principles as the only reliable source of advice in a world of universal computing. That is the purpose stated in the introduction, and I hope it has been kept: a deep understanding of the basic principles, deep enough to position generative AI, and whatever comes next, properly. As the hype fades, progress is usually made, sometimes in unforeseen ways. What does not change is the axis: small, vast, countable, uncountable, and the gap between notation and meaning that everything worth doing lives in.
+
+> Whatever intelligence is, humour is the only way
+
+For most of you, this book has probably confirmed your conviction never to study computer science. Or the exact opposite. And who knows, some of you may now be considering a switch into computer science. I have seen it happen, with apologies to my colleagues in the other fields. Outcome A: confirmed conviction. Outcome B: informed confusion. Regardless of which one you leave with, this is about becoming who you are and no one else. You are not competing with a machine at producing notation. You are the part of the loop that decides what it should mean, and whether it is true. Notation is finite. Meaning is not. Mind the gap, then go widen it.
+
+> Denn es ist zuletzt doch nur der Geist, der jede Technik lebendig macht.
+
+Goethe wrote that long before any of the mathematics in this book existed. For in the end it is only the *Geist* that brings any technique to life. *Technik* is technique, technology, the formal machinery: notation, proof, the compiler, the solver, the model. Necessary. Never sufficient. Never alive on its own. *Geist* is spirit, mind, meaning. For the whole of this book we have been calling it truth. And it is, finally, you and me.
+
+> Exercises
+
+1. Name the notation of a field other than computer science that you know well, and say what it made possible that was not possible before. Then name one thing in that field that everyone believes and nobody has proved.
+2. Take a project you are working on, in any field, and write down the five decidable questions for it: the language, its semantics, the metric, the budget, and who checks from outside.
+3. Run the three commands of the selfie chapter one last time: self-compilation, self-execution, self-hosting. For each, write one sentence saying what it proves and one saying what, by the meaning chapter, it cannot.
+4. Read the thirteen letters F B I C I A N A S A U S B to someone who has never seen them, then the four chunks, and note the difference. Then find thirteen letters that chunk for you and not for them.
+5. Pick one of the six habits and apply it, this week, to something you would otherwise have accepted on faith. Report what the check was and what it found.
+
+### Recommended Readings 10
+
+> The Library of Babel by Jorge Luis Borges
+
+A short story from 1941 about a library containing every possible book, which is to say the state space of the size chapter, walked by librarians. It says in ten pages what the first part of this book says in a hundred, and it is the book for anyone from the humanities who wants the argument without the machine.
+
+> Theory of Self-Reproducing Automata by John von Neumann
+
+Written in the 1940s and published in 1966, this is the source of the self-copying machine. Von Neumann worked out the architecture of reproduction before the structure of DNA was known, from the requirement of self-reference alone, which is the most remarkable prediction from notation that I know.
+
+> Thinking, Fast and Slow by Daniel Kahneman
+
+The two systems of the mind, a lookup and a derivation, are the cost chapter's problem inside one head, and this is the book that made them famous. Read it as a computer scientist and every chapter is about time, space, and the price of being checkable.
+
+> Selected Writings on Computing: A Personal Perspective by Edsger W. Dijkstra
+
+Dijkstra's notes, the EWDs, are the source of the submarine line and of most of the good sentences about the nature of the subject. He was wrong about some things and never boring, and he took the gap between notation and meaning more seriously than anyone in the field's first half century.
+
+> Gödel, Escher, Bach by Douglas Hofstadter
+
+Recommended in the first chapter and again in the ninth, and one more time here, because if you have finished this book you will now read it differently. It is the book this one was trying to be a runnable version of.
 
 ## Glossary

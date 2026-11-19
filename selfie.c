@@ -743,6 +743,7 @@ void syntax_error_unexpected_symbol();
 uint64_t get_expected_symbol(uint64_t expected_symbol);
 void     get_required_symbol(uint64_t required_symbol);
 
+void check_variable_redefinition(uint64_t scope, char* variable);
 void syntax_error_undeclared_identifier(char* name);
 void syntax_error_unexpected_identifier(char* expected);
 
@@ -4858,6 +4859,25 @@ void get_required_symbol(uint64_t required_symbol) {
     exit(EXITCODE_PARSERERROR);
 }
 
+void check_variable_redefinition(uint64_t scope, char* variable) {
+  uint64_t* entry;
+
+  assert(and(variable != (char*) 0, or(scope == GLOBAL_TABLE, scope == LOCAL_TABLE)), __LINE__, __func__);
+
+  if (scope == GLOBAL_TABLE)
+    entry = search_global_symbol_table(variable, VARIABLE);
+  else
+    entry = search_local_symbol_table(variable);
+
+  if (entry == (uint64_t*) 0)
+    return;
+
+  print_line_number("syntax error", line_number);
+  printf("redefinition of variable %s, original definition in line %lu\n", get_string(entry), get_line_number(entry));
+
+  number_of_syntax_errors = number_of_syntax_errors + 1;
+}
+
 void syntax_error_undeclared_identifier(char* name) {
   print_line_number("syntax error", line_number);
   printf("%s undeclared\n", name);
@@ -5078,25 +5098,20 @@ uint64_t* compile_variable(char* variable, uint64_t type, uint64_t offset) {
       value = 0;
 
     // global variable
-    entry = search_global_symbol_table(variable, VARIABLE);
+    check_variable_redefinition(GLOBAL_TABLE, variable);
 
-    if (entry == (uint64_t*) 0) {
-      // allocate memory for global variable in data segment
-      data_size = data_size + declared_variable_bytes;
+    // allocate memory for global variable in data segment
+    data_size = data_size + declared_variable_bytes;
 
-      entry = create_symbol_table_entry(GLOBAL_TABLE, variable,
-        line_number, VARIABLE, type, value, -data_size);
+    entry = create_symbol_table_entry(GLOBAL_TABLE, variable,
+      line_number, VARIABLE, type, value, -data_size);
 
-      number_of_global_variables = number_of_global_variables + 1;
-    } else {
-      // global variable already declared or defined
-      print_line_number("warning", line_number);
-      printf("redefinition of global variable %s ignored\n", variable);
-    }
+    number_of_global_variables = number_of_global_variables + 1;
   } else {
     // local variable or formal parameter
     if (symbol == SYM_IDENTIFIER) {
       local_variable = identifier;
+      check_variable_redefinition(LOCAL_TABLE, local_variable);
 
       get_symbol();
 
@@ -5117,7 +5132,6 @@ uint64_t* compile_variable(char* variable, uint64_t type, uint64_t offset) {
       } else
         value = 0;
 
-      // TODO: check if identifier has already been declared
       entry = create_symbol_table_entry(LOCAL_TABLE, local_variable,
         line_number, VARIABLE, type, value, offset);
     } else {

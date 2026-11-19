@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="800" height="520" role="img" aria-label="A finite state machine for integer literals, from the grammar digit { digit }">
+<title>A finite state machine for integer literals, from the grammar digit { digit }</title>
+<style>svg{--ink:#131C2A;--ink-2:#39485C;--muted:#5D6E85;--line:rgba(19,28,42,.18);--syn:#A2661A;--sem:#1F6C86;--bad:#A63E5A;--panel:#FFFFFF;--ground:#EFF1F3}@media (prefers-color-scheme: dark){svg{--ink:#E7EDF6;--ink-2:#B6C4D8;--muted:#8093AF;--line:rgba(122,162,204,.16);--syn:#E0A550;--sem:#5BB0C7;--bad:#C8607A;--panel:#111C2E;--ground:#080E18}}text{font-family:"JetBrains Mono","SFMono-Regular","SF Mono","Cascadia Mono",Menlo,Consolas,"DejaVu Sans Mono",monospace}.serif{font-family:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua","URW Palladio L",Georgia,serif}</style>
+<line x1="80.0" y1="300" x2="112.0" y2="300" stroke="var(--ink-2)" stroke-width="1.2"/><path d="M114.0 300 L108.0 297 L108.0 303 Z" fill="var(--ink-2)"/>
+<path d="M120 300 Q320.0 240.0 520.0 300" fill="none" stroke="var(--ink-2)" stroke-width="1.1"/>
+<rect x="261.0" y="263.7" width="22" height="16" fill="var(--panel)"/><text x="272.0" y="271.7" font-size="13" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">&quot;0&quot;</text>
+<path d="M120 300 Q320.0 188.0 520.0 300" fill="none" stroke="var(--ink-2)" stroke-width="1.1"/>
+<rect x="357.0" y="239.2" width="22" height="16" fill="var(--panel)"/><text x="368.0" y="247.2" font-size="13" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">&quot;1&quot;</text>
+<path d="M120 300 Q320.0 136.0 520.0 300" fill="none" stroke="var(--ink-2)" stroke-width="1.1"/>
+<rect x="261.0" y="214.7" width="22" height="16" fill="var(--panel)"/><text x="272.0" y="222.7" font-size="13" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">&quot;2&quot;</text>
+<path d="M120 300 Q320.0 84.0 520.0 300" fill="none" stroke="var(--ink-2)" stroke-width="1.1"/>
+<rect x="357.0" y="190.2" width="22" height="16" fill="var(--panel)"/><text x="368.0" y="198.2" font-size="13" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">&quot;3&quot;</text>
+<path d="M120 300 Q320.0 32.0 520.0 300" fill="none" stroke="var(--ink-2)" stroke-width="1.1"/>
+<rect x="261.0" y="165.7" width="22" height="16" fill="var(--panel)"/><text x="272.0" y="173.7" font-size="13" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">&quot;4&quot;</text>
+<path d="M120 300 Q320.0 -20.0 520.0 300" fill="none" stroke="var(--ink-2)" stroke-width="1.1"/>
+<rect x="357.0" y="141.2" width="22" height="16" fill="var(--panel)"/><text x="368.0" y="149.2" font-size="13" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">&quot;5&quot;</text>
+<path d="M120 300 Q320.0 -72.0 520.0 300" fill="none" stroke="var(--ink-2)" stroke-width="1.1"/>
+<rect x="261.0" y="116.7" width="22" height="16" fill="var(--panel)"/><text x="272.0" y="124.7" font-size="13" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">&quot;6&quot;</text>
+<path d="M120 300 Q320.0 -124.0 520.0 300" fill="none" stroke="var(--ink-2)" stroke-width="1.1"/>
+<rect x="357.0" y="92.2" width="22" height="16" fill="var(--panel)"/><text x="368.0" y="100.2" font-size="13" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">&quot;7&quot;</text>
+<path d="M120 300 Q320.0 -176.0 520.0 300" fill="none" stroke="var(--ink-2)" stroke-width="1.1"/>
+<rect x="261.0" y="67.7" width="22" height="16" fill="var(--panel)"/><text x="272.0" y="75.7" font-size="13" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">&quot;8&quot;</text>
+<path d="M120 300 Q320.0 -228.0 520.0 300" fill="none" stroke="var(--ink-2)" stroke-width="1.1"/>
+<rect x="357.0" y="43.2" width="22" height="16" fill="var(--panel)"/><text x="368.0" y="51.2" font-size="13" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">&quot;9&quot;</text>
+<path d="M518.0 298 L508.0 291 L511.0 299 Z" fill="var(--ink-2)"/>
+<circle cx="120" cy="300" r="6" fill="var(--syn)"/><circle cx="520.0" cy="300" r="6" fill="var(--sem)"/>
+<path d="M524.0 295 C550.0 255 490.0 255 516.0 295" fill="none" stroke="var(--ink-2)" stroke-width="1.1"/><path d="M516.0 295 L507.0 288 L516.0 286 Z" fill="var(--ink-2)"/>
+<text x="520.0" y="248.0" font-size="13" fill="var(--ink-2)" text-anchor="middle" dominant-baseline="central">&quot;0&quot; … &quot;9&quot;</text>
+<text x="120" y="470" font-size="13.2" fill="var(--ink-2)" text-anchor="start" dominant-baseline="central" xml:space="preserve">integer = digit { digit } .</text>
+<text x="120" y="492" font-size="13.2" fill="var(--ink-2)" text-anchor="start" dominant-baseline="central" xml:space="preserve">digit   = &quot;0&quot; | … | &quot;9&quot; .</text>
+</svg>
